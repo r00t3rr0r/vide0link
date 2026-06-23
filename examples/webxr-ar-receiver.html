@@ -304,7 +304,7 @@ function connect() {
 	pathParts.pop();
 	const basePath = pathParts.join('/') || '';
 	// cleanoutput removes UI; autostart/muted to dodge autoplay blocks
-	// Sensor data forwarding to parent is automatic when Vide0Link is in an iframe
+	// Sensor data forwarding to parent is automatic when VDO.Ninja is in an iframe
 	const url = `${window.location.origin}${basePath}/?view=${encodeURIComponent(streamId)}&cleanoutput&debug&autostart=1&mute=1`;
 
 	console.log('Connecting to:', url);
@@ -342,7 +342,7 @@ function handleMessage(event) {
 		console.log('SENSOR DATA RECEIVED #' + msgCount, data.sensors);
 	}
 
-	// Handle pose data from Vide0Link
+	// Handle pose data from VDO.Ninja
 	if (data.sensors && data.sensors.pose) {
 		msgCount++;
 		document.getElementById('stat-msgs').textContent = msgCount;

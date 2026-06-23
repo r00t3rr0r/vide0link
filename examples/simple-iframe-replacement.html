@@ -47,7 +47,7 @@
     </style>
 </head>
 <body>
-    <h1>Simple IFRAME Replacement with Vide0Link DataChannel SDK</h1>
+    <h1>Simple IFRAME Replacement with VDO.Ninja DataChannel SDK</h1>
     
     <div class="example old-way">
         <h2>❌ Old Way: Hidden IFRAME</h2>
@@ -73,7 +73,7 @@ window.addEventListener('message', (event) => {
         
         <p><strong>Problems:</strong></p>
         <ul>
-            <li>Hidden IFRAME still loads full Vide0Link UI</li>
+            <li>Hidden IFRAME still loads full VDO.Ninja UI</li>
             <li>Cross-origin communication limitations</li>
             <li>No direct control over connections</li>
             <li>Hard to debug</li>
@@ -83,7 +83,7 @@ window.addEventListener('message', (event) => {
     <div class="example new-way">
         <h2>✅ New Way: DataChannel SDK</h2>
         <pre><code>// JavaScript only - no hidden IFRAME needed!
-const node = new Vide0LinkDataChannel();
+const node = new VDONinjaDataChannel();
 
 // Connect and join room
 await node.joinRoom({
@@ -136,7 +136,7 @@ node.addEventListener('data', (event) => {
         
         <h3>1. IoT Sensor Network</h3>
         <pre><code>// Sensor publishes data
-const sensor = new Vide0LinkDataChannel();
+const sensor = new VDONinjaDataChannel();
 await sensor.joinRoom({ room: 'iot', label: 'temperature-sensor' });
 
 setInterval(() => {
@@ -149,7 +149,7 @@ setInterval(() => {
         
         <h3>2. Remote Control</h3>
         <pre><code>// Controller subscribes to specific device
-const controller = new Vide0LinkDataChannel();
+const controller = new VDONinjaDataChannel();
 await controller.joinRoom({ room: 'iot', label: 'controller' });
 
 // Subscribe to all temperature sensors
@@ -167,7 +167,7 @@ controller.addEventListener('data', (e) => {
         
         <h3>3. Multi-User Chat</h3>
         <pre><code>// Each user joins with unique ID but same label
-const chat = new Vide0LinkDataChannel();
+const chat = new VDONinjaDataChannel();
 await chat.joinRoom({ 
     room: 'chatroom',
     streamID: `user-${Date.now()}`,
@@ -193,7 +193,7 @@ chat.publish({
         async function connectNodeA() {
             if (nodeA) nodeA.disconnect();
             
-            nodeA = new Vide0LinkDataChannel({
+            nodeA = new VDONinjaDataChannel({
                 wss: 'wss://apibackup.vdo.ninja:443'
             });
             
@@ -230,7 +230,7 @@ chat.publish({
         async function connectNodeB() {
             if (nodeB) nodeB.disconnect();
             
-            nodeB = new Vide0LinkDataChannel({
+            nodeB = new VDONinjaDataChannel({
                 wss: 'wss://apibackup.vdo.ninja:443'
             });
             

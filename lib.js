@@ -64,7 +64,7 @@ var miscTranslations = {
 	// i can replace this list from time to time from the generated one in blank.json using translate.js
 	start: "START",
 	"new-display-name": "Enter a new Display Name for this stream",
-	"submit-error-report": "Press OK to submit any error logs to Vide0Link. Error logs may contain private information.",
+	"submit-error-report": "Press OK to submit any error logs to VDO.Ninja. Error logs may contain private information.",
 	"director-redirect-1": "The director wishes to redirect you to the URL: ",
 	"director-redirect-2": "\n\nPress OK to be redirected.",
 	"add-a-label": "Add a label",
@@ -145,9 +145,9 @@ var miscTranslations = {
 	"no-screen-share-supported": "Sorry, your browser does not support screen-sharing.\n\nPlease use the desktop versions of Firefox or Chrome instead.",
 	"no-screen-share-supported-firefox": "Sorry, your browser does not support screen-sharing.\n\nYour Firefox settings may be configured to block it or you've accessed the site insecurely.",
 	"speech-not-suppoted": "⚠ Speech Recognition is not supported by this browser",
-	"blue-yeti-tip": "<i>Tip:</i> Blue Yeti microphones may experience issues being overly loud. <a href='https://support.google.com/chrome/thread/7542181?hl=en&msgid=79691143'>Please see here</a> for a solution or disable auto-gain in Vide0Link.",
+	"blue-yeti-tip": "<i>Tip:</i> Blue Yeti microphones may experience issues being overly loud. <a href='https://support.google.com/chrome/thread/7542181?hl=en&msgid=79691143'>Please see here</a> for a solution or disable auto-gain in VDO.Ninja.",
 	"sample-rate-too-high": "Your audio playback device has its sample rate set very high. If having audio issues, try using 48-kHz instead.",
-	"site-not-responsive": "<h3>Notice: The system cannot be accessed or is currently slow to respond.</h3>\nIf a routing issue, try adding <i title='or try visiting https://proxy.vdo.ninja/'>&proxy</i> to the URL; you can also try <i>https://proxy.vdo.ninja</i> or a VPN if the service is blocked in your country.\n\nIf the main service is down, a backup version is also available here: <i>https://backup.vdo.ninja</i>\n\n..email for added help.\n\nThis service requires the use of Websockets over port 443.",
+	"site-not-responsive": "<h3>Notice: The system cannot be accessed or is currently slow to respond.</h3>\nIf a routing issue, try adding <i title='or try visiting https://proxy.vdo.ninja/'>&proxy</i> to the URL; you can also try <i>https://proxy.vdo.ninja</i> or a VPN if the service is blocked in your country.\n\nIf the main service is down, a backup version is also available here: <i>https://backup.vdo.ninja</i>\n\nContact steve@seguin.email for added help.\n\nThis service requires the use of Websockets over port 443.",
 	"no-audio-source-detected": "No audio source was detected.<br><br>Please see <a href='https://docs.vdo.ninja/common-errors-and-known-issues/cant-capture-an-applications-audio-when-screen-sharing' target='_blank'>the documention</a> for a guide on how to capture application-based audio.",
 	"viewer-count": "Total outbound p2p connections of this remote stream",
 	"enter-url-for-widget": "Enter a URL for a page to embed as a sidebar",
@@ -644,11 +644,11 @@ function submitDebugLog(msg = false) {
 		var request = new XMLHttpRequest();
 
 		var recordResults = session.streamID + "_" + parseInt(Date.now());
-		// Local error reporting (external report service removed)
+		request.open("POST", "https://reports.vdo.ninja/?name=" + recordResults); //  php, well, whatever.
 		if (!session.cleanOutput) {
-			warnUser("Error Report ID: " + recordResults + ". Please document this ID for support purposes.", false, false);
+			warnUser("Report any details of your bug report to steve@seguin.email, along with the following link: <a target='_blank' onclick='copyFunction(this, event)' href='https://reports.vdo.ninja/?name=" + recordResults + "'>https://reports.vdo.ninja/?name=" + recordResults + "</a>", false, false);
 		}
-		console.log("Error Report ID: " + recordResults);
+		console.log("Report any details of your bug report to steve@seguin.email, along with the following ID: " + recordResults);
 
 		request.send(JSON.stringify(errorReport));
 		errorReport = [];
@@ -4080,7 +4080,7 @@ function obsSourceActiveChanged(event) {
 }
 
 function obsSourceVisibleChanged(event) {
-	// accounts for visible in Vide0Link scene AND visible in OBS scene
+	// accounts for visible in VDO.Ninja scene AND visible in OBS scene
 	warnlog("obsSourceVisibleChanged");
 	warnlog(event.detail);
 	try {
@@ -10677,7 +10677,7 @@ var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
 eventer(messageEvent, function (e) {
 	// this listens for child IFRAMES.
 	try {
-		if (e.origin == "") {
+		if (e.origin == "https://www.youtube.com") {
 			processYoutubeEvent(e);
 		} else if (e.data && typeof e.data == "object" && "action" in e.data) {
 			if (e.data.action == "screen-share-state" && !e.data.value) {
@@ -16479,7 +16479,7 @@ function printValues(obj, sort = false) {
 					} else if (data.type === "url") {
 						out += `<div class="meta-item meta-url">
                             <small>${category}:</small>
-                            <a href="${data.value}" rel="noopener"
+                            <a href="${data.value}" target="_blank" rel="noopener"
                                class="meta-link" title="${data.value}">
                                 ${truncateUrl(data.value)}
                             </a>
@@ -16582,7 +16582,7 @@ function printValues(obj, sort = false) {
 						return;
 					}
 				} else if (key == "version") {
-					stat = "Vide0Link Version";
+					stat = "VDO.Ninja Version";
 				} else if (key == "platform") {
 					stat = "Platform (OS)";
 				} else if (key == "iPhone12Up") {
@@ -16681,7 +16681,7 @@ function printValues(obj, sort = false) {
 							(y - 3) +
 							'px;"></div>\
 						</div>';
-						out += 'Open Location in Google Maps';
+						out += '<a href="https://www.google.com/maps?q=' + lat + "," + lon + '" style="color:lightblue;text-align:center;margin:0 auto;" target="_blank">Open Location in Google Maps</a>';
 					}
 				}
 
@@ -19234,7 +19234,7 @@ function openChatLiteSettings() {
 	const popup = window.open(settingsUrl.toString(), "chatLiteSetup", "width=980,height=860,resizable=yes,scrollbars=yes");
 	if (!popup && !session.cleanOutput) {
 		const safeUrl = escapeHtml(settingsUrl.toString());
-		warnUser(`Popup blocked.<br /><br /><a rel="noopener" href="${safeUrl}" onclick="closeModal()">Open Chat Lite setup</a>`, false, false);
+		warnUser(`Popup blocked.<br /><br /><a target="_blank" rel="noopener" href="${safeUrl}" onclick="closeModal()">Open Chat Lite setup</a>`, false, false);
 	}
 }
 
@@ -23360,7 +23360,7 @@ function showTipOnboardingModal() {
 
 				'<h4>1. Register Your Account</h4>' +
 				'<p>Create a username and connect your Stripe account:</p>' +
-				'<a href="' + tipServer + '/register" class="tipOnboardingBtn">' +
+				'<a href="' + tipServer + '/register" target="_blank" class="tipOnboardingBtn">' +
 					'Register &amp; Create Username' +
 				'</a>' +
 
@@ -24780,7 +24780,7 @@ function publishWebcam(btn = false, miconly = false) {
 }
 
 function createYoutubeLink(vidid) {
-	return "" + vidid + "?modestbranding=1&playsinline=1&enablejsapi=1&autoplay=1";
+	return "https://www.youtube.com/embed/" + vidid + "?modestbranding=1&playsinline=1&enablejsapi=1&autoplay=1";
 }
 function parseURL4Iframe(iframeURL) {
 	if (iframeURL == "") {
@@ -24853,7 +24853,7 @@ function parseURL4Iframe(iframeURL) {
 				var match = iframeURL.match(regExp);
 				var plid = match && match[7] && match[7].length == 34 ? match[7] : false;
 				if (plid) {
-					iframeURL = "series?list=" + plid + "&autoplay=1&modestbranding=1&playsinline=1&enablejsapi=1";
+					iframeURL = "https://www.youtube.com/embed/videoseries?list=" + plid + "&autoplay=1&modestbranding=1&playsinline=1&enablejsapi=1";
 				}
 			}
 		} else if (domain == "twitch.tv" || domain == "www.twitch.tv") {
@@ -24871,7 +24871,7 @@ function parseURL4Iframe(iframeURL) {
 			} else {
 				var vidid = iframeURL.split("/").pop().split("#")[0].split("?")[0];
 				if (vidid) {
-					iframeURL = "" + vidid + "&parent=" + location.hostname;
+					iframeURL = "https://player.twitch.tv/?channel=" + vidid + "&parent=" + location.hostname;
 				}
 			}
 		} else if (domain == "www.vimeo.com" || domain == "vimeo.com") {
@@ -25430,7 +25430,7 @@ session.publishIFrame = function (iframeURL) {
 	container.appendChild(iframe);
 	getById("gridlayout").appendChild(container);
 
-	if (session.iframeSrc.startsWith("")) {
+	if (session.iframeSrc.startsWith("https://www.youtube.com/")) {
 		// special handler.
 		setTimeout(
 			function (iframe_id) {
@@ -25548,7 +25548,7 @@ session.publishIFrame = function (iframeURL) {
 	container.appendChild(iframe);
 	getById("gridlayout").appendChild(container);
 
-	if (session.iframeSrc.startsWith("")){ // special handler.
+	if (session.iframeSrc.startsWith("https://www.youtube.com/")){ // special handler.
 		setTimeout(function(iframe_id){YoutubeListen(iframe_id);}, 1000, iframe.id);
 	}
 
@@ -27297,7 +27297,7 @@ async function joinRoom(roomname) {
 								warnUser("You can invite others with:\n\n<a target='_blank' title='Copy this link to the clipboard' style='cursor:pointer' onclick='copyFunction(this.innerText,event);' href='" + invite + "'>" + invite + "</a>", false, false);
 							} else {
 								generateHash(session.password + session.salt, 4).then(function (hash) {
-									// change the hash length from 4 to 3 when Vide0Link v24.10 or newer is in production.
+									// change the hash length from 4 to 3 when VDO.Ninja v24.10 or newer is in production.
 									var invite = "https://" + location.host + location.pathname + "?room=" + session.roomid + getCloudflareInviteParam() + "&hash=" + hash + token;
 									warnUser("You can invite others with:\n\n<a target='_blank' title='Copy this link to the clipboard' style='cursor:pointer' onclick='copyFunction(this.innerText,event)' href='" + invite + "'>" + invite + "</a>", false, false);
 								});
@@ -27922,23 +27922,18 @@ async function registerToken() {
 function hideDirectorinvites(ele, skip = true) {
 	if (getById("directorLinks2").style.display == "none") {
 		ele.innerHTML = '<i class="las la-caret-down"></i><span data-translate="hide-the-links"> LINKS (GUEST INVITES & SCENES)</span>';
-		getById("directorLinks2").style.display = "inline-block";
+		getById("directorlayout").classList.remove("hidden");
+		getById("directorLinks2").style.display = "";
+		getById("directorLinks1").style.display = "";
 		getById("customizeLinks").classList.remove("hidden");
 	} else {
 		ele.innerHTML = '<i class="las la-caret-right"></i><span data-translate="hide-the-links"> LINKS (GUEST INVITES & SCENES)</span>';
 		getById("directorLinks2").style.display = "none";
-		getById("help_directors_room").style.display = "none";
-		getById("roomnotes2").style.display = "none";
-		getById("customizeLinks").classList.add("hidden");
-	}
-	if (getById("directorLinks1").style.display == "none") {
-		getById("directorLinks1").style.display = "inline-block";
-		getById("customizeLinks").classList.remove("hidden");
-	} else {
 		getById("directorLinks1").style.display = "none";
 		getById("help_directors_room").style.display = "none";
 		getById("roomnotes2").style.display = "none";
 		getById("customizeLinks").classList.add("hidden");
+		getById("directorlayout").classList.add("hidden");
 	}
 	if (skip) {
 		saveDirectorSettings();
@@ -28400,8 +28395,8 @@ async function createRoomCallback(passAdd, passAdd2) {
 	if (session.cleanDirector == false && session.cleanOutput == false) {
 		getById("roomHeader").style.display = "";
 		//getById("directorLinks").style.display = "";
-		getById("directorLinks1").style.display = "inline-block";
-		getById("directorLinks2").style.display = "inline-block";
+		getById("directorLinks1").style.display = "";
+		getById("directorLinks2").style.display = "";
 
 		getById("calendarButton").style.display = "inline-block";
 	} else {
@@ -33098,7 +33093,7 @@ function openMeshVisualization() {
 	// Detail panel (hidden by default)
 	var detailPanel = document.createElement("div");
 	detailPanel.id = "meshDetailPanel";
-	detailPanel.style.cssText = "position:absolute;right:0;top:0;width:300px;height:100%;background:#07140a;border-left:1px solid #444;padding:20px;display:none;overflow-y:auto;color:#fff;";
+	detailPanel.style.cssText = "position:absolute;right:0;top:0;width:300px;height:100%;background:#1a1a1a;border-left:1px solid #444;padding:20px;display:none;overflow-y:auto;color:#fff;";
 
 	svgContainer.appendChild(detailPanel);
 	modal.appendChild(toolbar);
@@ -42369,7 +42364,7 @@ function loadIframe(iframesrc, target) {
 	// trusted domains
 	var ipsafe = false;
 
-	if (iframesrc.startsWith("") || iframesrc.startsWith("")) {
+	if (iframesrc.startsWith("https://www.youtube.com/") || iframesrc.startsWith("https://youtube.com/")) {
 		iframe.classList.remove("insecure");
 		setTimeout(
 			function (iframe_id) {
@@ -42413,19 +42408,19 @@ function loadIframe(iframesrc, target) {
 			console.warn("You're not allow to put this domain inside an iframe of an iframe.");
 			return false;
 		}
-	} else if (iframesrc.startsWith("")) {
+	} else if (iframesrc.startsWith("https://player.twitch.tv/")) {
 		iframe.classList.remove("insecure");
 		ipsafe = true;
 	} else if (iframesrc.startsWith("https://x.com/")) {
 		iframe.classList.remove("insecure");
 		ipsafe = false;
-	} else if (iframesrc.startsWith("")) {
+	} else if (iframesrc.startsWith("https://twitch.tv/")) {
 		iframe.classList.remove("insecure");
 		ipsafe = true;
 	} else if (iframesrc.startsWith("https://caption.ninja/")) {
 		iframe.classList.remove("insecure");
 		ipsafe = true;
-	} else if (iframesrc.startsWith("")) {
+	} else if (iframesrc.startsWith("https://www.twitch.tv/")) {
 		iframe.classList.remove("insecure");
 		ipsafe = true;
 	} else if (iframesrc.startsWith("https://vimeo.com/")) {
@@ -48652,7 +48647,7 @@ async function shareWebsite(autostart = false, evt = false) {
 		setStorage("directorWebsiteShare", { website: session.iframeSrc, roomid: session.roomid });
 	} else if (session.iframeEle) {
 		session.iframeEle.src = session.iframeSrc;
-		if (session.iframeSrc.startsWith("")) {
+		if (session.iframeSrc.startsWith("https://www.youtube.com/")) {
 			// special handler.
 			setTimeout(
 				function (iframe_id) {
@@ -48676,7 +48671,7 @@ async function shareWebsite(autostart = false, evt = false) {
 		iframe.container = container;
 		container.id = "container_iframe";
 
-		if (session.iframeSrc.startsWith("")) {
+		if (session.iframeSrc.startsWith("https://www.youtube.com/")) {
 			// special handler.
 			setTimeout(
 				function (iframe_id) {
@@ -50987,7 +50982,7 @@ function replaceURLs(message) {
 		if (url.length > 35) {
 			url = url.substring(0, 35) + "...";
 		}
-		return '<a href="' + hyperlink + '" title="Click to open the link in a new tab" rel="noopener noreferrer">' + url + "</a>" + punc;
+		return '<a href="' + hyperlink + '" title="Click to open the link in a new tab" target="_blank" rel="noopener noreferrer">' + url + "</a>" + punc;
 	});
 }
 
@@ -56519,7 +56514,7 @@ function changeGroupDirectorAPI(group, state = null, update = true) {
 		ele.classList.add("float");
 		ele.style.display = "inline-block";
 		ele.role = "button";
-		ele.innerHTML = '<i class="las la-users" ></i><br />' + group;
+		ele.innerHTML = '<i class="las la-users" aria-hidden="true"></i><br />' + group;
 		eleGroup.appendChild(ele);
 		ele.onclick = function () {
 			changeGroupDirectorAPI(this.dataset.group);

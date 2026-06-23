@@ -13,7 +13,7 @@
 		min-height: 100vh;
 		overflow: hidden;
 	}
-	/* Vide0Link video layer (captures and shows webcam) */
+	/* VDO.Ninja video layer (captures and shows webcam) */
 	#video-layer {
 		position: fixed;
 		top: 0; left: 0;
@@ -118,7 +118,7 @@
 			pointer-events: auto;
 		}
 		#exit-btn.active { display: block; }
-		/* Vide0Link iframe - fullscreen camera */
+		/* VDO.Ninja iframe - fullscreen camera */
 		#vdo-frame {
 			width: 100%;
 			height: 100%;
@@ -140,12 +140,12 @@
 </head>
 <body>
 
-<!-- Vide0Link layer: handles the actual webcam/video stream -->
+<!-- VDO.Ninja layer: handles the actual webcam/video stream -->
 <div id="video-layer">
 	<iframe
 		id="vdo-frame"
 		allow="autoplay; camera; microphone; fullscreen; picture-in-picture; xr-spatial-tracking"
-		title="Vide0Link push"
+		title="VDO.Ninja push"
 		playsinline
 	></iframe>
 </div>
@@ -155,7 +155,7 @@
 
 <div id="intro">
 	<h1>WebXR AR 6DoF Sender</h1>
-	<p>Streams camera + 6DoF pose data via Vide0Link. Requires ARCore (Android) or ARKit (iOS) support.</p>
+	<p>Streams camera + 6DoF pose data via VDO.Ninja. Requires ARCore (Android) or ARKit (iOS) support.</p>
 
 	<div class="input-group">
 		<label for="stream-id">Stream ID</label>
@@ -485,7 +485,7 @@ function startVDO() {
 	const streamId = streamIdInput.value.trim();
 	if (!streamId) return;
 
-	// Construct URL for Vide0Link - data relay only (no camera needed here)
+	// Construct URL for VDO.Ninja - data relay only (no camera needed here)
 	const pathParts = window.location.pathname.split('/');
 	pathParts.pop();
 	pathParts.pop();
@@ -494,7 +494,7 @@ function startVDO() {
 	// facing=environment for rear camera
 	const url = `${window.location.origin}${basePath}/?push=${encodeURIComponent(streamId)}&facing=environment&webxrbridge=1&autostart=1&mute=1`;
 
-	console.log('Vide0Link URL:', url);
+	console.log('VDO.Ninja URL:', url);
 	vdoFrame.src = url;
 }
 
@@ -517,7 +517,7 @@ async function startAR() {
 			exitBtn.classList.add('active');
 		}
 
-		// Start Vide0Link for data relay + video
+		// Start VDO.Ninja for data relay + video
 		startVDO();
 
 		// Start sensors + animation loop
@@ -537,7 +537,7 @@ async function startAR() {
 async function checkSupport() {
 	startBtn.disabled = false;
 	startBtn.textContent = "Start AR Stream";
-	statusEl.textContent = "Uses device motion for pose; camera stays with Vide0Link.";
+	statusEl.textContent = "Uses device motion for pose; camera stays with VDO.Ninja.";
 	statusEl.classList.add('ok');
 }
 

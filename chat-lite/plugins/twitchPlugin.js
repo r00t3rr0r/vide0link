@@ -210,7 +210,7 @@ export class TwitchPlugin extends BasePlugin {
       force_verify: 'true'
     });
 
-    window.location.assign(`s.toString()}`);
+    window.location.assign(`https://id.twitch.tv/oauth2/authorize?${params.toString()}`);
   }
 
   handleOAuthCallback(params) {
@@ -360,7 +360,7 @@ export class TwitchPlugin extends BasePlugin {
   }
 
   async validateToken() {
-    const res = await fetch('', {
+    const res = await fetch('https://id.twitch.tv/oauth2/validate', {
       headers: {
         Authorization: `OAuth ${this.token.accessToken}`
       }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Vide0Link Chat Pop-out</title>
+<title>VDO.Ninja Chat Pop-out</title>
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
 <meta content="utf-8" http-equiv="encoding" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +72,7 @@
 
 	.tipMessage {
 		background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
-		color: #07140a;
+		color: #1a1a1a;
 		text-align: center;
 		justify-content: center;
 		font-weight: 500;
@@ -184,7 +184,7 @@
 <div id="chatModule" >
 	<div id="chatBody"> 
 		<div class="inMessage" data-translate='welcome-to-vdo-ninja-chat'>
-			Welcome to Vide0Link! You can send text messages directly to connected peers from here.
+			Welcome to VDO.Ninja! You can send text messages directly to connected peers from here.
 		</div>
 	</div>
     <div class="controls">
@@ -456,7 +456,7 @@ function replaceURLs(message) {
 				hyperlink = "http://" + hyperlink;
 			}
 			var display = url.length > 35 ? url.substring(0, 35) + "..." : url;
-			result += '<a href="' + sanitize(hyperlink) + '" title="Click to open the link in a new tab" rel="noopener noreferrer">' + sanitize(display) + "</a>";
+			result += '<a href="' + sanitize(hyperlink) + '" title="Click to open the link in a new tab" target="_blank" rel="noopener noreferrer">' + sanitize(display) + "</a>";
 		} else {
 			result += sanitize(match[0]);
 		}

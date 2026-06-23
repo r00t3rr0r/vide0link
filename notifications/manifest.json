@@ -1,11 +1,11 @@
 {
-  "name": "Vide0Link Notifications",
-  "short_name": "V0 Notify",
-  "description": "Get notified when someone joins your Vide0Link rooms",
+  "name": "VDO.Ninja Notifications",
+  "short_name": "VDO Notify",
+  "description": "Get notified when someone joins your VDO.Ninja rooms",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#07140a",
-  "theme_color": "#39ff14",
+  "background_color": "#121212",
+  "theme_color": "#1565c0",
   "gcm_sender_id": "231486807402",
   "icons": [
     {

@@ -1031,7 +1031,7 @@ async function main() {
 	}
 	if (urlParams.has("userforegroundimage") || urlParams.has("overlayimage") || urlParams.has("overlayimg")) {
 		// URL or data:base64 image. Becomes local to this viewer only.
-		let defaultMedia = urlParams.get("userforegroundimage") || urlParams.get("overlayimage") || urlParams.get("overlayimg") || "./media/logo.png";
+		let defaultMedia = urlParams.get("userforegroundimage") || urlParams.get("overlayimage") || urlParams.get("overlayimg") || "./media/avatar1.png";
 		if (defaultMedia) {
 			try {
 				defaultMedia = decodeURIComponent(defaultMedia);
@@ -1046,7 +1046,7 @@ async function main() {
 
 	if (urlParams.has("avatarimg") || urlParams.has("bgimage") || urlParams.has("bgimg")) {
 		// URL or data:base64 image. Becomes local to this viewer only.  This is like &avatar, but slightly different. Just CSS in this case
-		let avatarImg = urlParams.get("avatarimg") || urlParams.get("bgimage") || urlParams.get("bgimg") || "./media/logo.png";
+		let avatarImg = urlParams.get("avatarimg") || urlParams.get("bgimage") || urlParams.get("bgimg") || "./media/avatar1.png";
 		if (avatarImg=="0" || avatarImg == "false" || avatarImg == "no"){
 			if (session.disableBackground!==false){
 				session.disableBackground = true;
@@ -1075,7 +1075,7 @@ async function main() {
 	}
 	if (urlParams.has("avatarimg2") || urlParams.has("bgimage2") || urlParams.has("bgimg2")) {
 		// URL or data:base64 image. Becomes local to this viewer only.  This is like &avatar, but slightly different. Just CSS in this case
-		let avatarImg2 = urlParams.get("avatarimg2") || urlParams.get("bgimage2") || urlParams.get("bgimg2") || "./media/logo.png";
+		let avatarImg2 = urlParams.get("avatarimg2") || urlParams.get("bgimage2") || urlParams.get("bgimg2") || "./media/avatar2.png";
 		if (avatarImg2) {
 			try {
 				avatarImg2 = decodeURIComponent(avatarImg2);
@@ -1101,7 +1101,7 @@ async function main() {
 
 	if (urlParams.has("avatarimg3") || urlParams.has("bgimage3") || urlParams.has("bgimg3")) {
 		// URL or data:base64 image. Becomes local to this viewer only.  This is like &avatar, but slightly different. Just CSS in this case
-		let avatarImg3 = urlParams.get("avatarimg3") || urlParams.get("bgimage3") || urlParams.get("bgimg3") || "./media/logo.png";
+		let avatarImg3 = urlParams.get("avatarimg3") || urlParams.get("bgimage3") || urlParams.get("bgimg3") || "./media/avatar3.png";
 		if (avatarImg3) {
 			try {
 				avatarImg3 = decodeURIComponent(avatarImg3);
@@ -1141,7 +1141,7 @@ async function main() {
 
 	if (urlParams.has("poster")) {
 		// URL or data:base64 image. Becomes local to this viewer only.  This is like &avatar, but slightly different. Just CSS in this case
-		let posterImage = urlParams.get("poster") || "./media/logo.png";
+		let posterImage = urlParams.get("poster") || "./media/avatar.webp";
 		if (posterImage) {
 			try {
 				posterImage = decodeURIComponent(posterImage);
@@ -1758,13 +1758,13 @@ async function main() {
 	}
 
 	if (urlParams.has("motionswitch") || urlParams.has("motiondetection")) {
-		// switch OBS to this scene when there is motion, and "solo view" this video in the Vide0Link auto-mixer, if used
+		// switch OBS to this scene when there is motion, and "solo view" this video in the VDO.Ninja auto-mixer, if used
 		session.motionSwitch = parseInt(urlParams.get("motionswitch")) || parseInt(urlParams.get("motiondetection")) || 15; // threshold of motion needed to trigger
 		session.hiddenSceneViewBitrate = false;
 	}
 
 	if (urlParams.has("motionrecord") || urlParams.has("recordmotion")) {
-		// switch OBS to this scene when there is motion, and "solo view" this video in the Vide0Link auto-mixer, if used
+		// switch OBS to this scene when there is motion, and "solo view" this video in the VDO.Ninja auto-mixer, if used
 		session.motionRecord = parseInt(urlParams.get("motionrecord")) || parseInt(urlParams.get("recordmotion")) || 15; // threshold of motion needed to trigger
 		session.hiddenSceneViewBitrate = false;
 	}
@@ -3688,13 +3688,13 @@ async function main() {
 				id: "5",
 				label: "YouTube Channel",
 				type: "url",
-				placeholder: ""
+				placeholder: "https://youtube.com/c/channel"
 			},
 			twitch: {
 				id: "5",
 				label: "Twitch Channel",
 				type: "url",
-				placeholder: "sername"
+				placeholder: "https://www.twitch.tv/username"
 			},
 			bio: {
 				id: "6",
@@ -4611,7 +4611,7 @@ async function main() {
 							window.location.href +
 							"'> Clicking Here,</a> or by adding <i>&streamlabs</i> to the URL, but it may still not actually work.\
 						\
-						<br /> Please report this problem if you feel it is an error.\
+						<br /> Please report this problem to steve@seguin.email if you feel it is an error.\
 						</div>";
 					}
 				}
@@ -7208,7 +7208,7 @@ async function main() {
 
 	if (session.permaid === false && session.roomid === false && session.view === false && session.effect === false && session.director === false) {
 		session.effect = null;
-		getById("credits").innerHTML = "Version: " + session.version + ' Vide0Link | ' + getById("credits").innerHTML;
+		getById("credits").innerHTML = "Version: " + session.version + ' <a href="https://github.com/steveseguin/vdoninja" aria-hidden="true" title="Source Code via Github">VDO.Ninja, by Steve Seguin</a> | ' + getById("credits").innerHTML;
 	}
 
 	if (session.mobile && session.permaid === false && !session.roomid) {
@@ -8383,7 +8383,7 @@ async function main() {
 		}
 	}
 
-	//  Please ..vdo.ninja if you'd like this iFRAME tweaked, expanded, etc -- it's updated based on user request
+	//  Please contact steve on discord.vdo.ninja if you'd like this iFRAME tweaked, expanded, etc -- it's updated based on user request
 
 	session.remoteInterfaceAPI = function (e) {
 		// iFRAME api support
@@ -8564,7 +8564,7 @@ async function main() {
 						ele.classList.add("float");
 						ele.style.display = "inline-block";
 						ele.role = "button";
-						ele.innerHTML = '<i class="las la-users" ></i><br />' + group;
+						ele.innerHTML = '<i class="las la-users" aria-hidden="true"></i><br />' + group;
 						eleGroup.appendChild(ele);
 						ele.onclick = function () {
 							changeGroupDirectorAPI(this.dataset.group);
@@ -8845,7 +8845,7 @@ async function main() {
 			/// set a video bitrate for a video; scene or view link; kbps
 			var lock = true;
 			if ("lock" in e.data) {
-				// since this is the iframe API, we're going to assume the default is manual over-ride. Vide0Link's automixer logic won't override a locked bitrate.
+				// since this is the iframe API, we're going to assume the default is manual over-ride. VDO.Ninja's automixer logic won't override a locked bitrate.
 				lock = e.data.lock;
 			}
 			for (var i in session.rpcs) {
@@ -8878,7 +8878,7 @@ async function main() {
 			// changes the audio bitrate of a specific or all inbound media tracks. kbps
 			var lock = true;
 			if ("lock" in e.data) {
-				// since this is the iframe API, we're going to assume the default is manual over-ride. Vide0Link's automixer logic won't override a locked bitrate.
+				// since this is the iframe API, we're going to assume the default is manual over-ride. VDO.Ninja's automixer logic won't override a locked bitrate.
 				lock = e.data.lock;
 			}
 			for (var i in session.rpcs) {
@@ -9799,9 +9799,9 @@ async function main() {
 	window.addEventListener("offline", function (e) {
 		warnlog("connection lost");
 		if (((session.view!==false) || session.whepInput || session.whipView) && session.permaid === false) {
-			log("Vide0Link has no network connectivity and can't work properly.");
+			log("VDO.Ninja has no network connectivity and can't work properly.");
 		} else if (session.scene !== false) {
-			log("Vide0Link has no network connectivity and can't work properly.");
+			log("VDO.Ninja has no network connectivity and can't work properly.");
 		} else if (!session.cleanOutput) {
 			if (iOS || iPad) {
 				for (var UUID in session.pcs) {
@@ -9817,7 +9817,7 @@ async function main() {
 				warnUser(getTranslation("no-network"));
 			}
 		} else {
-			log("Vide0Link has no network connectivity and can't work properly.");
+			log("VDO.Ninja has no network connectivity and can't work properly.");
 		}
 	});
 
@@ -9942,7 +9942,7 @@ async function main() {
 		if (session.label !== false) {
 			url += "&layer-name=" + session.label;
 		} else {
-			url += "&layer-name=Vide0Link";
+			url += "&layer-name=VDO.Ninja";
 		}
 		if (streamId.length > 1) url += ": " + streamId[1].split("&")[0];
 		if (label.length > 1) url += " - " + decodeURI(label[1].split("&")[0]);

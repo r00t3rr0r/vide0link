@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shared Clipboard - P2P Text Sync | Vide0Link</title>
+    <title>Shared Clipboard - P2P Text Sync | VDO.Ninja</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Share text instantly across devices with Vide0Link's P2P Shared Clipboard. No server storage, real-time sync, secure peer-to-peer connection. Perfect for quick text sharing between devices.">
+    <meta name="description" content="Share text instantly across devices with VDO.Ninja's P2P Shared Clipboard. No server storage, real-time sync, secure peer-to-peer connection. Perfect for quick text sharing between devices.">
     <meta name="keywords" content="shared clipboard, p2p text sync, webrtc clipboard, cross-device clipboard, vdo.ninja, peer to peer, real-time text sharing, secure clipboard">
-    <meta name="author" content="Vide0Link">
+    <meta name="author" content="VDO.Ninja">
     <meta name="robots" content="index, follow">
-    
+    <link rel="canonical" href="https://vdo.ninja/clipboard">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    
-    <meta property="og:title" content="Shared Clipboard - P2P Text Sync | Vide0Link">
+    <meta property="og:url" content="https://vdo.ninja/clipboard">
+    <meta property="og:title" content="Shared Clipboard - P2P Text Sync | VDO.Ninja">
     <meta property="og:description" content="Share text instantly across devices with peer-to-peer technology. No server storage, real-time sync, completely secure.">
-    
-    <meta property="og:site_name" content="Vide0Link">
+    <meta property="og:image" content="https://vdo.ninja/media/vdo-ninja-banner.png">
+    <meta property="og:site_name" content="VDO.Ninja">
     
     <!-- Twitter -->
-    
-    
-    
-    
-    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vdo.ninja/clipboard">
+    <meta property="twitter:title" content="Shared Clipboard - P2P Text Sync | VDO.Ninja">
+    <meta property="twitter:description" content="Share text instantly across devices with peer-to-peer technology. No server storage, real-time sync.">
+    <meta property="twitter:image" content="https://vdo.ninja/media/vdo-ninja-banner.png">
     
     <!-- Additional Meta -->
-    <meta name="application-name" content="Vide0Link Shared Clipboard">
+    <meta name="application-name" content="VDO.Ninja Shared Clipboard">
     <meta name="theme-color" content="#2563eb">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,15 +36,15 @@
     <meta name="apple-mobile-web-app-title" content="Shared Clipboard">
     
     <!-- Favicon -->
-    
-    
+    <link rel="icon" type="image/png" href="https://vdo.ninja/favicon.png">
+    <link rel="apple-touch-icon" href="https://vdo.ninja/apple-touch-icon.png">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Vide0Link Shared Clipboard",
+        "name": "VDO.Ninja Shared Clipboard",
         "description": "Real-time P2P text synchronization across devices using WebRTC technology",
         "url": "https://vdo.ninja/clipboard",
         "applicationCategory": "UtilitiesApplication",
@@ -56,7 +56,7 @@
         },
         "creator": {
             "@type": "Organization",
-            "name": "Vide0Link",
+            "name": "VDO.Ninja",
             "url": "https://vdo.ninja"
         },
         "featureList": [
@@ -79,7 +79,7 @@
             --bg-secondary: #ffffff;
             --bg-tertiary: #f5f5f5;
             --bg-input: #f8f8f8;
-            --text-primary: #07140a;
+            --text-primary: #1a1a1a;
             --text-secondary: #4a4a4a;
             --text-tertiary: #6a6a6a;
             --border-primary: #e0e0e0;
@@ -97,7 +97,7 @@
         /* Dark mode */
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-primary: #07140a;
+                --bg-primary: #1a1a1a;
                 --bg-secondary: #242424;
                 --bg-tertiary: #2a2a2a;
                 --bg-input: #1e1e1e;
@@ -443,7 +443,7 @@
         </div>
     </div>
     
-    <!-- Load the Vide0Link SDK -->
+    <!-- Load the VDO.Ninja SDK -->
     <script src="vdoninja-sdk.js"></script>
     
     <script>
@@ -480,7 +480,7 @@
             document.getElementById('shareLink').value = shareLink;
             
             // Initialize SDK
-            sdk = new Vide0LinkSDK({
+            sdk = new VDONinjaSDK({
                 room: roomId,
                 password: false, // No encryption for simplicity
                 debug: true

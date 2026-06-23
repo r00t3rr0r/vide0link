@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vide0Link DataChannel Pub/Sub Example</title>
+    <title>VDO.Ninja DataChannel Pub/Sub Example</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -78,7 +78,7 @@
     </style>
 </head>
 <body>
-    <h1>Vide0Link DataChannel Pub/Sub Example</h1>
+    <h1>VDO.Ninja DataChannel Pub/Sub Example</h1>
     <p>This example demonstrates replacing IFRAME-based messaging with the DataChannel SDK.</p>
     
     <div class="container">
@@ -155,7 +155,7 @@
 iframe.contentWindow.postMessage({data: 'hello'}, '*');</code></pre>
         
         <h4>After (with SDK):</h4>
-        <pre><code>const node = new Vide0LinkDataChannel();
+        <pre><code>const node = new VDONinjaDataChannel();
 await node.joinRoom({room: 'myroom', streamID: 'cam1'});
 
 // Direct data channel communication
@@ -190,7 +190,7 @@ node.addEventListener('data', (e) => {
                 publisher.disconnect();
             }
             
-            publisher = new Vide0LinkDataChannel({
+            publisher = new VDONinjaDataChannel({
                 debug: true,
                 meshMode: 'partial'
             });
@@ -242,7 +242,7 @@ node.addEventListener('data', (e) => {
                 subscriber.disconnect();
             }
             
-            subscriber = new Vide0LinkDataChannel({
+            subscriber = new VDONinjaDataChannel({
                 debug: true,
                 meshMode: 'partial'
             });

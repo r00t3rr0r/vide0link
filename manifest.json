@@ -1,12 +1,12 @@
 {
-  "name": "Vide0Link",
-  "short_name": "Vide0Link",
+  "name": "VDO.Ninja",
+  "short_name": "VDO.Ninja",
   "description": "Bring live video from your smartphone, computer, or friends directly into your Studio. 100% free.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#07140a",
+  "theme_color": "#1a1a1a",
   "orientation": "any",
   "icons": [
     {

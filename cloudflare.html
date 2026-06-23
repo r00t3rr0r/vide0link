@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Validate a Cloudflare Stream API token and generate an encrypted cftoken parameter for Vide0Link.">
-    <title>Cloudflare Token Helper | Vide0Link</title>
+    <meta name="description" content="Validate a Cloudflare Stream API token and generate an encrypted cftoken parameter for VDO.Ninja.">
+    <title>Cloudflare Token Helper | VDO.Ninja</title>
     <link rel="icon" href="/media/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon-16x16.png">
@@ -306,7 +306,7 @@
             <h1>Cloudflare Token Helper</h1>
             <p class="intro">
                 Validate a Cloudflare API token, confirm it can access Stream live inputs for the selected account,
-                and then generate an encrypted <code>&amp;cftoken=</code> parameter for Vide0Link.
+                and then generate an encrypted <code>&amp;cftoken=</code> parameter for VDO.Ninja.
             </p>
 
             <div class="form-card">
@@ -336,7 +336,7 @@
             <div id="validationMeta" class="meta hidden"></div>
 
             <label for="response" class="output-label">Generated URL Parameter</label>
-            <textarea id="response" rows="5" readonly placeholder="Use this with your Vide0Link links in place of &amp;meshcast"></textarea>
+            <textarea id="response" rows="5" readonly placeholder="Use this with your VDO.Ninja links in place of &amp;meshcast"></textarea>
 
             <div class="response-actions">
                 <button type="button" id="copyButton" class="ghost-button" disabled>Copy</button>
@@ -348,7 +348,7 @@
                 <h2>Why This Exists</h2>
                 <p>
                     Cloudflare can create unique WHIP ingest endpoints for each participant, but doing that manually is tedious.
-                    This helper encrypts your Cloudflare credentials into a short URL-safe parameter that Vide0Link can use to
+                    This helper encrypts your Cloudflare credentials into a short URL-safe parameter that VDO.Ninja can use to
                     create live inputs on demand.
                 </p>
                 <p>
@@ -383,12 +383,12 @@
                 <p>The Cloudflare account ID is shown in the dashboard on the relevant account overview pages.</p>
                 <p>
                     Create an API token from
-                    Cloudflare API Tokens
+                    <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank" rel="noopener noreferrer">Cloudflare API Tokens</a>
                     and grant <code>Account -&gt; Stream -&gt; Edit</code>.
                 </p>
                 <p>
                     If you want to inspect Stream live inputs directly, use the
-                    Cloudflare dashboard
+                    <a href="https://dash.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare dashboard</a>
                     and open <code>Stream -&gt; Live inputs</code>.
                 </p>
             </div>
@@ -403,9 +403,9 @@
                 </p>
                 <p>
                     References:
-                    Start a live stream,
-                    Live inputs API,
-                    Disable or enable live inputs
+                    <a href="https://developers.cloudflare.com/stream/get-started/" target="_blank" rel="noopener noreferrer">Start a live stream</a>,
+                    <a href="https://developers.cloudflare.com/api/resources/stream/subresources/live_inputs/" target="_blank" rel="noopener noreferrer">Live inputs API</a>,
+                    <a href="https://developers.cloudflare.com/changelog/post/2026-02-24-disable-live-inputs/" target="_blank" rel="noopener noreferrer">Disable or enable live inputs</a>
                 </p>
             </div>
         </section>

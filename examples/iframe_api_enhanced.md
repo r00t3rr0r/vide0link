@@ -2,7 +2,7 @@
 
 ### Overview
 
-The Vide0Link IFRAME API provides access to all HTTP/WSS API commands through the `action` parameter. This means you can use any command from the [HTTP/WSS API](https://github.com/steveseguin/Companion-Ninja) directly through the iframe's postMessage interface.
+The VDO.Ninja IFRAME API provides access to all HTTP/WSS API commands through the `action` parameter. This means you can use any command from the [HTTP/WSS API](https://github.com/steveseguin/Companion-Ninja) directly through the iframe's postMessage interface.
 
 ### Using HTTP/WSS API Commands via IFRAME
 
@@ -35,7 +35,7 @@ https://vdo.ninja/?director=myroom&cleanoutput&api=myapikey
 
 #### Self Commands (No Target Required)
 
-These commands affect the local Vide0Link instance:
+These commands affect the local VDO.Ninja instance:
 
 ```javascript
 // Microphone control
@@ -313,7 +313,7 @@ window.addEventListener("message", function(e) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vide0Link Director Control Panel</title>
+    <title>VDO.Ninja Director Control Panel</title>
 </head>
 <body>
     <h1>Director Control Panel</h1>
@@ -431,4 +431,4 @@ window.addEventListener("message", function(e) {
 - **Guest not found**: Confirm target value matches slot or stream ID
 - **Permission errors**: Ensure using `&director=` not `&room=`
 
-This integration allows you to build powerful control interfaces using the full capabilities of the Vide0Link API through simple iframe messaging.
+This integration allows you to build powerful control interfaces using the full capabilities of the VDO.Ninja API through simple iframe messaging.

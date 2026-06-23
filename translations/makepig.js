@@ -6,7 +6,7 @@ var trans = {
   },
   "innerHTML": {
     "mute-guest": "Mute Guest",
-    "logo-header": "\n<font id=\"qos\" style=\"color: white;\">V</font>ide0Link \n",
+    "logo-header": "\n<font id=\"qos\" style=\"color: white;\">V</font>DO.Ninja \n",
     "start": "START",
     "update-your-device": "We've detected that you are using an old version of Apple iOS, which is known to have many issues.<br><br>Please consider updating.",
     "publish-via-whip": "Publish via WHIP",

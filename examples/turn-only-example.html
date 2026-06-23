@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vide0Link SDK - TURN Only Mode Example</title>
+    <title>VDO.Ninja SDK - TURN Only Mode Example</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -103,7 +103,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Vide0Link SDK - TURN Only Mode Example</h1>
+        <h1>VDO.Ninja SDK - TURN Only Mode Example</h1>
         
         <div class="info-box">
             <h3>What is TURN-Only Mode?</h3>
@@ -197,7 +197,7 @@
             <h2>Code Examples</h2>
             
             <h3>1. Basic TURN-Only Configuration</h3>
-            <pre><code>const sdk = new Vide0LinkSDK({
+            <pre><code>const sdk = new VDONinjaSDK({
     iceTransportPolicy: 'relay',  // Forces TURN-only mode
     turnServers: [
         {
@@ -209,7 +209,7 @@
 });</code></pre>
             
             <h3>2. Quick View with TURN-Only</h3>
-            <pre><code>const sdk = new Vide0LinkSDK({ 
+            <pre><code>const sdk = new VDONinjaSDK({ 
     iceTransportPolicy: 'relay' 
 });
 
@@ -269,7 +269,7 @@ const { pc, cleanup } = await sdk.quickView({
             }
             
             try {
-                const sdk = new Vide0LinkSDK(config);
+                const sdk = new VDONinjaSDK(config);
                 await sdk.connect();
                 
                 // Create a test connection to check config
@@ -301,7 +301,7 @@ const { pc, cleanup } = await sdk.quickView({
             list.innerHTML = '';
             
             try {
-                testSDK = new Vide0LinkSDK({
+                testSDK = new VDONinjaSDK({
                     debug: true,
                     iceTransportPolicy: policy
                 });
@@ -396,7 +396,7 @@ const { pc, cleanup } = await sdk.quickView({
                 document.getElementById('pubVideo').srcObject = stream;
                 
                 // Publisher SDK
-                pubSDK = new Vide0LinkSDK({
+                pubSDK = new VDONinjaSDK({
                     debug: true,
                     iceTransportPolicy: policy
                 });
@@ -413,7 +413,7 @@ const { pc, cleanup } = await sdk.quickView({
                 await new Promise(resolve => setTimeout(resolve, 2000));
                 
                 // Viewer SDK
-                viewSDK = new Vide0LinkSDK({
+                viewSDK = new VDONinjaSDK({
                     debug: true,
                     iceTransportPolicy: policy
                 });

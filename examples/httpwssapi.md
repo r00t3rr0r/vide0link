@@ -1,18 +1,18 @@
-# Vide0Link Remote Control API Documentation
+# VDO.Ninja Remote Control API Documentation
 
 ## Overview
 
-Vide0Link's Remote Control API allows programmatic control of Vide0Link sessions via HTTP or WebSocket connections. This powerful API enables integration with stream decks, custom applications, and automation tools for controlling cameras, microphones, layouts, and other features.
+VDO.Ninja's Remote Control API allows programmatic control of VDO.Ninja sessions via HTTP or WebSocket connections. This powerful API enables integration with stream decks, custom applications, and automation tools for controlling cameras, microphones, layouts, and other features.
 
 ## Basic Setup
 
-To enable the API on any Vide0Link instance, add the `&api` parameter with a unique API key:
+To enable the API on any VDO.Ninja instance, add the `&api` parameter with a unique API key:
 
 ```
 https://vdo.ninja/?api=YOUR_UNIQUE_API_KEY&webcam
 ```
 
-This key must be kept private and will be used to authenticate API requests. The same key must be used when making API calls to control this specific Vide0Link instance.
+This key must be kept private and will be used to authenticate API requests. The same key must be used when making API calls to control this specific VDO.Ninja instance.
 
 ## Connection Methods
 
@@ -72,7 +72,7 @@ eventSource.onmessage = function(event) {
 
 ### Self-Targeted Commands
 
-These commands affect the local Vide0Link instance that has the API key enabled.
+These commands affect the local VDO.Ninja instance that has the API key enabled.
 
 | Action | Value Options | Description |
 |--------|--------------|-------------|
@@ -260,12 +260,12 @@ The API integrates well with:
 
 - Keep your API key private
 - Consider using unique keys for different productions
-- The API has full control over the Vide0Link instance it's connected to
+- The API has full control over the VDO.Ninja instance it's connected to
 - All connections are encrypted over SSL/TLS
 
 ## Troubleshooting
 
-- Ensure the API key matches exactly between Vide0Link and your requests
+- Ensure the API key matches exactly between VDO.Ninja and your requests
 - For WebSocket connections, implement reconnection logic (connections timeout after ~1 minute of inactivity)
 - When using HTTP API, a `timeout` response means the request couldn't reach the target
 
@@ -281,7 +281,7 @@ For production environments, you can self-host the API server:
 
 1. Clone the repository from GitHub
 2. Install dependencies with `npm install`
-3. Modify the server URL in your Vide0Link instances:
+3. Modify the server URL in your VDO.Ninja instances:
    ```javascript
    session.apiserver = "wss://your-custom-domain:443";
    ```

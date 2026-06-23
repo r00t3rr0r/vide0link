@@ -1,10 +1,10 @@
-# Vide0Link IFRAME API: Transmitting Drawing Data Between Clients
+# VDO.Ninja IFRAME API: Transmitting Drawing Data Between Clients
 
-This guide explains how to use the Vide0Link IFRAME API to send drawing data (or any custom data) between clients using peer-to-peer (P2P) data channels.
+This guide explains how to use the VDO.Ninja IFRAME API to send drawing data (or any custom data) between clients using peer-to-peer (P2P) data channels.
 
 ## Understanding the Data Channel
 
-Vide0Link allows you to send arbitrary data between connected clients using its P2P data channels. This feature enables applications like:
+VDO.Ninja allows you to send arbitrary data between connected clients using its P2P data channels. This feature enables applications like:
 
 - Custom drawing/annotation tools
 - Chat systems
@@ -12,13 +12,13 @@ Vide0Link allows you to send arbitrary data between connected clients using its 
 - Sensor data exchange
 - Any other custom data payloads
 
-The creators of Vide0Link use Vide0Link's data-channel functionality in many of their other applications and services, including Social Stream Ninja that processes hundreds of messages per minute per peer connection.
+The creators of VDO.Ninja use VDO.Ninja's data-channel functionality in many of their other applications and services, including Social Stream Ninja that processes hundreds of messages per minute per peer connection.
 
 
 
 ## Basic Setup
 
-First, set up your Vide0Link iframe as described in the basic documentation:
+First, set up your VDO.Ninja iframe as described in the basic documentation:
 
 ```javascript
 // Create the iframe element
@@ -27,7 +27,7 @@ var iframe = document.createElement("iframe");
 // Set necessary permissions
 iframe.allow = "camera;microphone;fullscreen;display-capture;autoplay;";
 
-// Set the source URL (your Vide0Link room)
+// Set the source URL (your VDO.Ninja room)
 iframe.src = "https://vdo.ninja/?room=your-room-name&cleanoutput";
 
 // Add the iframe to your page
@@ -49,7 +49,7 @@ var connectedPeers = {};
 
 // Add the event listener
 eventer(messageEvent, function(e) {
-    // Make sure the message is from our Vide0Link iframe
+    // Make sure the message is from our VDO.Ninja iframe
     if (e.source != iframe.contentWindow) return;
     
     // Process connection events to track connected peers
@@ -326,13 +326,13 @@ function undoLastDrawing() {
 }
 ```
 
-## Using Vide0Link's Built-in Drawing System
+## Using VDO.Ninja's Built-in Drawing System
 
-Vide0Link has a built-in drawing system you can leverage if you prefer not to implement your own:
+VDO.Ninja has a built-in drawing system you can leverage if you prefer not to implement your own:
 
 ```javascript
-// Send drawing data using Vide0Link's built-in format
-function sendVide0LinkDrawing(drawingData) {
+// Send drawing data using VDO.Ninja's built-in format
+function sendVDONinjaDrawing(drawingData) {
     iframe.contentWindow.postMessage({
         draw: drawingData,  // Can be an object with drawing data or commands like "clear", "undo"
         type: "pcs",
@@ -340,16 +340,16 @@ function sendVide0LinkDrawing(drawingData) {
     }, "*");
 }
 
-// Clear Vide0Link's drawing
-function clearVide0LinkDrawing() {
+// Clear VDO.Ninja's drawing
+function clearVDONinjaDrawing() {
     iframe.contentWindow.postMessage({
         draw: "clear",
         type: "pcs"
     }, "*");
 }
 
-// Undo last drawing action in Vide0Link
-function undoVide0LinkDrawing() {
+// Undo last drawing action in VDO.Ninja
+function undoVDONinjaDrawing() {
     iframe.contentWindow.postMessage({
         draw: "undo",
         type: "pcs"
@@ -367,7 +367,7 @@ const container = document.createElement('div');
 container.id = 'app-container';
 document.body.appendChild(container);
 
-// Create Vide0Link iframe
+// Create VDO.Ninja iframe
 const iframe = document.createElement('iframe');
 iframe.allow = "camera;microphone;fullscreen;display-capture;autoplay;";
 iframe.src = "https://vdo.ninja/?room=drawing-demo&cleanoutput";
@@ -512,7 +512,7 @@ const eventer = window[eventMethod];
 const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
 
 eventer(messageEvent, function(e) {
-    // Make sure the message is from our Vide0Link iframe
+    // Make sure the message is from our VDO.Ninja iframe
     if (e.source != iframe.contentWindow) return;
     
     // Process connection events
@@ -645,4 +645,4 @@ eventer(messageEvent, function(e) {
 - **Format Errors**: Verify your data structure matches what receivers expect
 - **Performance Problems**: Large data payloads can cause lag; consider optimizing
 
-By following this guide, you should be able to implement custom drawing tools or any other data-sharing features using Vide0Link's P2P data channels.
+By following this guide, you should be able to implement custom drawing tools or any other data-sharing features using VDO.Ninja's P2P data channels.

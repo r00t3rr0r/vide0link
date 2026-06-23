@@ -6,7 +6,7 @@ description: Understanding URL parameters and custom settings
 
 ## Overview
 
-Vide0Link is a tool that can be seen as a mediator, negotiating a direct connection between a publishing device and a viewing device (such as [OBS \[Open Broadcaster Software\]](https://obsproject.com/)). There are generally two links involved; one to push (publish) and one to pull (view), although links can be made to do both at the same time.
+VDO.Ninja is a tool that can be seen as a mediator, negotiating a direct connection between a publishing device and a viewing device (such as [OBS \[Open Broadcaster Software\]](https://obsproject.com/)). There are generally two links involved; one to push (publish) and one to pull (view), although links can be made to do both at the same time.
 
 The viewer (receiver) and the publisher (sender) each play their own role in determining the qualities of a stream, so likewise each side has its own set of parameters available to them. A publisher can have multiple viewers access their video stream, with each viewer having the ability to customize the quality of the stream they receive.
 
@@ -14,7 +14,7 @@ The following guide details the options, syntax, values, and general use of thes
 
 ## Passing parameters via the URL to achieve your desired stream settings
 
-You can customize the playback of videos by adding query string parameters to the Vide0Link URL links, along with many other aspects. Vide0Link is highly flexible in this regard, letting you achieve your desired outcome without needing to code and without additional software.---
+You can customize the playback of videos by adding query string parameters to the VDO.Ninja URL links, along with many other aspects. VDO.Ninja is highly flexible in this regard, letting you achieve your desired outcome without needing to code and without additional software.---
 description: Understanding URL parameters and custom settings
 ---
 
@@ -22,7 +22,7 @@ description: Understanding URL parameters and custom settings
 
 ## Overview
 
-Vide0Link is a tool that can be seen as a mediator, negotiating a direct connection between a publishing device and a viewing device (such as [OBS \[Open Broadcaster Software\]](https://obsproject.com/)). There are generally two links involved; one to push (publish) and one to pull (view), although links can be made to do both at the same time.
+VDO.Ninja is a tool that can be seen as a mediator, negotiating a direct connection between a publishing device and a viewing device (such as [OBS \[Open Broadcaster Software\]](https://obsproject.com/)). There are generally two links involved; one to push (publish) and one to pull (view), although links can be made to do both at the same time.
 
 The viewer (receiver) and the publisher (sender) each play their own role in determining the qualities of a stream, so likewise each side has its own set of parameters available to them. A publisher can have multiple viewers access their video stream, with each viewer having the ability to customize the quality of the stream they receive.
 
@@ -30,7 +30,7 @@ The following guide details the options, syntax, values, and general use of thes
 
 ## Passing parameters via the URL to achieve your desired stream settings
 
-You can customize the playback of videos by adding query string parameters to the Vide0Link URL links, along with many other aspects. Vide0Link is highly flexible in this regard, letting you achieve your desired outcome without needing to code and without additional software.
+You can customize the playback of videos by adding query string parameters to the VDO.Ninja URL links, along with many other aspects. VDO.Ninja is highly flexible in this regard, letting you achieve your desired outcome without needing to code and without additional software.
 
 For example, a simple viewer URL link such as `https://vdo.ninja/?view=streamid` could be amended to `https://vdo.ninja/?view=streamid&videobitrate=500`, which will cause the viewer to receive the publisher's video stream at a video bitrate of 500-kbps.
 
@@ -40,13 +40,13 @@ Multiple parameters can be appended together by using the ampersand (`&`) as a s
 http://vdo.ninja/?view=streamid&videobitrate=500&stereo=1
 ```
 
-Some parameters, like [`&view`](advanced-settings/view-parameters/view.md) will accept a comma-separated list of valid values, so you can do some rather powerful combos, such as publish a video (using [`&push`](source-settings/push.md)) while also viewing multiple others videos. Vide0Link will auto-mix the videos together into a single layout for you:
+Some parameters, like [`&view`](advanced-settings/view-parameters/view.md) will accept a comma-separated list of valid values, so you can do some rather powerful combos, such as publish a video (using [`&push`](source-settings/push.md)) while also viewing multiple others videos. VDO.Ninja will auto-mix the videos together into a single layout for you:
 
 ```markup
 http://vdo.ninja/?push=aaa&view=bbb,ccc,ddd
 ```
 
-You might notice the stream ID values I'm using (ie: `aaa`, `bbb`, etc); these can be manually created and reused. Use `&push=STREAMID` to publish a video and `&view=STREAMID` to remotely view it. If you don't manually specify a stream ID, Vide0Link will sometimes generate one for you.
+You might notice the stream ID values I'm using (ie: `aaa`, `bbb`, etc); these can be manually created and reused. Use `&push=STREAMID` to publish a video and `&view=STREAMID` to remotely view it. If you don't manually specify a stream ID, VDO.Ninja will sometimes generate one for you.
 
 To make up a valid stream ID of your own though, choose something with less than 31-characters of length and ensure it's AlpHaNuMerIc-only.
 
@@ -82,52 +82,52 @@ All of the available parameters can be seperated in five categories. You find th
 
 ### Community Support
 
-**Discord**: 
-**Reddit**: [)
+**Discord**: [https://discord.vdo.ninja](https://discord.vdo.ninja)
+**Reddit**: [https://www.reddit.com/r/VDONinja/](https://www.reddit.com/r/VDONinja/)
 
 ## Where can I get support?
 
-The preferred support mechanism is via [Reddit]() or Discord, which offer community-assisted support. Development issues, feature requests, and bugs are tracked on [GitHub](https://github.com/steveseguin/obsninja). For mission critical support issues, or business-related inquiries, you can contact Steve directly.
+The preferred support mechanism is via [Reddit](https://www.reddit.com/r/VDONinja/) or [Discord](https://discord.gg/feenJm8HTa), which offer community-assisted support. Development issues, feature requests, and bugs are tracked on [GitHub](https://github.com/steveseguin/obsninja). For mission critical support issues, or business-related inquiries, you can contact Steve directly.
 
 ## Where can I report a bug?
 
-It is most helpful to report bugs via the official [GitHub]() and Discord channels, though it is easier to miss reports that occur there.
+It is most helpful to report bugs via the official [GitHub](https://github.com/steveseguin/obsninja). We also monitor the [Reddit](https://www.reddit.com/r/VDONinja/) and [Discord](https://discord.gg/qWDshMsTar) channels, though it is easier to miss reports that occur there.
 # How does it work
 
-[Vide0Link](https://vdo.ninja) relies heavily on [WebRTC](https://webrtc.org/), a secure peer-to-peer streaming technology that exists in most modern web browsers. Most of the Vide0Link code runs completely within your browser, although some server-side components are hosted to help facilitate an initial ‘handshake’ between connecting peers.
+[VDO.Ninja](https://vdo.ninja) relies heavily on [WebRTC](https://webrtc.org/), a secure peer-to-peer streaming technology that exists in most modern web browsers. Most of the VDO.Ninja code runs completely within your browser, although some server-side components are hosted to help facilitate an initial ‘handshake’ between connecting peers.
 
 As video data is streamed directly from one peer to the other, extremely low-latency and very high video quality is possible. If both peers are on the same Local Area Network (LAN), data transfer will stay local to your network, saving your bandwidth.
 
-Since applications like OBS have a built-in browser, you can use Vide0Link to stream low-latency video directly into the application without any downloads or user accounts. It's possible to start streaming within seconds to OBS and many modern applications -- you can even watch Vide0Link streams on a Tesla EV or within the Unity game engine.
+Since applications like OBS have a built-in browser, you can use VDO.Ninja to stream low-latency video directly into the application without any downloads or user accounts. It's possible to start streaming within seconds to OBS and many modern applications -- you can even watch VDO.Ninja streams on a Tesla EV or within the Unity game engine.
 
-Essentially, the basic usage of Vide0Link makes use of two URLs; one for **input** (i.e. PUSH) and one as an **output** (i.e. VIEW).
+Essentially, the basic usage of VDO.Ninja makes use of two URLs; one for **input** (i.e. PUSH) and one as an **output** (i.e. VIEW).
 
 The **PUSH** URL is loaded up in the browser on the **remote device**, which obtains access to the device's camera and microphone.
 
 To view the stream, you load up the corresponding **VIEW** URL in another browser, from anywhere. That's it. The video will begin playing in a full-window, without pesky watermarks or visual distractions, ready for professional-level video capture.
 
-Since collaboration is a big part of live streaming video, Vide0Link also offers [group chat rooms](help/how-does-group-chat-work.md), allowing for more complex options and controls over multiple streams at a time. What's possible with Vide0Link can be rather overwhelming, as the feature set does not end there, but the basic defaults are designed to satisfy the needs of most users.
+Since collaboration is a big part of live streaming video, VDO.Ninja also offers [group chat rooms](help/how-does-group-chat-work.md), allowing for more complex options and controls over multiple streams at a time. What's possible with VDO.Ninja can be rather overwhelming, as the feature set does not end there, but the basic defaults are designed to satisfy the needs of most users.
 
-One thing that may not be intuitive at first is the use of [URL-parameters](advanced-settings.md) to control settings, video quality, and many of the other options. URL parameters are used by Vide0Link in the same conceptual way that command-line parameters are used, such as by FFmpeg. Some URL parameters are set on the VIEW side, while others can be set on the PUSH side to allow for configuration of a standard offering with the opportunity for viewers to further refine their experience.  The documentation is a great resource for finding out more on all the advanced options and how to use them.
+One thing that may not be intuitive at first is the use of [URL-parameters](advanced-settings.md) to control settings, video quality, and many of the other options. URL parameters are used by VDO.Ninja in the same conceptual way that command-line parameters are used, such as by FFmpeg. Some URL parameters are set on the VIEW side, while others can be set on the PUSH side to allow for configuration of a standard offering with the opportunity for viewers to further refine their experience.  The documentation is a great resource for finding out more on all the advanced options and how to use them.
 ---
 description: All useful links you might take a look at
 ---
 
 # Useful Links
 
-### Vide0Link Versions
+### VDO.Ninja Versions
 
-<table data-header-hidden><thead><tr><th width="323">Description</th><th>URL</th></tr></thead><tbody><tr><td>Official Version</td><td>https://vdo.ninja/</td></tr><tr><td>Beta Version</td><td>https://vdo.ninja/beta/</td></tr><tr><td>Alpha Version</td><td>https://vdo.ninja/alpha/</td></tr><tr><td>BackUp Version</td><td>https://backup.vdo.ninja/</td></tr><tr><td>Previous Versions</td><td>https://docs.vdo.ninja/releases</td></tr><tr><td>Project Development on GitHub</td><td>https://github.com/steveseguin/vdo.ninja</td></tr><tr><td>Development Progress</td><td>https://docs.vdo.ninja/updates/updates-vdo.ninja</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="323">Description</th><th>URL</th></tr></thead><tbody><tr><td>Official Version</td><td><a href="https://vdo.ninja/">https://vdo.ninja/</a></td></tr><tr><td>Beta Version</td><td><a href="https://vdo.ninja/beta/">https://vdo.ninja/beta/</a></td></tr><tr><td>Alpha Version</td><td><a href="https://vdo.ninja/alpha/">https://vdo.ninja/alpha/</a></td></tr><tr><td>BackUp Version</td><td><a href="https://backup.vdo.ninja/">https://backup.vdo.ninja/</a></td></tr><tr><td>Previous Versions</td><td><a href="https://docs.vdo.ninja/releases">https://docs.vdo.ninja/releases</a></td></tr><tr><td>Project Development on GitHub</td><td><a href="https://github.com/steveseguin/vdo.ninja">https://github.com/steveseguin/vdo.ninja</a></td></tr><tr><td>Development Progress</td><td><a href="https://docs.vdo.ninja/updates/updates-vdo.ninja">https://docs.vdo.ninja/updates/updates-vdo.ninja</a></td></tr></tbody></table>
 
-### Vide0Link Link Generators
+### VDO.Ninja Link Generators
 
-<table data-header-hidden><thead><tr><th width="291">Description</th><th>URL</th></tr></thead><tbody><tr><td>Wizard-style</td><td>https://linkgen.vdo.ninja/</td></tr><tr><td>Toggle-style</td><td>https://invite.vdo.ninja/</td></tr><tr><td>Excel-based</td><td>https://drive.google.com/file/d/1A7qiFAC...</td></tr><tr><td>Trampoline</td><td>https://rse.github.io/vdo-ninja-trampoline/</td></tr><tr><td>URL Obfuscator for Vide0Link</td><td>https://invite.cam/</td></tr><tr><td>Invite Dock for OBS</td><td>https://vdo.ninja/dock</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="291">Description</th><th>URL</th></tr></thead><tbody><tr><td>Wizard-style</td><td><a href="https://linkgen.vdo.ninja/">https://linkgen.vdo.ninja/</a></td></tr><tr><td>Toggle-style</td><td><a href="https://invite.vdo.ninja/">https://invite.vdo.ninja/</a></td></tr><tr><td>Excel-based</td><td><a href="https://drive.google.com/file/d/1A7qiFACoCxk9J-uTv9yyZa5yQWzFol8l/view">https://drive.google.com/file/d/1A7qiFAC</a>...</td></tr><tr><td>Trampoline</td><td><a href="https://rse.github.io/vdo-ninja-trampoline/">https://rse.github.io/vdo-ninja-trampoline/</a></td></tr><tr><td>URL Obfuscator for VDO.Ninja</td><td><a href="https://invite.cam/">https://invite.cam/</a></td></tr><tr><td>Invite Dock for OBS</td><td><a href="https://vdo.ninja/dock">https://vdo.ninja/dock</a></td></tr></tbody></table>
 
 ### [Mobile Apps](steves-helper-apps/native-mobile-app-versions.md)
 
-<table data-header-hidden><thead><tr><th width="191">Description</th><th>URL</th></tr></thead><tbody><tr><td>iOS</td><td>https://apps.apple.com/us/app/vdo-ninja/id1607609685</td></tr><tr><td>Android</td><td>https://play.google.com/store/apps/details?id=flutter.vdo.ninja</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="191">Description</th><th>URL</th></tr></thead><tbody><tr><td>iOS</td><td><a href="https://apps.apple.com/us/app/vdo-ninja/id1607609685">https://apps.apple.com/us/app/vdo-ninja/id1607609685</a></td></tr><tr><td>Android</td><td><a href="https://play.google.com/store/apps/details?id=flutter.vdo.ninja">https://play.google.com/store/apps/details?id=flutter.vdo.ninja</a></td></tr></tbody></table>
 
-### Vide0Link Related
+### VDO.Ninja Related
 
 | Versus - E-Sports App                                                           | [https://versus.cam/](https://versus.cam/)                                                                                                             |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -147,7 +147,7 @@ description: All useful links you might take a look at
 | Companion                                                                       | [https://companion.vdo.ninja/](https://companion.vdo.ninja/)                                                                                           |
 | MIDI Controller App                                                             | [https://vdo.ninja/alpha/remotemidi](https://vdo.ninja/alpha/remotemidi)                                                                               |
 | Example for multiple rooms                                                      | [https://vdo.ninja/examples/multi?rooms=room1,room2,room3](https://vdo.ninja/examples/multi?rooms=room1,room2,room3)                                   |
-| Vide0Link shop                                                                  | [https://zero.vdo.ninja](https://zero.vdo.ninja)                                                                                                       |
+| VDO.Ninja shop                                                                  | [https://zero.vdo.ninja](https://zero.vdo.ninja)                                                                                                       |
 | Logos and media assets                                                          | [https://drive.google.com/drive/folders/1gYfxKEvFbKl\_UgHBT5PeGc5PJ-8yrGqW](https://drive.google.com/drive/folders/1gYfxKEvFbKl\_UgHBT5PeGc5PJ-8yrGqW) |
 | API / IFRAME sandbox page for developer                                         | [https://vdo.ninja/alpha/iframe](https://vdo.ninja/alpha/iframe)                                                                                       |
 | A more user-friendly version of [`&proxy`](newly-added-parameters/and-proxy.md) | [https://proxy.vdo.ninja/alpha/](https://proxy.vdo.ninja/alpha/)                                                                                       |
@@ -155,47 +155,47 @@ description: All useful links you might take a look at
 | Meshcast Server List                                                            | [https://meshcast.io/servers.json](https://meshcast.io/servers.json)                                                                                   |
 | Speed Test                                                                      | [https://vdo.ninja/alpha/check](https://vdo.ninja/alpha/check)                                                                                         |
 | Testing regions for vdo.ninja/alpha/check                                       | [https://vdo.ninja/alpha/regions](https://vdo.ninja/alpha/regions)                                                                                     |
-| Vide0Link + Chat Overlay Auto Mixer                                             | [https://chat.overlay.ninja/automix](https://chat.overlay.ninja/automix)                                                                               |
-| Vide0Link + Social Stream Auto Mixer                                            | [https://socialstream.ninja/automix](https://socialstream.ninja/automix)                                                                               |
-| [WHIP](advanced-settings/whip-parameters/and-whip.md) support for Vide0Link     | [https://whip.vdo.ninja/](https://whip.vdo.ninja/)                                                                                                     |
+| VDO.Ninja + Chat Overlay Auto Mixer                                             | [https://chat.overlay.ninja/automix](https://chat.overlay.ninja/automix)                                                                               |
+| VDO.Ninja + Social Stream Auto Mixer                                            | [https://socialstream.ninja/automix](https://socialstream.ninja/automix)                                                                               |
+| [WHIP](advanced-settings/whip-parameters/and-whip.md) support for VDO.Ninja     | [https://whip.vdo.ninja/](https://whip.vdo.ninja/)                                                                                                     |
 | Publish via WHIP                                                                | [https://vdo.ninja/whip](https://vdo.ninja/whip)                                                                                                       |
 | Publish via WHIP (alpha)                                                        | [https://vdo.ninja/alpha/whip](https://vdo.ninja/alpha/whip)                                                                                           |
-| Use Vide0Link and Kick chat at the same time                                    | [https://vdo.ninja/kick](https://vdo.ninja/kick)                                                                                                       |
+| Use VDO.Ninja and Kick chat at the same time                                    | [https://vdo.ninja/kick](https://vdo.ninja/kick)                                                                                                       |
 | Teleprompter                                                                    | [https://vdo.ninja/teleprompter](https://vdo.ninja/teleprompter)                                                                                       |
 | Mic Test                                                                        | [https://vdo.ninja/mictest](https://vdo.ninja/mictest)                                                                                                 |
 | Social Stream Sample Overlay                                                    | [https://socialstream.ninja/sampleoverlay](https://socialstream.ninja/sampleoverlay)                                                                   |
 
 ### [Sponsor ❤](getting-started/sponsor.md)
 
-<table data-header-hidden><thead><tr><th width="262">Description</th><th>URL</th></tr></thead><tbody><tr><td>GitHub Sponsors</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="262">Description</th><th>URL</th></tr></thead><tbody><tr><td>GitHub Sponsors</td><td><a href="https://github.com/sponsors/steveseguin">https://github.com/sponsors/steveseguin</a></td></tr><tr><td>Buy Steve a coffee</td><td><a href="https://www.buymeacoffee.com/steveseguin">https://www.buymeacoffee.com/steveseguin</a></td></tr><tr><td>PayPal</td><td><a href="https://www.paypal.com/paypalme/steveseguin">https://www.paypal.com/paypalme/steveseguin</a></td></tr></tbody></table>
 
 ### Discord/Reddit/YouTube
 
-| Discord Server  | /                           |
+| Discord Server  | [https://discord.vdo.ninja/](https://discord.vdo.ninja/)                           |
 | --------------- | ---------------------------------------------------------------------------------- |
-| Reddit          |                      |
-| Steve's YouTube |  |
+| Reddit          | [https://reddit.com/r/vdoninja](https://reddit.com/r/vdoninja)                     |
+| Steve's YouTube | [https://www.youtube.com/c/SteveSeguin82](https://www.youtube.com/c/SteveSeguin82) |
 
 ### [Steve's Other Projects](steves-helper-apps/)
 
-<table data-header-hidden><thead><tr><th width="150">Description</th><th>URL</th></tr></thead><tbody><tr><td>Overview</td><td>https://docs.vdo.ninja/steves-helper-apps</td></tr><tr><td>Live stream to multiple people</td><td>https://meshcast.io/</td></tr><tr><td>Electron Capture App</td><td>https://github.com/steveseguin/electroncapture</td></tr><tr><td>Steve's App</td><td>https://steves.app/</td></tr><tr><td>Social Stream</td><td>https://socialstream.ninja/</td></tr><tr><td>Captioning Tool</td><td>https://caption.ninja/</td></tr><tr><td>Translation Tool</td><td>https://caption.ninja/translate</td></tr><tr><td>Raspberry Ninja</td><td>https://raspberry.ninja/</td></tr><tr><td>YouTube, Twitch chat and social comment Overlays plugin</td><td>https://chat.overlay.ninja/</td></tr><tr><td>Lets you toggle your mouse cursor's visibility on and off</td><td>https://github.com/steveseguin/hide-cursor</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="150">Description</th><th>URL</th></tr></thead><tbody><tr><td>Overview</td><td><a href="https://docs.vdo.ninja/steves-helper-apps">https://docs.vdo.ninja/steves-helper-apps</a></td></tr><tr><td>Live stream to multiple people</td><td><a href="https://meshcast.io/">https://meshcast.io/</a></td></tr><tr><td>Electron Capture App</td><td><a href="https://github.com/steveseguin/electroncapture">https://github.com/steveseguin/electroncapture</a></td></tr><tr><td>Steve's App</td><td><a href="https://steves.app/">https://steves.app/</a></td></tr><tr><td>Social Stream</td><td><a href="https://socialstream.ninja/">https://socialstream.ninja/</a></td></tr><tr><td>Captioning Tool</td><td><a href="https://caption.ninja/">https://caption.ninja/</a></td></tr><tr><td>Translation Tool</td><td><a href="https://caption.ninja/translate">https://caption.ninja/translate</a></td></tr><tr><td>Raspberry Ninja</td><td><a href="https://raspberry.ninja/">https://raspberry.ninja/</a></td></tr><tr><td>YouTube, Twitch chat and social comment Overlays plugin</td><td><a href="https://chat.overlay.ninja">https://chat.overlay.ninja/</a></td></tr><tr><td>Lets you toggle your mouse cursor's visibility on and off</td><td><a href="https://github.com/steveseguin/hide-cursor">https://github.com/steveseguin/hide-cursor</a></td></tr></tbody></table>
 
 ### [Community contributed tools](steves-helper-apps/community-contributed-tools.md)
 
-<table data-header-hidden><thead><tr><th width="329">Description</th><th>URL</th></tr></thead><tbody><tr><td>Vingester (ingest web pages as NDI-multicasted streams)</td><td>https://vingester.app/</td></tr><tr><td>Vingester (v22 compatible)</td><td>https://github.com/steveseguin/vingester/releases/tag/2.8.1</td></tr><tr><td>Companion Module (remote control VDON via this plugin for Companion)</td><td>https://github.com/bitfocus/companion-module-vdo-ninja</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="329">Description</th><th>URL</th></tr></thead><tbody><tr><td>Vingester (ingest web pages as NDI-multicasted streams)</td><td><a href="https://vingester.app/">https://vingester.app/</a></td></tr><tr><td>Vingester (v22 compatible)</td><td><a href="https://github.com/steveseguin/vingester/releases/tag/2.8.1">https://github.com/steveseguin/vingester/releases/tag/2.8.1</a></td></tr><tr><td>Companion Module (remote control VDON via this plugin for Companion)</td><td><a href="https://github.com/bitfocus/companion-module-vdo-ninja">https://github.com/bitfocus/companion-module-vdo-ninja</a></td></tr></tbody></table>
 ---
 description: Known issues or problems, bugs, and limitations
 ---
 
 # Known Issues
 
-Known issues that are most critical are normally listed on the main page of Vide0Link.
+Known issues that are most critical are normally listed on the main page of VDO.Ninja.
 
-You can also refer to the #report-bugs channel on discord, at , to see recently reported issues. I push bug fixes daily to beta, at https://vdo.ninja/beta, so give that a shot if you find a bug on the main release.
+You can also refer to the #report-bugs channel on discord, at https://discord.vdo.ninja, to see recently reported issues. I push bug fixes daily to beta, at https://vdo.ninja/beta, so give that a shot if you find a bug on the main release.
 
 Since bugs and issues are ever evolving, it's hard to keep all issues up to date and verified.
 
-Below are some links to third parties, for a list of known issues that commonly will apply to Vide0Link as well:
+Below are some links to third parties, for a list of known issues that commonly will apply to VDO.Ninja as well:
 
 [https://docs.agora.io/en/All/web\_sdk\_compatibility?platform=Web](https://docs.agora.io/en/All/web\_sdk\_compatibility?platform=Web)
 
@@ -215,24 +215,24 @@ description: Not ready for production, not intended to be used or not well-docum
 
 # Other Parameters
 
-There are some more parameters on [Vide0Link](https://vdo.ninja/) which are currently not ready for production, not intended to be used, or not well-documented.
+There are some more parameters on [VDO.Ninja](https://vdo.ninja/) which are currently not ready for production, not intended to be used, or not well-documented.
 
 You could find out more about these parameters when searching for them on this link:
 [https://github.com/steveseguin/vdo.ninja/blob/develop/main.js](https://github.com/steveseguin/vdo.ninja/blob/develop/main.js)
 
-<table><thead><tr><th width="262.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><code>&#x26;crop</code></td><td>Changes the aspect ratio on the publisher side, but lets you pass an integer value to represent a percentile cropping value.<br><br>So, <code>&#x26;crop=10</code> will reduce the width by 90% and <code>&#x26;crop=-10</code> will increase the aspect ratio. The assumed base aspect ratio is 16:9.</td></tr><tr><td><code>&#x26;debug</code></td><td>Sends live debug log data to a remote server. That debug server is normally off, but this flag can be used . The debug data is not stored at any point.</td></tr><tr><td><code>&#x26;directorview</code></td><td>Not currently an active feature.</td></tr><tr><td><code>&#x26;nomouseevents</code></td><td>Disables 'some' of the mouse/touch/drag triggers and events; for debugging and niche situations.</td></tr><tr><td><code>&#x26;nonacks</code></td><td><p>'Tries' to force the browser to not send key frames or lower quality/resolution; doesn't really work.</p><p></p><p>Tells the browser to not send NACK feedback.</p></td></tr><tr><td><code>&#x26;nopli</code></td><td>Tries to find ways to combat frame stutter caused by packet loss or key frame requests. Doesn't really work.<br><br>Tells the browser to not send picture loss indicators.</td></tr><tr><td><code>&#x26;noremb</code></td><td>Deletes the flag for Chrome's bandwidth estimation logic.</td></tr><tr><td><code>&#x26;pusheffectsdata</code></td><td>Makes the data for the active digital effect available to the IFRAME API or a remote guest.</td></tr><tr><td><code>&#x26;retry</code></td><td>Used in rare cases, sometimes with the Raspberry Ninja project, where the peer connection may "crash" and the remote viewer won't bother to try reconnecting.</td></tr><tr><td><code>&#x26;retrytimeout</code></td><td>Should not be changed (value in milliseconds).</td></tr><tr><td><code>&#x26;salt</code></td><td>Mainly to allow <a href="steves-helper-apps/versus.cam.md">Versus.cam</a> to work with Vide0Link.</td></tr><tr><td><code>&#x26;slot</code></td><td>Not currently an active feature.</td></tr><tr><td><code>&#x26;speedtest</code></td><td>Forces essentially UDP mode, unless TCP is specified, and some other stuff.</td></tr><tr><td><code>&#x26;viewereffect</code></td><td>Not currently an active feature.</td></tr><tr><td><code>&#x26;wss</code></td><td>Specify the handshake server address to use.</td></tr><tr><td><code>&#x26;graphs</code></td><td>?</td></tr><tr><td><code>&#x26;lowmobilebitrate</code></td><td>?</td></tr><tr><td><code>&#x26;maxmobilebitrate</code></td><td>?</td></tr><tr><td><code>&#x26;minroombitrate</code></td><td>?</td></tr><tr><td><code>&#x26;sendframes</code></td><td>?</td></tr><tr><td><code>&#x26;overlaycontrols</code></td><td>?</td></tr><tr><td><code>&#x26;pushloudness</code></td><td>This sets the loudness IFRAME API output, if available</td></tr><tr><td><code>&#x26;hangupbutton</code></td><td>?</td></tr><tr><td><code>&#x26;socialstream</code></td><td>?</td></tr><tr><td><code>&#x26;fakeuser</code></td><td>?</td></tr><tr><td><code>&#x26;androidfix</code></td><td>?</td></tr><tr><td><code>&#x26;scenelinkcodec</code></td><td>This is mainly for a niche IFRAME API use</td></tr><tr><td><code>&#x26;scenelinkbitrate</code></td><td>This is mainly for a niche IFRAME API use</td></tr><tr><td><code>&#x26;showheader</code></td><td>Forces the header bar to show even if using <a href="advanced-settings/design-parameters/cleanoutput.md"><code>&#x26;cleanoutput</code></a> for example</td></tr><tr><td><code>&#x26;degrade</code></td><td>Firefox, and maybe Safari, supported I think. The possible values are <code>maintain-framerate</code>, <code>maintain-resolution</code>, or <code>balanced</code>. The default value is balanced.</td></tr><tr><td><code>&#x26;iframetarget</code></td><td>Specifies the IFRAME Hostname target</td></tr><tr><td><code>&#x26;bypass</code></td><td>?</td></tr><tr><td><code>&#x26;mixminus</code></td><td>In development</td></tr><tr><td><code>&#x26;nopassword</code></td><td>?</td></tr><tr><td><code>&#x26;micsamplerate</code></td><td>Lets you specify the capture audio sample rate. Also added purely for experimental reasons; I don't recommend touching.</td></tr><tr><td><code>&#x26;insertablestreams</code></td><td>Enables a special mode that allows for custom codecs</td></tr><tr><td><code>&#x26;leaveorientationflag</code></td><td>?</td></tr><tr><td><code>&#x26;motionrecord</code></td><td>Switch OBS to this scene when there is motion, and "solo view" this video in the Vide0Link auto-mixer, if used</td></tr><tr><td><code>&#x26;alpha</code></td><td>Fixed <a href="advanced-settings/view-parameters/webp.md"><code>&#x26;webp</code></a> + <a href="advanced-settings/view-parameters/codec.md#webp"><code>&#x26;codec=webp</code></a> + <code>&#x26;alpha</code> so it properly supports alpha channels. If your needs are modest it can offer transparent streaming video when using <a href="source-settings/and-fileshare.md"><code>&#x26;fileshare</code></a> /w a transparent WebM video source (or a virtual background /w a transparent png)</td></tr></tbody></table>
+<table><thead><tr><th width="262.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><code>&#x26;crop</code></td><td>Changes the aspect ratio on the publisher side, but lets you pass an integer value to represent a percentile cropping value.<br><br>So, <code>&#x26;crop=10</code> will reduce the width by 90% and <code>&#x26;crop=-10</code> will increase the aspect ratio. The assumed base aspect ratio is 16:9.</td></tr><tr><td><code>&#x26;debug</code></td><td>Sends live debug log data to a remote server. That debug server is normally off, but this flag can be used by Steve to debug issues remotely. The debug data is not stored at any point.</td></tr><tr><td><code>&#x26;directorview</code></td><td>Not currently an active feature.</td></tr><tr><td><code>&#x26;nomouseevents</code></td><td>Disables 'some' of the mouse/touch/drag triggers and events; for debugging and niche situations.</td></tr><tr><td><code>&#x26;nonacks</code></td><td><p>'Tries' to force the browser to not send key frames or lower quality/resolution; doesn't really work.</p><p></p><p>Tells the browser to not send NACK feedback.</p></td></tr><tr><td><code>&#x26;nopli</code></td><td>Tries to find ways to combat frame stutter caused by packet loss or key frame requests. Doesn't really work.<br><br>Tells the browser to not send picture loss indicators.</td></tr><tr><td><code>&#x26;noremb</code></td><td>Deletes the flag for Chrome's bandwidth estimation logic.</td></tr><tr><td><code>&#x26;pusheffectsdata</code></td><td>Makes the data for the active digital effect available to the IFRAME API or a remote guest.</td></tr><tr><td><code>&#x26;retry</code></td><td>Used in rare cases, sometimes with the Raspberry Ninja project, where the peer connection may "crash" and the remote viewer won't bother to try reconnecting.</td></tr><tr><td><code>&#x26;retrytimeout</code></td><td>Should not be changed (value in milliseconds).</td></tr><tr><td><code>&#x26;salt</code></td><td>Mainly to allow <a href="steves-helper-apps/versus.cam.md">Versus.cam</a> to work with VDO.Ninja.</td></tr><tr><td><code>&#x26;slot</code></td><td>Not currently an active feature.</td></tr><tr><td><code>&#x26;speedtest</code></td><td>Forces essentially UDP mode, unless TCP is specified, and some other stuff.</td></tr><tr><td><code>&#x26;viewereffect</code></td><td>Not currently an active feature.</td></tr><tr><td><code>&#x26;wss</code></td><td>Specify the handshake server address to use.</td></tr><tr><td><code>&#x26;graphs</code></td><td>?</td></tr><tr><td><code>&#x26;lowmobilebitrate</code></td><td>?</td></tr><tr><td><code>&#x26;maxmobilebitrate</code></td><td>?</td></tr><tr><td><code>&#x26;minroombitrate</code></td><td>?</td></tr><tr><td><code>&#x26;sendframes</code></td><td>?</td></tr><tr><td><code>&#x26;overlaycontrols</code></td><td>?</td></tr><tr><td><code>&#x26;pushloudness</code></td><td>This sets the loudness IFRAME API output, if available</td></tr><tr><td><code>&#x26;hangupbutton</code></td><td>?</td></tr><tr><td><code>&#x26;socialstream</code></td><td>?</td></tr><tr><td><code>&#x26;fakeuser</code></td><td>?</td></tr><tr><td><code>&#x26;androidfix</code></td><td>?</td></tr><tr><td><code>&#x26;scenelinkcodec</code></td><td>This is mainly for a niche IFRAME API use</td></tr><tr><td><code>&#x26;scenelinkbitrate</code></td><td>This is mainly for a niche IFRAME API use</td></tr><tr><td><code>&#x26;showheader</code></td><td>Forces the header bar to show even if using <a href="advanced-settings/design-parameters/cleanoutput.md"><code>&#x26;cleanoutput</code></a> for example</td></tr><tr><td><code>&#x26;degrade</code></td><td>Firefox, and maybe Safari, supported I think. The possible values are <code>maintain-framerate</code>, <code>maintain-resolution</code>, or <code>balanced</code>. The default value is balanced.</td></tr><tr><td><code>&#x26;iframetarget</code></td><td>Specifies the IFRAME Hostname target</td></tr><tr><td><code>&#x26;bypass</code></td><td>?</td></tr><tr><td><code>&#x26;mixminus</code></td><td>In development</td></tr><tr><td><code>&#x26;nopassword</code></td><td>?</td></tr><tr><td><code>&#x26;micsamplerate</code></td><td>Lets you specify the capture audio sample rate. Also added purely for experimental reasons; I don't recommend touching.</td></tr><tr><td><code>&#x26;insertablestreams</code></td><td>Enables a special mode that allows for custom codecs</td></tr><tr><td><code>&#x26;leaveorientationflag</code></td><td>?</td></tr><tr><td><code>&#x26;motionrecord</code></td><td>Switch OBS to this scene when there is motion, and "solo view" this video in the VDO.Ninja auto-mixer, if used</td></tr><tr><td><code>&#x26;alpha</code></td><td>Fixed <a href="advanced-settings/view-parameters/webp.md"><code>&#x26;webp</code></a> + <a href="advanced-settings/view-parameters/codec.md#webp"><code>&#x26;codec=webp</code></a> + <code>&#x26;alpha</code> so it properly supports alpha channels. If your needs are modest it can offer transparent streaming video when using <a href="source-settings/and-fileshare.md"><code>&#x26;fileshare</code></a> /w a transparent WebM video source (or a virtual background /w a transparent png)</td></tr></tbody></table>
 ---
 description: '"Vee-Dee-Oh" .. oh, video!'
 ---
 
-# What is Vide0Link?
+# What is VDO.Ninja?
 
-## What is Vide0Link?
+## What is VDO.Ninja?
 
-In its simplest form, [Vide0Link](https://vdo.ninja) brings live video from a smartphone, tablet, or remote computer, directly into OBS Studio or other browser-enabled software. Vide0Link is offered as a free web service, but it's also available as customizable and deployable code. Some have called it the modern Swiss Army knife of audio and video transmission. 🛠
+In its simplest form, [VDO.Ninja](https://vdo.ninja) brings live video from a smartphone, tablet, or remote computer, directly into OBS Studio or other browser-enabled software. VDO.Ninja is offered as a free web service, but it's also available as customizable and deployable code. Some have called it the modern Swiss Army knife of audio and video transmission. 🛠
 
-
-Video intro to Vide0Link and getting-started playlist
+https://www.youtube.com/watch?index=1&list=PLWodc2tCfAH1l_LDvEyxEqFf42hOBKqQM&v=QaA_6aOP9z8
+Video intro to VDO.Ninja and getting-started playlist
 
 ## Getting Started
 
@@ -250,15 +250,15 @@ There are a few basic guides for beginners here as well:
 
 ## Need help or support?
 
-The preferred support mechanism is via [Reddit]() or Discord, which offer community-assisted support. Discord is very active, so check it out. As well, development issues, feature requests, and bugs are tracked on [GitHub](https://github.com/steveseguin/obsninja).&#x20;
+The preferred support mechanism is via [Reddit](https://www.reddit.com/r/vdoninja) or [Discord](https://discord.gg/feenJm8HTa), which offer community-assisted support. Discord is very active, so check it out. As well, development issues, feature requests, and bugs are tracked on [GitHub](https://github.com/steveseguin/obsninja).&#x20;
 
 For mission critical support issues, or business-related inquiries, you can contact Steve directly. Please don't make it a habit.
 
 ## Bug reports
 
-It is most helpful to report bugs via the official [GitHub]() and Discord channels, it is easy to miss issues/details that occur in comments and older threads.
+It is most helpful to report bugs via the official [GitHub](https://github.com/steveseguin/obsninja). While we monitor the [Reddit](https://www.reddit.com/r/vdoninja) and [Discord](https://discord.gg/qWDshMsTar) channels, it is easy to miss issues/details that occur in comments and older threads.
 ---
-description: List of apps and helper tools Steve has created to be used with Vide0Link
+description: List of apps and helper tools Steve has created to be used with VDO.Ninja
 ---
 
 # Steve's helper apps & tools
@@ -276,7 +276,7 @@ description: List of apps and helper tools Steve has created to be used with Vid
 
 [https://github.com/steveseguin/electroncapture](https://github.com/steveseguin/electroncapture)
 
-Created for [Vide0Link](https://vdo.ninja) users, it can provide users a clean way of window capturing websites. In the case of [Vide0Link](https://vdo.ninja), it may offer a more flexible and reliable method of capturing live video than the browser source plugin built into OBS.
+Created for [VDO.Ninja](https://vdo.ninja) users, it can provide users a clean way of window capturing websites. In the case of [VDO.Ninja](https://vdo.ninja), it may offer a more flexible and reliable method of capturing live video than the browser source plugin built into OBS.
 
 ### Why ?
 
@@ -284,7 +284,7 @@ On some systems the OBS Browser Source plugin isn't available or doesn't work al
 
 The app can also be set to remain on top of other windows, attempts to hide the mouse cursor when possible, provides accurate window sizes for 1:1 pixel mapping, and supports global system hotkeys (`CTRL+M` on Windows, for example).
 
-Windows users may find it beneficial too, as it offers support for Vide0Link's [`&buffer`](https://docs.vdo.ninja/viewers-settings/buffer) audio sync command and it has robust support for video packet loss. In other words, it can playback live video better than OBS can, with fewer video playback errors and with better audio/video sync. If you have a spare monitor, it may at times be worth the hassle to use instead of OBS alone.
+Windows users may find it beneficial too, as it offers support for VDO.Ninja's [`&buffer`](https://docs.vdo.ninja/viewers-settings/buffer) audio sync command and it has robust support for video packet loss. In other words, it can playback live video better than OBS can, with fewer video playback errors and with better audio/video sync. If you have a spare monitor, it may at times be worth the hassle to use instead of OBS alone.
 
 The Electron Capture app uses recent versions of Chromium, which is more resistant to desync, video smearing, and other issues that might exist in the native OBS browser source capture method. [More benefits listed here](https://github.com/steveseguin/electroncapture/blob/master/BENEFITS.md)
 
@@ -320,7 +320,7 @@ This chat overlay extension will forward the selected chat message over a web-so
 
 [https://meshcast.io](https://meshcast.io)
 
-This is a free to use service that can work in conjunction with Vide0Link. It's a low latency video CDN (content delivery network), which can be used to host larger group rooms in Vide0Link. It's not designed for mass broadcast, not at present anyways, but it can handle upwards of 100-viewers without taxing your CPU or network.
+This is a free to use service that can work in conjunction with VDO.Ninja. It's a low latency video CDN (content delivery network), which can be used to host larger group rooms in VDO.Ninja. It's not designed for mass broadcast, not at present anyways, but it can handle upwards of 100-viewers without taxing your CPU or network.
 
 [https://youtu.be/-7QsLChfdsE](https://youtu.be/-7QsLChfdsE)
 
@@ -330,7 +330,7 @@ This is a free to use service that can work in conjunction with Vide0Link. It's 
 
 [https://caption.ninja/](https://caption.ninja/)
 
-Although Vide0Link supports captions, sometimes you need something simple yet flexible. Caption.Ninja lets you use the browser's built in speech-to-text service to provide overlay captions for your live stream.
+Although VDO.Ninja supports captions, sometimes you need something simple yet flexible. Caption.Ninja lets you use the browser's built in speech-to-text service to provide overlay captions for your live stream.
 
 Captions are streamed via a web-socket service to your OBS or other studio software, where they can be shown over your video.
 
@@ -354,13 +354,13 @@ I welcome feedback.
 
 [https://raspberry.ninja](https://raspberry.ninja)
 
-Turn your Raspberry Pi or Nvidia Jetson into a Ninja-cam with hardware-acceleration enabled! Publish live streaming video to Vide0Link on the cheap at very high resolutions! The script for the Nvidia Jetson ($69 and up) is setup to plug in a $10 1080p30 HDMI to USB adapter and go, while the Raspberry Pi is setup as a quick-deploy image that can work with the official Raspicam.
+Turn your Raspberry Pi or Nvidia Jetson into a Ninja-cam with hardware-acceleration enabled! Publish live streaming video to VDO.Ninja on the cheap at very high resolutions! The script for the Nvidia Jetson ($69 and up) is setup to plug in a $10 1080p30 HDMI to USB adapter and go, while the Raspberry Pi is setup as a quick-deploy image that can work with the official Raspicam.
 
-![An Nvidia Jetson NX pushing 1080p video to Vide0Link, captured with a $10 HDMI to USB adapter](<.gitbook/assets/image (38).png>)
+![An Nvidia Jetson NX pushing 1080p video to VDO.Ninja, captured with a $10 HDMI to USB adapter](<.gitbook/assets/image (38).png>)
 
-## Native mobile app versions for Vide0Link
+## Native mobile app versions for VDO.Ninja
 
-Mobile native app versions of Vide0Link can be found behind the link below. These are mainly backup options for when the browser-based versions fail to work or lack a certain feature due to system restrictions.
+Mobile native app versions of VDO.Ninja can be found behind the link below. These are mainly backup options for when the browser-based versions fail to work or lack a certain feature due to system restrictions.
 
 [native-mobile-app-versions.md](getting-started/native-mobile-app-versions.md)
 
@@ -378,7 +378,7 @@ Very much like Chat Overlay Ninja, except is purely for live chat and has a focu
 
 [https://versus.cam/](https://versus.cam/)
 
-Versus.cam is the upcoming and standalone replacement for the [vdo.ninja/monitor](https://vdo.ninja/monitor) page. Versus.cam has some interesting features that are specific to the upcoming version of Vide0Link, so at the moment it only works in conjunction with [vdo.ninja/alpha](https://vdo.ninja/alpha/).
+Versus.cam is the upcoming and standalone replacement for the [vdo.ninja/monitor](https://vdo.ninja/monitor) page. Versus.cam has some interesting features that are specific to the upcoming version of VDO.Ninja, so at the moment it only works in conjunction with [vdo.ninja/alpha](https://vdo.ninja/alpha/).
 
 ### Details
 
@@ -389,25 +389,25 @@ Versus.cam is the upcoming and standalone replacement for the [vdo.ninja/monitor
 * The room is configured so that guests cannot see or talk to each other. All guests can do is text-chat with the versus host.
 
 * Versus.cam is compatible with a director and the director room, so you can use a director room AND the Versus.cam room at the same time, without conflict.
-* A new feature that Versus.cam has, that will also soon be coming to the normal Vide0Link directors' room, is the ability to **dynamically change the resolution and bitrate of remote scenes**. This works by means of the [`&remote`](general-settings/remote.md) control feature, which is preconfigured in the links already, so no director is needed when using versus. This will then also work with non-room links, so long as [`&remote`](general-settings/remote.md) is included in their URL.
+* A new feature that Versus.cam has, that will also soon be coming to the normal VDO.Ninja directors' room, is the ability to **dynamically change the resolution and bitrate of remote scenes**. This works by means of the [`&remote`](general-settings/remote.md) control feature, which is preconfigured in the links already, so no director is needed when using versus. This will then also work with non-room links, so long as [`&remote`](general-settings/remote.md) is included in their URL.
 * I don't intend to add many advanced features to this site.
 * It's designed to be very simple, elegant, and hyper focused on a single use case and user type.
-* E-Sports and one-way ingestion of very high quality video. I'll likely be making more scenario-specific interfaces in the future like this, to make Vide0Link easier and less cluttered for common use cases.
-* Versus.cam is built using the Vide0Link IFRAME API, which I hope demonstrates the flexibility of it.
+* E-Sports and one-way ingestion of very high quality video. I'll likely be making more scenario-specific interfaces in the future like this, to make VDO.Ninja easier and less cluttered for common use cases.
+* Versus.cam is built using the VDO.Ninja IFRAME API, which I hope demonstrates the flexibility of it.
 * Versus.cam is only supported by Chrome/Chromium-based browsers; it isn't yet compatible with Firefox/Safari (they lack the features needed for it to operate).
 
-Please report bugs. It's a first release, using the alpha version of Vide0Link, so bugs are kind of expected.
+Please report bugs. It's a first release, using the alpha version of VDO.Ninja, so bugs are kind of expected.
 
 [https://youtu.be/I12ASNWHPPI](https://youtu.be/I12ASNWHPPI)
 # Table of contents
 
-* [What is Vide0Link?](README.md)
+* [What is VDO.Ninja?](README.md)
   * [How does it work](how-does-it-work.md)
   * [Use cases](use-cases.md)
-  * [Why use Vide0Link over other solutions?](why-use-obs.ninja-over-other-solutions.md)
+  * [Why use VDO.Ninja over other solutions?](why-use-obs.ninja-over-other-solutions.md)
   * [Sponsor ❤](https://docs.vdo.ninja/getting-started/sponsor)
 * [Getting started](getting-started/README.md)
-  * [Vide0Link basics](getting-started/vdo.ninja-basics.md)
+  * [VDO.Ninja basics](getting-started/vdo.ninja-basics.md)
   * [What are stream IDs?](getting-started/stream-ids.md)
   * [The power of the URL parameter](getting-started/the-power-of-the-url-parameter.md)
   * [Multi-Person Chat](getting-started/multi-person-chat.md)
@@ -449,38 +449,38 @@ Please report bugs. It's a first release, using the alpha version of Vide0Link, 
   * [Options to record streams](guides/options-to-record-streams.md)
   * [External guides and how-tos](guides/guides-and-how-tos.md)
   * [How to lock the resolution](guides/how-do-i-lock-the-resolution.md)
-  * [How to use Vide0Link as a webcam for Google Hangouts, Zoom, and more](guides/use-vdo.ninja-as-a-webcam-for-google-hangouts-zoom-and-more.md)
+  * [How to use VDO.Ninja as a webcam for Google Hangouts, Zoom, and more](guides/use-vdo.ninja-as-a-webcam-for-google-hangouts-zoom-and-more.md)
   * [How to capture without browser sources](guides/capturing-without-browser-sources.md)
   * [How to control bitrate/quality](guides/how-do-i-control-bitrate-quality.md)
   * [How to selectively allow access](guides/how-to-selectively-allow-access.md)
-  * [How to send the audio/video output of one OBS to another OBS using Vide0Link](guides/how-to-send-the-audio-video-output-of-one-obs-to-another-obs-using-vdo.ninja.md)
+  * [How to send the audio/video output of one OBS to another OBS using VDO.Ninja](guides/how-to-send-the-audio-video-output-of-one-obs-to-another-obs-using-vdo.ninja.md)
   * [How to mirror a video while Full-Screen - For iPads and Teleprompters](guides/how-to-mirror-a-video-while-full-screen-for-ipads-and-teleprompters.md)
   * [How to get permanent links](guides/how-to-get-permanent-links.md)
   * [How to capture an application's audio](guides/audio.md)
-  * [How to control Vide0Link with Touch Portal](guides/hotkey-support/how-to-control-vdo.ninja-with-touch-portal.md)
-  * [How to publish from OBS into Vide0Link](guides/publish-from-obs-into-vdo.ninja.md)
+  * [How to control VDO.Ninja with Touch Portal](guides/hotkey-support/how-to-control-vdo.ninja-with-touch-portal.md)
+  * [How to publish from OBS into VDO.Ninja](guides/publish-from-obs-into-vdo.ninja.md)
   * [How to screen share your iPhone/iPad](guides/screen-share-your-iphone-ipad.md)
   * [How to get iPhones to output 1080p Videos](guides/how-to-get-iphones-to-output-1080p-videos.md)
   * [How to stream into Zoom without OBS](guides/how-to-stream-into-zoom-without-obs.md)
   * [How to connect a smartphone to computer via USB](guides/connecting-smartphone-to-computer-via-usb.md)
   * [How to edit an invite after sending it](guides/edit-an-invite-after-sending-it.md)
   * [How to get highest video quality (for an interview)](guides/highest-quality-video-for-an-interview.md)
-  * [How to stream 4K video using Vide0Link](guides/how-to-stream-4k-video-using-vdo.ninja.md)
+  * [How to stream 4K video using VDO.Ninja](guides/how-to-stream-4k-video-using-vdo.ninja.md)
   * [How to get lowest audio latency possible](guides/lowest-audio-latency-possible.md)
   * [How to share webcam from inside OBS](guides/share-webcam-from-inside-obs.md)
   * [How to publish to Facebook Live](guides/publish-to-facebook-live.md)
-  * [How to embed Vide0Link into a site with iFrames](guides/iframe-api-documentation.md)
+  * [How to embed VDO.Ninja into a site with iFrames](guides/iframe-api-documentation.md)
   * [How to use the green screen just locally](guides/use-the-green-screen-just-locally.md)
-  * [How to connect a GoPro to Vide0Link](guides/connect-a-gopro-to-vdo.ninja.md)
+  * [How to connect a GoPro to VDO.Ninja](guides/connect-a-gopro-to-vdo.ninja.md)
   * [How to install RaspNinja on Jetson](guides/installing-raspninja-on-jetson.md)
   * [How to transfer guests to other rooms](getting-started/rooms/transfer-rooms.md)
   * [How to set up a simple chat room](guides/how-to-set-up-a-simple-chat-room.md)
   * [How to screen share in 1080p](guides/how-to-screen-share-in-1080p.md)
-  * [How to control PowerPoint remotely with Vide0Link](guides/how-to-control-powerpoint-remotely-with-vdo.ninja.md)
+  * [How to control PowerPoint remotely with VDO.Ninja](guides/how-to-control-powerpoint-remotely-with-vdo.ninja.md)
   * [How to improve quality of the native app](guides/improving-quality-of-the-native-app.md)
   * [How to stream transparent video](guides/how-to-stream-transparent-video.md)
   * [How to set up OBS WHIP output settings](guides/obs-whip-output-settings.md)
-  * [How to use Vide0Link on a website](guides/how-to-use-vdo.ninja-on-a-website.md)
+  * [How to use VDO.Ninja on a website](guides/how-to-use-vdo.ninja-on-a-website.md)
 * [Advanced Options (URL Parameters)](advanced-settings.md)
   * [Most common Parameters](advanced-settings/cheat-sheet-of-basic-parameters/README.md)
     * [\&push](https://docs.vdo.ninja/advanced-settings/source-parameters/push)
@@ -941,7 +941,7 @@ Please report bugs. It's a first release, using the alpha version of Vide0Link, 
   * [v10](releases/v10.md)
   * [v8](releases/v8.md)
 * [Updates](updates/README.md)
-  * [Updates - Vide0Link](updates/updates-vdo.ninja.md)
+  * [Updates - VDO.Ninja](updates/updates-vdo.ninja.md)
   * [Updates - Social Stream & Chat Overlay](updates/updates-social-stream-and-chat-overlay/README.md)
     * [Updates - Social Stream Standalone App](updates/updates-social-stream-and-chat-overlay/updates-social-stream-standalone-app.md)
   * [Updates - Electron Capture App](updates/updates-electron-capture-app.md)
@@ -959,8 +959,8 @@ Please report bugs. It's a first release, using the alpha version of Vide0Link, 
 * [Help!](help/README.md)
   * [Fail safes and Backups](help/fail-safes-and-backups.md)
   * [Privacy and security details](help/privacy-and-security-details.md)
-    * [Vide0Link Terms of Service](help/privacy-and-security-details/vdo.ninja-terms-of-service.md)
-    * [Vide0Link Privacy Policy](help/privacy-and-security-details/vdo.ninja-privacy-policy.md)
+    * [VDO.Ninja Terms of Service](help/privacy-and-security-details/vdo.ninja-terms-of-service.md)
+    * [VDO.Ninja Privacy Policy](help/privacy-and-security-details/vdo.ninja-privacy-policy.md)
   * [Project Contact Info](help/project-contact-info.md)
   * [Where can I report a bug?](help/report-a-bug.md)
   * [Where can I get support?](help/where-can-i-get-support.md)
@@ -982,7 +982,7 @@ Please report bugs. It's a first release, using the alpha version of Vide0Link, 
   * [Can't load camera both in OBS and VDON](common-errors-and-known-issues/cant-load-camera-both-in-obs-and-vdon.md)
   * [Can't select a camera lens on mobile](common-errors-and-known-issues/cant-select-a-camera-lens-on-mobile.md)
   * [No video in OBS, just an "Add camera" button](common-errors-and-known-issues/no-video-in-obs-just-an-add-camera-button.md)
-  * [Audio over Vide0Link isn't working](common-errors-and-known-issues/audio-over-vdo.ninja-isnt-working.md)
+  * [Audio over VDO.Ninja isn't working](common-errors-and-known-issues/audio-over-vdo.ninja-isnt-working.md)
   * [Loading circle shows in OBS or browser](common-errors-and-known-issues/loading-circle-shows-in-obs-or-browser.md)
   * [Appearing then disappearing guest](common-errors-and-known-issues/appearing-then-disappearing-guest.md)
   * [Can't auto-start screen sharing](common-errors-and-known-issues/cant-auto-start-screen-sharing.md)
@@ -1002,7 +1002,7 @@ Please report bugs. It's a first release, using the alpha version of Vide0Link, 
   * [Video stream looks corrupted](common-errors-and-known-issues/video-is-pixelated.md)
   * [Video freezes mid-stream](common-errors-and-known-issues/video-freezes-mid-stream.md)
   * [Webcam freezes after a time](common-errors-and-known-issues/webcam-freezes-after-a-time.md)
-  * [Is the Vide0Link server down?](common-errors-and-known-issues/is-the-obs.ninja-server-down.md)
+  * [Is the VDO.Ninja server down?](common-errors-and-known-issues/is-the-obs.ninja-server-down.md)
   * [Hosted your own TURN server?](common-errors-and-known-issues/hosted-your-own-turn-server.md)
   * [Can't screen-share from certain devices](common-errors-and-known-issues/why-cant-i-screen-share-from-certain-devices.md)
   * [Cursor shows when screen-sharing](common-errors-and-known-issues/cursor-shows-when-screen-sharing.md)
@@ -1035,7 +1035,7 @@ Please report bugs. It's a first release, using the alpha version of Vide0Link, 
 * [Redirect 2](donate.md)
 ---
 description: >-
-  The use cases of Vide0Link are many; they go far beyond the original scope of
+  The use cases of VDO.Ninja are many; they go far beyond the original scope of
   the project
 ---
 
@@ -1054,14 +1054,14 @@ description: >-
 * Use as a remote low-latency teleprompter feed.
 * Recording remote or local video at high quality without needing any downloads.
 * Remotely streaming MIDI device output, such as MIDI keyboards or production control boards.
-* Controlling OBS remotely from any computer on the Internet using [Vide0Link](https://vdo.ninja/) as a p2p bridge.
+* Controlling OBS remotely from any computer on the Internet using [VDO.Ninja](https://vdo.ninja/) as a p2p bridge.
 * Recording remote participates during interviews directly to their own computer; perfect recordings.
 * Applying green screens, digital face effects, and other advanced video filters to video streams.
 * Real-time closed-captions and transcriptions.
 * For whatever other reason you might come up with.
-# Why use Vide0Link over other solutions?
+# Why use VDO.Ninja over other solutions?
 
-In some cases, the functionality of [Vide0Link](https://vdo.ninja) may overlap with existing solutions. However, in its primary function as an ultra-low latency peer-to-peer video bridge to OBS, it has many benefits and advantages over other methods:
+In some cases, the functionality of [VDO.Ninja](https://vdo.ninja) may overlap with existing solutions. However, in its primary function as an ultra-low latency peer-to-peer video bridge to OBS, it has many benefits and advantages over other methods:
 
 * **100% free.** There's **no downloads** required, **no personal data collected**, and **no sign-in** needed.
 * Compatible with most modern browsers and mobile devices.
@@ -1071,24 +1071,24 @@ In some cases, the functionality of [Vide0Link](https://vdo.ninja) may overlap w
 * **Low latency**. I'm talking as low as 30-ms, and normally it never goes higher than 200-ms.
 * **Adjustable resolutions and video bitrates** (1920x1080p60 @ 30-Mbps -- or even custom resolutions). 4K @ 30fps is possible, but CPU intensive.
 * **Control over audio denoise**, **echo-cancellation**, and **auto-gain** is available, along with custom audio bitrates, and **stereo-sound**. It is an exceptional tool for podcasters and live streaming DJs.
-* You can **parameterize many aspects of Vide0Link** such as total bitrate usage, bitrate per viewer usage, auto-select a device, autostart a session, removing the preview window.
+* You can **parameterize many aspects of VDO.Ninja** such as total bitrate usage, bitrate per viewer usage, auto-select a device, autostart a session, removing the preview window.
 * The interface is **open-source**, so you can white-label, stylize, tweak, and deploy the website code however you want.
 * **Reusable invite links**, meaning OBS Browser Sources don't need to be recreated or changed once created and shared.
 * Playback of video has been tested to work on using Amazon's Firestick's with Silk browser, along with a Tesla's Model 3's infotainment display.
-* **No plugins needed for OBS** -- just drag the selected link into OBS (v25 or newer on PC\*) and it auto generates the OBS Browser source with the correct resolution. (\*[MacOS](https://github.com/steveseguin/obsninja/wiki/FAQ#MacOS) users need to update to OBS v26.1.2 to access support for Vide0Link natively.)
+* **No plugins needed for OBS** -- just drag the selected link into OBS (v25 or newer on PC\*) and it auto generates the OBS Browser source with the correct resolution. (\*[MacOS](https://github.com/steveseguin/obsninja/wiki/FAQ#MacOS) users need to update to OBS v26.1.2 to access support for VDO.Ninja natively.)
 * **QR Code support for invite links**, which allows for easy ingestion of mobile devices without needing to use the keyboard.
 * **Browser-based control of OBS scenes**.
-* **No overlays or windows to crop** -- Vide0Link auto-fills the window and if there is a black border, it becomes a transparent layer.
+* **No overlays or windows to crop** -- VDO.Ninja auto-fills the window and if there is a black border, it becomes a transparent layer.
 * **Group rooms available** with a Director able to control participants, the options presented to them, and even an autojoin experience.
 * **Group chat rooms** have an "auto-mix" mode, making for easy management of dynamic group chat sessions.
 * Those in a **group-chat can also be split up into individual streams**, so the Director has control to treat them like different sources in OBS, switching and mixing as they want.
-* **Free TURN servers** are hosted for Vide0Link users, which normally are quite costly, but are kindly subsidized by community sponsors and . [Sponsor ❤](getting-started/sponsor.md)&#x20;
-* **Tally-light** support is offered when Vide0Link is used in conjunction with OBS.
+* **Free TURN servers** are hosted for VDO.Ninja users, which normally are quite costly, but are kindly subsidized by community sponsors and by Steve, the developer of the application. [Sponsor ❤](getting-started/sponsor.md)&#x20;
+* **Tally-light** support is offered when VDO.Ninja is used in conjunction with OBS.
 * Group rooms and streams can be **password protected** and given extra security.
 * The group-room director has a **"push to talk"** capability, along with text-chat being available.
 * Support for **ISO feed recording** via the Director's Control Room.
 * With little dependence on video servers, at peak usage hours video quality does not suffer.
-* Vide0Link is a **project of passion**, **built by creators for creators**, and we like to think it shows.
+* VDO.Ninja is a **project of passion**, **built by creators for creators**, and we like to think it shows.
 ---
 description: The link has been moved.
 ---
@@ -1105,12 +1105,12 @@ description: Advanced
 
 This link has been moved to here:[ https://docs.vdo.ninja/advanced-settings](https://docs.vdo.ninja/advanced-settings)
 ---
-description: Recently added to Vide0Link
+description: Recently added to VDO.Ninja
 ---
 
 # New Parameters in Version 24
 
-These parameters are all on production in [v24](../releases/v24.md) of Vide0Link
+These parameters are all on production in [v24](../releases/v24.md) of VDO.Ninja
 
 <table><thead><tr><th width="316">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="design-parameters/and-pipall-alpha.md"><code>&#x26;pipall</code></a></td><td>New floating picture in picture mode, so you can pop out the entire video mix as a pinned window overlay</td></tr><tr><td><a href="design-parameters/and-pipme-alpha.md"><code>&#x26;pipme</code></a></td><td>Will cause your self-video preview window to pop out into its own picture in picture</td></tr><tr><td><a href="design-parameters/and-nomirror-alpha.md"><code>&#x26;nomirror</code></a></td><td>Disables the default mirror state of the video preview for a guest</td></tr><tr><td><a href="setup-parameters/and-hangupmessage-alpha.md"><code>&#x26;hangupmessage</code></a></td><td>Option for a custom hang-up message</td></tr><tr><td><a href="setup-parameters/and-humb64-alpha.md"><code>&#x26;humb64</code></a></td><td>The same as <a href="setup-parameters/and-hangupmessage-alpha.md"><code>&#x26;hangupmessage</code></a>, except this takes an input as a base64 encoded string</td></tr><tr><td><a href="setup-parameters/and-welcomeb64-alpha.md"><code>&#x26;welcomeb64</code></a></td><td>The same as <a href="../newly-added-parameters/and-welcome.md"><code>&#x26;welcome</code></a>, except this takes an input as a base64 encoded string</td></tr><tr><td><a href="whip-parameters/and-whipoutscale-alpha.md"><code>&#x26;whipoutscale</code></a></td><td>Scales down the WHIP video output via the URL</td></tr><tr><td><a href="whip-parameters/and-whipoutscreensharecodec-alpha.md"><code>&#x26;whipoutscreensharecodec</code></a></td><td>Option to change codec of the WHIP while screen-sharing</td></tr><tr><td><a href="whip-parameters/and-whipoutscreensharebitrate-alpha.md"><code>&#x26;whipoutscreensharebitrate</code></a></td><td>Option to change outbound screen-share video bitrate of WHIP</td></tr><tr><td><a href="whip-parameters/and-cftoken-alpha.md"><code>&#x26;cftoken</code></a></td><td>Accepts the special token without needing to specify the cloudflare.vdo.ninja part if using <a href="whip-parameters/and-whipout.md"><code>&#x26;whipout</code></a> instead</td></tr><tr><td><a href="settings-parameters/and-clock24-alpha.md"><code>&#x26;clock24</code></a></td><td>The same as <a href="settings-parameters/and-clock.md"><code>&#x26;clock</code></a> option, except it uses 24-hour time for the display</td></tr><tr><td><a href="mixer-scene-parameters/and-motiondetection-alpha.md"><code>&#x26;motiondetection</code></a></td><td>Does a few things when it detects motion in a video</td></tr><tr><td><a href="mixer-scene-parameters/and-forceviewerlandscape.md"><code>&#x26;forceviewerlandscape</code></a></td><td>Keeps all incoming videos oriented (rotated) so that the aspect ratio is always above 1</td></tr><tr><td><a href="guest-queuing-parameters/and-screen-alpha.md"><code>&#x26;screen</code></a></td><td>Replaces the way <a href="../general-settings/queue.md"><code>&#x26;queue</code></a> worked before, where the guest can see/hear the director, but not other guests, until activated</td></tr><tr><td><a href="guest-queuing-parameters/and-hold-alpha.md"><code>&#x26;hold</code></a></td><td>Like <a href="../general-settings/queue.md"><code>&#x26;queue</code></a>, except the guest gets a message telling them they need to wait until approved by the director</td></tr><tr><td><a href="guest-queuing-parameters/and-holdwithvideo-alpha.md"><code>&#x26;holdwithvideo</code></a></td><td>Just like <a href="guest-queuing-parameters/and-hold-alpha.md"><code>&#x26;hold</code></a>, except the director does see the guest's video and audio before the guest is activated</td></tr><tr><td><a href="settings-parameters/and-nocaptionlabels.md"><code>&#x26;nocaptionlabels</code></a></td><td>Disables showing the names when using the <a href="settings-parameters/and-closedcaptions.md"><code>&#x26;closedcaptions</code></a> feature</td></tr><tr><td><a href="video-parameters/and-largepreview.md"><code>&#x26;largepreview</code></a></td><td>Will disable the mini-preview functionality</td></tr><tr><td><a href="video-parameters/and-nodirectorvideo.md"><code>&#x26;nodirectorvideo</code></a></td><td>Disables all video playback from room directors</td></tr><tr><td><a href="audio-parameters/and-nodirectoraudio.md"><code>&#x26;nodirectoraudio</code></a></td><td>Disables all audio playback from room directors</td></tr><tr><td><a href="settings-parameters/and-retransmit.md"><code>&#x26;retransmit</code></a></td><td>Will relay the incoming 'chunked' media stream to others connected to you, without transcoding</td></tr><tr><td><a href="recording-parameters/and-recordmotion.md"><code>&#x26;recordmotion</code></a></td><td>Takes a video snapshot and saves it to disk whenever there is motion detected in a video</td></tr><tr><td><a href="whip-parameters/and-svc.md"><code>&#x26;svc</code></a></td><td>Useful for publishing to WHIP broadcast servers that support scalable video modes</td></tr><tr><td><a href="setup-parameters/and-e2ee.md"><code>e2ee</code></a></td><td>Support for something called "end to end encryption" using "insertable streams"</td></tr><tr><td><a href="camera-parameters/and-whitebalance.md"><code>&#x26;whitebalance</code></a></td><td>Lets you manually pre-set the white balance of the camera/webcam</td></tr><tr><td><a href="camera-parameters/and-exposure.md"><code>&#x26;exposure</code></a></td><td>Lets you manually pre-set the exposure of the camera/webcam</td></tr><tr><td><a href="camera-parameters/and-saturation.md"><code>&#x26;saturation</code></a></td><td>Lets you manually pre-set the saturation of the camera/webcam</td></tr><tr><td><a href="camera-parameters/and-sharpness.md"><code>&#x26;sharpness</code></a></td><td>Lets you manually pre-set the sharpness of the camera/webcam</td></tr><tr><td><a href="camera-parameters/and-contrast.md"><code>&#x26;contrast</code></a></td><td>Lets you manually pre-set the contrast of the camera/webcam</td></tr><tr><td><a href="camera-parameters/and-brightness.md"><code>&#x26;brightness</code></a></td><td>Lets you manually pre-set the brightness of the camera/webcam</td></tr><tr><td><a href="buttons-and-control-bar-parameters/and-hands-1.md"><code>&#x26;forcecontrols</code></a></td><td>Will try to keep the video controls visible, even if your mouse isn't hovering over the video</td></tr></tbody></table>
 ---
@@ -1147,7 +1147,7 @@ Example: `&mididelay=1000`
 
 ## Details
 
-`&mididelay=1000` lets you precisely delay the MIDI play-out from Vide0Link to your MIDI device when using [`&midiin`](../../midi-settings/midiin.md), irrespective of network latency.
+`&mididelay=1000` lets you precisely delay the MIDI play-out from VDO.Ninja to your MIDI device when using [`&midiin`](../../midi-settings/midiin.md), irrespective of network latency.
 
 Use case: If you have a remote drum machine, you can have it play out the beat exactly 4-bars ahead, allowing for music jamming types with even high ping delays between locations.
 
@@ -1157,7 +1157,7 @@ Use case: If you have a remote drum machine, you can have it play out the beat e
 
 [midiin.md](../../midi-settings/midiin.md)
 ---
-description: Lets you specify a custom POST URL to send events within Vide0Link to
+description: Lets you specify a custom POST URL to send events within VDO.Ninja to
 ---
 
 # &postapi
@@ -1176,7 +1176,7 @@ Example: `&postapi=https%3A%2F%2Fwebhook.site%2Fb190f5bf-e4f8-454a-bd51-78b5807d
 
 ## Details
 
-`&postapi` lets you specify a custom POST URL to send events within Vide0Link to.
+`&postapi` lets you specify a custom POST URL to send events within VDO.Ninja to.
 
 Data JSON encoded, post URL requires HTTPS+CORS, and the passed URL parameter value needs to be encodedURLComponent.
 ie: `&postapi=https%3A%2F%2Fwebhook.site%2Fb190f5bf-e4f8-454a-bd51-78b5807df9c1`
@@ -1194,9 +1194,9 @@ description: hotkey features via API and MIDI
 
 # API & MIDI Parameters
 
-<table><thead><tr><th width="213.75007715635093">Parameter</th><th width="446.4285714285714">Explanation</th></tr></thead><tbody><tr><td><a href="../../general-settings/api.md"><code>&#x26;api</code></a></td><td>Remote control API (HTTP-GET / WSS-based)</td></tr><tr><td><a href="../../general-settings/pie.md"><code>&#x26;pie</code></a></td><td>Support for piesocket.com</td></tr><tr><td><a href="../../midi-settings/midiin.md"><code>&#x26;midi</code></a></td><td>Global hotkey support via MIDI input and more</td></tr><tr><td><a href="../../midi-settings/midiin.md"><code>&#x26;midiin</code></a></td><td>Allows for receiving of remote MIDI</td></tr><tr><td><a href="../../midi-settings/midiout.md"><code>&#x26;midiout</code></a></td><td>Broadcast MIDI commands to a remote computer's virtual MIDI device</td></tr><tr><td><a href="../../director-settings/midiremote.md"><code>&#x26;midiremote</code></a></td><td>Remote MIDI control</td></tr><tr><td><a href="../../midi-settings/and-midichannel.md"><code>&#x26;midichannel</code></a></td><td>Allows for specifying which midi channel (1 to 16) to listen on</td></tr><tr><td><a href="../../midi-settings/and-mididevice.md"><code>&#x26;mididevice</code></a></td><td>Allows to specify which midi device (1 and up) selected</td></tr><tr><td><a href="../../midi-settings/and-midioffset.md"><code>&#x26;midioffset</code></a></td><td>Allows you to set a series of buttons on a MIDI controller to be mute controls for those guests</td></tr><tr><td><a href="and-mididelay.md"><code>&#x26;mididelay</code></a></td><td>Lets you precisely delay the MIDI play-out</td></tr><tr><td><a href="../../newly-added-parameters/and-datamode.md"><code>&#x26;datamode</code></a></td><td>Combines a bunch of flags together; no video, no audio, GUI, etc.</td></tr><tr><td><a href="and-postapi.md"><code>&#x26;postapi</code></a></td><td>Lets you specify a custom POST URL to send events within Vide0Link to</td></tr></tbody></table>
+<table><thead><tr><th width="213.75007715635093">Parameter</th><th width="446.4285714285714">Explanation</th></tr></thead><tbody><tr><td><a href="../../general-settings/api.md"><code>&#x26;api</code></a></td><td>Remote control API (HTTP-GET / WSS-based)</td></tr><tr><td><a href="../../general-settings/pie.md"><code>&#x26;pie</code></a></td><td>Support for piesocket.com</td></tr><tr><td><a href="../../midi-settings/midiin.md"><code>&#x26;midi</code></a></td><td>Global hotkey support via MIDI input and more</td></tr><tr><td><a href="../../midi-settings/midiin.md"><code>&#x26;midiin</code></a></td><td>Allows for receiving of remote MIDI</td></tr><tr><td><a href="../../midi-settings/midiout.md"><code>&#x26;midiout</code></a></td><td>Broadcast MIDI commands to a remote computer's virtual MIDI device</td></tr><tr><td><a href="../../director-settings/midiremote.md"><code>&#x26;midiremote</code></a></td><td>Remote MIDI control</td></tr><tr><td><a href="../../midi-settings/and-midichannel.md"><code>&#x26;midichannel</code></a></td><td>Allows for specifying which midi channel (1 to 16) to listen on</td></tr><tr><td><a href="../../midi-settings/and-mididevice.md"><code>&#x26;mididevice</code></a></td><td>Allows to specify which midi device (1 and up) selected</td></tr><tr><td><a href="../../midi-settings/and-midioffset.md"><code>&#x26;midioffset</code></a></td><td>Allows you to set a series of buttons on a MIDI controller to be mute controls for those guests</td></tr><tr><td><a href="and-mididelay.md"><code>&#x26;mididelay</code></a></td><td>Lets you precisely delay the MIDI play-out</td></tr><tr><td><a href="../../newly-added-parameters/and-datamode.md"><code>&#x26;datamode</code></a></td><td>Combines a bunch of flags together; no video, no audio, GUI, etc.</td></tr><tr><td><a href="and-postapi.md"><code>&#x26;postapi</code></a></td><td>Lets you specify a custom POST URL to send events within VDO.Ninja to</td></tr></tbody></table>
 ---
-description: This is a snapshot of the Vide0Link API documentation as of Aug 16th, 2023
+description: This is a snapshot of the VDO.Ninja API documentation as of Aug 16th, 2023
 ---
 
 # API reference
@@ -1205,37 +1205,37 @@ For the most up to date copy of this API endpoint documentation, please go to [h
 
 For a test sandbox, to easily try out a few of the basic API options via a web dashboard, please go to: [https://companion.vdo.ninja/](https://companion.vdo.ninja/)
 
-You can use this API on its own directly, or can use it indirectly via the Bitfocus Companion app /w the Vide0Link module.  The Companion app can be found here: [https://bitfocus.io/companion](https://bitfocus.io/companion)
+You can use this API on its own directly, or can use it indirectly via the Bitfocus Companion app /w the VDO.Ninja module.  The Companion app can be found here: [https://bitfocus.io/companion](https://bitfocus.io/companion)
 
-While not maintained or controlled by Vide0Link, you can find the third-party Bitfocus Companion module for Vide0Link here: [https://github.com/bitfocus/companion-module-vdo-ninja](https://github.com/bitfocus/companion-module-vdo-ninja)
+While not maintained or controlled by VDO.Ninja, you can find the third-party Bitfocus Companion module for VDO.Ninja here: [https://github.com/bitfocus/companion-module-vdo-ninja](https://github.com/bitfocus/companion-module-vdo-ninja)
 
-## Companion Ninja _(aka, the Vide0Link remote HTTP/WSS API)_
+## Companion Ninja _(aka, the VDO.Ninja remote HTTP/WSS API)_
 
-Remote control Vide0Link using an HTTP or Websocket interface; now Companion compatible.
+Remote control VDO.Ninja using an HTTP or Websocket interface; now Companion compatible.
 
-#### Direct integration into Vide0Link
+#### Direct integration into VDO.Ninja
 
-Support for Companion.Ninja is now built into Vide0Link (v19), with a set of hard-coded commands. The available API commands and their related options are listed further down. The index.html file contains sample code with an interactive layer, where you can press buttons to send commands to Vide0Link. HTTP and Websocket methods of sending commands are provided as examples. Details of those two methods are also below.
+Support for Companion.Ninja is now built into VDO.Ninja (v19), with a set of hard-coded commands. The available API commands and their related options are listed further down. The index.html file contains sample code with an interactive layer, where you can press buttons to send commands to VDO.Ninja. HTTP and Websocket methods of sending commands are provided as examples. Details of those two methods are also below.
 
-To use the integrated command set and API, just add \&api=XXXXXX to the Vide0Link link you wish to remotely control, like you would any other parameter. ie: https://vdo.ninja?api=XXXXXX The API value needs to match the value used by Companion Ninja and should be kept private. Then just send commands however you may wish.
+To use the integrated command set and API, just add \&api=XXXXXX to the VDO.Ninja link you wish to remotely control, like you would any other parameter. ie: https://vdo.ninja?api=XXXXXX The API value needs to match the value used by Companion Ninja and should be kept private. Then just send commands however you may wish.
 
 Note: This API should also work with the vdo.ninja/beta/mixer?api=XXXXX page.
 
 #### Companion Plugin
 
-A fantastic user in the community also has made a BitFocus-Companion module for this Vide0Link API. If you wish to avoid doing custom API calls, definitely give the module a go.
+A fantastic user in the community also has made a BitFocus-Companion module for this VDO.Ninja API. If you wish to avoid doing custom API calls, definitely give the module a go.
 
 [https://github.com/bitfocus/companion-module-vdo-ninja](https://github.com/bitfocus/companion-module-vdo-ninja)
 
 #### Customized IFRAME API Integration
 
-You can also use the Companion Ninja service with your own custom set of commands if desired. You would wrap Vide0Link into an IFRAME, and use the parent-window to relay commands to Vide0Link and Companion Ninja. You can speak to Vide0Link via the IFRAME API in that case, to have access to the more exhaustive set of remote control options.
+You can also use the Companion Ninja service with your own custom set of commands if desired. You would wrap VDO.Ninja into an IFRAME, and use the parent-window to relay commands to VDO.Ninja and Companion Ninja. You can speak to VDO.Ninja via the IFRAME API in that case, to have access to the more exhaustive set of remote control options.
 
 An example of this approach can be found here:
 
 [https://github.com/steveseguin/Companion-Ninja/blob/main/iframe\_api\_customizable\_example.html](https://github.com/steveseguin/Companion-Ninja/blob/main/iframe\_api\_customizable\_example.html)
 
-Also note, the IFRAME API used by Vide0Link (v19.1) is also largely backwards compatible with the Companion Ninja API. You can find the IFRAME developer sandbox here: [https://vdo.ninja/beta/iframe](https://vdo.ninja/beta/iframe) to get a sense of what is available.
+Also note, the IFRAME API used by VDO.Ninja (v19.1) is also largely backwards compatible with the Companion Ninja API. You can find the IFRAME developer sandbox here: [https://vdo.ninja/beta/iframe](https://vdo.ninja/beta/iframe) to get a sense of what is available.
 
 #### Technical Details of the API
 
@@ -1332,7 +1332,7 @@ layout | null | {\*\* see below}
 
 **Custom layout switching \*\***
 
-You can create an array of layouts, set them via the URL parameters in Vide0Link, and then switch between them remotely using the API.
+You can create an array of layouts, set them via the URL parameters in VDO.Ninja, and then switch between them remotely using the API.
 
 The value passed to the API can either be a number, representing the position in the array of the layout you want to activate, or it can be a single layout object.
 
@@ -1349,13 +1349,13 @@ If using the [Mixer App](../../../steves-helper-apps/mixer-app.md), the layout o
 
 `?layouts=[[{"x":0,"y":0,"w":100,"h":100,"slot":0}],[{"x":0,"y":0,"w":100,"h":100,"slot":1}],[{"x":0,"y":0,"w":100,"h":100,"slot":2}],[{"x":0,"y":0,"w":100,"h":100,"slot":3}],[{"x":0,"y":0,"w":50,"h":100,"c":false,"slot":0},{"x":50,"y":0,"w":50,"h":100,"c":false,"slot":1}],[{"x":0,"y":0,"w":100,"h":100,"z":0,"c":false,"slot":1},{"x":70,"y":70,"w":30,"h":30,"z":1,"c":true,"slot":0}],[{"x":0,"y":0,"w":50,"h":50,"c":true,"slot":0},{"x":50,"y":0,"w":50,"h":50,"c":true,"slot":1},{"x":0,"y":50,"w":50,"h":50,"c":true,"slot":2},{"x":50,"y":50,"w":50,"h":50,"c":true,"slot":3}],[{"x":0,"y":16.667,"w":66.667,"h":66.667,"c":true,"slot":0},{"x":66.667,"y":0,"w":33.333,"h":33.333,"c":true,"slot":1},{"x":66.667,"y":33.333,"w":33.333,"h":33.333,"c":true,"slot":2},{"x":66.667,"y":66.667,"w":33.333,"h":33.333,"c":true,"slot":3}]]`
 
-Some of these layout features are only available with [Version 22](../../../releases/v22.md) of Vide0Link; specifically the [`&layouts=`](../../director-parameters/and-layouts.md) parameter is available on v22.5 or newer only.
+Some of these layout features are only available with [Version 22](../../../releases/v22.md) of VDO.Ninja; specifically the [`&layouts=`](../../director-parameters/and-layouts.md) parameter is available on v22.5 or newer only.
 
 See for details and better documentation on this layout function:
 
 [and-layouts.md](../../director-parameters/and-layouts.md "mention")
 
-**Commands that target remote guests as a director (available on Vide0Link v19)**
+**Commands that target remote guests as a director (available on VDO.Ninja v19)**
 
 The guest slot (1 to 99) or the guests's stream ID can be used as a target.
 
@@ -1383,7 +1383,7 @@ Currently toggling is primarily available for options; on/off absolute value opt
 
 #### Callbacks / State Responses
 
-Start with Version 22 of Vide0Link, the API requests will have a response reflecting the state of the request.
+Start with Version 22 of VDO.Ninja, the API requests will have a response reflecting the state of the request.
 
 For example, if toggling a mic of a guest, the response of the HTTP API request will be `true` or `false`, based on whether the mic is now muted or not. If the request is an object, such as when using `getDetails`, you'll get a JSON response instead of basic text. There's also `getGuestList`, which can be useful for getting a set of possible guest slot positional values, along with its corresponding stream ID and label.
 
@@ -1594,7 +1594,7 @@ For example, if a guest joins and you can only hear them in the left or right ch
 
 ### Mono-specific alias
 
-If looking for a memorable parameter to set a guest's audio input to mono (1-channel), [`&monomic`](and-monomic.md) is the same as `&inputchannels=1`. This was added in Vide0Link v22.
+If looking for a memorable parameter to set a guest's audio input to mono (1-channel), [`&monomic`](and-monomic.md) is the same as `&inputchannels=1`. This was added in VDO.Ninja v22.
 
 ## Related
 
@@ -1758,7 +1758,7 @@ The default mode when `&proaudio` is used alone is `&proaudio=5`, which acts lik
 | ----------- | ----- | --- | -------- | ------- | --------------- | ------------- | ------------- | ---------- | ------------- | ---- |
 | iOS devices |       | on  | on       | on      | _off_           | _off_         | 32            | 32         | 32            | _no_ |
 
-Just for reference, the audio codec used by Vide0Link is OPUS (48khz), which can provide high-fidelity music transfer when the audio bitrate is set to 80-kbps per channel or higher. The default audio bitrate used is 32-kbps VBR, which is sufficient for most voice applications. Increasing the audio bitrate to a near-lossless 500-kbps or something may end up causing more problems than anything, but that is supported if needed.
+Just for reference, the audio codec used by VDO.Ninja is OPUS (48khz), which can provide high-fidelity music transfer when the audio bitrate is set to 80-kbps per channel or higher. The default audio bitrate used is 32-kbps VBR, which is sufficient for most voice applications. Increasing the audio bitrate to a near-lossless 500-kbps or something may end up causing more problems than anything, but that is supported if needed.
 
 ### Disabling stereo when using \&proaudio
 
@@ -1797,7 +1797,7 @@ Example: `&volume=50`
 
 ## Details
 
-`&volume` can set the 'default' playback volume for all video elements in Vide0Link. Currently the range is 0 to 100 and other volume commands or mute states may override this value. The default is 100.
+`&volume` can set the 'default' playback volume for all video elements in VDO.Ninja. Currently the range is 0 to 100 and other volume commands or mute states may override this value. The default is 100.
 
 `&volume=50`
 
@@ -1903,7 +1903,7 @@ Viewer-Side Option! ([`&view`](../view-parameters/view.md), [`&scene`](../view-p
 
 ## Details
 
-Using `&dtx` will turn off the audio encoder automatically when no little to no sound is detected. The Vide0Link default uses a dynamic audio bitrate mode ([`&vbr`](../view-parameters/vbr.md)), but using `&dtx` takes things to the next level. It might be useful as a very mild [noise-gate](../../source-settings/noisegate.md) I suppose?
+Using `&dtx` will turn off the audio encoder automatically when no little to no sound is detected. The VDO.Ninja default uses a dynamic audio bitrate mode ([`&vbr`](../view-parameters/vbr.md)), but using `&dtx` takes things to the next level. It might be useful as a very mild [noise-gate](../../source-settings/noisegate.md) I suppose?
 
 ## Related
 
@@ -1964,7 +1964,7 @@ General Option! ([`&push`](../../source-settings/push.md), [`&room`](../../gener
 
 `&forcecontrols` is experimental, but it will try to keep the video controls visible, even if your mouse isn't hovering over the video.
 
-The Vide0Link tab/window still needs to be 'active' however, for this to work; changing focus to another tab will stop it.
+The VDO.Ninja tab/window still needs to be 'active' however, for this to work; changing focus to another tab will stop it.
 
 Only works really for Chrome/Chromium on desktop; not Firefox, etc.
 
@@ -2030,7 +2030,7 @@ Lets you manually pre-set the brightness of the camera/webcam:
 
 It will normally take an integer value in the range of `1` to `255`, at least for a Logitech webcam, but will vary based on the camera / device you are using.
 
-Vide0Link already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
+VDO.Ninja already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
 
 These settings will apply to ALL video devices though, not just a specific one. If a setting isn't supported by your camera or browser, it will just fail quietly, and not apply. You'll see an error in the console log though.
 
@@ -2062,7 +2062,7 @@ Lets you manually pre-set the contrast of the camera/webcam:
 
 It will normally take an integer value in the range of `1` to `255`, at least for a Logitech webcam, but will vary based on the camera / device you are using.
 
-Vide0Link already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
+VDO.Ninja already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
 
 These settings will apply to ALL video devices though, not just a specific one. If a setting isn't supported by your camera or browser, it will just fail quietly, and not apply. You'll see an error in the console log though.
 
@@ -2094,7 +2094,7 @@ Lets you manually pre-set the exposure of the camera/webcam:
 
 It will normally take an integer value in the range of `1` to `255`, at least for a Logitech webcam, but will vary based on the camera / device you are using.
 
-Vide0Link already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
+VDO.Ninja already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
 
 These settings will apply to ALL video devices though, not just a specific one. If a setting isn't supported by your camera or browser, it will just fail quietly, and not apply. You'll see an error in the console log though.
 
@@ -2126,7 +2126,7 @@ Lets you manually pre-set the saturation of the camera/webcam:
 
 It will normally take an integer value in the range of `1` to `255`, at least for a Logitech webcam, but will vary based on the camera / device you are using.
 
-Vide0Link already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
+VDO.Ninja already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
 
 These settings will apply to ALL video devices though, not just a specific one. If a setting isn't supported by your camera or browser, it will just fail quietly, and not apply. You'll see an error in the console log though.
 
@@ -2158,7 +2158,7 @@ Lets you manually pre-set the sharpness of the camera/webcam:
 
 It will normally take an integer value in the range of `1` to `255`, at least for a Logitech webcam, but will vary based on the camera / device you are using.
 
-Vide0Link already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
+VDO.Ninja already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
 
 These settings will apply to ALL video devices though, not just a specific one. If a setting isn't supported by your camera or browser, it will just fail quietly, and not apply. You'll see an error in the console log though.
 
@@ -2194,7 +2194,7 @@ Lets you manually pre-set the white balance of the camera/webcam:
 
 It is normally in Kelvin, so `5000` or `6500` are typical values it will take.
 
-Vide0Link already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
+VDO.Ninja already tries to auto-save camera settings for android devices that support video settings, but for desktop browsers, it does not. Using these new values though you can manually set things to auto-configure as you want.
 
 These settings will apply to ALL video devices though, not just a specific one. If a setting isn't supported by your camera or browser, it will just fail quietly, and not apply. You'll see an error in the console log though.
 
@@ -2225,7 +2225,7 @@ description: Cheat sheet of the basic URL-based settings
 
 # Most common Parameters
 
-Vide0Link makes heavy use of URL-based parameters to configure settings. Some of the most commonly used ones are listed below, with a brief explanation of what they are for and links to more detail.&#x20;
+VDO.Ninja makes heavy use of URL-based parameters to configure settings. Some of the most commonly used ones are listed below, with a brief explanation of what they are for and links to more detail.&#x20;
 
 | Sender-side parameter                                                | Explanation                                                                                                                                                                                                                                                                                                                                                                         |
 | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2276,7 +2276,7 @@ Example: `&background=./media/logo_cropped.png`
 
 | Value         | Description                         |
 | ------------- | ----------------------------------- |
-| (encoded URL) | Changes the background of Vide0Link |
+| (encoded URL) | Changes the background of VDO.Ninja |
 
 ## Details
 
@@ -2285,7 +2285,7 @@ Accepts a URL-encoded image URL to make as the app's default background.
 To test:
 [`https://vdo.ninja/?background=./media/logo_cropped.png`](https://vdo.ninja/?background=./media/logo\_cropped.png)
 
-The image will scale in size to cover the Vide0Link app's background. [`&chroma`](chroma.md) can still be used to set the background color, if using transparencies. There already exists [`&bgimage`](and-bgimage.md), which will set the default background image for videos; this however will set a background image for the entire page.
+The image will scale in size to cover the VDO.Ninja app's background. [`&chroma`](chroma.md) can still be used to set the background color, if using transparencies. There already exists [`&bgimage`](and-bgimage.md), which will set the default background image for videos; this however will set a background image for the entire page.
 
 You can encode and decode a URL here:
 [https://www.urlencoder.org/](https://www.urlencoder.org/)
@@ -2325,7 +2325,7 @@ Example: `&base64css=JTIzbWFpbm1lbnUlN0JiYWNrZ3JvdW5kLWNvbG9yJTNBJTIwcGluayUzQiU
 
 ## Details
 
-This command lets you add CSS to Vide0Link via the URL, but as a single string, so no external reference to a file is needed.
+This command lets you add CSS to VDO.Ninja via the URL, but as a single string, so no external reference to a file is needed.
 
 Example usage:
 [`https://vdo.ninja/?base64css=JTIzbWFpbm1lbnUlN0JiYWNrZ3JvdW5kLWNvbG9yJTNBJTIwcGluayUzQiUyMCVFMiU5RCVBNA`](https://vdo.ninja/?base64css=JTIzbWFpbm1lbnUlN0JiYWNrZ3JvdW5kLWNvbG9yJTNBJTIwcGluayUzQiUyMCVFMiU5RCVBNA)
@@ -2644,7 +2644,7 @@ Effects however may increase CPU/GPU usage, and could cause frame rate instabili
 
 ### Dedicated teleprompter tool that works for most sites
 
-There's a dedicated tool for mirror, flipping, and rotating websites as part of Vide0Link as well:
+There's a dedicated tool for mirror, flipping, and rotating websites as part of VDO.Ninja as well:
 
 [teleprompter-tool.md](../../steves-helper-apps/teleprompter-tool.md "mention")
 
@@ -2701,7 +2701,7 @@ Sender-Side Option! ([`&push`](../../source-settings/push.md))
 
 ## Details
 
-`&hideheader` could be useful for hiding Vide0Link branding, making videos a bit larger at times, or for IFRAME use-case applications.
+`&hideheader` could be useful for hiding VDO.Ninja branding, making videos a bit larger at times, or for IFRAME use-case applications.
 
 It hides this:
 
@@ -2711,7 +2711,7 @@ It hides this:
 
 [and-hidemenu.md](and-hidemenu.md)
 ---
-description: Hides the Vide0Link-branded menu and header bar
+description: Hides the VDO.Ninja-branded menu and header bar
 ---
 
 # &hidemenu
@@ -2724,7 +2724,7 @@ Sender-Side Option! ([`&push`](../../source-settings/push.md))
 
 ## Details
 
-Hides the Vide0Link-branded menu and header bar.
+Hides the VDO.Ninja-branded menu and header bar.
 
 Useful for making videos larger for guests by freeing up space.
 
@@ -2806,7 +2806,7 @@ Effects however may increase CPU/GPU usage, and could cause frame rate instabili
 
 ### Dedicated teleprompter tool that works for most sites
 
-There's a dedicated tool for mirror, flipping, and rotating websites as part of Vide0Link as well:
+There's a dedicated tool for mirror, flipping, and rotating websites as part of VDO.Ninja as well:
 
 [teleprompter-tool.md](../../steves-helper-apps/teleprompter-tool.md "mention")
 
@@ -2851,7 +2851,7 @@ Viewer-Side Option! ([`&view`](../view-parameters/view.md), [`&scene`](../view-p
 
 ## Details
 
-Disables the tally light effects; can be applied to both viewer or publisher. Tally lights are represented as a glowing red border around videos. When the light is on, the video is considered "VISIBLE" within OBS Studio. This is based on whether OBS Studio tells Vide0Link if a video is active or not.
+Disables the tally light effects; can be applied to both viewer or publisher. Tally lights are represented as a glowing red border around videos. When the light is on, the video is considered "VISIBLE" within OBS Studio. This is based on whether OBS Studio tells VDO.Ninja if a video is active or not.
 
 Videos on **first-load** in OBS, even if visible in OBS, **don't glow red**; it requires an **initial visibility change to trigger it**.
 
@@ -2973,7 +2973,7 @@ There's also the [`&flip`](and-flip.md) and [`&mirror`](and-mirror.md) options, 
 
 ### Dedicated teleprompter tool that works for most sites
 
-There's a dedicated tool for mirror, flipping, and rotating websites as part of Vide0Link as well:
+There's a dedicated tool for mirror, flipping, and rotating websites as part of VDO.Ninja as well:
 
 [https://vdo.ninja/teleprompter](https://vdo.ninja/teleprompter)
 
@@ -2989,7 +2989,7 @@ In case the built-in options to mirror or flip don't work, the teleprompter app 
 
 [and-rotatewindow.md](and-rotatewindow.md)
 ---
-description: Will rotate the contents of the Vide0Link window
+description: Will rotate the contents of the VDO.Ninja window
 ---
 
 # &rotatewindow
@@ -3008,7 +3008,7 @@ Example: `&rotatewindow=270`
 
 ## Details
 
-`&rotatewindow` will rotate the contents of the Vide0Link window. It doesn't target any specific video, and can be used on the viewer-side, not just the sender.
+`&rotatewindow` will rotate the contents of the VDO.Ninja window. It doesn't target any specific video, and can be used on the viewer-side, not just the sender.
 
 This will be overridden by [`&forcelandscape`](../mobile-parameters/and-forcelandscape.md) mode, if that is used also.
 
@@ -3102,7 +3102,7 @@ Makes the background for the website transparent using CSS.
 
 The browser source in OBS already has a transparent background by default.
 
-This is useful for embedding Vide0Link as an [IFRAME](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
+This is useful for embedding VDO.Ninja as an [IFRAME](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
 Not helpful with the Electron Capture app.
 Not needed for OBS if using default OBS CSS stylesheet:
 
@@ -3224,9 +3224,9 @@ You can use this tool to encode the URL you want to link to
 
 ## Details
 
-Link to a remotely hosted CSS style sheet via the URL. You can stylize Vide0Link without needing to host anything more than a CSS file. The page elements are not visible until the remote style sheet has been loaded.
+Link to a remotely hosted CSS style sheet via the URL. You can stylize VDO.Ninja without needing to host anything more than a CSS file. The page elements are not visible until the remote style sheet has been loaded.
 
-I've made the `&css` parameter within Vide0Link more tolerant to invalid forms of input, so if you don't know what URL or Base64 encoding is, you might be able to get away without using any now.
+I've made the `&css` parameter within VDO.Ninja more tolerant to invalid forms of input, so if you don't know what URL or Base64 encoding is, you might be able to get away without using any now.
 [`https://vdo.ninja/?css=body{background-color:blue!important}`](https://vdo.ninja/?css=body{background-color:blue!important})
 
 ### base64css
@@ -3404,7 +3404,7 @@ They are separated in three groups: [general options](./#general-options) (push 
 
 You can add them to both, source ([`&push`](../../source-settings/push.md)) and viewer ([`&view`](../view-parameters/view.md) or [`&scene`](../view-parameters/scene.md)) sides.
 
-<table><thead><tr><th width="251.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="../../general-settings/label.md"><code>&#x26;label</code></a></td><td>Sets a display name label</td></tr><tr><td><a href="showlabels.md"><code>&#x26;showlabels</code></a></td><td>Display labels as a video overlay</td></tr><tr><td><a href="../view-parameters/fontsize.md"><code>&#x26;fontsize</code></a></td><td>Let you set font-size of the closed captions and stream labels</td></tr><tr><td><a href="style.md"><code>&#x26;style</code></a></td><td>Lets you select how audio-only elements are displayed in OBS and for guests</td></tr><tr><td><a href="and-bgimage.md"><code>&#x26;bgimage</code></a></td><td>Can be used to set the default image avatar, when using <a href="style.md"><code>&#x26;style=0</code></a> or <a href="style.md"><code>&#x26;style=6</code></a></td></tr><tr><td><a href="and-showall.md"><code>&#x26;showall</code></a></td><td>Includes non-media-based push connections as video elements in a group room</td></tr><tr><td><a href="meterstyle.md"><code>&#x26;meterstyle</code></a></td><td>Optional audio meter style type</td></tr><tr><td><a href="cleanoutput.md"><code>&#x26;cleanoutput</code></a></td><td>Keeps the output as clean as possible from UI elements</td></tr><tr><td><a href="cleanish.md"><code>&#x26;cleanish</code></a></td><td>Cleaner output; not as clean as <a href="cleanoutput.md"><code>&#x26;cleanoutput</code></a></td></tr><tr><td><a href="css.md"><code>&#x26;css</code></a></td><td>Loads a custom CSS file</td></tr><tr><td><a href="and-base64css.md"><code>&#x26;base64css</code></a></td><td>Lets you add css to the URL, but as a single string, so no external reference to a file is needed</td></tr><tr><td><a href="and-js.md"><code>&#x26;js</code></a></td><td>Lets you pass a third party hosted javascript file URL</td></tr><tr><td><a href="and-base64js.md"><code>&#x26;base64js</code></a></td><td>Lets a user add raw javascript to the URL to run on page load</td></tr><tr><td><a href="and-mirror.md"><code>&#x26;mirror</code></a></td><td>Inverts the video so it is the mirror reflection</td></tr><tr><td><a href="and-nomirror-alpha.md"><code>&#x26;nomirror</code></a>*</td><td>Disables the default mirror state of the video preview for a guest</td></tr><tr><td><a href="and-flip.md"><code>&#x26;flip</code></a></td><td>Inverts the video so it is upside down</td></tr><tr><td><a href="and-rotatewindow.md"><code>&#x26;rotatewindow</code></a></td><td>Will rotate the contents of the Vide0Link window</td></tr><tr><td><a href="and-structure.md"><code>&#x26;structure</code></a></td><td>Will have the video holding div element be structured to the aspect ratio</td></tr><tr><td><a href="and-color.md"><code>&#x26;color</code></a></td><td>You can specify the background color independent of the border color</td></tr><tr><td><a href="and-blur.md"><code>&#x26;blur</code></a></td><td>Will try to add a blurred background to the video so it fits the structured video container</td></tr><tr><td><a href="and-border.md"><code>&#x26;border</code></a></td><td>Adds a border around the videos</td></tr><tr><td><a href="and-bordercolor.md"><code>&#x26;bordercolor</code></a></td><td>Defines the color of <a href="and-border.md"><code>&#x26;border</code></a></td></tr><tr><td><a href="rounded.md"><code>&#x26;rounded</code></a></td><td>Rounds the edges of videos</td></tr><tr><td><a href="margin.md"><code>&#x26;margin</code></a></td><td>Adds a margin around the videos in pixel</td></tr><tr><td><a href="darkmode.md"><code>&#x26;darkmode</code></a></td><td>Darkens the website and interface</td></tr><tr><td><a href="and-lightmode.md"><code>&#x26;lightmode</code></a></td><td>Forces to enable the lightmode / disable the darkmode</td></tr><tr><td><a href="and-background.md"><code>&#x26;background</code></a></td><td>Accepts a URL-encoded image URL to make as the app's default background</td></tr><tr><td><a href="chroma.md"><code>&#x26;chroma</code></a></td><td>Sets the background for the website to a particular hex color</td></tr><tr><td><a href="and-transparent.md"><code>&#x26;transparent</code></a></td><td>Makes the background transparent</td></tr><tr><td><a href="../../general-settings/and-nocursor.md"><code>&#x26;nocursor</code></a></td><td>Hides the mouse cursor over videos at a CSS level</td></tr><tr><td><a href="and-favicon-alpha.md"><code>&#x26;favicon</code></a></td><td>Will change the browser's page favicon image</td></tr><tr><td><a href="and-headertitle.md"><code>&#x26;headertitle</code></a></td><td>Will change the browser's page title</td></tr><tr><td><a href="and-pipall-alpha.md"><code>&#x26;pipall</code></a>*</td><td>New floating picture in picture mode, so you can pop out the entire video mix as a pinned window overlay</td></tr><tr><td><a href="and-pipme-alpha.md"><code>&#x26;pipme</code></a>*</td><td>Will cause your self-video preview window to pop out into its own picture in picture</td></tr></tbody></table>
+<table><thead><tr><th width="251.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="../../general-settings/label.md"><code>&#x26;label</code></a></td><td>Sets a display name label</td></tr><tr><td><a href="showlabels.md"><code>&#x26;showlabels</code></a></td><td>Display labels as a video overlay</td></tr><tr><td><a href="../view-parameters/fontsize.md"><code>&#x26;fontsize</code></a></td><td>Let you set font-size of the closed captions and stream labels</td></tr><tr><td><a href="style.md"><code>&#x26;style</code></a></td><td>Lets you select how audio-only elements are displayed in OBS and for guests</td></tr><tr><td><a href="and-bgimage.md"><code>&#x26;bgimage</code></a></td><td>Can be used to set the default image avatar, when using <a href="style.md"><code>&#x26;style=0</code></a> or <a href="style.md"><code>&#x26;style=6</code></a></td></tr><tr><td><a href="and-showall.md"><code>&#x26;showall</code></a></td><td>Includes non-media-based push connections as video elements in a group room</td></tr><tr><td><a href="meterstyle.md"><code>&#x26;meterstyle</code></a></td><td>Optional audio meter style type</td></tr><tr><td><a href="cleanoutput.md"><code>&#x26;cleanoutput</code></a></td><td>Keeps the output as clean as possible from UI elements</td></tr><tr><td><a href="cleanish.md"><code>&#x26;cleanish</code></a></td><td>Cleaner output; not as clean as <a href="cleanoutput.md"><code>&#x26;cleanoutput</code></a></td></tr><tr><td><a href="css.md"><code>&#x26;css</code></a></td><td>Loads a custom CSS file</td></tr><tr><td><a href="and-base64css.md"><code>&#x26;base64css</code></a></td><td>Lets you add css to the URL, but as a single string, so no external reference to a file is needed</td></tr><tr><td><a href="and-js.md"><code>&#x26;js</code></a></td><td>Lets you pass a third party hosted javascript file URL</td></tr><tr><td><a href="and-base64js.md"><code>&#x26;base64js</code></a></td><td>Lets a user add raw javascript to the URL to run on page load</td></tr><tr><td><a href="and-mirror.md"><code>&#x26;mirror</code></a></td><td>Inverts the video so it is the mirror reflection</td></tr><tr><td><a href="and-nomirror-alpha.md"><code>&#x26;nomirror</code></a>*</td><td>Disables the default mirror state of the video preview for a guest</td></tr><tr><td><a href="and-flip.md"><code>&#x26;flip</code></a></td><td>Inverts the video so it is upside down</td></tr><tr><td><a href="and-rotatewindow.md"><code>&#x26;rotatewindow</code></a></td><td>Will rotate the contents of the VDO.Ninja window</td></tr><tr><td><a href="and-structure.md"><code>&#x26;structure</code></a></td><td>Will have the video holding div element be structured to the aspect ratio</td></tr><tr><td><a href="and-color.md"><code>&#x26;color</code></a></td><td>You can specify the background color independent of the border color</td></tr><tr><td><a href="and-blur.md"><code>&#x26;blur</code></a></td><td>Will try to add a blurred background to the video so it fits the structured video container</td></tr><tr><td><a href="and-border.md"><code>&#x26;border</code></a></td><td>Adds a border around the videos</td></tr><tr><td><a href="and-bordercolor.md"><code>&#x26;bordercolor</code></a></td><td>Defines the color of <a href="and-border.md"><code>&#x26;border</code></a></td></tr><tr><td><a href="rounded.md"><code>&#x26;rounded</code></a></td><td>Rounds the edges of videos</td></tr><tr><td><a href="margin.md"><code>&#x26;margin</code></a></td><td>Adds a margin around the videos in pixel</td></tr><tr><td><a href="darkmode.md"><code>&#x26;darkmode</code></a></td><td>Darkens the website and interface</td></tr><tr><td><a href="and-lightmode.md"><code>&#x26;lightmode</code></a></td><td>Forces to enable the lightmode / disable the darkmode</td></tr><tr><td><a href="and-background.md"><code>&#x26;background</code></a></td><td>Accepts a URL-encoded image URL to make as the app's default background</td></tr><tr><td><a href="chroma.md"><code>&#x26;chroma</code></a></td><td>Sets the background for the website to a particular hex color</td></tr><tr><td><a href="and-transparent.md"><code>&#x26;transparent</code></a></td><td>Makes the background transparent</td></tr><tr><td><a href="../../general-settings/and-nocursor.md"><code>&#x26;nocursor</code></a></td><td>Hides the mouse cursor over videos at a CSS level</td></tr><tr><td><a href="and-favicon-alpha.md"><code>&#x26;favicon</code></a></td><td>Will change the browser's page favicon image</td></tr><tr><td><a href="and-headertitle.md"><code>&#x26;headertitle</code></a></td><td>Will change the browser's page title</td></tr><tr><td><a href="and-pipall-alpha.md"><code>&#x26;pipall</code></a>*</td><td>New floating picture in picture mode, so you can pop out the entire video mix as a pinned window overlay</td></tr><tr><td><a href="and-pipme-alpha.md"><code>&#x26;pipme</code></a>*</td><td>Will cause your self-video preview window to pop out into its own picture in picture</td></tr></tbody></table>
 
 \*NEW IN VERSION 24
 
@@ -3412,7 +3412,7 @@ You can add them to both, source ([`&push`](../../source-settings/push.md)) and 
 
 You have to add them to the source side ([`&push`](../../source-settings/push.md)).
 
-<table><thead><tr><th width="200.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-rotate.md"><code>&#x26;rotate</code></a></td><td>Rotates the camera</td></tr><tr><td><a href="grid.md"><code>&#x26;grid</code></a></td><td>Applies an rule-of-thirds grid overlay to the self-preview</td></tr><tr><td><a href="and-hideheader.md"><code>&#x26;hideheader</code></a></td><td>Hides just the top header-bar</td></tr><tr><td><a href="and-hidemenu.md"><code>&#x26;hidemenu</code></a></td><td>Hides the Vide0Link-branded menu and header bar</td></tr><tr><td><a href="tallyoff.md"><code>&#x26;tally</code></a></td><td>Will make the tally sign larger and colorize the background of the page</td></tr><tr><td><a href="tallyoff-1.md"><code>&#x26;tallyoff</code></a></td><td>Disables the Tally Light's visibility for that particular guest</td></tr></tbody></table>
+<table><thead><tr><th width="200.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-rotate.md"><code>&#x26;rotate</code></a></td><td>Rotates the camera</td></tr><tr><td><a href="grid.md"><code>&#x26;grid</code></a></td><td>Applies an rule-of-thirds grid overlay to the self-preview</td></tr><tr><td><a href="and-hideheader.md"><code>&#x26;hideheader</code></a></td><td>Hides just the top header-bar</td></tr><tr><td><a href="and-hidemenu.md"><code>&#x26;hidemenu</code></a></td><td>Hides the VDO.Ninja-branded menu and header bar</td></tr><tr><td><a href="tallyoff.md"><code>&#x26;tally</code></a></td><td>Will make the tally sign larger and colorize the background of the page</td></tr><tr><td><a href="tallyoff-1.md"><code>&#x26;tallyoff</code></a></td><td>Disables the Tally Light's visibility for that particular guest</td></tr></tbody></table>
 
 ## **Viewer side options**
 
@@ -3470,7 +3470,7 @@ There are some preset style options, which can be passed to the parameter as a v
 
 Example: `&showlabels=ninjablue`
 
-<table><thead><tr><th width="210.9699570815451">Value</th><th>Description</th></tr></thead><tbody><tr><td>(no value given)</td><td>Generic styled display names</td></tr><tr><td><code>fire</code></td><td>Fire looking display names</td></tr><tr><td><code>ninjablue</code></td><td>Vide0Link styled display names</td></tr><tr><td><code>skype</code></td><td>Skype styled display names</td></tr><tr><td><code>teams</code></td><td>Microsoft Teams styled display names</td></tr><tr><td><code>toprounded</code></td><td>Top-center rounded display names</td></tr><tr><td><code>zoom</code></td><td>Zoom styled display names</td></tr><tr><td><code>rounded</code></td><td>Rounded lower-right names; bold</td></tr></tbody></table>
+<table><thead><tr><th width="210.9699570815451">Value</th><th>Description</th></tr></thead><tbody><tr><td>(no value given)</td><td>Generic styled display names</td></tr><tr><td><code>fire</code></td><td>Fire looking display names</td></tr><tr><td><code>ninjablue</code></td><td>VDO.Ninja styled display names</td></tr><tr><td><code>skype</code></td><td>Skype styled display names</td></tr><tr><td><code>teams</code></td><td>Microsoft Teams styled display names</td></tr><tr><td><code>toprounded</code></td><td>Top-center rounded display names</td></tr><tr><td><code>zoom</code></td><td>Zoom styled display names</td></tr><tr><td><code>rounded</code></td><td>Rounded lower-right names; bold</td></tr></tbody></table>
 
 ## Details
 
@@ -3696,7 +3696,7 @@ Example: `&layouts=[[{"x":0,"y":0,"w":100,"h":100,"slot":0}],[{"x":0,"y":0,"w":1
 
 ## Details
 
-`&layouts=[[{xxxxxx}]]` is a URL parameter option, where you can pass a set of different layouts (as a URL-encoded ordered array) to Vide0Link.
+`&layouts=[[{xxxxxx}]]` is a URL parameter option, where you can pass a set of different layouts (as a URL-encoded ordered array) to VDO.Ninja.
 
 This is akin to using the [vdo.ninja/mixer](https://vdo.ninja/mixer), to visually set layouts, but instead you are just manually setting all the available layouts directly, bypassing the mixer app.
 
@@ -3787,7 +3787,7 @@ This will add a [`&token`](../settings-parameters/and-token.md) value to the inv
 
 This token is used by the guests to check a remote database server to see who currently 'owns' the token; it persists though, even if the director is not connected.
 
-When using `&maindirectorpassword` as a director, it tells this database that you are the owner, and it will persist even if you aren't connected to Vide0Link. The [`&token`](../settings-parameters/and-token.md) tells the guest to ignore other logic about who the director is, instead using the info provided by the token-lookup to determine whose the director.
+When using `&maindirectorpassword` as a director, it tells this database that you are the owner, and it will persist even if you aren't connected to VDO.Ninja. The [`&token`](../settings-parameters/and-token.md) tells the guest to ignore other logic about who the director is, instead using the info provided by the token-lookup to determine whose the director.
 
 I may change or revoke this feature, depending on how testing goes this week, as it's rather experimental.
 
@@ -4221,7 +4221,7 @@ Adding `&layout` to a guest link shows the guest a return feed of the current mi
 [and-layouts.md](../director-parameters/and-layouts.md)
 ---
 description: >-
-  Will force a the Vide0Link's mixer output keep the mixed render contained to a
+  Will force a the VDO.Ninja's mixer output keep the mixed render contained to a
   specific aspect-ratio, regardless of the browser's window size
 ---
 
@@ -4237,7 +4237,7 @@ Example: `&locked=portrait`
 
 ## Details
 
-`&locked` will force a the Vide0Link's mixer output keep the mixed render contained to a specific aspect-ratio, regardless of the browser's window size. (as seen in photo)
+`&locked` will force a the VDO.Ninja's mixer output keep the mixed render contained to a specific aspect-ratio, regardless of the browser's window size. (as seen in photo)
 
 You'll get black bars (or whatever the background color is) as padding on the sides to force the inner video elements into the desired aspect ratio
 
@@ -4276,7 +4276,7 @@ Example: `&motiondetection=40`
 
 It will feature highlight the specific video where movement is detected, if more than one video is included in the mix. Using a custom [`&layout`](and-layout.md) will disable this feature though, and use the layout instead.
 
-It will also trigger an IFrame API event, which might be useful if you want to use Vide0Link as a security camera; you could script things to auto-record the video or log data events.
+It will also trigger an IFrame API event, which might be useful if you want to use VDO.Ninja as a security camera; you could script things to auto-record the video or log data events.
 
 It will also switch to itself in OBS as a scene, which might be how this will be mainly used. (you need to have the OBS browser source's page permission set to high to allow this to actually work)
 
@@ -4348,7 +4348,7 @@ Mixer/Scene Parameters are viewer side options. You can add them to guest's URLs
 
 You have to add them to [`&scene`](../view-parameters/scene.md) or [`&room`](../../general-settings/room.md) or [`&view`](../view-parameters/view.md) URLs to change the behaviour of the Video Mixer.
 
-<table><thead><tr><th width="150">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-solo.md"><code>&#x26;solo</code></a></td><td>Similar to <a href="../view-parameters/scene.md"><code>&#x26;scene</code></a>, but tells the system to be a solo-link</td></tr><tr><td><a href="../view-parameters/view.md"><code>&#x26;view</code></a></td><td>Defines the stream(s) you are receiving, by their stream IDs</td></tr><tr><td><a href="and-include.md"><code>&#x26;include</code></a></td><td>Includes streams that do not exist in the room</td></tr><tr><td><a href="../view-parameters/and-exclude.md"><code>&#x26;exclude</code></a></td><td>Same concept as <a href="../view-parameters/view.md"><code>&#x26;view</code></a>, except does the opposite</td></tr><tr><td><a href="and-layout.md"><code>&#x26;layout</code></a></td><td>Shows the guest a return feed of the current mixer layout when using the <a href="../../steves-helper-apps/mixer-app.md">Mixer App</a></td></tr><tr><td><a href="../view-parameters/activespeaker.md"><code>&#x26;activespeaker</code></a></td><td>Auto-hides remote guests videos when added, if those guests are not speaking actively</td></tr><tr><td><a href="../../source-settings/order.md"><code>&#x26;order</code></a></td><td>The order priority of a source video when added to the video mixer</td></tr><tr><td><a href="../../newly-added-parameters/and-slots.md"><code>&#x26;slots</code></a></td><td>Will force the auto-mixer to have that number of slots, even if there are more or less videos available to fill them</td></tr><tr><td><a href="and-fakeguests.md"><code>&#x26;fakeguests</code></a></td><td>Creates simulated guest videos</td></tr><tr><td><a href="../view-parameters/randomize.md"><code>&#x26;randomize</code></a></td><td>Random video loading order</td></tr><tr><td><a href="../view-parameters/cover.md"><code>&#x26;cover</code></a></td><td>Has the videos fully "cover" their assigned areas, even if it means cropping the video</td></tr><tr><td><a href="../../newly-added-parameters/and-43.md"><code>&#x26;43</code></a></td><td>Optimizes the video mixer for 4:3 videos</td></tr><tr><td><a href="../view-parameters/and-portrait.md"><code>&#x26;portrait</code></a></td><td>Optimizes the video mixer for 9:16 videos</td></tr><tr><td><a href="../../newly-added-parameters/and-square.md"><code>&#x26;square</code></a></td><td>Optimizes the video mixer for 1:1 videos</td></tr><tr><td><a href="and-forceviewerlandscape.md"><code>&#x26;forceviewerlandscape</code></a>*</td><td>Keeps all incoming videos oriented (rotated) so that the aspect ratio is always above 1</td></tr><tr><td><a href="../view-parameters/animated.md"><code>&#x26;animated</code></a></td><td>Videos in a group scene will slide around the screen when being re-arranged</td></tr><tr><td><a href="../view-parameters/manual.md"><code>&#x26;manual</code></a></td><td>Disables the auto-mixer, allowing for a custom mixer to be used</td></tr><tr><td><a href="and-locked.md"><code>&#x26;locked</code></a></td><td>Will force a the Vide0Link's mixer output keep the mixed render contained to a specific aspect-ratio, regardless of the browser's window size</td></tr><tr><td><a href="and-poster.md"><code>&#x26;poster</code></a></td><td>Lets you specify a poster image for videos that have not yet started playing</td></tr><tr><td><a href="and-hideplaybutton.md"><code>&#x26;hideplaybutton</code></a></td><td>Will hide the default big play button that overlays a video when auto play is not allowed</td></tr><tr><td><a href="and-motiondetection-alpha.md"><code>&#x26;motiondetection</code></a>*</td><td>Does a few things when it detects motion in a video</td></tr></tbody></table>
+<table><thead><tr><th width="150">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-solo.md"><code>&#x26;solo</code></a></td><td>Similar to <a href="../view-parameters/scene.md"><code>&#x26;scene</code></a>, but tells the system to be a solo-link</td></tr><tr><td><a href="../view-parameters/view.md"><code>&#x26;view</code></a></td><td>Defines the stream(s) you are receiving, by their stream IDs</td></tr><tr><td><a href="and-include.md"><code>&#x26;include</code></a></td><td>Includes streams that do not exist in the room</td></tr><tr><td><a href="../view-parameters/and-exclude.md"><code>&#x26;exclude</code></a></td><td>Same concept as <a href="../view-parameters/view.md"><code>&#x26;view</code></a>, except does the opposite</td></tr><tr><td><a href="and-layout.md"><code>&#x26;layout</code></a></td><td>Shows the guest a return feed of the current mixer layout when using the <a href="../../steves-helper-apps/mixer-app.md">Mixer App</a></td></tr><tr><td><a href="../view-parameters/activespeaker.md"><code>&#x26;activespeaker</code></a></td><td>Auto-hides remote guests videos when added, if those guests are not speaking actively</td></tr><tr><td><a href="../../source-settings/order.md"><code>&#x26;order</code></a></td><td>The order priority of a source video when added to the video mixer</td></tr><tr><td><a href="../../newly-added-parameters/and-slots.md"><code>&#x26;slots</code></a></td><td>Will force the auto-mixer to have that number of slots, even if there are more or less videos available to fill them</td></tr><tr><td><a href="and-fakeguests.md"><code>&#x26;fakeguests</code></a></td><td>Creates simulated guest videos</td></tr><tr><td><a href="../view-parameters/randomize.md"><code>&#x26;randomize</code></a></td><td>Random video loading order</td></tr><tr><td><a href="../view-parameters/cover.md"><code>&#x26;cover</code></a></td><td>Has the videos fully "cover" their assigned areas, even if it means cropping the video</td></tr><tr><td><a href="../../newly-added-parameters/and-43.md"><code>&#x26;43</code></a></td><td>Optimizes the video mixer for 4:3 videos</td></tr><tr><td><a href="../view-parameters/and-portrait.md"><code>&#x26;portrait</code></a></td><td>Optimizes the video mixer for 9:16 videos</td></tr><tr><td><a href="../../newly-added-parameters/and-square.md"><code>&#x26;square</code></a></td><td>Optimizes the video mixer for 1:1 videos</td></tr><tr><td><a href="and-forceviewerlandscape.md"><code>&#x26;forceviewerlandscape</code></a>*</td><td>Keeps all incoming videos oriented (rotated) so that the aspect ratio is always above 1</td></tr><tr><td><a href="../view-parameters/animated.md"><code>&#x26;animated</code></a></td><td>Videos in a group scene will slide around the screen when being re-arranged</td></tr><tr><td><a href="../view-parameters/manual.md"><code>&#x26;manual</code></a></td><td>Disables the auto-mixer, allowing for a custom mixer to be used</td></tr><tr><td><a href="and-locked.md"><code>&#x26;locked</code></a></td><td>Will force a the VDO.Ninja's mixer output keep the mixed render contained to a specific aspect-ratio, regardless of the browser's window size</td></tr><tr><td><a href="and-poster.md"><code>&#x26;poster</code></a></td><td>Lets you specify a poster image for videos that have not yet started playing</td></tr><tr><td><a href="and-hideplaybutton.md"><code>&#x26;hideplaybutton</code></a></td><td>Will hide the default big play button that overlays a video when auto play is not allowed</td></tr><tr><td><a href="and-motiondetection-alpha.md"><code>&#x26;motiondetection</code></a>*</td><td>Does a few things when it detects motion in a video</td></tr></tbody></table>
 
 \*NEW IN VERSION 24
 
@@ -4698,7 +4698,7 @@ Example: `&bitratecutoff=500`
 
 `&bitratecutoff` is a viewer-side parameter. If the total bitrate drops below the specified bitrate (default value of 300), the viewer will auto-hide the audio and video for that stream. It will un-hide once the average bitrate returns above 300-kbps.
 
-There is a 3-second delay in calculating the average bitrate. Won't work with viewers that are Firefox/Safari; just Chrome/Chromium, so OBS, vMix, Electron Capture, Chrome. This is because Firefox/Safari lack the stats in Vide0Link needed to trigger this.
+There is a 3-second delay in calculating the average bitrate. Won't work with viewers that are Firefox/Safari; just Chrome/Chromium, so OBS, vMix, Electron Capture, Chrome. This is because Firefox/Safari lack the stats in VDO.Ninja needed to trigger this.
 
 When using `&bitratecutoff` on a room scene, it won't trigger due to a director being in the room with no video, unless they are using [`&showdirector`](../../viewers-settings/and-showdirector.md).
 
@@ -4858,7 +4858,7 @@ Video recordings will be saved as Video + PCM audio format.
 
 WebM is a universal container of sorts when used within a Chromium browser, but it doesn't always work well for VLC or popular video editors. FFmpeg can be used to convert to other formats though, including MP4 and WAV, typically without transcoding.
 
-To make converting from WebM to other formats easier, a version of FFmpeg is hosted within Vide0Link for this. It can be located here at [https://vdo.ninja/convert](https://vdo.ninja/convert), with several of the most common conversion options ready to go, such as WebM-PCM to WAV-PCM.
+To make converting from WebM to other formats easier, a version of FFmpeg is hosted within VDO.Ninja for this. It can be located here at [https://vdo.ninja/convert](https://vdo.ninja/convert), with several of the most common conversion options ready to go, such as WebM-PCM to WAV-PCM.
 
 Due to memory limits and other browser limitations, this FFmpeg tool can only process files under about 2-gigabytes in size. For larger files, you may need to download and use a desktop version of [FFmpeg](https://ffmpeg.org/download.html) instead.
 
@@ -4912,7 +4912,7 @@ When recording as the director, the button and option to record each guest is av
 
 When recording to the guest's local storage, quality should be near pristine, given as its not being sent via the Internet first. Recording locally, the video may have dynamic resolutions and varying quality, due to the low latency transmission. ([`&chunked`](../../newly-added-parameters/and-chunked.md)-mode excepted)
 
-Anyone can also access the recording options via right-clicking a video. This option is available as of Vide0Link [v22](../../releases/v22.md).
+Anyone can also access the recording options via right-clicking a video. This option is available as of VDO.Ninja [v22](../../releases/v22.md).
 
 ### Bitrate Thresholds
 
@@ -4932,13 +4932,13 @@ The chunked mode (as of June 2022) is still a maturing feature. Please report an
 
 WebM is a universal container of sorts when used within a Chromium browser, but it doesn't always work well for VLC or popular video editors. FFmpeg can be used to convert to other formats though, including MP4 and WAV, typically without transcoding.
 
-To make converting from WebM to other formats easier, a version of FFmpeg is hosted within Vide0Link for this. It can be located here at [https://vdo.ninja/convert](https://vdo.ninja/convert), with several of the most common conversion options ready to go, such as WebM-PCM to WAV-PCM.
+To make converting from WebM to other formats easier, a version of FFmpeg is hosted within VDO.Ninja for this. It can be located here at [https://vdo.ninja/convert](https://vdo.ninja/convert), with several of the most common conversion options ready to go, such as WebM-PCM to WAV-PCM.
 
 Due to memory limits and other browser limitations, this FFmpeg tool can only process files under about 2-gigabytes in size. For larger files, you may need to download and use a desktop version of [FFmpeg](https://ffmpeg.org/download.html) instead.
 
 FFmpeg command lines are provided if you choose to run FFmpeg yourself locally, but if that is still to complicated, you can grab [Handbrake ](https://handbrake.fr/)for free; it's a GUI-based option that is fairly accessible.
 
-Lastly, sometimes a video recorded by Vide0Link will have a variable resolution or/and frame rate, which can cause problems with some video editors. For example, the quality might be stuck low, or it might freeze after a few seconds. In these cases, you may need to transcode the video to a fixed resolution and frame rate using FFmpeg (or Handbrake) first, before using.. Transcoding is very slow in the browser, so I'd recommend you download Handbrake or FFmpeg for this task.
+Lastly, sometimes a video recorded by VDO.Ninja will have a variable resolution or/and frame rate, which can cause problems with some video editors. For example, the quality might be stuck low, or it might freeze after a few seconds. In these cases, you may need to transcode the video to a fixed resolution and frame rate using FFmpeg (or Handbrake) first, before using.. Transcoding is very slow in the browser, so I'd recommend you download Handbrake or FFmpeg for this task.
 
 FFmpeg in the browser; up to 4-gb file sizes
 
@@ -5019,7 +5019,7 @@ Example: `&recordmotion=15`
 * I guess the point of this is to allow for basic security camera operation, but also as a source of inspiration for other ideas
 * File name of the saved file contains the timestamp
 ---
-description: Options to specify recordings with Vide0Link
+description: Options to specify recordings with VDO.Ninja
 ---
 
 # Recording Parameters
@@ -5129,7 +5129,7 @@ Depending on browser and version, there may be additional values you can pass, s
 
 ## Details
 
-`&screensharecontenthint` can customize how you want Vide0Link to balance screen-share resolution vs screen-share frame rate, specifically when bitrate or CPU is insufficient to offer both at the same time.
+`&screensharecontenthint` can customize how you want VDO.Ninja to balance screen-share resolution vs screen-share frame rate, specifically when bitrate or CPU is insufficient to offer both at the same time.
 
 The two options are `detail` or `motion`. Screen-shares generally tend towards `detail` by default, and camera sources are tend towards `motion` by default. `detail` will try to prioritize resolution over frame rate, so the frame rate may drop a lot used. `motion` will try to maximize frame rate, but may drop the resolution a lot. There's no way to force both on as there's no magic bullet if your CPU or network cannot keep up.
 
@@ -5228,7 +5228,7 @@ Sender-Side Option! ([`&push`](../../source-settings/push.md))
 
 ## Details
 
-`&suppresslocalaudio` will disable local audio playback of a Chrome tab while screen-sharing it. This can be used with the new [WHIP](../whip-parameters/and-whip.md) output of Vide0Link to publish a Vide0Link scene directly to Twitch, without having to deal with any audio feedback issues while having that scene tab open.
+`&suppresslocalaudio` will disable local audio playback of a Chrome tab while screen-sharing it. This can be used with the new [WHIP](../whip-parameters/and-whip.md) output of VDO.Ninja to publish a VDO.Ninja scene directly to Twitch, without having to deal with any audio feedback issues while having that scene tab open.
 
 For more details on these new features see here:
 [https://developer.chrome.com/docs/web-platform/screen-sharing-controls/](https://developer.chrome.com/docs/web-platform/screen-sharing-controls/)
@@ -5532,7 +5532,7 @@ Sender-Side Option! ([`&push`](../../source-settings/push.md), [`&room`](../../g
 [and-autohide.md](../../parameters-only-on-beta/and-autohide.md)
 ---
 description: >-
-  The ability for Vide0Link to Remotely Control OBS Studio while
+  The ability for VDO.Ninja to Remotely Control OBS Studio while
   streaming/directing
 ---
 
@@ -5555,9 +5555,9 @@ Example: `&controlobs=0`
 
 ## Remotely Control OBS Studio
 
-Added the ability for Vide0Link to **Remotely Control OBS Studio** while streaming/directing. It may be useful for [IRL streaming](https://restream.io/blog/irl-streaming-ultimate-guide/)?
+Added the ability for VDO.Ninja to **Remotely Control OBS Studio** while streaming/directing. It may be useful for [IRL streaming](https://restream.io/blog/irl-streaming-ultimate-guide/)?
 
-The menu button to control OBS auto-shows in the director's view or push-mode, if OBS Studio is set to give Vide0Link "full" permissions.
+The menu button to control OBS auto-shows in the director's view or push-mode, if OBS Studio is set to give VDO.Ninja "full" permissions.
 
 The menu button can also be added manually, for even guests, using `&controlobs`. [`&obsoff`](../design-parameters/and-obsoff.md) can be used to set permissions to fully off (also disables tally light and scene optimizations tho) when added to the OBS browser source link.
 
@@ -5578,7 +5578,7 @@ It supports multiple OBS instances and will label them according to the [`&label
 
 4\. Click on this button
 
-5\. Control OBS Studio remotely via Vide0Link
+5\. Control OBS Studio remotely via VDO.Ninja
 
 ### Disabling or hiding the controls
 
@@ -5630,7 +5630,7 @@ https://vdo.ninja/?view=XXX&controlobs&bitratecutoff=300&cutscene=FML&remote
 
 You can of course use this with [`&controlobs`](and-controlobs.md)[`&remote`](../../general-settings/remote.md), to have the publisher change the scenes dynamically, and see what the current OBS scene is (if still connected).
 
-Note that the OBS browser source needs the permissions to be set to high, to give Vide0Link permissions to change scenes.
+Note that the OBS browser source needs the permissions to be set to high, to give VDO.Ninja permissions to change scenes.
 
 Do not set the OBS browser source to "Shutdown" when not visible, as this will prevent things from being able to switch back.
 
@@ -5713,7 +5713,7 @@ Viewer-Side Option! ([`&scene`](../view-parameters/scene.md), [`&room`](../../ge
 `&getfaces` requires the use of the Chromium experimental face detection API, as I'm using the built-in browser face-tracking model for this. You can enable the API flag here: `chrome://flags/#enable-experimental-web-platform-features`
 My hope is that this feature will eventually be enabled by default within Chromium, as loading a large ML model to do face detection otherwise is a bit heavy; you may need to enable this within the OBS CLI if wishing to use it there?
 ---
-description: Hides the Vide0Link homepage and many links that lead to it
+description: Hides the VDO.Ninja homepage and many links that lead to it
 ---
 
 # &hidehome
@@ -5722,7 +5722,7 @@ General Option! ([`&push`](../../source-settings/push.md), [`&room`](../../gener
 
 ## Details
 
-`&hidehome` hides the Vide0Link homepage and many links that lead to it. You can also enable at a code level with `session.hidehome=true;`, which is useful if doing a self-deployment, where you don't want anyone to stumble onto the site and start using it. You'll still be able to join push links and create rooms via URL parameters, but that's about it.
+`&hidehome` hides the VDO.Ninja homepage and many links that lead to it. You can also enable at a code level with `session.hidehome=true;`, which is useful if doing a self-deployment, where you don't want anyone to stumble onto the site and start using it. You'll still be able to join push links and create rooms via URL parameters, but that's about it.
 
 ## Related
 
@@ -5730,7 +5730,7 @@ General Option! ([`&push`](../../source-settings/push.md), [`&room`](../../gener
 
 [and-hideheader.md](../design-parameters/and-hideheader.md)
 ---
-description: Hides the option to translate Vide0Link
+description: Hides the option to translate VDO.Ninja
 ---
 
 # &hidetranslate
@@ -5739,7 +5739,7 @@ General Option! ([`&push`](../../source-settings/push.md), [`&room`](../../gener
 
 ## Details
 
-`&hidetranslate` hides the button at the bottom right of Vide0Link to select a different language. If you want to change the language via URL you can use [`&language`](and-language.md).
+`&hidetranslate` hides the button at the bottom right of VDO.Ninja to select a different language. If you want to change the language via URL you can use [`&language`](and-language.md).
 
 ## Related
 
@@ -5766,7 +5766,7 @@ Example: `&language=fr`
 
 You can [contribute new or update existing translations](https://github.com/steveseguin/obsninja/tree/master/translations).
 
-You can also change the language of Vide0Link dynamically on the bottom right.
+You can also change the language of VDO.Ninja dynamically on the bottom right.
 
 ## Related
 
@@ -5808,7 +5808,7 @@ Viewer-Side Option! ([`&view`](../view-parameters/view.md), [`&scene`](../view-p
 
 ## Details
 
-If a Vide0Link guest has [`&chunked`](../../newly-added-parameters/and-chunked.md) added, the viewer or another guest can use `&nochunked` to ignore the chunked version, and use the low-latency version. In this way, guests in a room can still use the low latency streams to chat, but publish chunked video to OBS for (delayed) high quality video.
+If a VDO.Ninja guest has [`&chunked`](../../newly-added-parameters/and-chunked.md) added, the viewer or another guest can use `&nochunked` to ignore the chunked version, and use the low-latency version. In this way, guests in a room can still use the low latency streams to chat, but publish chunked video to OBS for (delayed) high quality video.
 
 ## Related
 
@@ -6226,7 +6226,7 @@ When using [`&maindirectorpassword`](../director-parameters/and-maindirectorpass
 
 This token is used by the guests to check a remote database server to see who currently 'owns' the token; it persists though, even if the director is not connected.
 
-When using [`&maindirectorpassword`](../director-parameters/and-maindirectorpassword.md) as a director, it tells this database that you are the owner, and it will persist even if you aren't connected to Vide0Link. The `&token` tells the guest to ignore other logic about who the director is, instead using the info provided by the token-lookup to determine whose the director.
+When using [`&maindirectorpassword`](../director-parameters/and-maindirectorpassword.md) as a director, it tells this database that you are the owner, and it will persist even if you aren't connected to VDO.Ninja. The `&token` tells the guest to ignore other logic about who the director is, instead using the info provided by the token-lookup to determine whose the director.
 
 I may change or revoke this feature, depending on how testing goes this week, as it's rather experimental.
 
@@ -6283,7 +6283,7 @@ They are separated in three groups: [general options](./#general-options) (push 
 
 You can use them for publisher, viewer and director URLs.
 
-<table><thead><tr><th width="267.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-language.md"><code>&#x26;language</code></a></td><td>Sets the interface language</td></tr><tr><td><a href="../../general-settings/remote.md"><code>&#x26;remote</code></a></td><td>Allows remote operation of the zoom and focus, and access to statistics</td></tr><tr><td><a href="and-controlobs.md"><code>&#x26;controlobs</code></a></td><td>The ability for Vide0Link to Remotely Control OBS Studio while streaming/directing</td></tr><tr><td><a href="and-allowedscenes.md"><code>&#x26;allowedscenes</code></a></td><td>Option to filter which OBS scenes a remote guest has access to controlling when using <a href="and-controlobs.md"><code>&#x26;controlobs</code></a></td></tr><tr><td><a href="../../general-settings/and-stats.md"><code>&#x26;stats</code></a></td><td>Shows the connection/media stats window by default</td></tr><tr><td><a href="../../general-settings/sticky.md"><code>&#x26;sticky</code></a></td><td>Allows a user to save and then later restore their streaming session settings</td></tr><tr><td><a href="and-clearstorage.md"><code>&#x26;clearstorage</code></a></td><td>Will clear all the saved user preferences for all sessions</td></tr><tr><td><a href="and-disablehotkeys.md"><code>&#x26;disablehotkeys</code></a></td><td>Disables hotkeys (like <code>CRTL + M</code>)</td></tr><tr><td><a href="../../source-settings/showlist.md"><code>&#x26;showlist</code></a></td><td>Shows list of hidden guests</td></tr><tr><td><a href="and-nopush.md"><code>&#x26;nopush</code></a></td><td>Blocks outbound publishing connections</td></tr><tr><td><a href="and-hidehome.md"><code>&#x26;hidehome</code></a></td><td>Hides the Vide0Link homepage and many links that lead to it</td></tr><tr><td><a href="and-hidetranslate.md"><code>&#x26;hidetranslate</code></a></td><td>Hides the option to translate Vide0Link</td></tr><tr><td><a href="and-clock.md"><code>&#x26;clock</code></a></td><td>Shows the current time</td></tr><tr><td><a href="and-clock24-alpha.md"><code>&#x26;clock24</code></a>*</td><td>The same as <a href="and-clock.md"><code>&#x26;clock</code></a> option, except it uses 24-hour time for the display</td></tr><tr><td><a href="and-timer.md"><code>&#x26;timer</code></a></td><td>Positions the countdown timer</td></tr><tr><td><a href="and-powerpoint.md"><code>&#x26;powerpoint</code></a></td><td>Adds a built-in basic controller to control PowerPoint</td></tr><tr><td><a href="and-widget.md"><code>&#x26;widget</code></a></td><td>Will load a side-bar with an IFrame embed, with support for YouTube / Twitch / Social Stream</td></tr><tr><td><a href="and-token.md"><code>&#x26;token</code></a></td><td>A token for invite/scene links to determine whose the director of a room</td></tr></tbody></table>
+<table><thead><tr><th width="267.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-language.md"><code>&#x26;language</code></a></td><td>Sets the interface language</td></tr><tr><td><a href="../../general-settings/remote.md"><code>&#x26;remote</code></a></td><td>Allows remote operation of the zoom and focus, and access to statistics</td></tr><tr><td><a href="and-controlobs.md"><code>&#x26;controlobs</code></a></td><td>The ability for VDO.Ninja to Remotely Control OBS Studio while streaming/directing</td></tr><tr><td><a href="and-allowedscenes.md"><code>&#x26;allowedscenes</code></a></td><td>Option to filter which OBS scenes a remote guest has access to controlling when using <a href="and-controlobs.md"><code>&#x26;controlobs</code></a></td></tr><tr><td><a href="../../general-settings/and-stats.md"><code>&#x26;stats</code></a></td><td>Shows the connection/media stats window by default</td></tr><tr><td><a href="../../general-settings/sticky.md"><code>&#x26;sticky</code></a></td><td>Allows a user to save and then later restore their streaming session settings</td></tr><tr><td><a href="and-clearstorage.md"><code>&#x26;clearstorage</code></a></td><td>Will clear all the saved user preferences for all sessions</td></tr><tr><td><a href="and-disablehotkeys.md"><code>&#x26;disablehotkeys</code></a></td><td>Disables hotkeys (like <code>CRTL + M</code>)</td></tr><tr><td><a href="../../source-settings/showlist.md"><code>&#x26;showlist</code></a></td><td>Shows list of hidden guests</td></tr><tr><td><a href="and-nopush.md"><code>&#x26;nopush</code></a></td><td>Blocks outbound publishing connections</td></tr><tr><td><a href="and-hidehome.md"><code>&#x26;hidehome</code></a></td><td>Hides the VDO.Ninja homepage and many links that lead to it</td></tr><tr><td><a href="and-hidetranslate.md"><code>&#x26;hidetranslate</code></a></td><td>Hides the option to translate VDO.Ninja</td></tr><tr><td><a href="and-clock.md"><code>&#x26;clock</code></a></td><td>Shows the current time</td></tr><tr><td><a href="and-clock24-alpha.md"><code>&#x26;clock24</code></a>*</td><td>The same as <a href="and-clock.md"><code>&#x26;clock</code></a> option, except it uses 24-hour time for the display</td></tr><tr><td><a href="and-timer.md"><code>&#x26;timer</code></a></td><td>Positions the countdown timer</td></tr><tr><td><a href="and-powerpoint.md"><code>&#x26;powerpoint</code></a></td><td>Adds a built-in basic controller to control PowerPoint</td></tr><tr><td><a href="and-widget.md"><code>&#x26;widget</code></a></td><td>Will load a side-bar with an IFrame embed, with support for YouTube / Twitch / Social Stream</td></tr><tr><td><a href="and-token.md"><code>&#x26;token</code></a></td><td>A token for invite/scene links to determine whose the director of a room</td></tr></tbody></table>
 
 \*NEW IN [VERSION 24](../../releases/v24.md)
 
@@ -6299,7 +6299,7 @@ You can use them for publisher, viewer and director URLs.
 
 **Viewer's Settings**, which are aspects that are controllable by the viewer's side. These parameters are mostly added to [`&room`](../../general-settings/room.md) (viewing other guests), [`&view`](../view-parameters/view.md) and [`&scene`](../view-parameters/scene.md) or [`&solo`](../mixer-scene-parameters/and-solo.md) links, but some of them can also be added to the director's URL.
 
-<table><thead><tr><th width="244.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-closedcaptions.md"><code>&#x26;closedcaptions</code></a></td><td>Enables displaying of closed captioning text</td></tr><tr><td><a href="and-nocaptionlabels.md"><code>&#x26;nocaptionlabels</code></a>*</td><td>Disables showing the names when using the <a href="and-closedcaptions.md"><code>&#x26;closedcaptions</code></a> feature</td></tr><tr><td><a href="../view-parameters/enhance.md"><code>&#x26;enhance</code></a></td><td>Tells the remote source that you would like them to prioritize the audio stream over other streams</td></tr><tr><td><a href="../parameters-only-on-beta/and-bitratecutoff.md"><code>&#x26;bitratecutoff</code></a></td><td>If the total bitrate drops below the specified bitrate, the viewer will auto-hide the audio and video for that stream</td></tr><tr><td><a href="and-cutscene.md"><code>&#x26;cutscene</code></a></td><td>Specifies an OBS cut scene to switch to when the bitrate drops below a threshold</td></tr><tr><td><a href="../parameters-only-on-beta/and-statsinterval.md"><code>&#x26;statsinterval</code></a></td><td>Lets you change the default stats update interval from 3-seconds to something else</td></tr><tr><td><a href="../view-parameters/keyframerate.md"><code>&#x26;keyframerate</code></a></td><td>This tells the remote publishers to send keyframes at a specified rate</td></tr><tr><td><a href="../view-parameters/and-maxpublishers.md"><code>&#x26;maxpublishers</code></a></td><td>Limits the number of remote peer connections that are publishers</td></tr><tr><td><a href="and-showconnections.md"><code>&#x26;showconnections</code></a></td><td>Displays the total number of p2p connections of a remote stream</td></tr><tr><td><a href="../view-parameters/and-obsfix.md"><code>&#x26;obsfix</code></a></td><td>Disables or adjusts the sensitivity of the VP8/VP9 Codec packet loss 'fix' for OBS</td></tr><tr><td><a href="../view-parameters/streamlabs.md"><code>&#x26;streamlabs</code></a></td><td>Tells Vide0Link to not block Vide0Link from attempting to run when using Streamlabs for MacOS</td></tr><tr><td><a href="and-getfaces.md"><code>&#x26;getfaces</code></a></td><td>Will request a continuous stream of face bounding boxes</td></tr><tr><td><a href="and-nochunked.md"><code>&#x26;nochunked</code></a></td><td>Will ignore the chunked version and use the low-latency version</td></tr></tbody></table>
+<table><thead><tr><th width="244.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-closedcaptions.md"><code>&#x26;closedcaptions</code></a></td><td>Enables displaying of closed captioning text</td></tr><tr><td><a href="and-nocaptionlabels.md"><code>&#x26;nocaptionlabels</code></a>*</td><td>Disables showing the names when using the <a href="and-closedcaptions.md"><code>&#x26;closedcaptions</code></a> feature</td></tr><tr><td><a href="../view-parameters/enhance.md"><code>&#x26;enhance</code></a></td><td>Tells the remote source that you would like them to prioritize the audio stream over other streams</td></tr><tr><td><a href="../parameters-only-on-beta/and-bitratecutoff.md"><code>&#x26;bitratecutoff</code></a></td><td>If the total bitrate drops below the specified bitrate, the viewer will auto-hide the audio and video for that stream</td></tr><tr><td><a href="and-cutscene.md"><code>&#x26;cutscene</code></a></td><td>Specifies an OBS cut scene to switch to when the bitrate drops below a threshold</td></tr><tr><td><a href="../parameters-only-on-beta/and-statsinterval.md"><code>&#x26;statsinterval</code></a></td><td>Lets you change the default stats update interval from 3-seconds to something else</td></tr><tr><td><a href="../view-parameters/keyframerate.md"><code>&#x26;keyframerate</code></a></td><td>This tells the remote publishers to send keyframes at a specified rate</td></tr><tr><td><a href="../view-parameters/and-maxpublishers.md"><code>&#x26;maxpublishers</code></a></td><td>Limits the number of remote peer connections that are publishers</td></tr><tr><td><a href="and-showconnections.md"><code>&#x26;showconnections</code></a></td><td>Displays the total number of p2p connections of a remote stream</td></tr><tr><td><a href="../view-parameters/and-obsfix.md"><code>&#x26;obsfix</code></a></td><td>Disables or adjusts the sensitivity of the VP8/VP9 Codec packet loss 'fix' for OBS</td></tr><tr><td><a href="../view-parameters/streamlabs.md"><code>&#x26;streamlabs</code></a></td><td>Tells VDO.Ninja to not block VDO.Ninja from attempting to run when using Streamlabs for MacOS</td></tr><tr><td><a href="and-getfaces.md"><code>&#x26;getfaces</code></a></td><td>Will request a continuous stream of face bounding boxes</td></tr><tr><td><a href="and-nochunked.md"><code>&#x26;nochunked</code></a></td><td>Will ignore the chunked version and use the low-latency version</td></tr></tbody></table>
 
 \*NEW IN [VERSION 24](../../releases/v24.md)
 ---
@@ -6335,17 +6335,17 @@ If the parameter's value is left blank, it hides the option to change the output
 
 Visit [vdo.ninja/devices](https://vdo.ninja/devices) to find the available device IDs and device names on your system.
 
-Device IDs are specific to Vide0Link's domain, while device names are not.
+Device IDs are specific to VDO.Ninja's domain, while device names are not.
 
 This web-based tool will also auto-create links for you, just by clicking on the respective device.
 
 You can change the audio output device dynamically via the settings menu.
 
-In Version 22 of Vide0Link you can change the audio output device of each video feed individually via `Right-Click -> Audio Destination` on the video feed.
+In Version 22 of VDO.Ninja you can change the audio output device of each video feed individually via `Right-Click -> Audio Destination` on the video feed.
 
 ### Electron Capture
 
-You can specify an audio output device via the Electron Capture app's command line using this URL parameter  (when used in conjunction with Vide0Link).
+You can specify an audio output device via the Electron Capture app's command line using this URL parameter  (when used in conjunction with VDO.Ninja).
 
 Example: 
 
@@ -6366,11 +6366,11 @@ General Option! ([`&push`](../../source-settings/push.md), [`&room`](../../gener
 
 ## Details
 
-There is support for something called "end to end encryption" using "insertable streams" to Vide0Link. To use, **add** `&e2ee` **to both the viewer and sender side links**. Can be used in conjunction with [`&password`](and-password.md) to specify a cipher.
+There is support for something called "end to end encryption" using "insertable streams" to VDO.Ninja. To use, **add** `&e2ee` **to both the viewer and sender side links**. Can be used in conjunction with [`&password`](and-password.md) to specify a cipher.
 
 More technical details about it:
 
-* Vide0Link is already end to end encrypted by default (in peer to peer mode), so this isn't anything of much value to most users.
+* VDO.Ninja is already end to end encrypted by default (in peer to peer mode), so this isn't anything of much value to most users.
 * In p2p mode, this will double up the encryption on the video/audio stream, which might be useful if your system was compromised by a state actor.
 * Uses the browser's built-in AES algo, but there is dedicated JS file for the encryption logic, so you can custom-code to use your own encryption I guess.
 * Does NOT work with [Meshcast](../../newly-added-parameters/and-meshcast.md), as I don't have insertable streams working server-side there yet, so there is no E2EE with Meshcast still.
@@ -6396,7 +6396,7 @@ Sender-Side Option! ([`&push`](../../source-settings/push.md), [`&room`](../../g
 
 With `&groupmode` added to your URL, when not assigned to a group, you don't hear or see anything. This also goes for remote participants who are not in a group - you will not see or hear them if they are not in a group, even if you also are not in a group.
 
-The default normally with Vide0Link is that if not in a group, you see and hear everyone. This remains true if not using `&groupmode`, even if others in the room are. Others may not be able to see or hear you though, if they have `&groupmode` enabled, and you haven't picked a group. So, `&groupmode` only impacts the local user, and will not impact remote connections.
+The default normally with VDO.Ninja is that if not in a group, you see and hear everyone. This remains true if not using `&groupmode`, even if others in the room are. Others may not be able to see or hear you though, if they have `&groupmode` enabled, and you haven't picked a group. So, `&groupmode` only impacts the local user, and will not impact remote connections.
 
 The [Comms app](../../steves-helper-apps/comms.md) uses `&groupmode` by default.
 
@@ -6493,7 +6493,7 @@ Example: `&humb64=YnllJTNDaW1nJTIwc3JjJTNEJTIyLiUyRm1lZGlhJTJGbG9nb19jcm9wcGVkLn
 
 ## Details
 
-`&humb64` is the same as [`&hangupmessage`](and-hangupmessage-alpha.md), except this new option takes an input as a base64 encoded string. Vide0Link will decode the base64 on load.
+`&humb64` is the same as [`&hangupmessage`](and-hangupmessage-alpha.md), except this new option takes an input as a base64 encoded string. VDO.Ninja will decode the base64 on load.
 
 Base64 values are less likely to get parsed by apps like Slack incorrectly, so safer to share. If feeling lazy, you can also just use [invite.cam](https://invite.cam/), and encode the entire link itself; has a similar effect.
 
@@ -6627,7 +6627,7 @@ Example: `&permaid=StreamID`
 
 If using `&permaid=streamidhere` to specify the stream ID, rather than just [`&push`](../../source-settings/push.md), will save that stream ID to local storage and reuse it every time `&permaid` is used without a stream ID.
 
-You could also just use `&permaid` on its own initially, which will auto assign a unique stream ID and save that generated one to local storage, which makes it easier to use one invite for many users, but have Vide0Link manage the stream ID assignments.
+You could also just use `&permaid` on its own initially, which will auto assign a unique stream ID and save that generated one to local storage, which makes it easier to use one invite for many users, but have VDO.Ninja manage the stream ID assignments.
 
 If not using `&permaid`, it will just default to using `&push` with a random ID. (this avoids 'stream already in use' mishaps)
 
@@ -6650,7 +6650,7 @@ Example: `&welcome64=SGVsbG8=`
 
 ## Details
 
-`&welcome64` is the same as [`&welcome`](../../newly-added-parameters/and-welcome.md), except this new option takes an input as a base64 encoded string. Vide0Link will decode the base64 on load.
+`&welcome64` is the same as [`&welcome`](../../newly-added-parameters/and-welcome.md), except this new option takes an input as a base64 encoded string. VDO.Ninja will decode the base64 on load.
 
 Base64 values are less likely to get parsed by apps like Slack incorrectly, so safer to share. If feeling lazy, you can also just use [invite.cam](https://invite.cam/), and encode the entire link itself; has a similar effect.
 
@@ -7302,7 +7302,7 @@ Consider using [`&broadcast`](../view-parameters/broadcast.md), combined with ei
 
 ### Director's ability to control
 
-If the director joins the room, they automatically set the default total room bitrate for every guest that joins the room; guests will match the director's value. This feature may even override the URL-parameter that any guest might have added to their URL already, depending on version of Vide0Link. (still being tweaked based on user feedback)
+If the director joins the room, they automatically set the default total room bitrate for every guest that joins the room; guests will match the director's value. This feature may even override the URL-parameter that any guest might have added to their URL already, depending on version of VDO.Ninja. (still being tweaked based on user feedback)
 
 The director can also dynamically change their total room bitrate value using a slider that appears when pressing the room-settings button in the lower control bar. This will instantly change the total room bitrate value for all guests.
 
@@ -7411,7 +7411,7 @@ General Option! ([`&push`](../../source-settings/push.md), [`&room`](../../gener
 
 ## Details
 
-Video playback is disabled in Vide0Link.
+Video playback is disabled in VDO.Ninja.
 
 ## Related
 
@@ -7476,7 +7476,7 @@ Depending on browser and version, there may be additional values you can pass, s
 
 ## Details
 
-`&contenthint` can customize how you want Vide0Link to balance resolution vs frame rate, specifically when bitrate or CPU is insufficient to offer both at the same time.
+`&contenthint` can customize how you want VDO.Ninja to balance resolution vs frame rate, specifically when bitrate or CPU is insufficient to offer both at the same time.
 
 The two options for video are `detail` or `motion`. Screen-shares generally tend towards `detail` by default, and camera sources are tend towards `motion` by default. `detail` will try to prioritize resolution over frame rate, so the frame rate may drop a lot used. `motion` will try to maximize frame rate, but may drop the resolution a lot. There's no way to force both on as there's no magic bullet if your CPU or network cannot keep up.
 
@@ -7556,11 +7556,11 @@ Example: `&fps=60`
 
 `&fps` specifies a target frame rate for the video capture, in frames per second; it is specified on the sender's side. The actual frame rate that's encoded and sent to the viewers may be less than the captured frame rate, sometimes quite a bit lower.
 
-In most cases, if the target captured frame rate isn't supported, Vide0Link will throw an error. As a result, \&fps is considered pretty strict and isn't recommended for most normal use cases.&#x20;
+In most cases, if the target captured frame rate isn't supported, VDO.Ninja will throw an error. As a result, \&fps is considered pretty strict and isn't recommended for most normal use cases.&#x20;
 
 If the camera cannot support the targetted frame rate, **it will likely fail**. Use [`&maxframerate`](../../source-settings/and-maxframerate.md) instead if you are okay with the system to fallback onto a different frame rate, as it is less strict compared to `&fps`.
 
-Limiting the frame rate can reduce the CPU load and the bandwidth, as the encoded video frame rate will try to match the capture the captured frame rate. The higher the encoded frame rate, the more CPU is typically used. 30-fps is fairly standard, although Vide0Link targets 60-fps by default.
+Limiting the frame rate can reduce the CPU load and the bandwidth, as the encoded video frame rate will try to match the capture the captured frame rate. The higher the encoded frame rate, the more CPU is typically used. 30-fps is fairly standard, although VDO.Ninja targets 60-fps by default.
 
 You can change the frame rate dynamically, as the sender, via the settings -> video options; if your browser and device supports it that is. The viewer cannot change or request a specific frame rate, but they can specify [`&contenthint`](and-contenthint.md), which indicates whether they prefer higher resolution vs higher frame rates.
 
@@ -7609,7 +7609,7 @@ Example: `&imagelist=%5B%22https%3A%2F%2Fvdo.ninja%2Fmedia%2Fold_logo.png%22%2C%
 
 Added options to host your own default background images for the virtual background effect. `&imagelist=xxxx` can be used to pass a list of images via the URL.
 
-Code to generate the list properly can be found here: [https://jsfiddle.net/steveseguin/w7z28kgb/](https://jsfiddle.net/steveseguin/w7z28kgb/) (images must be cross origin enabled) - at the base of index.html, if self-hosting Vide0Link, you can hard-code the list of images as well.
+Code to generate the list properly can be found here: [https://jsfiddle.net/steveseguin/w7z28kgb/](https://jsfiddle.net/steveseguin/w7z28kgb/) (images must be cross origin enabled) - at the base of index.html, if self-hosting VDO.Ninja, you can hard-code the list of images as well.
 
 <div align="left">
 
@@ -7625,7 +7625,7 @@ Example: `&imagelist=[%22https://i.imgur.com/XXXXXXX.png%22]`
 
 ### Mirroring issues
 
-By default, the image may be mirrored to the publisher, as webcam previews are by default mirrored in Vide0Link. The image will not be mirrored in the output however; just in the preview.
+By default, the image may be mirrored to the publisher, as webcam previews are by default mirrored in VDO.Ninja. The image will not be mirrored in the output however; just in the preview.
 
 You can disable the mirroring on the preview though; use `&nomirror` on the URL as a parameter.
 
@@ -7642,7 +7642,7 @@ Sender-Side Option! ([`&push`](../../source-settings/push.md))
 
 ## Details
 
-If you want the Vide0Link self-preview to not be mini-sized in [broadcast](../view-parameters/broadcast.md) mode, which might be the case on mobile, you can try using [`&minipreview=0`](../../source-settings/and-minipreview.md) or `&largepreview`. These flags will disable the mini-preview functionality, keeping the preview the same size as other videos.
+If you want the VDO.Ninja self-preview to not be mini-sized in [broadcast](../view-parameters/broadcast.md) mode, which might be the case on mobile, you can try using [`&minipreview=0`](../../source-settings/and-minipreview.md) or `&largepreview`. These flags will disable the mini-preview functionality, keeping the preview the same size as other videos.
 
 ## Related
 
@@ -8373,7 +8373,7 @@ Example: `&animated=false`
 
 Videos in a group scene will slide around the screen when being re-arranged, such as when a new video gets added to the scene.
 
-In the newest version of Vide0Link `&animated` is on by default. You can disable it with `&animated=0`. There is also a toggle in the director's room to disable it in the guest's invite URL.
+In the newest version of VDO.Ninja `&animated` is on by default. You can disable it with `&animated=0`. There is also a toggle in the director's room to disable it in the guest's invite URL.
 
 Mobile phone users will not have this effect enabled by default, but most other guest and scene types will.
 
@@ -8460,7 +8460,7 @@ You can pass a stream ID as a value, which will specify the video source to be f
 
 You add `&broadcast` to the guest invite links. You do not add this to the director or scene links.
 
-Configuring Vide0Link in a broadcast group mode
+Configuring VDO.Ninja in a broadcast group mode
 
 #### Why might you want to use this option?
 
@@ -8486,7 +8486,7 @@ You can some-what imitate the `&broadcast` parameter using something like :&#x20
 
 While the `&broadcast` flag is great for reducing the load on guests in a room, it will put all the load onto the director instead.
 
-* Consider using NVEnc or other hardware-encoders to encode any RTMP streams in your studio software to reduce CPU load there. This frees up more CPU for Vide0Link.
+* Consider using NVEnc or other hardware-encoders to encode any RTMP streams in your studio software to reduce CPU load there. This frees up more CPU for VDO.Ninja.
 * Make sure you have a capable computer; an AMD 5900x CPU is recommend for most users using this mode without Meshcast, allowing for medium-sized group rooms with some headroom to spare.
 * A quad-core computer might only be able to support 1 or 2 guests adequately in this mode, although using Meshcast can help overcome that limitation.
 * If you would like the guests to see even higher quality video, consider using [`&totalroombitrate=2500`](../video-bitrate-parameters/totalroombitrate.md) as an option to greatly improve the video quality. This also will greatly also increase the load on the director, so good internet and a powerful CPU will be needed.
@@ -8494,16 +8494,16 @@ While the `&broadcast` flag is great for reducing the load on guests in a room, 
 #### Using `&broadcast` mode with Meshcast as a source
 
 * Using a service like meshcast.io, along with the [`&website`](../../source-settings/and-website.md) sharing option, can also greatly reduce load on the director and guests. The website sharing function works with other video content delivery networks, not just Meshcast.io, so you have choices.
-* When the director shares a website, their own low-latency Vide0Link audio remains active, so audio doubling could happen if the website contains their audio also. You'll want to mute either the website's audio or the director's Vide0Link audio, to avoid this issue. To also avoid echo-cancellation issues and audio delays, it is recommended to mute the website audio, as Vide0Link's audio will have not have those issues.
-* You may want to add [`&novideo`](../video-parameters/and-novideo.md) to the guest invite links if you only intend to share video via the website sharing function. This ensures the director's Vide0Link video-track doesn't appear, as Vide0Link can't always tell if a website contains a video track or not, and so may show the director's video alongside the shared website in some cases otherwise.
-* In more recent versions of Vide0Link (v22), Meshcast is available built-into Vide0Link via the [`&meshcast`](../../newly-added-parameters/and-meshcast.md) parameter, which sends both audio and video over meshcast in sync, without concerns of echo cancellation or audio doubling. Just add `&meshcast` to the director's URL to use this mode; the director's audio and video will auto-publish via Meshcast without needing to visit meshcast.io.
+* When the director shares a website, their own low-latency VDO.Ninja audio remains active, so audio doubling could happen if the website contains their audio also. You'll want to mute either the website's audio or the director's VDO.Ninja audio, to avoid this issue. To also avoid echo-cancellation issues and audio delays, it is recommended to mute the website audio, as VDO.Ninja's audio will have not have those issues.
+* You may want to add [`&novideo`](../video-parameters/and-novideo.md) to the guest invite links if you only intend to share video via the website sharing function. This ensures the director's VDO.Ninja video-track doesn't appear, as VDO.Ninja can't always tell if a website contains a video track or not, and so may show the director's video alongside the shared website in some cases otherwise.
+* In more recent versions of VDO.Ninja (v22), Meshcast is available built-into VDO.Ninja via the [`&meshcast`](../../newly-added-parameters/and-meshcast.md) parameter, which sends both audio and video over meshcast in sync, without concerns of echo cancellation or audio doubling. Just add `&meshcast` to the director's URL to use this mode; the director's audio and video will auto-publish via Meshcast without needing to visit meshcast.io.
 * The director's ability to share a website (meshcast.io link) is via a button found in the director's control bar. The director doesn't need to use [`&website`](../../source-settings/and-website.md) parameter since a website sharing functionality has its own dedicated button in the director's control room.
 
 ![The button used to share a website as the director](<../../.gitbook/assets/image (93) (1) (1).png>)
 
 * If using meshcast.io and the website share functionality, rather than `&meshcast`, you will want to mute the Meshcast source to avoid echo cancellation or audio-doubling. The meshcast.io source page has options to do so there, but you can also add [`&mute`](../../source-settings/and-mute.md) to the meshcast.io when sharing it, to have it auto-mute on playback for the guests.
 
-Understanding Meshcast as a tool for Vide0Link
+Understanding Meshcast as a tool for VDO.Ninja
 
 An older video, but it gets some basics across still about \&broadcast mode
 
@@ -8612,7 +8612,7 @@ The `&codec` parameter is added to the viewer-side; so the [`&view`](view.md) or
 
 ### **Description**
 
-Video that is captured by a camera is compressed and sent over Vide0Link. The default codec is left up to the peer-connection to decide on, where the viewer and the sender agree on what is best automatically.
+Video that is captured by a camera is compressed and sent over VDO.Ninja. The default codec is left up to the peer-connection to decide on, where the viewer and the sender agree on what is best automatically.
 
 Normally VP8 is selected, which is an older codec that uses little CPU, but isn't as efficient as some others. Some mobile devices may hardware-encoder VP8, such as Google Pixel phones, but the vast majority will use software (CPU) to encode VP8.
 
@@ -8628,7 +8628,7 @@ Hardware-encoding has pros and cons. A device generally has limited hardware-enc
 
 ### **H264**
 
-H264 may offer hardware encoding for better battery life with mobile and embedded devices. In these causes, it is often used automatically by Vide0Link. Support for H264 on Android devices is hit and miss though, so if enabling it, be prepared for it to potentially result in no video playback.
+H264 may offer hardware encoding for better battery life with mobile and embedded devices. In these causes, it is often used automatically by VDO.Ninja. Support for H264 on Android devices is hit and miss though, so if enabling it, be prepared for it to potentially result in no video playback.
 
 iOS devices should generally use H264, but the max resolution supported then is 1280x720p30 with iOS 14 and under. With iOS 15, 1080p30 is supported, but I'm not entirely sure if 1080p30 is hardware-encoded as the phone will get quite warm at that resolution.
 
@@ -8646,7 +8646,7 @@ Firefox on Apple M1 chips may not support H264. OperaGX may also not support H26
 
 #### Customizing H264 further
 
-Starting with Vide0Link [v20](../../release-notes/v20.md), you can specify the flavour of H264 being used with the [`&h264profile`](../../newly-added-parameters/and-h264profile.md) flag.
+Starting with VDO.Ninja [v20](../../release-notes/v20.md), you can specify the flavour of H264 being used with the [`&h264profile`](../../newly-added-parameters/and-h264profile.md) flag.
 
 Using that parameter without specifying a particular H264 profile ID will trigger the software OpenH264 encoder to be used, blocking any hardware H264 encoder. On Windows, OpenH264 may actually use less CPU than the a hardware encoder and may side step video glitching issues.
 
@@ -8885,7 +8885,7 @@ Viewer-Side Option! ([`&view`](view.md), [`&scene`](scene.md), [`&room`](../../g
 
 ## Details
 
-This is an advanced feature, for primarily developers, who wish to utilize their own auto-mixing code or perhaps are not using Vide0Link for video/audio specifically.&#x20;
+This is an advanced feature, for primarily developers, who wish to utilize their own auto-mixing code or perhaps are not using VDO.Ninja for video/audio specifically.&#x20;
 
 `session.rpcs` is an object that can be queried for a list of active receiving peer sessions. `session.rpcs[UUID].videoElement.srcObject` contains video/audio data if available.
 
@@ -8969,7 +8969,7 @@ External Iframes may or may not be muted by default if using \&noaudio. While I 
 
 If you want to be able to unmute the speaker button during production, use [`&mutespeaker`](../../source-settings/and-mutespeaker.md) instead of `&noaudio`.&#x20;
 
-[`&deafen`](../../general-settings/deafen.md) also disables monitoring your own audio, then it's impossible to get any sound from Vide0Link.
+[`&deafen`](../../general-settings/deafen.md) also disables monitoring your own audio, then it's impossible to get any sound from VDO.Ninja.
 
 ## Related
 
@@ -9057,7 +9057,7 @@ Example: `&scene=2` or `&scene=choosethename`
 
 Must be used in conjunction with the [`&room`](../../general-settings/room.md) parameter.&#x20;
 
-By adding `&scene` to a room URL, it tells Vide0Link that this is no [`&push`](../../source-settings/push.md) connection.
+By adding `&scene` to a room URL, it tells VDO.Ninja that this is no [`&push`](../../source-settings/push.md) connection.
 
 `&scene=0` by default has all videos in the room automatically added to the scene. They cannot be removed.
 
@@ -9069,7 +9069,7 @@ By adding `&scene` to a room URL, it tells Vide0Link that this is no [`&push`](.
     <img src="../../.gitbook/assets/image (1) (2) (1) (1) (2).png" alt="" data-size="original">
 * When using a scene, if you manually specify a video via the [`&view`](view.md) parameter, it automatically is added to the scene.
 * Audio of videos in scenes can be controlled by the director: volume and mute are options.
-* In [v17.2](../../release-notes/v17-release-notes.md) of Vide0Link, if using [`&view`](view.md) in a scene link, the director won't be able to remotely control the scene. This applies to solo links.
+* In [v17.2](../../release-notes/v17-release-notes.md) of VDO.Ninja, if using [`&view`](view.md) in a scene link, the director won't be able to remotely control the scene. This applies to solo links.
 * In [v18](../../release-notes/v18.md), you can create custom scenes, as per the video below.
 
 ## Related
@@ -9079,7 +9079,7 @@ By adding `&scene` to a room URL, it tells Vide0Link that this is no [`&push`](.
 [and-solo.md](../mixer-scene-parameters/and-solo.md)
 ---
 description: >-
-  Tells Vide0Link to not block Vide0Link from attempting to run when using
+  Tells VDO.Ninja to not block VDO.Ninja from attempting to run when using
   Streamlabs for MacOS
 ---
 
@@ -9089,11 +9089,11 @@ Viewer-Side Option! ([`&view`](view.md), [`&scene`](scene.md), [`&room`](../../g
 
 ## Details
 
-Tells Vide0Link to not block Vide0Link from attempting to run when using Streamlabs for MacOS.
+Tells VDO.Ninja to not block VDO.Ninja from attempting to run when using Streamlabs for MacOS.
 
-For normal OBS users, update to OBS 26.1.2 on MacOS to obtain native support for Vide0Link in OBS.
+For normal OBS users, update to OBS 26.1.2 on MacOS to obtain native support for VDO.Ninja in OBS.
 
-Streamlabs doesn't yet have full support for Vide0Link; consider the [Electron Capture](../../steves-helper-apps/electron-capture.md) app if it fails to work well.
+Streamlabs doesn't yet have full support for VDO.Ninja; consider the [Electron Capture](../../steves-helper-apps/electron-capture.md) app if it fails to work well.
 ---
 description: Sets an offset (in ms) for the automatic audio sync fix node
 ---
@@ -9221,7 +9221,7 @@ Example: `&webp=jpeg`
 
 ## Details
 
-#### Changes on Version 22 of Vide0Link
+#### Changes on Version 22 of VDO.Ninja
 
 The `&webp` mode has been modified a bit. Main change is that you now enable it by add `&webp` to the sender's URL, and [`&codec=webp`](codec.md) to the viewer's URL (otherwise, it falls back to normal video mode). No need for [`&broadcast`](broadcast.md) anymore. (as a reminder, this mode sends the video as a series of low-quality images, rather than a more efficient video stream).
 
@@ -9237,7 +9237,7 @@ The quality by default is limited in both frame rate and resolution, as this cus
 
 Based on my testing, the webp mode is only efficient if you are keeping the bitrates under like 2 mbps, so the higher qualities make little sense IMO outside of some niche use cases as they use up a lot of bandwidth.
 
-If you have issues with Webp-mode, or find the quality or CPU savings not sufficient, you can check out the [`&meshcast`](../../newly-added-parameters/and-meshcast.md) integration instead. It's a relatively new supported addition to Vide0Link.
+If you have issues with Webp-mode, or find the quality or CPU savings not sufficient, you can check out the [`&meshcast`](../../newly-added-parameters/and-meshcast.md) integration instead. It's a relatively new supported addition to VDO.Ninja.
 
 #### Details
 
@@ -9322,7 +9322,7 @@ Example: `&cftoken=token`
 
 ## Details
 
-If using a cloudflare.com WHIP URL on the sender side, I'll guess at the WHEP link - seems to be working so far. (built this logic into Vide0Link directly and works automatically). This of course still implies a unique whip URL per guest.
+If using a cloudflare.com WHIP URL on the sender side, I'll guess at the WHEP link - seems to be working so far. (built this logic into VDO.Ninja directly and works automatically). This of course still implies a unique whip URL per guest.
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -9381,7 +9381,7 @@ Experiment with this feature here:
 [whip-and-whep-tooling.md](../../steves-helper-apps/whip-and-whep-tooling.md)
 
 ---
-description: Publish directly from OBS (or other) to Vide0Link without a virtual camera
+description: Publish directly from OBS (or other) to VDO.Ninja without a virtual camera
 ---
 
 # &whipview
@@ -9402,31 +9402,31 @@ Example: `&whipview=bearertoken`
 
 ## Details
 
-Added experimental "WHIP" support to Vide0Link, which means in the near future you'll be able to publish directly from OBS to Vide0Link without a virtual camera. There's some big caveats to it all, so I don't recommend it over the normal method to most users, but we'll see how it evolves.
+Added experimental "WHIP" support to VDO.Ninja, which means in the near future you'll be able to publish directly from OBS to VDO.Ninja without a virtual camera. There's some big caveats to it all, so I don't recommend it over the normal method to most users, but we'll see how it evolves.
 
 To publish use: [https://whip.vdo.ninja/bearertoken](https://whip.vdo.ninja/bearertoken)
 To view use: [https://vdo.ninja/?whip=bearertoken](https://vdo.ninja/?whip=bearertoken)
 
-You can also go to [https://vdo.ninja/alpha/whip](https://vdo.ninja/alpha/whip) for a page to help auto-generate basic Vide0Link WHIP links for you.
+You can also go to [https://vdo.ninja/alpha/whip](https://vdo.ninja/alpha/whip) for a page to help auto-generate basic VDO.Ninja WHIP links for you.
 
 You have to use a version of OBS that contains WHIP support to get OBS to WHIP working. As of April 2023, these are some builds of OBS that support WHIP:
 [https://github.com/obsproject/obs-studio/suites/12263428876/artifacts/649328007](https://github.com/obsproject/obs-studio/suites/12263428876/artifacts/649328007) win (x64)
 [https://github.com/obsproject/obs-studio/suites/12263428876/artifacts/649328001](https://github.com/obsproject/obs-studio/suites/12263428876/artifacts/649328001) mac (arm)
 [https://github.com/obsproject/obs-studio/actions/runs/4711358202?pr=7926](https://github.com/obsproject/obs-studio/actions/runs/4711358202?pr=7926) (others here)
 
-Hopefully WHIP support will be in OBS officially sometime soon. WHIP support is already added to many other applications and services, and Vide0Link will do its best to ensure compatibility as the situation evolves.
+Hopefully WHIP support will be in OBS officially sometime soon. WHIP support is already added to many other applications and services, and VDO.Ninja will do its best to ensure compatibility as the situation evolves.
 
-See this video for details how to set up OBS WHIP to Vide0Link:
+See this video for details how to set up OBS WHIP to VDO.Ninja:
 
-Publishing from OBS directly to Vide0Link
+Publishing from OBS directly to VDO.Ninja
 
-I've refined the WHIP service on `vdo.ninja/alpha/?whipview=xxx`, making it as robust as I can I think, so if some third-party WHIP client/app doesn't work with it, it may not an issue with Vide0Link. In those cases it will be up to the client to ensure full support of the WHIP specification, else it may not work with Vide0Link.
+I've refined the WHIP service on `vdo.ninja/alpha/?whipview=xxx`, making it as robust as I can I think, so if some third-party WHIP client/app doesn't work with it, it may not an issue with VDO.Ninja. In those cases it will be up to the client to ensure full support of the WHIP specification, else it may not work with VDO.Ninja.
 
 ## Related
 
 [publish-from-obs-into-vdo.ninja.md](../../guides/publish-from-obs-into-vdo.ninja.md)
 ---
-description: Publish directly from OBS (or other) to Vide0Link without a virtual camera
+description: Publish directly from OBS (or other) to VDO.Ninja without a virtual camera
 ---
 
 # &whipout
@@ -9448,23 +9448,23 @@ Example: `&whipout=bearertoken`
 
 ## Details
 
-Added experimental "WHIP" support to Vide0Link, which means in the near future you'll be able to publish directly from OBS to Vide0Link without a virtual camera. There's some big caveats to it all, so I don't recommend it over the normal method to most users, but we'll see how it evolves.
+Added experimental "WHIP" support to VDO.Ninja, which means in the near future you'll be able to publish directly from OBS to VDO.Ninja without a virtual camera. There's some big caveats to it all, so I don't recommend it over the normal method to most users, but we'll see how it evolves.
 
 To publish use: [https://whip.vdo.ninja/bearertoken](https://whip.vdo.ninja/bearertoken)
 To view use: [https://vdo.ninja/?whip=bearertoken](https://vdo.ninja/?whip=bearertoken)
 
-You can also go to [https://vdo.ninja/alpha/whip](https://vdo.ninja/alpha/whip) for a page to help auto-generate basic Vide0Link WHIP links for you.
+You can also go to [https://vdo.ninja/alpha/whip](https://vdo.ninja/alpha/whip) for a page to help auto-generate basic VDO.Ninja WHIP links for you.
 
 You have to use a version of OBS that contains WHIP support to get OBS to WHIP working. As of April 2023, these are some builds of OBS that support WHIP:
 [https://github.com/obsproject/obs-studio/suites/12263428876/artifacts/649328007](https://github.com/obsproject/obs-studio/suites/12263428876/artifacts/649328007) win (x64)
 [https://github.com/obsproject/obs-studio/suites/12263428876/artifacts/649328001](https://github.com/obsproject/obs-studio/suites/12263428876/artifacts/649328001) mac (arm)
 [https://github.com/obsproject/obs-studio/actions/runs/4711358202?pr=7926](https://github.com/obsproject/obs-studio/actions/runs/4711358202?pr=7926) (others here)
 
-Hopefully WHIP support will be in OBS officially sometime soon. WHIP support is already added to many other applications and services, and Vide0Link will do its best to ensure compatibility as the situation evolves.
+Hopefully WHIP support will be in OBS officially sometime soon. WHIP support is already added to many other applications and services, and VDO.Ninja will do its best to ensure compatibility as the situation evolves.
 
-See this video for details how to set up OBS WHIP to Vide0Link:
+See this video for details how to set up OBS WHIP to VDO.Ninja:
 
-Publishing from OBS directly to Vide0Link
+Publishing from OBS directly to VDO.Ninja
 
 A goal for a while has been to allow anyone to drop-in their own Meshcast replacement, using a third-party WHIP/WHEP server/service. That is, publish to a whip-service, and have viewers of the stream get the WHEP-view link, so they can view via WHEP instead of p2p. I've achieved this finally; close enough at least.
 
@@ -9472,7 +9472,7 @@ There's a few requirements to make it work though, so either an API wrapper is n
 \-- If your WHIP server returns an exposed "WHEP" field in the POST response header, with the URL to the WHEP view link, it will use that WHEP link. You just need to then specify the `&whipout` URL on the sender side then.
 \-- This should let you make your own Meshcast service with minimal work; the open-source WHIP API code I released the other day further makes it pretty easy.
 
-I've refined the WHIP service on `vdo.ninja/alpha/?whipview=xxx`, making it as robust as I can I think, so if some third-party WHIP client/app doesn't work with it, it may not an issue with Vide0Link. In those cases it will be up to the client to ensure full support of the WHIP specification, else it may not work with Vide0Link.
+I've refined the WHIP service on `vdo.ninja/alpha/?whipview=xxx`, making it as robust as I can I think, so if some third-party WHIP client/app doesn't work with it, it may not an issue with VDO.Ninja. In those cases it will be up to the client to ensure full support of the WHIP specification, else it may not work with VDO.Ninja.
 
 ## Related
 
@@ -9677,7 +9677,7 @@ description: Options for the &whip parameter
 
 ## Viewer side options
 
-<table><thead><tr><th width="335.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-whipout.md"><code>&#x26;whipout</code></a></td><td>Publish directly from OBS (or other) to Vide0Link without a virtual camera</td></tr><tr><td><a href="and-whip.md"><code>&#x26;whipview</code></a></td><td>Publish directly from OBS (or other) to Vide0Link without a virtual camera</td></tr><tr><td><a href="and-whipoutcodec.md"><code>&#x26;whipoutcodec</code></a></td><td>Lets you specify the WHIP video output codec</td></tr><tr><td><a href="and-whipoutaudiobitrate.md"><code>&#x26;whipoutaudiobitrate</code></a></td><td>Lets you specify the WHIP audio bitrate (kbps)</td></tr><tr><td><a href="and-whipoutvideobitrate.md"><code>&#x26;whipoutvideobitrate</code></a></td><td>Lets you specify the WHIP video bitrate (kbps)</td></tr><tr><td><a href="and-whipoutscale-alpha.md"><code>&#x26;whipoutscale</code></a>*</td><td>Scales down the WHIP video output via the URL</td></tr><tr><td><a href="and-whipoutscreensharecodec-alpha.md"><code>&#x26;whipoutscreensharecodec</code></a>*</td><td>Option to change codec of the WHIP while screen-sharing</td></tr><tr><td><a href="and-whipoutscreensharebitrate-alpha.md"><code>&#x26;whipoutscreensharebitrate</code></a>*</td><td>Option to change outbound screen-share video bitrate of WHIP</td></tr><tr><td><a href="and-cftoken-alpha.md"><code>&#x26;cftoken</code></a>*</td><td>Accepts the special token without needing to specify the cloudflare.vdo.ninja part if using <a href="and-whipout.md"><code>&#x26;whipout</code></a> instead</td></tr><tr><td><a href="and-svc.md"><code>&#x26;svc</code></a>*</td><td>Useful for publishing to WHIP broadcast servers that support scalable video modes</td></tr></tbody></table>
+<table><thead><tr><th width="335.57142857142856">Parameter</th><th>Explanation</th></tr></thead><tbody><tr><td><a href="and-whipout.md"><code>&#x26;whipout</code></a></td><td>Publish directly from OBS (or other) to VDO.Ninja without a virtual camera</td></tr><tr><td><a href="and-whip.md"><code>&#x26;whipview</code></a></td><td>Publish directly from OBS (or other) to VDO.Ninja without a virtual camera</td></tr><tr><td><a href="and-whipoutcodec.md"><code>&#x26;whipoutcodec</code></a></td><td>Lets you specify the WHIP video output codec</td></tr><tr><td><a href="and-whipoutaudiobitrate.md"><code>&#x26;whipoutaudiobitrate</code></a></td><td>Lets you specify the WHIP audio bitrate (kbps)</td></tr><tr><td><a href="and-whipoutvideobitrate.md"><code>&#x26;whipoutvideobitrate</code></a></td><td>Lets you specify the WHIP video bitrate (kbps)</td></tr><tr><td><a href="and-whipoutscale-alpha.md"><code>&#x26;whipoutscale</code></a>*</td><td>Scales down the WHIP video output via the URL</td></tr><tr><td><a href="and-whipoutscreensharecodec-alpha.md"><code>&#x26;whipoutscreensharecodec</code></a>*</td><td>Option to change codec of the WHIP while screen-sharing</td></tr><tr><td><a href="and-whipoutscreensharebitrate-alpha.md"><code>&#x26;whipoutscreensharebitrate</code></a>*</td><td>Option to change outbound screen-share video bitrate of WHIP</td></tr><tr><td><a href="and-cftoken-alpha.md"><code>&#x26;cftoken</code></a>*</td><td>Accepts the special token without needing to specify the cloudflare.vdo.ninja part if using <a href="and-whipout.md"><code>&#x26;whipout</code></a> instead</td></tr><tr><td><a href="and-svc.md"><code>&#x26;svc</code></a>*</td><td>Useful for publishing to WHIP broadcast servers that support scalable video modes</td></tr></tbody></table>
 
 \*NEW IN [VERSION 24](../../releases/v24.md)
 ---
@@ -9688,15 +9688,15 @@ description: '"The stream ID you are publishing to is already in use" and other 
 
 ### "The stream ID you are publishing to is already in use"
 
-Understanding[ stream IDs](../getting-started/stream-ids.md) will help potentially avoid these errors in the future, but the basic notion is any media stream being published over Vide0Link needs to register itself with a stream ID. This is specified by using the [`&push`](../source-settings/push.md) URL parameter, such as `&push=STREAMID`.
+Understanding[ stream IDs](../getting-started/stream-ids.md) will help potentially avoid these errors in the future, but the basic notion is any media stream being published over VDO.Ninja needs to register itself with a stream ID. This is specified by using the [`&push`](../source-settings/push.md) URL parameter, such as `&push=STREAMID`.
 
 The moment you connect to the system or start streaming, your stream ID gets registered to your connection, and so as long as you remain connected and online, you keep that stream ID. If you close the browser, hang up, or lose your Internet connection, then your stream ID unregisters automatically as well.
 
 If a stream ID you are trying to claim is already in use by another stream, and that other connection is still actively online, then you'll get an error about it being already in use. In this case, you will need to wait for that other user to hang up or disconnect before you can attempt to register the stream ID yourself.
 
-There are some subtleties to the above, such as if using passwords or self-hosted instances of Vide0Link, then stream IDs are isolated to their own unique realm, allowing you to use the same stream ID as someone else from a different realm. So if a stream ID is already in use, you can just change or add a password, and that will resolve the issue.
+There are some subtleties to the above, such as if using passwords or self-hosted instances of VDO.Ninja, then stream IDs are isolated to their own unique realm, allowing you to use the same stream ID as someone else from a different realm. So if a stream ID is already in use, you can just change or add a password, and that will resolve the issue.
 
-Of course, when you want to invite several people to a group room, you can't have different passwords, so you will want each guest to have their own unique stream ID still. By default with Vide0Link, if you do not use `&push` in the URL to specify a stream ID, then Vide0Link will auto generate a random stream ID for the guest. The system will also auto add the `&push=STREAMID` parameter to the guest's URL, so if the guest refreshes their page, they will keep the same stream ID.
+Of course, when you want to invite several people to a group room, you can't have different passwords, so you will want each guest to have their own unique stream ID still. By default with VDO.Ninja, if you do not use `&push` in the URL to specify a stream ID, then VDO.Ninja will auto generate a random stream ID for the guest. The system will also auto add the `&push=STREAMID` parameter to the guest's URL, so if the guest refreshes their page, they will keep the same stream ID.
 
 The above is where there are sometimes issues, as if you join a room without a `&push` value specified, and then after connecting connecting you copy/share your URL with someone else, your URL might now contain your stream ID. When you then share it with someone else, they won't be able to connect as you are already using the stream ID that is specified.
 
@@ -9714,7 +9714,7 @@ This error indicates that there is already someone in a group room that has join
 
 Claiming a room doesn't inherently mean much, other than anyone who joins the room will only acknowledge them as the main director. Acknowledging someone as a director will simply mean that director has certain privileges when requesting actions of a guest or scene. A validated director can ask a guest to hang up, for example, while otherwise such a request will be rejected.
 
-Since Vide0Link is built on the concept of peer to peer connections, claiming a room is the same concept as claiming a stream ID, and those claims are tied to your active connections. Everything beyond that is really a matter of peers agreeing to a certain set of rules amongst themselves. If someone does claim a room and forgets to close their browser, you'll need to close that browser, change rooms, or change room passwords if you wish to have someone else become the main director.
+Since VDO.Ninja is built on the concept of peer to peer connections, claiming a room is the same concept as claiming a stream ID, and those claims are tied to your active connections. Everything beyond that is really a matter of peers agreeing to a certain set of rules amongst themselves. If someone does claim a room and forgets to close their browser, you'll need to close that browser, change rooms, or change room passwords if you wish to have someone else become the main director.
 # Appearing then disappearing guest
 
 In this case, it sounds like the remote guest is failing to create a WebRTC peer connection with the director.
@@ -9731,8 +9731,8 @@ Things that often work:
 * Use a VPN designed for streaming, such as [speedify.com](https://speedify.com/). Free VPNs exist as Chrome extensions, if you need something quick.
 * Switch networks; if using WiFi, switch to Cellular, and vice-versa.
 * If behind a corporate firewall, have the IT administrators allow WebRTC traffic, or use a different.
-* [Meshcast.io](../steves-helper-apps/meshcast.io.md) is a server-based WebRTC system, and it may work in place of Vide0Link for simple needs.
-* If nothing above works, join the Discord support community for personalized help at discord.vdo.ninja.
+* [Meshcast.io](../steves-helper-apps/meshcast.io.md) is a server-based WebRTC system, and it may work in place of VDO.Ninja for simple needs.
+* If nothing above works, join the Discord support community for personalized help at [discord.vdo.ninja](https://discord.vdo.ninja).
 ---
 description: >-
   ATEM devices don't support HDCP, which some HDMI input devices require.
@@ -9745,11 +9745,11 @@ One user reports that their ATEM extreme wasn't working with an Amazon Firestick
 
 Due to HDCP, it turns out you need to use an HDMI splitter that bypasses HDCP for it to work, else you'll just get a black screen. The ATEM does not support HDCP, so you need a way to disable it, and some splitters can offer that.
 
-Taking a look at the Firestick HD Max and Vide0Link
+Taking a look at the Firestick HD Max and VDO.Ninja
 
 ### Background and more information
 
-In a YouTube video, it was demonstrated that a Firestick, such as the 4K Max, can play Vide0Link videos at full-screen with a clean output. AV1 is even supported to some degree with the 4K Max, which offers excellent color reproduction versus VP8 or H264.
+In a YouTube video, it was demonstrated that a Firestick, such as the 4K Max, can play VDO.Ninja videos at full-screen with a clean output. AV1 is even supported to some degree with the 4K Max, which offers excellent color reproduction versus VP8 or H264.
 
 Given the price of a Firestick versus something like an SBC (ie: Orange Pi 5), it's an appealing option to use as a source for an ATEM device, like an ATEM mini. ATEMs don't have browser source support on their own, making a hack like this necessary.
 
@@ -9759,12 +9759,12 @@ If using this setup with an overlay, like [Social Stream](../steves-helper-apps/
 
 It's also possible to use OBS to output a source to an ATEM device, via HDMI output on your computer. You'll still need to use a green screen if wanting transparencies of course.
 
-Lastly, you can use IFrames and the Vide0Link mixer app to create custom scenes and layouts with transparencies in a browser source, if you wanted to do the mixing that way, avoiding the need for Chroma keying. Just please note that a Firestick or other low-powered dongle don't seem to handle multiple videos and complex effects all that well, or even full HD video for that matter. You may want to get a NUC device or powerful SBC to do more complex mixes that feed out into an ATEM of such.
+Lastly, you can use IFrames and the VDO.Ninja mixer app to create custom scenes and layouts with transparencies in a browser source, if you wanted to do the mixing that way, avoiding the need for Chroma keying. Just please note that a Firestick or other low-powered dongle don't seem to handle multiple videos and complex effects all that well, or even full HD video for that matter. You may want to get a NUC device or powerful SBC to do more complex mixes that feed out into an ATEM of such.
 # Audio Clicking / Popping
 
 Bluetooth microphones can cause clicking/popping.
 
-[Vide0Link](https://vdo.ninja/) uses 48kHz audio (48000hz), so any software you are using with Vide0Link should ideally also use 48-KHz. If using a different sample rate, the browser or app will try to convert it as needed, but this doesn't always go smoothly. Very high sample rates are especially troublesome on some systems, so having your system be end-to-end setup in 48khz audio is suggested and reduce any additional audio processing overhead.
+[VDO.Ninja](https://vdo.ninja/) uses 48kHz audio (48000hz), so any software you are using with VDO.Ninja should ideally also use 48-KHz. If using a different sample rate, the browser or app will try to convert it as needed, but this doesn't always go smoothly. Very high sample rates are especially troublesome on some systems, so having your system be end-to-end setup in 48khz audio is suggested and reduce any additional audio processing overhead.
 
 If using any virtual audio cables or pro audio gear, try to increase the audio buffer packet sizes, as buffer-under issues can cause audio distortion. Too small an audio buffer on some mic preamps or virtual audio cables can lead to clicking or distortion.
 
@@ -9798,16 +9798,16 @@ Fully restart OBS and see if that clears the issue.
 
 You can try to bring in audio via [https://vdo.ninja/electron](https://vdo.ninja/electron) instead. [`&novideo`](../advanced-settings/video-parameters/and-novideo.md) can be used to ingest just the audio. Route the audio to a virtual audio device and then bring that into OBS as an audio device. Should be in sync this way.
 
-Vide0Link uses 48000khz sample rate for audio; using this sample rate whenever possible can help keep things in sync.
+VDO.Ninja uses 48000khz sample rate for audio; using this sample rate whenever possible can help keep things in sync.
 
 Try to avoid overloading your CPU or using too many browser source elements in OBS; OBS Browser Source can get overwhelmed.
 
-VMix could be an alternative to OBS if problems persist; Vmix supports Vide0Link also.
+VMix could be an alternative to OBS if problems persist; Vmix supports VDO.Ninja also.
 ---
 description: Several possible causes of audio not working in Windows are listed
 ---
 
-# Audio over Vide0Link isn't working
+# Audio over VDO.Ninja isn't working
 
 ### OBS isn't set to capture audio
 
@@ -9825,7 +9825,7 @@ Starting OBS in adminstirator mode, if using Windows, may help. Reducing the CPU
 
 ### Sample rates or invalid audio settings
 
-If however you are testing Vide0Link and audio isn't working at all, from browser to browser, yet you see your mic-level loudness green indicator moving in Vide0Link as you speak, double check your Windows audio settings. In particular, high sample rates, like 384-khz sample rates, 32-bit depth audio playback, or other professional audio device settings in Windows may cause problems with audio playback.
+If however you are testing VDO.Ninja and audio isn't working at all, from browser to browser, yet you see your mic-level loudness green indicator moving in VDO.Ninja as you speak, double check your Windows audio settings. In particular, high sample rates, like 384-khz sample rates, 32-bit depth audio playback, or other professional audio device settings in Windows may cause problems with audio playback.
 
 <figure><img src="../.gitbook/assets/image (4) (9).png" alt=""><figcaption></figcaption></figure>
 
@@ -9835,13 +9835,13 @@ Surround sound or multi-channel audio, for both the microphone and audio playbac
 
 If using a remote virtual desktop, such as a server-hosted version of Windows, be sure the Windows audio service is enabled; you might be able to turn this on via `services.msc` , accessible via the `Windows Key + R` run prompt.
 
-Also check that the default audio device in Windows is as expected and that any select audio output device in Vide0Link is pointed to the right location. Bluetooth devices may sometimes be problematic, especially on mobile, so try to avoid Bluetooth if possible.
+Also check that the default audio device in Windows is as expected and that any select audio output device in VDO.Ninja is pointed to the right location. Bluetooth devices may sometimes be problematic, especially on mobile, so try to avoid Bluetooth if possible.
 
-In some cases, adding `&noap` to the URL for the sender or/and reciever of the audio may help, as this will disable web-audio node processing in Vide0Link, which may fail when using invalid sample rates of an overly stressed CPU.
+In some cases, adding `&noap` to the URL for the sender or/and reciever of the audio may help, as this will disable web-audio node processing in VDO.Ninja, which may fail when using invalid sample rates of an overly stressed CPU.
 
 ### Not all playback devices support audio
 
-Some media devices, like the Magewell Director Mini, may not support audio via Vide0Link, and only video. Please also ensure the video is playing, as some devices may pause a media track until there is a user-gesture, which woudl prevent audio from playing in cases.
+Some media devices, like the Magewell Director Mini, may not support audio via VDO.Ninja, and only video. Please also ensure the video is playing, as some devices may pause a media track until there is a user-gesture, which woudl prevent audio from playing in cases.
 
 ### Echo cancellation
 
@@ -9853,13 +9853,13 @@ Sometimes if there is background audio being captured, the system will remove th
 
 If using an external audio device on mobile, like via USB, it's suggested to use a TRRS audio input adapter, with the your microphone connected to that.
 
-
+[https://www.youtube.com/watch?v=BBus\_S8iJUE](https://www.youtube.com/watch?v=BBus\_S8iJUE\&feature=youtu.be)
 
 If on Android, using Firefox might work well without the need of TRRS however.
 
 ### If using the native mobile app
 
-If using the native Vide0Link mobile app, please note that screen sharing might only contain microphone-sourced audio -- the system audio won't be detected at the moment. This will hopefully change soon, but there is no timeline as to when it will be working.
+If using the native VDO.Ninja mobile app, please note that screen sharing might only contain microphone-sourced audio -- the system audio won't be detected at the moment. This will hopefully change soon, but there is no timeline as to when it will be working.
 
 ---
 description: Browsers may prevent videos from auto-playing on initial page load
@@ -9879,7 +9879,7 @@ A full-screen-sized play button will show up to help accommodate the need for us
 
 * use the Electron Capture app or OBS Studio to play videos; these apps have gesture-requirements disabled
 * in Chrome, go to: `chrome://settings/content/sound?search=sound` and add vdo.ninja to the list of "allowed to play sound" list
-* add `&noaudio` to your Vide0Link view link, so no audio track loads -- without audio, the video should auto-play.&#x20;
+* add `&noaudio` to your VDO.Ninja view link, so no audio track loads -- without audio, the video should auto-play.&#x20;
 * try adding `--autoplay-policy=no-user-gesture-required` to the Chrome/Chromium command line to have the auto-play policy changed on load (this may not work with recent versions of Chrome though)
 * make sure there are no Adblockers installed or other extensions install; sometimes these may interfere with auto-playing
 
@@ -10032,15 +10032,15 @@ description: >-
 
 # Camera works in Safari; not Chrome
 
-### Check if its Vide0Link specific or browser-wide
+### Check if its VDO.Ninja specific or browser-wide
 
-Often the camera will not just fail ot load in Vide0Link, but fail to load with any web app in Chrome or browser.
+Often the camera will not just fail ot load in VDO.Ninja, but fail to load with any web app in Chrome or browser.
 
-You can confirm its not Vide0Link specific by going to the following page and seeing if the camera works with this simple camera app: [https://webrtc.github.io/samples/src/content/devices/input-output/](https://webrtc.github.io/samples/src/content/devices/input-output/)
+You can confirm its not VDO.Ninja specific by going to the following page and seeing if the camera works with this simple camera app: [https://webrtc.github.io/samples/src/content/devices/input-output/](https://webrtc.github.io/samples/src/content/devices/input-output/)
 
-If it fails only within Vide0Link, make sure you've enabled the Camera and Microphone permissions for Vide0Link.
+If it fails only within VDO.Ninja, make sure you've enabled the Camera and Microphone permissions for VDO.Ninja.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Make sure Vide0Link has access to the camera and microphone</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Make sure VDO.Ninja has access to the camera and microphone</p></figcaption></figure>
 
 ### Close other apps or restart the computer
 
@@ -10088,7 +10088,7 @@ Browsers won't let you auto-start a screen share, as it will require a user's in
 There are still some other options though that might work for your use case:
 
 * The[ Electron Capture app](../steves-helper-apps/electron-capture.md) can be configured to allow for automatic screen sharing, which is useful if you want to start the screen share from command line or as a quickstart icon.
-* OBS Studio can be used for screen capturing, and then when needed, you can have Vide0Link auto-select the OBS Virtual Camera as a source, since it can be selected automatically as a web camera.
+* OBS Studio can be used for screen capturing, and then when needed, you can have VDO.Ninja auto-select the OBS Virtual Camera as a source, since it can be selected automatically as a web camera.
 * If you don't want to have to start OBS or are already running it, there's a virtual camera driver that will let you select screen shares as a source. [See here](https://github.com/rdp/screen-capture-recorder-to-video-windows-free).
 # Can't capture an application's audio when screen-sharing
 
@@ -10098,7 +10098,7 @@ There are still some other options though that might work for your use case:
 
 To capture an application's audio, and not the entire desktop, you can use a virtual audio cable.
 
-On **Windows**, VB Cable is a free option, you can use it with Windows' built-in "mixer" app to push the audio from the application to the virtual cable. From there, you can bring the audio into Vide0Link as needed. There's also Voicemeeter, which offers more advanced routing and features for Windows users.
+On **Windows**, VB Cable is a free option, you can use it with Windows' built-in "mixer" app to push the audio from the application to the virtual cable. From there, you can bring the audio into VDO.Ninja as needed. There's also Voicemeeter, which offers more advanced routing and features for Windows users.
 
 With **macOS**, Loopback is a wonderful app that makes capturing audio from an application easy, but it is non-free. For a list of free options for macOS, please see here: [https://docs.vdo.ninja/platform-specific-issues/macos#capturing-audio](https://docs.vdo.ninja/platform-specific-issues/macos#capturing-audio)
 
@@ -10107,21 +10107,21 @@ For a detailed guide on how to capture an application's audio, please see here: 
 There are other methods and software alternatives out there to solving this problem, although.
 ---
 description: >-
-  Can't load camera both in both Vide0Link and OBS (or other app) at the same
+  Can't load camera both in both VDO.Ninja and OBS (or other app) at the same
   time
 ---
 
 # Can't load camera both in OBS and VDON
 
-If using a physical camera in OBS, or using a physical camera in [Vide0Link](https://vdo.ninja/), it can't be used by a second app.
+If using a physical camera in OBS, or using a physical camera in [VDO.Ninja](https://vdo.ninja/), it can't be used by a second app.
 
-If using the camera with [Vide0Link](https://vdo.ninja/), you can use it with other websites within the same browser though. So you can use the web version of Discord with [Vide0Link](https://vdo.ninja/); no issues with that.
+If using the camera with [VDO.Ninja](https://vdo.ninja/), you can use it with other websites within the same browser though. So you can use the web version of Discord with [VDO.Ninja](https://vdo.ninja/); no issues with that.
 
 #### However if you need to load the camera up in two different desktop apps, try the following:
 
 * Open up a second OBS instance, and load your camera in that instead.
 * Enable its Virtual Camera.
-* Select the Virtual Camera in [Vide0Link](https://vdo.ninja/).
+* Select the Virtual Camera in [VDO.Ninja](https://vdo.ninja/).
 * Select the Virtual Camera now also in the first OBS instance (or other app). 
   
   Your camera \*may\* now be working in both apps; this has been tested with OBS and VDO.NInja on Windows 11 anyways.
@@ -10132,8 +10132,8 @@ _Example:_
 
 #### If that doesn't work, another option that works well:
 
-* Just pull your video into OBS from Vide0Link. It uses up a bit more CPU, but it simplifies things to just use [Vide0Link](https://vdo.ninja/) as the source for OBS.
-* You can also always use the Virtual Camera from OBS to load the Vide0Link camera feed into another app.
+* Just pull your video into OBS from VDO.Ninja. It uses up a bit more CPU, but it simplifies things to just use [VDO.Ninja](https://vdo.ninja/) as the source for OBS.
+* You can also always use the Virtual Camera from OBS to load the VDO.Ninja camera feed into another app.
 ---
 description: Can't load camera from local webserver issues and how to resolve them.
 ---
@@ -10156,7 +10156,7 @@ openssl req  -nodes -new -x509  -keyout key.pem -out cert.pem
 
 <figure><img src="../.gitbook/assets/image (240).png" alt=""><figcaption></figcaption></figure>
 
-If you can access the site via http://localhost, or http://127.0.0.1, that may work also. This could be possible if hosting Vide0Link locally, and accessing it via a local webserver.  If you have Python installed, you could get away using it to host Vide0Link in this way.
+If you can access the site via http://localhost, or http://127.0.0.1, that may work also. This could be possible if hosting VDO.Ninja locally, and accessing it via a local webserver.  If you have Python installed, you could get away using it to host VDO.Ninja in this way.
 
 ```
 git clone https://github.com/steveseguin/vdoninja
@@ -10164,14 +10164,14 @@ cd vdoninja
 python -m http.server 8000
 ```
 
-When accessing Vide0Link in this way, make sure the remote computer that may also be accessing Vide0Link is using the same "salt". To debug this, you can try adding \&salt=vdo.ninja to all the Vide0Link links, as that will mnually assign all the links to use the same salt. The salt is used in the encryption process for site isolation and increased privacy/security when not using the official Vide0Link deployment.
+When accessing VDO.Ninja in this way, make sure the remote computer that may also be accessing VDO.Ninja is using the same "salt". To debug this, you can try adding \&salt=vdo.ninja to all the VDO.Ninja links, as that will mnually assign all the links to use the same salt. The salt is used in the encryption process for site isolation and increased privacy/security when not using the official VDO.Ninja deployment.
 ---
 description: Some games may need settings tweaked to be captured properly with the browser
 ---
 
 # Can't screen capture certain games
 
-If you're struggling to capture a game with Vide0Link using the browser, a list of options are below.
+If you're struggling to capture a game with VDO.Ninja using the browser, a list of options are below.
 
 * Disable Fullscreen Optimizations: Right-click the game's .exe file, go to Properties > Compatibility, and check "Disable fullscreen optimizations"
   * Sometimes you want to even uncheck "Disable fullscreen optimizations", so try both ways
@@ -10183,7 +10183,7 @@ If you're struggling to capture a game with Vide0Link using the browser, a list 
 
 * Run the game in windowed or borderless windowed mode
 
-* Consider using OBS Studio to capture the game with, and then output the captured video to Vide0Link using the OBS Virtual Camera.
+* Consider using OBS Studio to capture the game with, and then output the captured video to VDO.Ninja using the OBS Virtual Camera.
   * Sound can be captured with a virtual audio device in conjunction with the the OBS audio monitoring output option.
 
 * If using hybrid graphics, such as two graphics cards, try to run the game on the same graphics card as the system / browser.
@@ -10196,7 +10196,7 @@ If you're struggling to capture a game with Vide0Link using the browser, a list 
 
 * Update your graphics card drivers
 
-* If using a browser such as Opera GX, it may throttle or disable Vide0Link when gaming.
+* If using a browser such as Opera GX, it may throttle or disable VDO.Ninja when gaming.
   * The Electron Capture application, or a different browser, are better choices
 
 ---
@@ -10225,7 +10225,7 @@ description: >-
 
 **Use OBS and it's Virtual Camera:**
 
-* You can use OBS to capture lightroom, and from there output it to Vide0Link via the OBS Virtual Camera.  You would select the virtual camera in Vide0Links a camera source, instead of a screen share source.  OBS has more advanced screen capture options than Chrome does.
+* You can use OBS to capture lightroom, and from there output it to VDO.Ninja via the OBS Virtual Camera.  You would select the virtual camera in VDO.Ninjas a camera source, instead of a screen share source.  OBS has more advanced screen capture options than Chrome does.
 
 ---
 description: Accessing the wide-angle or zoom lens on your camera
@@ -10235,7 +10235,7 @@ description: Accessing the wide-angle or zoom lens on your camera
 
 Some camera lenses are not easily accessible in native mobile applications, and many are not available at all in the browser.
 
-The [native app versions](../steves-helper-apps/native-mobile-app-versions.md) of Vide0Link may sometimes offer additional lens options not found in the browser, but adding all options is still a work-in-progress.
+The [native app versions](../steves-helper-apps/native-mobile-app-versions.md) of VDO.Ninja may sometimes offer additional lens options not found in the browser, but adding all options is still a work-in-progress.
 
 On Android, you can try Firefox Mobile as well as Chrome or other browsers to see if your camera lens appears there. Some manufacturers offer better support for their cameras than others, making lens selection more accessible to browsers and app developers.
 
@@ -10243,7 +10243,7 @@ Sometimes you can zoom in and the cameras will switch automatically, but this is
 
 ### Digital zoom
 
-There is the option to digitally zoom with Vide0Link, [\&effects=7](../source-settings/effects.md), will allow you to adjust the digital zoom via the browser. This isn't an ideal solution, but it may work in some cases where optical zoom isn't available.
+There is the option to digitally zoom with VDO.Ninja, [\&effects=7](../source-settings/effects.md), will allow you to adjust the digital zoom via the browser. This isn't an ideal solution, but it may work in some cases where optical zoom isn't available.
 
 ### Smartphones that support more than one rear camera
 
@@ -10305,13 +10305,13 @@ This list was based on results obtained using BrowserStack.com, so cloud-hosted 
 
 ### WHIP mode
 
-Vide0Link supports the [WHIP](../advanced-settings/whip-parameters/and-whip.md) streaming protocol, so if there is a native camera app that has proper WHIP-output support, and has the camera features you are looking for, using that can be used with Vide0Link.
+VDO.Ninja supports the [WHIP](../advanced-settings/whip-parameters/and-whip.md) streaming protocol, so if there is a native camera app that has proper WHIP-output support, and has the camera features you are looking for, using that can be used with VDO.Ninja.
 
-Currently WHIP support in Vide0Link is a bit experimental, but the publishing URL for a WHIP-enabled device to stream to is:
+Currently WHIP support in VDO.Ninja is a bit experimental, but the publishing URL for a WHIP-enabled device to stream to is:
 
 _`https://whip.vdo.ninja/STREAMIDHERE`_
 
-To view a WHIP stream then on Vide0Link, have open the following link in your browser:
+To view a WHIP stream then on VDO.Ninja, have open the following link in your browser:
 
 _`https://vdo.ninja/alpha/?whip=STREAMIDHERE`_
 
@@ -10327,7 +10327,7 @@ There are camera lens adapters available for smartphones for fairly cheap; anywh
 
 ### USB  external cameras
 
-With the newest development builds of the Android native app of Vide0Link, many external (USB/UVC) cameras are supported.
+With the newest development builds of the Android native app of VDO.Ninja, many external (USB/UVC) cameras are supported.
 
 With iPhones/iPads, USB-based models (iPhone 15 Pro) seem to support some USB video devices as well, via the USB 3.0 port.
 
@@ -10338,7 +10338,7 @@ description: iPhones don't allow the user to select the audio output destination
 
 # Can't select audio output on iOS
 
-While iOS devices have so far not allowed the user to select the audio output destination of Vide0Link via Safari, there are some experimental options in the Advanced settings menu of Safari.
+While iOS devices have so far not allowed the user to select the audio output destination of VDO.Ninja via Safari, there are some experimental options in the Advanced settings menu of Safari.
 
 You can access such experimental option via Settings -> Safari ->Advanced -> Allow speaker device selection, as seen in the below screen capture.
 
@@ -10383,7 +10383,7 @@ Please refer to this guide for more details:
 
 ### Android
 
-For Android users, downloading the Vide0Link APK file will let you screen share on Android, however you can't screen share via the browser on Android.
+For Android users, downloading the VDO.Ninja APK file will let you screen share on Android, however you can't screen share via the browser on Android.
 
 The Android app is available here: [https://docs.vdo.ninja/getting-started/native-mobile-app-versions](https://docs.vdo.ninja/getting-started/native-mobile-app-versions)
 ---
@@ -10410,7 +10410,7 @@ For gaming, this can be an obvious problem.
 
 If you're a gamer comfortable with AutoHotKey, you can hide the cursor with it using a custom hotkey. You can download the free script to do this here: [https://github.com/steveseguin/hide-cursor](https://github.com/steveseguin/hide-cursor), which works with Windows and is preset to toggle the cursor with WinKey+Click.
 
-You can use OBS to capture the game and use the OBS Virtual Camera to share the screen with Vide0Link that way. This might result in more stable game play capture, but it is added work.
+You can use OBS to capture the game and use the OBS Virtual Camera to share the screen with VDO.Ninja that way. This might result in more stable game play capture, but it is added work.
 
 You can setup the OBS Virtual Camera to output a specific scene or screen-share, rather than the current active scene, using this filter:
 [https://obsproject.com/forum/resources/virtual-cam-filter.1142/](https://obsproject.com/forum/resources/virtual-cam-filter.1142/)
@@ -10432,13 +10432,13 @@ description: >-
 
 Chrome continues to be incompatible with Blackmagic Decklink video sources, however there still are solutions.
 
-* Someone says Firefox works for them, but not Chrome, so perhaps try Firefox with Vide0Link
+* Someone says Firefox works for them, but not Chrome, so perhaps try Firefox with VDO.Ninja
 * Bringing the Decklink into OBS, and then into Chrome via the OBS Virtual Camera seems like a popular approach.
-* It's possible to bring in Decklink via OBS using WHIP webrtc output, which is compatible with Vide0Link if there is no NAT firewall blocking the connection.
+* It's possible to bring in Decklink via OBS using WHIP webrtc output, which is compatible with VDO.Ninja if there is no NAT firewall blocking the connection.
   * An option on this page ([https://whip.vdo.ninja/](https://whip.vdo.ninja/)), shows the WHIP ingestion URL and will offer a view-link.
   * I also have WHIP working with [https://meshcast.io/](https://meshcast.io/), if needed, but this may limit bitrates. Details on WHIP publishing should be available on meshcast.io.
-* Raspberry Ninja as a command-line tool for Vide0Link that I am able to support myself, [https://raspberry.ninja/](https://raspberry.ninja/),  and it is compatible with a large array of input sources.
-  * Basic Decklink support could be added probably within a few minutes, but it's not as easy to use as the browser-based version of Vide0Link.
+* Raspberry Ninja as a command-line tool for VDO.Ninja that I am able to support myself, [https://raspberry.ninja/](https://raspberry.ninja/),  and it is compatible with a large array of input sources.
+  * Basic Decklink support could be added probably within a few minutes, but it's not as easy to use as the browser-based version of VDO.Ninja.
   * I don't have Decklink device to actually test support with here, and Windows compatibility may be challenging, but it may be worth considering for your needs.
 
 Please advocate to both Decklink and the Chromium development teams for proper Decklink support, as this has been a long-standing issue without either party addressing the issue yet.
@@ -10454,13 +10454,13 @@ Dealing with feedback is challenging, as the reasons are numerous, but not alway
 * Using Safari as it has poor AEC abilities; use Chrome instead. Safari struggles when a room has bad reverb issues, so changing locations might also help, if forced to use Safari.
 * [`&proaudio`](../general-settings/stereo.md) or [`&stereo`](../general-settings/stereo.md) mode is being used. This mode will disable echo-cancellation and so you must use headphones in this mode. As noted above, if using this mode, lower your headphone volume or/and use closed-back headphones.
 * Screen-sharing the desktop /w audio capture on, especially in the case of a group room, will create nasty feedback for others. You can add [`&sstype=3`](../newly-added-parameters/and-screensharetype.md) to the guest's invite link to try to prevent this issue, but otherwise you may need to use a virtual audio cable to limit what application's audio gets recorded. Details on that here: [https://docs.vdo.ninja/guides/audio](https://docs.vdo.ninja/guides/audio)
-* Incorrect OBS configuration is common, especially if the echo is only heard in the RTMP broadcast or recording, and not by those using Vide0Link themselves
+* Incorrect OBS configuration is common, especially if the echo is only heard in the RTMP broadcast or recording, and not by those using VDO.Ninja themselves
 * Having two browser tabs open (such as one with the YouTube output playing) will cause echo. Echo cancellation only works within the same tab that the audio is played back and captured, and only if the echo is not prolonged.
   
   You can use an experimental Chrome feature to solve this issue though. Go to [chrome://flags/#chrome-wide-echo-cancellation](chrome://flags/#chrome-wide-echo-cancellation) and enable Chrome Wide Echo Cancellation, to see if it helps.
-* Having two devices connected to Vide0Link near each other, or sometimes even in the same house, can create echo. Phones have very sensitive microphones and can pick up the audio of others who might also be on the group call.
+* Having two devices connected to VDO.Ninja near each other, or sometimes even in the same house, can create echo. Phones have very sensitive microphones and can pick up the audio of others who might also be on the group call.
 * Enabling certain advanced web-audio effects, such as per-video-specific audio output destinations can break echo cancellation.
-* Playing an IFrame within Vide0Link (website share) may not have that IFrame's audio cancelled out by the echo-cancellation features.
+* Playing an IFrame within VDO.Ninja (website share) may not have that IFrame's audio cancelled out by the echo-cancellation features.
 * If only appearing in the OBS recording or stream, check to make sure you are not capturing the desktop's audio in OBS. This can happen if not using "Control audio via OBS" in the OBS Browser source, capturing a screen-share into OBS, or trying to record the director's room audio with OBS.
 
 #### Troubleshooting
@@ -10471,16 +10471,16 @@ Normally the person who isn't hearing any echo or feedback is the cause.
 
 If you identify that person, triple check that they are using Chrome and not Safari, make sure they are wearing headphones and that the audio is correctly playing into them, and have them close all other browser tabs and applications.
 
-If the issue is only within OBS, this is likely an issue with OBS and not Vide0Link. Try disabling all global audio devices, muting audio devices in OBS one at a time, and double checking the advanced audio mixing settings.
+If the issue is only within OBS, this is likely an issue with OBS and not VDO.Ninja. Try disabling all global audio devices, muting audio devices in OBS one at a time, and double checking the advanced audio mixing settings.
 ---
 description: Permission denied when trying to access the camera or microphone
 ---
 
 # Enable Camera / Microphone permissions
 
-Once camera / microphone permission have been denied, often accidentally, the browser won't let Vide0Link ask for it again. You'll need to manually change the permission to fix it, or use a different browser. How to change the permission depends on the browser and operation system.
+Once camera / microphone permission have been denied, often accidentally, the browser won't let VDO.Ninja ask for it again. You'll need to manually change the permission to fix it, or use a different browser. How to change the permission depends on the browser and operation system.
 
-I've provided links to some guides. If these guides are helpful for you, I'll offer a guide in [Vide0Link](https://vdo.ninja/) to help future users when I detect permissions have been denied.
+I've provided links to some guides. If these guides are helpful for you, I'll offer a guide in [VDO.Ninja](https://vdo.ninja/) to help future users when I detect permissions have been denied.
 
 ### _**How to change a site's camera & microphone permissions**_
 
@@ -10516,15 +10516,15 @@ If you still have issues, try a different browser; perhaps Firefox.
 
 ### **Firefox Mobile**
 
-In Firefox Mobile, you can try going to **Settings** -> **Site permissions** -> **exceptions** (at bottom) -> **Vide0Link**, and then manually set the permissions for the camera and microphone to **enabled**.
+In Firefox Mobile, you can try going to **Settings** -> **Site permissions** -> **exceptions** (at bottom) -> **VDO.Ninja**, and then manually set the permissions for the camera and microphone to **enabled**.
 
 If Firefox Mobile still gives you issues afterwards, try in incognito mode, try a different browser, or fully restart the device.
 
 ### Vivaldi / Brave / Opera
 
-You can try following the same steps needed for Chrome above, however if that fails, ensure Vide0Link is not being loaded via an IFrame.
+You can try following the same steps needed for Chrome above, however if that fails, ensure VDO.Ninja is not being loaded via an IFrame.
 
-In the case of [invite.cam](https://invite.cam/) for example, which loads Vide0Link via an IFrame, you may need to give microphone and camera permissions to both the invite.cam and Vide0Link domains.
+In the case of [invite.cam](https://invite.cam/) for example, which loads VDO.Ninja via an IFrame, you may need to give microphone and camera permissions to both the invite.cam and VDO.Ninja domains.
 
 You can visit [invite.cam](https://invite.cam/) and [vdo.ninja](https://vdo.ninja/), and for each domain, ensure the microphone and camera permissions are set to allow.
 
@@ -10537,7 +10537,7 @@ If the issue persists, fully close Safari and try again. Sometimes updating your
 
 ### IFrame permissions not provided
 
-If embedding Vide0Link into a site as an IFrame, you'll not be allowed access to camera or microphones unless that IFRAME-element has allowed said permissions.
+If embedding VDO.Ninja into a site as an IFrame, you'll not be allowed access to camera or microphones unless that IFRAME-element has allowed said permissions.
 
 See the documentation for more details
 
@@ -10549,20 +10549,20 @@ Adding [`&safemode`](../newly-added-parameters/and-safemode.md) or [`&videodevic
 
 In either mode, you might be able to bypass the initial camera selection page, or start the system with the default camera settings.
 
-If you are able to start the session in this mode, you can go to the Vide0Link gear icon (settings), click on User settings, and then clear the local storage. You can then retry, refreshing the page, and try to connect again.
+If you are able to start the session in this mode, you can go to the VDO.Ninja gear icon (settings), click on User settings, and then clear the local storage. You can then retry, refreshing the page, and try to connect again.
 ---
 description: >-
-  If screen sharing, you may see a frame rate drop once Vide0Link loses focus.
+  If screen sharing, you may see a frame rate drop once VDO.Ninja loses focus.
   This background app-throttling can normally be disabled
 ---
 
 # FPS drop if app not in focus
 
-Chrome and Chromium-based browsers will sometimes throttle or limit the resources available to browser tabs that are not visible or in the background. This can result in a frame rate loss, often when using digital effects (green screen), when screen sharing, or using Vide0Link while gaming.
+Chrome and Chromium-based browsers will sometimes throttle or limit the resources available to browser tabs that are not visible or in the background. This can result in a frame rate loss, often when using digital effects (green screen), when screen sharing, or using VDO.Ninja while gaming.
 
 ### Windows process throttling (efficiency mode)
 
-If the issue is with Windows itself throttling the tab or application, you can open the Task Process manager (`Ctrl + Shift + Esc`), expand the processes for the browser application, and click on the Vide0Link tab process.
+If the issue is with Windows itself throttling the tab or application, you can open the Task Process manager (`Ctrl + Shift + Esc`), expand the processes for the browser application, and click on the VDO.Ninja tab process.
 
 You can right-click it and disable efficiency mode if it is on.
 
@@ -10580,25 +10580,25 @@ Some flags you can try disable in Chrome are the following:
 
 You can also go into your browser's settings and search for "performance" or go to `chrome://settings/system` , and at the bottom, you might see performance setting options.
 
-Disable the efficiency mode, or customize as desired, and that might help with performance of Vide0Link when gaming with the tab in the background.
+Disable the efficiency mode, or customize as desired, and that might help with performance of VDO.Ninja when gaming with the tab in the background.
 
 <figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Electron Capture
 
-If you can't get things to improve, you can try the [Electron Capture app](../steves-helper-apps/electron-capture.md) for screen sharing or for Vide0Link. It's optimized to not throttle in most cases, and it can be pinned on top of other applications if occlusion is a cause of throttling.
+If you can't get things to improve, you can try the [Electron Capture app](../steves-helper-apps/electron-capture.md) for screen sharing or for VDO.Ninja. It's optimized to not throttle in most cases, and it can be pinned on top of other applications if occlusion is a cause of throttling.
 
 Get Electron Capture here. Enable elevated privs if screen sharing with it
 
 ### OBS Virtual Camera
 
-If screen sharing is getting low frame rates still, you can try using OBS to screen capture your game or application, and use it's virtual camera output as the source for Vide0Link.
+If screen sharing is getting low frame rates still, you can try using OBS to screen capture your game or application, and use it's virtual camera output as the source for VDO.Ninja.
 
 OBS with its Virtual Camera can maintain a higher steady frame rate than most browsers can when screen sharing. You can use a virtual audio cable to capture the games/application audio, if needed.
 
 # Getting “Overconstrained" Camera Error
 
-If you get an Overconstrained error, it typically means the webcam or camera device has settings that are not compatible with Vide0Link code. With every camera being different, and everyone wanting high-quality video, it's a game of whack-a-mole to address each specific instance.
+If you get an Overconstrained error, it typically means the webcam or camera device has settings that are not compatible with VDO.Ninja code. With every camera being different, and everyone wanting high-quality video, it's a game of whack-a-mole to address each specific instance.
 
 Some ideas though:
 
@@ -10614,7 +10614,7 @@ For a guide on deploying your own TURN server on a Ubuntu server, see the below 
 
 The benefits of a turn server include Increased security when actively used (less chance of IP leaking) and better network compatibility. Without a TURN server, about 10% of remote guests will not be able to connect with each other. In some cases, at the cost of added latency, a TURN server can also provide better video quality by means of forcing TCP data transfer.
 
-I do offer a basic TURN server for Vide0Link users, but it is costly to operate and maintain. Deploying your own can offer better reliability and it frees up potential resources for other Vide0Link users. Please do not abuse it.
+I do offer a basic TURN server for VDO.Ninja users, but it is costly to operate and maintain. Deploying your own can offer better reliability and it frees up potential resources for other VDO.Ninja users. Please do not abuse it.
 
 Google Cloud offers a free small server for life, so it’s possible to do this for free, so long as you keep it all private. GCP also often comes with a $300 free credit tier, even though GCP is a bit expensive for heavy usage in the long-run. It doesn't support IPv6 either, but it does have a good network backbone (\~20-cents per gig).
 
@@ -10627,9 +10627,9 @@ Another option is to run OBS in the cloud on a virtual workstation, where you ca
 You can also have remote guests who are needing a TURN server to install a VPN, like Speedify, which can bypass firewalls and other issues that might otherwise require a TURN server. Enabling TCP-mode within Speedify or other VPN service can also help combat packet loss, at the cost of added latency.
 
 If going the VPN route, you also have the ability to secure your privacy/IP-address more securely; in some cases, more so than even a TURN server. See this article for more information there: [https://www.expressvpn.com/webrtc-leak-test](https://www.expressvpn.com/webrtc-leak-test)
-# Is the Vide0Link server down?
+# Is the VDO.Ninja server down?
 
-The "V" in Vide0Link, in the top left, will go red as an indication that the client cannot talk to the Vide0Link server. It will _NOT_ try to reconnect automatically, although that is a coming feature I will add eventually.
+The "V" in VDO.Ninja, in the top left, will go red as an indication that the client cannot talk to the VDO.Ninja server. It will _NOT_ try to reconnect automatically, although that is a coming feature I will add eventually.
 
 If on mobile and you tab away from the site, the server connection may be lost.
 
@@ -10641,18 +10641,18 @@ The video stream happens over a direct peer connection. This connection can be p
 
 Auto-reconnecting does depend on the server though. When connected over a high quality LAN , two devices really shouldn't see their connection fail though, but if it happens often, please let me know.
 
-There is a **backup** **server** at[ https://backup.vdo.ninja](https://backup.vdo.ninja) if the main Vide0Link does ever go down.
+There is a **backup** **server** at[ https://backup.vdo.ninja](https://backup.vdo.ninja) if the main VDO.Ninja does ever go down.
 ---
 description: Known issues or problems, bugs, and limitations
 ---
 
 # Known issues
 
-Known issues that are most critical and up-to-date are normally listed on the main page of [Vide0Link](https://vdo.ninja/).
+Known issues that are most critical and up-to-date are normally listed on the main page of [VDO.Ninja](https://vdo.ninja/).
 
-You can also refer to the #report-bugs channel on Discord, to see recently reported issues. I push bug fixes daily to beta, at [https://vdo.ninja/beta](https://vdo.ninja/beta), so give that a shot if you find a bug on the main release.
+You can also refer to the #report-bugs channel on [Discord](https://discord.com/invite/cKkj5nN8pH), to see recently reported issues. I push bug fixes daily to beta, at [https://vdo.ninja/beta](https://vdo.ninja/beta), so give that a shot if you find a bug on the main release.
 
-Below are some links to third parties, for a list of known issues that commonly will apply to Vide0Link as well. They might have some issues not yet reported here and are often up to date.
+Below are some links to third parties, for a list of known issues that commonly will apply to VDO.Ninja as well. They might have some issues not yet reported here and are often up to date.
 
 [https://docs.agora.io/en/All/web\_sdk\_compatibility?platform=Web](https://docs.agora.io/en/All/web\_sdk\_compatibility?platform=Web)
 
@@ -10677,22 +10677,22 @@ Below are more possible/past issues, although the list is not often curated and 
     You can add \`--`` disable-gpu-process-crash-limit` `` to the OBS start up properties as a way to avoid this. There will still be an issue. You can also use the Electron Capture app instead of the OBS browser source.
 * All green or all purple video from a mobile device (Pixel, Samsung Galaxy) can sometimes happen with certain resolutions or orientations. Using `&scale=100` or `&scale=95` can sometimes help (viewer side), but also changing the video codec to `&codec=vp8` might help.
 * OBS on PC can have video become corrupted if there is moderate or heavy packet loss. Changing the video codec to vp9 or h264 can fix it for moderate packet loss, but for heavy packet loss using the Electron Capture app is suggested. You can also issue keyframes with the rainbow puke button in the Director's room or refresh the viewing page, but it's a temporary fix. Ideally, fixing the packet loss itself is the ideal solution.
-* Streamlabs (SLOBS) on macOS does not currently support Vide0Link directly; you'll need to use the Electron Capture app or the normal OBS version instead.
+* Streamlabs (SLOBS) on macOS does not currently support VDO.Ninja directly; you'll need to use the Electron Capture app or the normal OBS version instead.
 * OBS on PC can sometimes run into a Max Buffer Limit Reached error, which can cause the audio to become delayed by seconds or simply stop being captured at all. Using the Electron Capture app to capture audio can avoid this problem.
-* Some browser-extensions will cause webRTC to fail. Try loading Vide0Link in incognito mode or try using the Electron Capture app instead.
+* Some browser-extensions will cause webRTC to fail. Try loading VDO.Ninja in incognito mode or try using the Electron Capture app instead.
 * On most modern browsers, a user will need to click the browser window before the video will play. This goes for VMIX and for Firefox/Chrome. This is not the case for OBS or the Electron Capture app, however.
 * Android 11 users using Chrome may need to push the app to the background, and then foreground it again, to unfreeze the video camera when it loads or changes camera sources.
 * iOS (iPhone) users using Safari 13 may sometimes not send audio.
-* iOS (iPhone) users sometimes cannot access their camera until they close all other Safari browser tabs. If it still does not work, using the native iOS app on the App Store may work; "Capture for Vide0Link".
-* Chrome on iOS only works for iOS 14.3 and newer. It will not work with Vide0Link on older iOS versions.
-* iOS 12 and newer is required for Vide0Link to work; older iPads may not work as a result.
+* iOS (iPhone) users sometimes cannot access their camera until they close all other Safari browser tabs. If it still does not work, using the native iOS app on the App Store may work; "Capture for VDO.Ninja".
+* Chrome on iOS only works for iOS 14.3 and newer. It will not work with VDO.Ninja on older iOS versions.
+* iOS 12 and newer is required for VDO.Ninja to work; older iPads may not work as a result.
 * Firefox on Android has numerous bugs that may cause connections to not always work; more prone to happen in larger group rooms.
 * Setting an audio bitrate to 64-kbps or higher can cause video to get stuck at near-zero bitrate. I've tried to account for this bug, but setting a higher video bitrate seems to help avoid the issue as well.
 * Bluetooth headphones on macOS, especially when using battery power, can cause audio-clicking on outbound audio.
 * Safari on macOS does not have the greatest noise or echo-cancellation, causing poor audio performance. Use a Chromium-based browser instead for the best audio quality.
 # Loading circle shows in OBS or browser
 
-The loading circle will appear in a Vide0Link view link if a video does not auto-load within several seconds or so.
+The loading circle will appear in a VDO.Ninja view link if a video does not auto-load within several seconds or so.
 
 It will be removed once the video connects, and won't re-appear unless the browser source/page is refreshed.
 
@@ -10705,11 +10705,11 @@ This will hide other non-essentially UI elements as well, such as any error mess
 It is also possible to customize the loading circle with other images.
 # Loss of audio when OBS minimized
 
-Some users have reported their audio recording of Vide0Link stops or becomes choppy once OBS Studio is taken out of focus or minimized.
+Some users have reported their audio recording of VDO.Ninja stops or becomes choppy once OBS Studio is taken out of focus or minimized.
 
 One solution is to run OBS Studio in Administrator mode. You can do this by first ensuring OBS is closed, and then holding SHIFT, right-click the OBS Studio icon; select `Run as administrator` from the menu that appears.
 
-Another option is to use the [electron-capture.md](../steves-helper-apps/electron-capture.md "mention") to capture Vide0Link, instead of OBS browser source.
+Another option is to use the [electron-capture.md](../steves-helper-apps/electron-capture.md "mention") to capture VDO.Ninja, instead of OBS browser source.
 # Low frame rates
 
 There are several reasons you may be experiencing low frame rates, including:
@@ -10736,7 +10736,7 @@ description: If your microphone drops out after a few seconds
 
 ### One possible solution:
 
-One user had an issue where their microphone audio would drop out now and then; not just in Vide0Link, but in all browser-based web apps.
+One user had an issue where their microphone audio would drop out now and then; not just in VDO.Ninja, but in all browser-based web apps.
 
 They resolved the issue by **disabling** certain WebRTC audio processing options in the browser&#x20;
 
@@ -10764,11 +10764,11 @@ _ℹ️ This also might be a useful option if using a USB mic that has the audio
 
 iPhone 14 phones in particular have been pretty buggy with Audio, along with older versions of iOS across all iOS devices.
 
-Make sure to update your iOS device if possible, use the newest version of Vide0Link (perhaps even the alpha version at [https://vdo.ninja/alpha/](https://vdo.ninja/alpha/)), and disable any audio processing in Vide0Link by adding [`&noap`](../general-settings/noaudioprocessing.md) to the URL.
+Make sure to update your iOS device if possible, use the newest version of VDO.Ninja (perhaps even the alpha version at [https://vdo.ninja/alpha/](https://vdo.ninja/alpha/)), and disable any audio processing in VDO.Ninja by adding [`&noap`](../general-settings/noaudioprocessing.md) to the URL.
 
 ### Bluetooth or microphones connected to a USB hub
 
-It is not recommended to use Bluetooth audio devices with Vide0Link. In the past, there were drop outs when using AirPods on a battery-powered Macbook, for example. Constant Bluetooth range / connectivity issues can also cause Vide0Link to potentially lose the connection to the microphone.
+It is not recommended to use Bluetooth audio devices with VDO.Ninja. In the past, there were drop outs when using AirPods on a battery-powered Macbook, for example. Constant Bluetooth range / connectivity issues can also cause VDO.Ninja to potentially lose the connection to the microphone.
 
 USB Hubs are not all created equal, and some may cause USB devices to drop in and out. For this reason, connect your microphone and cameras directly to computer, bypassing USB hubs if possible.
 
@@ -10776,7 +10776,7 @@ USB Hubs are not all created equal, and some may cause USB devices to drop in an
 
 Audio captured from a microphone may be paused or stopped if there is an inbound phone calls or system notifications. I suppose this is a mobile security consideration, but after a notification alert, the microphone may sometimes not be re-activivated, either due to a system-bug or other.
 
-For this reason, disable notifications, inbound calls, etc, while streaming on mobile with Vide0Link.
+For this reason, disable notifications, inbound calls, etc, while streaming on mobile with VDO.Ninja.
 
 ### Packet loss or an over-stressed computer
 
@@ -10785,11 +10785,11 @@ Computers that are running at near 100% CPU load can fail to encode audio stream
 Heavy network packet loss, such as a bad WiFi connection can also cause audio drop outs. Completely connection losses are possible also, particularly if behind a corporate firewall or VPN service that is throttling or restricting WebRTC services.
 # Mic stops on MacOS when OBS opens
 
-If the microphone stops working in Vide0Link when OBS Studio is open, on MacOS, considering using Safari instead of Chrome or other browser.
+If the microphone stops working in VDO.Ninja when OBS Studio is open, on MacOS, considering using Safari instead of Chrome or other browser.
 
 One user with this issue noted the problem resolved itself when they used Safari instead of Chrome.
 
-They also noted that opening OBS with the scene first, then launching Vide0Link in the Chrome browser, also resolved the issue. Safari was indifferent to order.
+They also noted that opening OBS with the scene first, then launching VDO.Ninja in the Chrome browser, also resolved the issue. Safari was indifferent to order.
 
 Some users on Google noted that they re-selected their microphone permissions in the browser to resolve the issue as well, so there may be some system-level permissions issue at play here.
 
@@ -10802,9 +10802,9 @@ description: The mic's gain won't stay still or the auto-gain won't turn off
 
 Some microphones, like the Blue Yeti, Wave XLR, Samsun Q2U, or Scarlett Solo XLR interface, may have issues with Chrome (Chromium) and the mic's gain auto-changing on its own. This may cause clipping in certain cases or it may interfere with other applications that may also be using the microphone.
 
-You can also add [`&autogain=0`](../source-settings/autogain.md) to the VDO.NInja invite link to disable the auto-gain. You can also toggle the auto-gain from the Vide0Link settings menu, or if a guest, the room's director can remotely toggle the guest's auto-gain via: advanced options -> audio settings -> auto gain control. 
+You can also add [`&autogain=0`](../source-settings/autogain.md) to the VDO.NInja invite link to disable the auto-gain. You can also toggle the auto-gain from the VDO.Ninja settings menu, or if a guest, the room's director can remotely toggle the guest's auto-gain via: advanced options -> audio settings -> auto gain control. 
 
-Disabling the auto-gain functionality in Vide0Link may cause the audio level to be rather low, so it will be up to you then to manually set the gain accordingly. Vide0Link offers manual gain if needed.
+Disabling the auto-gain functionality in VDO.Ninja may cause the audio level to be rather low, so it will be up to you then to manually set the gain accordingly. VDO.Ninja offers manual gain if needed.
 
 An additional option to addressing this issue seems to be installing a browser extension that with disable auto-gain automatically within Chrome. ([https://chrome.google.com/webstore/detail/disable-automatic-gain-co/clpapnmmlmecieknddelobgikompchkk](https://chrome.google.com/webstore/detail/disable-automatic-gain-co/clpapnmmlmecieknddelobgikompchkk))&#x20;
 
@@ -10820,7 +10820,7 @@ description: >-
 
 # No video in OBS, just an "Add camera" button
 
-If see the Vide0Link menu, instead of a video, it is typically caused by having your PUSH link used as a VIEW link in OBS or Streamlabs's browser source.
+If see the VDO.Ninja menu, instead of a video, it is typically caused by having your PUSH link used as a VIEW link in OBS or Streamlabs's browser source.
 
 To fix, you should be able to just replace the `?push=` part of the URL with `?view=`.
 
@@ -10828,11 +10828,11 @@ A push link is for the sender to use, so to send video from your phone or comput
 
 A view link is used for viewing a video in OBS or other studio software.
 
-Vide0Link will respond differently to whether a push or view link is provided, as each has a different role.
+VDO.Ninja will respond differently to whether a push or view link is provided, as each has a different role.
 
-If you still see the Vide0Link menu or website, check to make sure your link is correct. Your links should start with `https://vdo.ninja/?`
+If you still see the VDO.Ninja menu or website, check to make sure your link is correct. Your links should start with `https://vdo.ninja/?`
 
-If you forget the `?`, or have other errors in the URL, the website might load in an error state. This error state may sometimes be the Vide0Link website, perhaps with no images showing, or other graphical issues.
+If you forget the `?`, or have other errors in the URL, the website might load in an error state. This error state may sometimes be the VDO.Ninja website, perhaps with no images showing, or other graphical issues.
 
 If still having problems after, ensure the stream ID value for both the view and the push parameters of the sender and viewer links are the same. You should have only at most one push-link open per stream ID as well; more than one will show an error that the stream ID is already in use.
 ---
@@ -10847,7 +10847,7 @@ description: >-
 
 ## macOS
 
-Please be aware that OBS v24 to v26.0 does not natively support Vide0Link, but version 26.1.2 and newer does.
+Please be aware that OBS v24 to v26.0 does not natively support VDO.Ninja, but version 26.1.2 and newer does.
 
 If using an Android smartphone, try using Firefox instead of Chrome, or a different browser in general.
 
@@ -10879,7 +10879,7 @@ Ensure that the “Enable Browser Source Hardware Acceleration” checkbox is ch
 * In the OBS Settings -> Advanced menu, disable Browser source hardware acceleration, and then restart. If it works then, the above GPU-related options should work. Otherwise, it might be a firewall, VPN, or privacy software.
 * Check to make sure you are not behind a corporate firewall or on a VPN (see Network issues below). Sometimes using a Firewall can actually help, such as if the guest is in mainland China, where a VPN service (like ExpressVPN) has been able to bypass the Great Firewall of China.
 * Disable any anti-virus or other security software. If using PFSense firewall, ensure you are whitelisting the IP address of the remote camera source or allowing webRTC-related UDP traffic. While use PFSense may still work, if you do not open the correct ports, frame loss may be significant if relying on the public TURN servers for high-bandwidth data transit.
-* If the video is choppy, be sure there is no packet loss. Adding `&stats` to the Vide0Link URL link will display the stats in the OBS Browser source, on top of the video.  A high-packet loss, higher than 0.3%, can result in signifcant frame loss, while 3% packet loss is nearly unusable.
+* If the video is choppy, be sure there is no packet loss. Adding `&stats` to the VDO.Ninja URL link will display the stats in the OBS Browser source, on top of the video.  A high-packet loss, higher than 0.3%, can result in signifcant frame loss, while 3% packet loss is nearly unusable.
 * You can also download the Electron Capture app, and use that instead of OBS browser source: [https://github.com/steveseguin/electroncapture](https://www.google.com/url?q=https://github.com/steveseguin/electroncapture\&sa=D\&source=editors\&ust=1619943104618000\&usg=AOvVaw2vbHW2zTdxaCofB42QQ\_fT)
 * Make sure you have not disabled webRTC with your browser; you can confirm you have webRTC disabled with your browser(s) here: [https://browserleaks.com/webrtc](https://browserleaks.com/webrtc)
 * As a final resort, consider using a Cloud-hosted version of OBS instead, such as on Paperspace or AWS /w Parsec installed.
@@ -10899,20 +10899,20 @@ description: >-
 
 # OBS Virtual Camera has low FPS
 
-If you open an OBS Virtual Camera device in Vide0Link before starting the output in OBS, the OBS virtual camera will default to 1080p 30fps. If you start OBS first, it will use whatever is set as the Output resolution and framerate in OBS Studio's options, under Settings -> Video.
+If you open an OBS Virtual Camera device in VDO.Ninja before starting the output in OBS, the OBS virtual camera will default to 1080p 30fps. If you start OBS first, it will use whatever is set as the Output resolution and framerate in OBS Studio's options, under Settings -> Video.
 
-So, make sure the set OBS to 60-fps and then start the OBS Virtual camera before starting Chrome and/or Vide0Link. If you don't do this, you may be capturing at 30-fps max.
+So, make sure the set OBS to 60-fps and then start the OBS Virtual camera before starting Chrome and/or VDO.Ninja. If you don't do this, you may be capturing at 30-fps max.
 
 You may also have low frame rates if you are using the OBS virtual camera straight from OBS rather than by adding a filter to the video source. Filters may reduce the frame rate by 30% or so in my testing. Instead, considering opening two instances of OBS instead, if that is needed.
 
-Of course, frame rates with Vide0Link can also be low if you don't have the video bitrate set high enough; for gaming, you might want to consider adding [`&videobitrate=20000`](../advanced-settings/video-bitrate-parameters/bitrate.md) to the view link. You can also try different video codecs, such as [`&codec=h264`](../advanced-settings/view-parameters/codec.md). If you are on a WiFi or weak Internet connection, that also can limit the frame rate of a stream due to heavy packet loss.&#x20;
+Of course, frame rates with VDO.Ninja can also be low if you don't have the video bitrate set high enough; for gaming, you might want to consider adding [`&videobitrate=20000`](../advanced-settings/video-bitrate-parameters/bitrate.md) to the view link. You can also try different video codecs, such as [`&codec=h264`](../advanced-settings/view-parameters/codec.md). If you are on a WiFi or weak Internet connection, that also can limit the frame rate of a stream due to heavy packet loss.&#x20;
 ---
 description: Mobile and laptop devices may overheat under prolong use
 ---
 
 # Overheating
 
-[Vide0Link](https://vdo.ninja/) offers a lot of power and unconstrained video quality. Some devices however will overheat if pushed for prolonged periods though, as they were not designed necessary for professional streaming video applications in mind.
+[VDO.Ninja](https://vdo.ninja/) offers a lot of power and unconstrained video quality. Some devices however will overheat if pushed for prolonged periods though, as they were not designed necessary for professional streaming video applications in mind.
 
 Still, there are steps you can take to minimize the heat generated by devices with software settings and configurations.
 
@@ -10940,9 +10940,9 @@ Currently a web-browser does not allow a single video encoder to share video wit
 
 ### Meshcast.io and server-based restreaming
 
-Vide0Link is peer-to-peer-based, which works great for linking one camera to one viewer. The more viewers though, as mentioned, the more load is created on that guest. Just the act of uploading data uses power, so mobile devices are also quite poor at restreaming to multiple viewers even if encoding video wasn't already an issue. This is why the video quality on mobile devices between guests is set very low by default.
+VDO.Ninja is peer-to-peer-based, which works great for linking one camera to one viewer. The more viewers though, as mentioned, the more load is created on that guest. Just the act of uploading data uses power, so mobile devices are also quite poor at restreaming to multiple viewers even if encoding video wasn't already an issue. This is why the video quality on mobile devices between guests is set very low by default.
 
-[Meshcast.io](https://meshcast.io/) is by the same creator as Vide0Link, but it's a server-based solution to sharing low-latency video. It has a lower-maximum video quality, it isn't peer-to-peer-based, and it has numerous other short comings, but it does allow a mobile device to encode just one video stream, upload just one video stream, and still share that video with numerous viewers. Feel free to experiment with it, it's free, and if more quality and reliability is needed, there are paid options that are similar to it available. The cost of restreaming with a server-solution is about 15-cents per GB, depending on quality of the service. This is why Meshcast.io needs to limit it's video quality to afford a free-offering; server solutions are expensive!
+[Meshcast.io](https://meshcast.io/) is by the same creator as VDO.Ninja, but it's a server-based solution to sharing low-latency video. It has a lower-maximum video quality, it isn't peer-to-peer-based, and it has numerous other short comings, but it does allow a mobile device to encode just one video stream, upload just one video stream, and still share that video with numerous viewers. Feel free to experiment with it, it's free, and if more quality and reliability is needed, there are paid options that are similar to it available. The cost of restreaming with a server-solution is about 15-cents per GB, depending on quality of the service. This is why Meshcast.io needs to limit it's video quality to afford a free-offering; server solutions are expensive!
 
 ### Group rooms, multiple-scenes, or multiple viewers
 
@@ -10966,19 +10966,19 @@ I've done a YouTube video demoing how cooling your smartphone can reduce heat an
 
 ### Web apps are intentionally limited on mobile devices
 
-It is not possible to change between apps, screen-share, or turn off the display when using a web-app, like Vide0Link. You can turn down the screen brightness manually on your phone though, which will be nearly as effective.
+It is not possible to change between apps, screen-share, or turn off the display when using a web-app, like VDO.Ninja. You can turn down the screen brightness manually on your phone though, which will be nearly as effective.
 
 Also, If you use `?push=STREAMIDGOESHERE&cleanoutput&nopreview&chroma=000&view` as a publishing link, you can hide pretty much everything on the screen, and if using an OLED display, this should reduce power usage. This is a great option if you wanted to set your phone up as a dedicated webcam and were worried about the screen generating heat.
 
-### Native mobile app of Vide0Link
+### Native mobile app of VDO.Ninja
 
-There are native Android and iOS app versions of Vide0Link, but they are very limited at the moment. They can be used to turn a phone into a dedicated webcam, and that's about the only they are good at. The Android app supports screen-sharing, which is the main advantage of using it.
+There are native Android and iOS app versions of VDO.Ninja, but they are very limited at the moment. They can be used to turn a phone into a dedicated webcam, and that's about the only they are good at. The Android app supports screen-sharing, which is the main advantage of using it.
 
 Until the native apps are further developed, they are not great options for most users. They may still however use less CPU and may generate less heat though, just due to how basic they are in function.
 
 Download the mobile app versions here: [https://docs.vdo.ninja/getting-started/native-mobile-app-versions](https://docs.vdo.ninja/getting-started/native-mobile-app-versions)
 
-Please ..email` or via discord (discord.vdo.ninja) if you'd like to contribute to development of these native versions. The cost, time, and skill requirements for their continued development are quite steep.
+Please contact steve at `steve@seguin.email` or via discord ([discord.vdo.ninja](https://discord.vdo.ninja)) if you'd like to contribute to development of these native versions. The cost, time, and skill requirements for their continued development are quite steep.
 
 ### Laptops and Macbooks
 
@@ -10988,7 +10988,7 @@ Ensure you are not running a laptop at 100% CPU load, make sure it has plenty of
 
 ### Raspberry Pi, Nvidia Jetson, and dedicated hardware-encoders
 
-Vide0Link has limited support for hardware encoders. Hardware encoders greatly reduce heat, but they are often poorly suited for low-latency video that requires tolerant packet-loss capabilities and dynamic resolutions. Green/purple/grey coloring of video, lost frames, and distorted video blocks are common when using hardware-encoders at very-low latencies.&#x20;
+VDO.Ninja has limited support for hardware encoders. Hardware encoders greatly reduce heat, but they are often poorly suited for low-latency video that requires tolerant packet-loss capabilities and dynamic resolutions. Green/purple/grey coloring of video, lost frames, and distorted video blocks are common when using hardware-encoders at very-low latencies.&#x20;
 
 There is support for the Raspberry Pi, both software-encoder and hardware-encoder options, but the hardware-encoded option is the most limited and challenging. The current project supporting this offering is here: [https://github.com/steveseguin/raspberry\_ninja](https://github.com/steveseguin/raspberry\_ninja)
 
@@ -10998,7 +10998,7 @@ Using a Chromium browser with a Raspberry Pi, in software-encoded mode, will pro
 
 Just as a consideration though, the Nvidia Jetson development boards support higher resolutions and seem to have better support for dynamic video and packet loss recovery. These products are a bit more expensive, but tend to work better than a Raspberry Pi when it comes to encoding HD video. I have a support for the Hardware-encoding capabilities of a Jetson here, buried away alongside the files for the Raspberry Pi: [https://github.com/steveseguin/raspberry\_ninja](https://github.com/steveseguin/raspberry\_ninja) It's pretty basic support also currently, but has a lot of potential.
 
-In the future, more professional video-centric hardware encoding options with built-in LTE/5G transmitters will support Vide0Link in a basic publish-only mode. This advancement will be due to the adoption of community standards for publishing low-latency video, although don't hold your breath for progress here.
+In the future, more professional video-centric hardware encoding options with built-in LTE/5G transmitters will support VDO.Ninja in a basic publish-only mode. This advancement will be due to the adoption of community standards for publishing low-latency video, although don't hold your breath for progress here.
 ---
 description: When data is lost or delayed during transfer between peers
 ---
@@ -11017,30 +11017,30 @@ An Ethernet connection is highly recommended over WiFi.
 * Try to sit closer to the WiFi router and try to limit the traffic on the network; the more that's going through the air, the more packet loss.
 * If the guest can use the 4G LTE instead of WiFi (tethered via USB), that will often be much better than WiFi.
 * The guest can also Tether their 4G LTE /w their WiFi using bonding apps like Speedify or with hardware from Peplink; these services can give you more control over network settings.
-* If using a smartphone, consider using a USB to Ethernet adapter instead. I have a video demonstrating how to do this here: 
+* If using a smartphone, consider using a USB to Ethernet adapter instead. I have a video demonstrating how to do this here: [https://www.youtube.com/watch?v=abCuANblE5w](https://www.youtube.com/watch?v=abCuANblE5w)
 * Some users have mentioned that reducing their network's MTU size, or the size of their packets, has helped reduce packet loss over bad WiFi. You'll need to experiment with this, but 800 to 1000 might be in the range you can try in this case.
 * Improving the Wi-Fi network, such as switching network bands (5hz / 2.4ghz), buying a mesh-based multi-node access point setup for larger homes, changing network channels to account for frequency interference, updating to Wifi-6 or newer technologies, and moving the closer to the access point.
 
 ### If the issue isn't WiFi related
 
-* Try to have the guest use a different browser. For example, if using Firefox, use Chrome, and vice versa. Some browsers are optimized for privacy over performance, and that may hinder video quality, and even Chrome can sometime be configured in a way that hinders Vide0Link from working well.
+* Try to have the guest use a different browser. For example, if using Firefox, use Chrome, and vice versa. Some browsers are optimized for privacy over performance, and that may hinder video quality, and even Chrome can sometime be configured in a way that hinders VDO.Ninja from working well.
 * Disable any Anti-virus software or any security software that may disable WebRTC IP leaking.
-* Advanced network firewalls, like _pfsense_, may block UDP packets or force traffic through a TURN relay server. Vide0Link uses mainly UDP packets in the high port range.
-* If your connection with a guest is going thru a TURN relay server, such as perhaps due to a security or privacy setting, resolving that may fix issues. Vide0Link offers publicly accessible and free TURN servers as part of its service, but these may introduce packet loss. You can always host your own TURN servers instead, but avoiding them if not needed is usually the best option.
+* Advanced network firewalls, like _pfsense_, may block UDP packets or force traffic through a TURN relay server. VDO.Ninja uses mainly UDP packets in the high port range.
+* If your connection with a guest is going thru a TURN relay server, such as perhaps due to a security or privacy setting, resolving that may fix issues. VDO.Ninja offers publicly accessible and free TURN servers as part of its service, but these may introduce packet loss. You can always host your own TURN servers instead, but avoiding them if not needed is usually the best option.
 * Restart your Internet router; sometimes a router or network equipment just needs a good reset or update.
-* If your router is double-natted, such as if you have a router plugged into another router at home, it can cause Vide0Link to send video via relay servers instead of the preferred direct peer to peer. Commonly, to address this, either set the second router as an AP access point instead, or configure the first router to be in bridge mode.
+* If your router is double-natted, such as if you have a router plugged into another router at home, it can cause VDO.Ninja to send video via relay servers instead of the preferred direct peer to peer. Commonly, to address this, either set the second router as an AP access point instead, or configure the first router to be in bridge mode.
 
 #### Routing issues
 
 Sometimes two peers just can't get a good connection, while with other peers they can. This is often largely dependent on your ISPs, and it can be challenging to fix.
 
 * Host your OBS Studio on a premium cloud server, like Amazon AWS Workspaces or Google GCP. These providers have good networks optimized for most users to access, and hosting a VPN, TURN server, or the entire OBS Studio can help you control for network routing issues.
-* Forcing the TURN relay servers into use may help at times; adding [`&relay`](../general-settings/and-relay.md) to the links can enable this mode. It may add some latency though, as the video traffic will take a longer, but different, network routing path that may be more reliable. Hosting your own TURN server on a local premium server, and specifying Vide0Link to use it, has been a good solution for some.
+* Forcing the TURN relay servers into use may help at times; adding [`&relay`](../general-settings/and-relay.md) to the links can enable this mode. It may add some latency though, as the video traffic will take a longer, but different, network routing path that may be more reliable. Hosting your own TURN server on a local premium server, and specifying VDO.Ninja to use it, has been a good solution for some.
 * As mentioned above, you can also use a VPN, perhaps one with the server is hosted on a local Google Cloud server or perhaps use a VPN service that offers local edge network access onto a premium network. If all guests connect via the VPN, you'll have more control over the routing quality.
 * Change your ISP (Internet provider) to another provider; this maybe needed on either your end or the remote guest's end. Some network providers, especially consumer-grade residential providers, can have really bad packet loss issues, especially during the evening hours.
 * Use cellular connections instead, especially if the issue is intermittent and perhaps only during peak Internet usage hours. Cellular connections are optimized for audio and live streaming, and so while they may have limited bandwidth or be expensive, they can also be the last refuge of hope sometimes. This is especially true of 5G connections.
 * If your router or connection supports IPv6, but you don't have it enabled, try enabling it. Sometimes if limiting yourself to IPv4 or IPv6, your ISP may send your traffic through an IPv4<>IPv6 translation server, which could introduce delays, throttling, and packet loss.
-* Some cellular providers limit and throttle UDP packets, which are used by Vide0Link. Using a service such as Speedify, in TCP-mode, can bypass this limitation by wrapping the UDP packets as TCP and relaying them thru servers. Check with the cellular provider before purchasing a SIM card to ensure they do not throttle UDP packets as well, if intending to travel.
+* Some cellular providers limit and throttle UDP packets, which are used by VDO.Ninja. Using a service such as Speedify, in TCP-mode, can bypass this limitation by wrapping the UDP packets as TCP and relaying them thru servers. Check with the cellular provider before purchasing a SIM card to ensure they do not throttle UDP packets as well, if intending to travel.
 * As mentioned before, sometimes the TURN relay severs get used, and this might be the case with cellular connections or corporate firewalls; hosting your own TURN server or finding a way to bypass them can sometimes help improve the quality of connections.
 
 #### More generic options to try
@@ -11049,7 +11049,7 @@ Sometimes two peers just can't get a good connection, while with other peers the
 * Try using [`&codec=av1`](../advanced-settings/view-parameters/codec.md#av1) on the viewer side; this won't solve packet loss issues, but the AV1 codec is more efficient than the default codecs, and so it may offer better video quality despite the packet loss.
 * Try adding [`&buffer=500`](../advanced-settings/view-parameters/buffer.md) to the viewer link, as this might allow for more time for lost packets to arrive.
 * Reduce the bitrate of your video streams. If your connection can only handle 30-Mbps in and 10-Mbps out, trying to push it to do more will cause network thrashing and packet loss. In this case, try to ensure that your connection's up and download links are not saturated by more than 80% of their tested max capacity. Leaving some headroom will reduce latency and packet loss, ultimately leading to better quality.
-* Consider using Meshcast or a WHIP/WHEP server-based SFU provider, and use that with Vide0Link instead of a direct peer-to-peer connection. I have a [guide for setting up Cloudflare ](https://cloudflare.vdo.ninja/)to be used in this regard, but any WHIP+WHEP SFU can work. This can provide more advanced buffering and SVC options not available with direct browser to browser options.
+* Consider using Meshcast or a WHIP/WHEP server-based SFU provider, and use that with VDO.Ninja instead of a direct peer-to-peer connection. I have a [guide for setting up Cloudflare ](https://cloudflare.vdo.ninja/)to be used in this regard, but any WHIP+WHEP SFU can work. This can provide more advanced buffering and SVC options not available with direct browser to browser options.
 * Use [Raspberry.Ninja](../steves-helper-apps/raspberry.ninja/) or OBS Studio's WHIP output as a video source, instead of the browser. Raspberry.Ninja in particular supports double redundant video streams for added error correction, and while it uses more bandwidth, it can tolerate heavy packet loss and force a specified video quality. While packet loss will still exist, you might find the outcome is more to your liking.
 * If screen sharing, you can use [`&contenthint=detail`](../advanced-settings/video-parameters/and-contenthint.md), which can tell the system to prioritize frame resolution, than frame rate. While this isn't suitable for gaming, it might be a good option for screen shares, where packet loss might otherwise might text unreadable.
 
@@ -11059,17 +11059,17 @@ Sometimes two peers just can't get a good connection, while with other peers the
 * You can add [`&enhance`](../advanced-settings/view-parameters/enhance.md) on the viewer side to try to prioritize the audio over the video. This might help with audio clicking issues.
 * Using [`&audiocodec=red`](../advanced-settings/audio-parameters/minptime-1.md#red) on the viewer side can increase the amount of error correction data being sent, reducing packet loss. This will double the audio bandwidth, but that shoulnd't be an issue for most modern connections.
 
-### Youtube Video guide on packet loss + Vide0Link
+### Youtube Video guide on packet loss + VDO.Ninja
 
-I have a video talking about packet loss, with details on how to setup Speedify as well: 
+I have a video talking about packet loss, with details on how to setup Speedify as well: [https://www.youtube.com/watch?v=je2ljlvLzlYAnd](https://www.youtube.com/watch?v=je2ljlvLzlYAnd)
 
 ## Connection testing tools and statistics
 
 There is a speedtest that the local user can try out to give them feedback on their packet loss. This is a special speedtest, different than normal tests, as it does not test for available bandwidth, but network quality and packet loss: [https://vdo.ninja/speedtest](https://vdo.ninja/speedtest)
 
-If you'd like to remotely test a guest's connection, you can also have them perform the Vide0Link pre-check test. This is a comprehensive system and network test, which allows you to review the results of the guest remotely: [https://vdo.ninja/check](https://vdo.ninja/check)
+If you'd like to remotely test a guest's connection, you can also have them perform the VDO.Ninja pre-check test. This is a comprehensive system and network test, which allows you to review the results of the guest remotely: [https://vdo.ninja/check](https://vdo.ninja/check)
 
-You can also do a peer-to-peer test by just making a Vide0Link connection with the guest. If you hold down CTRL (cmd) and click on their video, you'll see the stats. Packet loss is a listed stat, as well as the candidate type. If a guest is connecting to you via RELAY candidate type, that implies there is a firewall or security setting blocking a direct peer to peer connection. Addressing this will likely resolve your issues.
+You can also do a peer-to-peer test by just making a VDO.Ninja connection with the guest. If you hold down CTRL (cmd) and click on their video, you'll see the stats. Packet loss is a listed stat, as well as the candidate type. If a guest is connecting to you via RELAY candidate type, that implies there is a firewall or security setting blocking a direct peer to peer connection. Addressing this will likely resolve your issues.
 
 When doing a pre-check or speed test, make sure to test during the hours of the day you intend to go live. Mornings will often have less packet loss than evenings, with around 7pm to 10pm being especially bad.
 
@@ -11163,7 +11163,7 @@ Some common reasons, with some solutions, are listed below.
 
 ### Cellular connections
 
-If on cellular, some cellular providers will configure the system to not support peer to peer networking or UDP-traffic. Some others will also throttle UDP-traffic, which is what Vide0Link uses, and they may stop the UDP-traffic entirely after a few seconds or moments.
+If on cellular, some cellular providers will configure the system to not support peer to peer networking or UDP-traffic. Some others will also throttle UDP-traffic, which is what VDO.Ninja uses, and they may stop the UDP-traffic entirely after a few seconds or moments.
 
 * Use a VPN service, such as Speedify, and consider enabling TCP encapsulation mode if UDP throttling is an issue. If you host a VPN service yourself, perhaps near your studio host computer, you can minimize performance and latency concerns
 * Change networks
@@ -11188,18 +11188,18 @@ These issues can be hard to judge, especially if they are issues on the remote g
 * Corporate firewalls blocking WebRTC or UDP traffic
   * Ask your IT department for a solution, perhaps be given an isolated network space.
   * Use a VPN, preferably something hosted close by to reduce performance issues
-  * Host your own TURN / STUN server, close to or within the corporate network, and specify it to be used within Vide0Link.
+  * Host your own TURN / STUN server, close to or within the corporate network, and specify it to be used within VDO.Ninja.
 * pfSense firewalls will block WebRTC or UDP traffic.
   * Modify your firewall settings to allow those two options.
 * Symmetrical firewalls, such as with some fiber internet services, may cause issues.
   * Contact your ISP if this is the case.
 * You are using Safari and you have rejected the microphone permissions
   * Safari, such as on iPhone, will require microphone permissions to allow private IP address sharing. Rejecting that will force the TURN servers into use.
-  * To avoid this, provide Vide0Link permissions to the microphone always, via the Safari settings.
+  * To avoid this, provide VDO.Ninja permissions to the microphone always, via the Safari settings.
 * Strict security software installed
   * Try from a different computer on the same network to see if its a local software issue
-* If using WHIP / WHEP, some third party applications may not support NAT traversal, lacking STUN server support, as it can be a lot of adding coding work. In these cases, Vide0Link might use a TURN server to assist things along, but it's far from ideal.
-  * Host your own TURN server locally, and specify it in Vide0Link.
+* If using WHIP / WHEP, some third party applications may not support NAT traversal, lacking STUN server support, as it can be a lot of adding coding work. In these cases, VDO.Ninja might use a TURN server to assist things along, but it's far from ideal.
+  * Host your own TURN server locally, and specify it in VDO.Ninja.
   * Reach out to the developers / support staff and ask for help
 * STUN servers are being block. The STUN servers are hosted by Google, so if they are blocked, TURN might be the fallback.&#x20;
   * You can specify your own STUN servers if needed via URL parameters
@@ -11223,11 +11223,11 @@ To fix such a scenario, some options:
 * Enable and point the travel router's DMZ at the production laptop's local IP address; this makes the travel router transparent to the gaming desktop. Just be sure to disable the DMZ mode when done.
 * Move all devices to the same router, using the main router or the travel router\* for all devices.
   
-  \*Assuming you connect the gaming laptop to the travel router instead, another issue might occur, and that is any Vide0Link user you try to connect to on the Internet may end up in relay mode with you. We can solve this issue potentially by putting our main router into bridge mode, which is often available as an option on cable modems in its gateway settings.
+  \*Assuming you connect the gaming laptop to the travel router instead, another issue might occur, and that is any VDO.Ninja user you try to connect to on the Internet may end up in relay mode with you. We can solve this issue potentially by putting our main router into bridge mode, which is often available as an option on cable modems in its gateway settings.
 
 The recommended solutions have the benefit of ensuring all the clients, even clients on the Internet, can establish a peer to peer connection with any other client on the network. This wouldn't be the case for example if we simply used the DMZ mode, as the smartphone would not be able to connect to clients on the Internet in a direct p2p mode.
 
-### Ports used by Vide0Link
+### Ports used by VDO.Ninja
 
 TCP 443 and 3478 UDP are the most important ports to have open, if behind a strict firewall. These allow for WebSockets, STUN, and TURN, but they alone will not allow for direct peer to peer traffic.
 
@@ -11235,7 +11235,7 @@ The actual media in direct peer to peer WebRTC (RTP/RTCP packets) is sent over r
 
 If you want to allow peer to peer traffic, and are dealing with something more complex than a NAT firewall, like PFSense Firewall, UDP ports 49152–65535 are commonly suggested to opened to allow peer to peer traffic. You might need to open lower as well though, along with port TCP 443 and UDP 3478.
 
-These high-numbered UDP ports used are dynamically chosen by the browser, and there isn't much control on Vide0Link's side to control that. Since you are also dealing with peer to peer mode, unless you know the IP address of each guest you intend to connect to, you can't easily unblock based on IP address either. This isn't the case if using a TURN relay server of course, but that's not direct p2p then.
+These high-numbered UDP ports used are dynamically chosen by the browser, and there isn't much control on VDO.Ninja's side to control that. Since you are also dealing with peer to peer mode, unless you know the IP address of each guest you intend to connect to, you can't easily unblock based on IP address either. This isn't the case if using a TURN relay server of course, but that's not direct p2p then.
 
 ### Final comments and advice
 
@@ -11243,9 +11243,9 @@ Identifying which client is the problem can go a long way to troubleshooting.
 
 Don't be afraid to try from different networks, computers, browsers, or other remote clients.
 
-Advanced users can always just deploy their own TURN server locally or nearby, and specify it via Vide0Link. Hosting it yourself can reduce latency, improve performance, and improve security (no IP leaking). Using relay mode doesn't need to be a bad thing!
+Advanced users can always just deploy their own TURN server locally or nearby, and specify it via VDO.Ninja. Hosting it yourself can reduce latency, improve performance, and improve security (no IP leaking). Using relay mode doesn't need to be a bad thing!
 
-Join the Discord if still stuck and need help:  
+Join the Discord if still stuck and need help: [https://discord.vdo.ninja ](https://discord.vdo.ninja)
 ---
 description: Some causes and solutions for robotic audio issues
 ---
@@ -11263,7 +11263,7 @@ Another user found that starting OBS in Administrator mode fixed the issue. They
 
 OBS as well may have issues with the log file reporting "Max audio buffering reached!". Try to reduce your computer's CPU load, or perhaps consider upgrading to a newer computer. You can also try capturing the audio and video with the[ Electron Capture app](../steves-helper-apps/electron-capture.md) instead of the OBS Browser source, which may avoid some issues with OBS browser source audio capture.
 
-Checking the audio sample rate on your system can help as well. High sample rates, like 384-khz for either the microphone or default system device may cause the issue. As well, a 32-bit audio sample rate, versus 16-/24-bit, may cause it as well. Vide0Link works best at 48-khz and either 16- or 24-bit. Users with FiiO audio DACs may encounter this issue, for example.
+Checking the audio sample rate on your system can help as well. High sample rates, like 384-khz for either the microphone or default system device may cause the issue. As well, a 32-bit audio sample rate, versus 16-/24-bit, may cause it as well. VDO.Ninja works best at 48-khz and either 16- or 24-bit. Users with FiiO audio DACs may encounter this issue, for example.
 
 Very high packet loss may cause distorted audio as well. Adding `&enhance&red` to the view/scene link may help, but chances are reducing the packet loss is your best bet instead. If using a VPN or behind a strict firewall that is forcing the relay servers to be used, address that if possible.
 
@@ -11271,12 +11271,12 @@ If using a virtual audio cable, or a pro-audio mixer, issues with audio buffers 
 
 Surround sound headphones, like 5.1 / 7.1 Logitech/Corsair gaming headsets may cause disorted audio as well. Set the headphones and speakers to 2.0 stereo audio, disabing any surround sound effect, or perhaps change headsets.
 
-Echo-cancellation can cause robotic audio effects, for example, having two tabs of Vide0Link open on the same computer can cause feedback loops that may be cancelling each other out.  As well, having a mobile phone or a second computer near by that is also streaming into a Vide0Link group may create a feedback loop that also can result in echo-cancellation issues.
+Echo-cancellation can cause robotic audio effects, for example, having two tabs of VDO.Ninja open on the same computer can cause feedback loops that may be cancelling each other out.  As well, having a mobile phone or a second computer near by that is also streaming into a VDO.Ninja group may create a feedback loop that also can result in echo-cancellation issues.
 
-Some versions of Vide0Link may be more prone to issues than others. https://vdo.ninja/v23/ is an older version for example that you may want to try, but there are a variety of others. If you notice the robotic audio issue is version-specific, please report the issue on Discord ().
+Some versions of VDO.Ninja may be more prone to issues than others. https://vdo.ninja/v23/ is an older version for example that you may want to try, but there are a variety of others. If you notice the robotic audio issue is version-specific, please report the issue on Discord (https://discord.vdo.ninja).
 
 
-Adding `&noap` to the Vide0Link URL can disable web-audio processing in Vide0Link, and if a computer is heavily overloaded, disabling web-audio may help with robotic audio effects caused by audio buffer underruns.
+Adding `&noap` to the VDO.Ninja URL can disable web-audio processing in VDO.Ninja, and if a computer is heavily overloaded, disabling web-audio may help with robotic audio effects caused by audio buffer underruns.
 
 ---
 description: When screen-sharing, your local preview and output is black
@@ -11288,10 +11288,10 @@ description: When screen-sharing, your local preview and output is black
 
 If the video preview when screen sharing is black, try disabling or enabling the browser's hardware acceleration. This can be found in the Google settings -> system menu.
 
-If sharing a Netflix, Prime Video, or other content that is protected by content-protection, such as DRM/HDCP, the screen share may be black also. You can try screen sharing using the window, display, or tab methods to see if one works where the others fail, or you can try display grabbing with OBS Studio instead, but Vide0Link itself doesn't offer methods intended to bypass content copy protection.
+If sharing a Netflix, Prime Video, or other content that is protected by content-protection, such as DRM/HDCP, the screen share may be black also. You can try screen sharing using the window, display, or tab methods to see if one works where the others fail, or you can try display grabbing with OBS Studio instead, but VDO.Ninja itself doesn't offer methods intended to bypass content copy protection.
 ---
 description: >-
-  Some surround sound headphones can cause Vide0Link to have audio problems,
+  Some surround sound headphones can cause VDO.Ninja to have audio problems,
   including failed screen sharing
 ---
 
@@ -11305,15 +11305,15 @@ Another option is to disabling surround sound in the Windows, or typically, the 
 
 In one past Reddit post, someone mentioned going to [**chrome://flags/**](chrome://flags/) and turning off **Override software rendering list** fixed their issue. I've not been able to test or confirm this though, since I do not have surround sound headphones.
 
-For Logitech surround headphones specifically, the following old Reddit post mentions a fix for problematic surround sound and Chrome, along with a fix. I think this might have worked for one Vide0Link user in the past, but it's been a couple years now. Perhaps also update your drivers.
+For Logitech surround headphones specifically, the following old Reddit post mentions a fix for problematic surround sound and Chrome, along with a fix. I think this might have worked for one VDO.Ninja user in the past, but it's been a couple years now. Perhaps also update your drivers.
 
-Another possible fault is that the audio quality in Windows is too high; 384-khz or 32-bit audio may cause issues, for example. You might also have issues with ASIO-based drivers, DSD systems, and multi-channel audio systems. In these cases, set the audio output and microphone input in Windows to at most 24-bit at 48-khz stereo; Vide0Link doesn't typically offer better audio quality than this anyways.
+Another possible fault is that the audio quality in Windows is too high; 384-khz or 32-bit audio may cause issues, for example. You might also have issues with ASIO-based drivers, DSD systems, and multi-channel audio systems. In these cases, set the audio output and microphone input in Windows to at most 24-bit at 48-khz stereo; VDO.Ninja doesn't typically offer better audio quality than this anyways.
 
 <figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="391"><figcaption></figcaption></figure>
 
 Looking at the code, this error message is triggered when "NotReadableError" is reported by the browser, I think when screen sharing with audio. So, I suppose you can also screen-share without audio maybe, and then perhaps select a virtual audio device for the audio after the fact instead if you still need a window's audio. However, this is cumbersome to do.
 
-Google or such might offer a solution as well, since this probably isn't a Vide0Link-specific issue. That said, you can try adding [`&inputchannels=2`](../advanced-settings/audio-parameters/and-inputchannels.md) to the guest/push links, to see if that helps at all. But beyond that, I'm not sure this can be addressed via Vide0Link's code itself.
+Google or such might offer a solution as well, since this probably isn't a VDO.Ninja-specific issue. That said, you can try adding [`&inputchannels=2`](../advanced-settings/audio-parameters/and-inputchannels.md) to the guest/push links, to see if that helps at all. But beyond that, I'm not sure this can be addressed via VDO.Ninja's code itself.
 # There are black borders around the video in OBS.
 
 If a black border appears around the video, check that the custom CSS settings in the browser source has not been modified from the default setting:
@@ -11326,18 +11326,18 @@ If you changed the default CSS settings, then you'll need to change them back to
 
 Also, ideally the width/height in OBS Browser source should be the same aspect ratio as the video. 1280x720 (not 800x600) This will fit the window to the video.
 
-_original issue thread:_ [_Reddit: Advice on adding to OBS_]()
+_original issue thread:_ [_Reddit: Advice on adding to OBS_](https://www.reddit.com/r/OBSNinja/comments/g1xyoi/advice\_on\_adding\_to\_obs/)
 ---
 description: old iPhone errors, such as "cannot verify server identity" or
 ---
 
 # Very old iPhone support
 
-An iPhone 5s /w iOS 11 (or newer) is the technical minimum requirement for [Vide0Link](https://vdo.ninja), as Apple's webKit lacks the proper webRTC support in older iOS versions. Older iPhones/iPads can't update to newer iOS versions, so they are out of luck. iPhone 3G, 3Gs, 4, 4s, and iPhone 5 are not supported as a result, and many older iPads are also not supported.
+An iPhone 5s /w iOS 11 (or newer) is the technical minimum requirement for [VDO.Ninja](https://vdo.ninja), as Apple's webKit lacks the proper webRTC support in older iOS versions. Older iPhones/iPads can't update to newer iOS versions, so they are out of luck. iPhone 3G, 3Gs, 4, 4s, and iPhone 5 are not supported as a result, and many older iPads are also not supported.
 
 I'd strongly recommend at least iOS 16 be used either way, as older versions of iOS have serious limitations and bugs. Starting with iOS 13 things started to be at least usable though, so an iPhone 6s is the recommended minimum, but don't expect a bug-free experience.
 
-If using the native iOS app of Vide0Link, while I used to support iOS 11 with it, newer releases of the native app may require a newer iOS version. If using an iPhone 6 for example then, while it may not work with the native app, it might still at least work with the Safari web-app version.
+If using the native iOS app of VDO.Ninja, while I used to support iOS 11 with it, newer releases of the native app may require a newer iOS version. If using an iPhone 6 for example then, while it may not work with the native app, it might still at least work with the Safari web-app version.
 
 Older Android phones tend to work usually though, as I think Google added support for WebRTC earlier on than Apple did, but you might be limited in terms of maximum quality or face heat issues on such old phones.
 # Video freezes mid-stream
@@ -11369,7 +11369,7 @@ To fix the problem though, a bit of troubleshooting may be needed. More often th
 
 If the issue is not fixed by toggling your camera, make sure your internet connection is stable and you're device is not overloaded. Bad connections, network firewalls, or VPNs can cause the video to lose connection and then reconnect, causing the picture to appear to freeze for several seconds or longer.
 
-Vide0Link requires a solid Internet connection with no interfering services to work its best. On some networks, especially during prime-time evening hours of the day, connections can drop out for seconds at the time constantly.&#x20;
+VDO.Ninja requires a solid Internet connection with no interfering services to work its best. On some networks, especially during prime-time evening hours of the day, connections can drop out for seconds at the time constantly.&#x20;
 
 Mobile devices may also have the video freeze for a few moments at a time if switching between cellular networks and WiFi networks, but in these cases things will auto-reconnect within a few seconds normally.
 
@@ -11377,7 +11377,7 @@ Services like [https://speedify.com](https://speedify.cm) can offer a VPN with b
 
 ### iPhone specific issues
 
-Regarding mobile, iOS users can only send video to 3 viewers at a time if using the H264 hardware encoder. Newer versions of Vide0Link will try to keep track of how many H264 streams are being used, and revert to VP8-software-based encoding when the hardware encoders are maxed out, however VP8 encoding can cause iPhones to get very warm. If forcing H264 with an iPhone or iPad, and you max them out, you might cause videos to freeze or go black though.
+Regarding mobile, iOS users can only send video to 3 viewers at a time if using the H264 hardware encoder. Newer versions of VDO.Ninja will try to keep track of how many H264 streams are being used, and revert to VP8-software-based encoding when the hardware encoders are maxed out, however VP8 encoding can cause iPhones to get very warm. If forcing H264 with an iPhone or iPad, and you max them out, you might cause videos to freeze or go black though.
 
 View links and scenes can sometimes can use an iPhone H264's encoder, even if the video isn't visible in OBS. If having issues, try to avoid forcing the H264 encoder or using it sparingly for only the active sources. If using [`&broadcast`](../advanced-settings/view-parameters/broadcast.md) mode, only the director and scenes could possibly contribute to using an H264 encoder; other guests won't have access to the guest's video stream, so they won't count towards this H264 encoder total.
 
@@ -11385,7 +11385,7 @@ View links and scenes can sometimes can use an iPhone H264's encoder, even if th
 
 Some Windows computers that can offer H264 hardware encoding with AMD or Nvidia GPUs run into the same limitations that an iPhone device may have. That is, if more than 2 or 3 video streams are being published that use H264 encoding, the hardware encoder on those devices may fail.
 
-If someone if using OBS to publish H264 video via RTMP using Nvidia's NVenc, while also publishing H264 video to Vide0Link, conflicts may arise, and video streams may fail. This shouldn't happen really, but in theory, it's something to be aware of.
+If someone if using OBS to publish H264 video via RTMP using Nvidia's NVenc, while also publishing H264 video to VDO.Ninja, conflicts may arise, and video streams may fail. This shouldn't happen really, but in theory, it's something to be aware of.
 ---
 description: When the video turns into a rainbow puke with distorted colors
 ---
@@ -11394,7 +11394,7 @@ description: When the video turns into a rainbow puke with distorted colors
 
 Update: This issue of rainbow puke impacted OBS v25 and older, but is no longer an issue for most users.
 
-If having issues with the video being very low quality, this is often due to high packet loss caused by weak WiFi or other network issue. More info: 
+If having issues with the video being very low quality, this is often due to high packet loss caused by weak WiFi or other network issue. More info: [https://www.youtube.com/watch?v=je2ljlvLzlY](https://www.youtube.com/watch?v=je2ljlvLzlY)
 
 **DO NOT USE WIFI**. Have everyone connect to stable wired Internet whenever possible.
 
@@ -11440,7 +11440,7 @@ If using Windows or if you have just installed OBS, please restart your browser 
 
 The Google Chrome usually works with most virtual cameras. If you are having problems with it, you can also try another browser.
 
-Please also be sure to START the virtual camera before selecting or opening it in Vide0Link. If you open it in Vide0Link before starting it, the resolution and/or frame rate may be wrong.
+Please also be sure to START the virtual camera before selecting or opening it in VDO.Ninja. If you open it in VDO.Ninja before starting it, the resolution and/or frame rate may be wrong.
 
 ## Enabling permissions for Virtual Camera on MacOS
 
@@ -11461,7 +11461,7 @@ If the OBS Virtual Camera is not appearing in Chrome or your browser after insta
 
     <figure><img src="../.gitbook/assets/image (2) (14).png" alt=""><figcaption><p>If OBS isn't listed, press the + button, navigate to it, and select it</p></figcaption></figure>
 ---
-description: Some ideas on how to reduce total system load on a vMix system using Vide0Link
+description: Some ideas on how to reduce total system load on a vMix system using VDO.Ninja
 ---
 
 # vMix High CPU
@@ -11473,15 +11473,15 @@ vMix is a great studio mixer, although some users find the CPU load can get a bi
 * Using the H264 codec may reduce CPU; adding `&codec=h264` to the view link may help.
 * Disabling de-interlacing, sharpening, or aliasing of the browser source might free up some load.
 * Electron Capture or Vingester.app can be used instead of the vMix browser source; they can use window capture, which can reduce the CPU load.
-* If you have a spare computer, Vingester.app has a Vide0Link to NDI output option, which can perhaps help with distributing load if the browser source is causing issues.
-* Lowering the frame rate of the browser source and incoming Vide0Link videos might help reduce CPU load. `&maxframerate=30`, for example, on the guest link can help cap the frame rate.
+* If you have a spare computer, Vingester.app has a VDO.Ninja to NDI output option, which can perhaps help with distributing load if the browser source is causing issues.
+* Lowering the frame rate of the browser source and incoming VDO.Ninja videos might help reduce CPU load. `&maxframerate=30`, for example, on the guest link can help cap the frame rate.
 * The director of a room can adjust settings of incoming videos via the video settings options under advanced settings. This includes the max resolution, frame rate, and aspect ratio of incoming videos.
 * Updating your graphics card drivers can sometimes help.
-* If acting as a Vide0Link director, consider hosting the director on a different computer than vMix. If not possible, consider using `&meshcast` with the director's link to use `&meshcast` to help reduce the CPU load when in larger group rooms.
-* Try to use your local camera as a source in vMix, rather than bringing your local video into vMix with Vide0Link. Using a virtual camera, like Snapcamera, OBS Virtual Camera, Manycam, or such can allow a webcam to be accessed using the browser and vMix at the same time.
-* Avoid using multiple group scene link, unless solo-view links. Instead, consider using the Vide0Link mixer app to use a single group scene link, switching between different layouts using the mixer interface. (The Mixer app is relatively new, as of May 2022, so still undergoing feature enhancements).
+* If acting as a VDO.Ninja director, consider hosting the director on a different computer than vMix. If not possible, consider using `&meshcast` with the director's link to use `&meshcast` to help reduce the CPU load when in larger group rooms.
+* Try to use your local camera as a source in vMix, rather than bringing your local video into vMix with VDO.Ninja. Using a virtual camera, like Snapcamera, OBS Virtual Camera, Manycam, or such can allow a webcam to be accessed using the browser and vMix at the same time.
+* Avoid using multiple group scene link, unless solo-view links. Instead, consider using the VDO.Ninja mixer app to use a single group scene link, switching between different layouts using the mixer interface. (The Mixer app is relatively new, as of May 2022, so still undergoing feature enhancements).
 
-There are additional other options available to reduce CPU / GPU / Network load when using Vide0Link; this list is specific to vMix issues.
+There are additional other options available to reduce CPU / GPU / Network load when using VDO.Ninja; this list is specific to vMix issues.
 ---
 description: >-
   Some laptops will put the webcam to sleep for a moment to save power, causing
@@ -11496,11 +11496,11 @@ One place to is in the Windows Power Options settings, which you can find in the
 
 You can also try disabling the "Allow the computer to turn off this device to save power" options in the Windows Device Manager for each USB device/host controller. (uncheck them)
 
-If the problem isn't resolved, you can still reload the camera with the refresh button in the Vide0Link settings menu when it happens. This just reloads the camera and should fix the problem until it happens again.
+If the problem isn't resolved, you can still reload the camera with the refresh button in the VDO.Ninja settings menu when it happens. This just reloads the camera and should fix the problem until it happens again.
 
 The director of a room can also refresh a camera remotely of a guest, when it freezes, via the video settings of the guest.
 
-If it's a common occurrence, you can load the camera into OBS or SnapCamera and then bring the video into Vide0Link as a virtual camera device. While Vide0Link does try to automatically reconnect devices when they become disconnected, it sometimes isn't alerted by the browser that the camera has glitched. OBS or Snapcamera might handle these conditions better.
+If it's a common occurrence, you can load the camera into OBS or SnapCamera and then bring the video into VDO.Ninja as a virtual camera device. While VDO.Ninja does try to automatically reconnect devices when they become disconnected, it sometimes isn't alerted by the browser that the camera has glitched. OBS or Snapcamera might handle these conditions better.
 
 Another reason for a camera freezing randomily is that it may be a bad USB 3.0 cable or a USB 3.0 hub that is overloaded with other USB devices already. Plug any camera directly into the back of the computer, on a dedicated USB 3.0 port, with a high quality USB 3.0 or better cable. Unplug other unneeded USB devices.
 
@@ -11528,7 +11528,7 @@ There's other tricks as well to get screen sharing working on mobile, such as us
 [screen-share-your-iphone-ipad.md](../guides/screen-share-your-iphone-ipad.md)
 ---
 description: >-
-  Sometimes 4G or 5G, or even some corporate networks, block Vide0Link from
+  Sometimes 4G or 5G, or even some corporate networks, block VDO.Ninja from
   working
 ---
 
@@ -11538,15 +11538,15 @@ When using 4G or 5G Internet, some network providers have firewalls or network r
 
 If a director of a room, you may see guests join and then disconnected repeatedly, with video and audio never actually showing. This means the peer connection has failed, and is constantly retrying. The issue should go away though if the guest user changes networks; switching to WiFi for example or a different ISP provider.
 
-Vide0Link uses TURN servers to bypass most 4G-related network issues, offering solutions to network traversal, TCP, UDP, and IPv6 routing issues. Sometimes, in rare cares, even this isn't enough.
+VDO.Ninja uses TURN servers to bypass most 4G-related network issues, offering solutions to network traversal, TCP, UDP, and IPv6 routing issues. Sometimes, in rare cares, even this isn't enough.
 
 There are solutions usually.
 
 1. One option is to try adding `&privacy&tz=-60` or `&privacy&tcp&tz=300` to the guest's URL.  This attempts to force the TURN servers into action, with a couple different configurations set. Sometimes, especially in the case of active firewalls, this can fix the issue.
 2. Using speedify.com on the mobile device often will solve the problem. It's a paid service that's free to try, but it's well worth buying if it works. It creates a VPN designed for live video that solves many issues mobile 4G devices commonly face.&#x20;
-3. If you're an advanced user, setting up your own TURN server that is tweaked to your specific scenario and problem is an option. Please do let me know what works for you in this regard though, as I'd be keen to add such support to Vide0Link's TURN network also.&#x20;
+3. If you're an advanced user, setting up your own TURN server that is tweaked to your specific scenario and problem is an option. Please do let me know what works for you in this regard though, as I'd be keen to add such support to VDO.Ninja's TURN network also.&#x20;
 
-Please note, if you have self-deployed Vide0Link onto your own servers, it becomes your responsibility to deploy your own TURN servers or purchase TURN services from a third-party. Any TURN server access provided currently by Vide0Link for private deployments is out of generosity and isn't a guaranteed service.
+Please note, if you have self-deployed VDO.Ninja onto your own servers, it becomes your responsibility to deploy your own TURN servers or purchase TURN services from a third-party. Any TURN server access provided currently by VDO.Ninja for private deployments is out of generosity and isn't a guaranteed service.
 
 ---
 description: Hides the invite URL options in the Director's room
@@ -11621,7 +11621,7 @@ If the main director does not have `&codirector={somepassword}` in their URL, no
 
 The co-director mode is still evolving, and certain things like shared-state between all the directors may still be missing.
 
-Starting with [v20](../release-notes/v20.md) of Vide0Link, a co-director invite link will be available via the room settings button, along with the option to customize permissions.
+Starting with [v20](../release-notes/v20.md) of VDO.Ninja, a co-director invite link will be available via the room settings button, along with the option to customize permissions.
 
 <div align="left">
 
@@ -11676,7 +11676,7 @@ Example: `&midiremote=4`
 
 ## Details
 
-This lets you route all MIDI messages from one computer to another computer, with the purpose of remote triggering the Vide0Link hotkeys.
+This lets you route all MIDI messages from one computer to another computer, with the purpose of remote triggering the VDO.Ninja hotkeys.
 
 ```
 https://vdo.ninja/beta/?midiremote=4&director=ROOMNAMEHERE
@@ -11832,7 +11832,7 @@ This does not hide the mouse cursor for Chrome-based screen capture, as Chrome [
 
 Works better in Windows than on macOS, due to OS-level limitations.
 
-If you're looking to hide the cursor while screen-recording, consider using OBS to capture and OBS Virtual Cam as the source into Vide0Link. You can also check out: [https://github.com/rdp/screen-capture-recorder-to-video-windows-free](https://github.com/rdp/screen-capture-recorder-to-video-windows-free) as an option to turn a screen into a virtual camera without needing OBS.
+If you're looking to hide the cursor while screen-recording, consider using OBS to capture and OBS Virtual Cam as the source into VDO.Ninja. You can also check out: [https://github.com/rdp/screen-capture-recorder-to-video-windows-free](https://github.com/rdp/screen-capture-recorder-to-video-windows-free) as an option to turn a screen into a virtual camera without needing OBS.
 
 ## Related
 
@@ -11869,7 +11869,7 @@ Uses of relay mode include:
 
 You can [deploy your own TURN server](https://github.com/steveseguin/obsninja/blob/master/turnserver.md) if intending to use this feature a lot or needing more bandwidth.
 
-Please feel free to donate to Vide0Link to help support the provided TURN servers.
+Please feel free to donate to VDO.Ninja to help support the provided TURN servers.
 
 Currently TURN servers are deployed numerous countries around the world.
 
@@ -11946,11 +11946,11 @@ General Option! ([`&push`](../source-settings/push.md), [`&room`](room.md), [`&v
 
 Example: `&api=SomeAPIKey`
 
-<table><thead><tr><th width="180">Value</th><th>Description</th></tr></thead><tbody><tr><td>(key)</td><td>API KEY to control Vide0Link remotely</td></tr></tbody></table>
+<table><thead><tr><th width="180">Value</th><th>Description</th></tr></thead><tbody><tr><td>(key)</td><td>API KEY to control VDO.Ninja remotely</td></tr></tbody></table>
 
 ## Details
 
-You can use this parameter to enable the HTTP/WSS remote control API for Vide0Link. You pass a API KEY value to the parameter, and if it matches the remote control's API KEY, then the remote control interface will be able to send commands to your Vide0Link session.
+You can use this parameter to enable the HTTP/WSS remote control API for VDO.Ninja. You pass a API KEY value to the parameter, and if it matches the remote control's API KEY, then the remote control interface will be able to send commands to your VDO.Ninja session.
 
 You can control guests in the director's room, or you can control your local microphone and camera, as examples.
 
@@ -12008,7 +12008,7 @@ General Option! ([`&push`](../source-settings/push.md), [`&room`](room.md), [`&v
 
 ## Details
 
-Audio playback is muted in Vide0Link. If you just want to mute the speaker button temporarily use [`&mutespeaker`](../source-settings/and-mutespeaker.md).
+Audio playback is muted in VDO.Ninja. If you just want to mute the speaker button temporarily use [`&mutespeaker`](../source-settings/and-mutespeaker.md).
 
 ## Related
 
@@ -12054,12 +12054,12 @@ Example: `&label=Steve`
 
 ### Multiple lines
 
-Until I figure out a better way of doing this, I've enabled a way to have a display name be on multiple-lines in Vide0Link.
+Until I figure out a better way of doing this, I've enabled a way to have a display name be on multiple-lines in VDO.Ninja.
 
 `&label=DisplayNameHere\nSubtitleHere` Note the use of as a line break ie:
 
 ```
-
+https://vdo.ninja/?label=Steve_Seguin\n(he/him)\nhttps://twitch.tv/vdoninja&push=JaAiVEH
 https://vdo.ninja/?view=JaAiVEH&showlabels
 ```
 
@@ -12123,9 +12123,9 @@ Example: `&pie=YourPiesocketAPIKey`
 
 Third-party handshake-server service option. If using piesocket, you can just do `&pie=APKKEY` to use that service, without deploying any code or servers yourself.
 
-At the time of originally adding this feature, PieSocket was a free service. That has since changed (Dec 2021). Vide0Link is not affiliated with PieSocket and never has been. We have no recommendation on whether you should use them or not.
+At the time of originally adding this feature, PieSocket was a free service. That has since changed (Dec 2021). VDO.Ninja is not affiliated with PieSocket and never has been. We have no recommendation on whether you should use them or not.
 
-For a free handshake-server though, please instead consider hosting your own on Google Cloud or Amazon AWS with a free micro-server instance. The following server code is compatible with Vide0Link: [https://github.com/steveseguin/websocket\_server](https://github.com/steveseguin/websocket\_server)
+For a free handshake-server though, please instead consider hosting your own on Google Cloud or Amazon AWS with a free micro-server instance. The following server code is compatible with VDO.Ninja: [https://github.com/steveseguin/websocket\_server](https://github.com/steveseguin/websocket\_server)
 ---
 description: A basic guest queuing and approving system
 ---
@@ -12274,7 +12274,7 @@ If you are the one publishing with an Android device, you can hold the screen do
 
 ### Remote Statistics using `&remote`
 
-A bit less accessible, but using `&remote` also gives the viewer permission to request statistic information. The monitoring tool, also used by the Vide0Link speed-test, makes use of the `&remote` flag to remote access stats.
+A bit less accessible, but using `&remote` also gives the viewer permission to request statistic information. The monitoring tool, also used by the VDO.Ninja speed-test, makes use of the `&remote` flag to remote access stats.
 
 [https://vdo.ninja/monitor](https://vdo.ninja/monitor)
 
@@ -12286,7 +12286,7 @@ It will pull statistics data from the sender of a video stream and visualize it,
 
 This reason for needing `&remote` is privacy related, as the statistical information being shared with the monitor page could include information like browser or system data of remote viewers unconnected to the monitoring user. While likely unneeded, adding `&remote=somePassword` to both the monitoring and push links will further increase security with a password check.
 
-The Vide0Link speed test ([https://vdo.ninja/speedtest](https://vdo.ninja/speedtest)) has a link at the bottom of the page, which is all already configured to provide remote monitoring of speed test results without needing to play with any parameters or settings.
+The VDO.Ninja speed test ([https://vdo.ninja/speedtest](https://vdo.ninja/speedtest)) has a link at the bottom of the page, which is all already configured to provide remote monitoring of speed test results without needing to play with any parameters or settings.
 
 In regards to `&sid`, you can pass multiple stream IDs, and so long as each remote sender of that stream ID has `&remote` added to their URL, the monitoring page will be able to monitor all those outbound streams.
 
@@ -12426,7 +12426,7 @@ The default mode when `&stereo` is used alone is `&stereo=5`, which acts like ei
 | ----------- | ----- | --- | -------- | ------- | --------------- | ------------- | ------------- | ---------- | ------------- | ---- |
 | iOS devices |       | on  | on       | on      | _off_           | _off_         | 32            | 32         | 32            | _no_ |
 
-Just for reference, the audio codec used by Vide0Link is OPUS (48khz), which can provide high-fidelity music transfer when the audio bitrate is set to 80-kbps per channel or higher. The default audio bitrate used is 32-kbps VBR, which is sufficient for most voice applications. Increasing the audio bitrate to a near-lossless 500-kbps or something may end up causing more problems than anything, but that is supported if needed.
+Just for reference, the audio codec used by VDO.Ninja is OPUS (48khz), which can provide high-fidelity music transfer when the audio bitrate is set to 80-kbps per channel or higher. The default audio bitrate used is 32-kbps VBR, which is sufficient for most voice applications. Increasing the audio bitrate to a near-lossless 500-kbps or something may end up causing more problems than anything, but that is supported if needed.
 
 ### WHIP
 
@@ -12465,7 +12465,7 @@ There is a toggle in the director's room which adds `&sticky` to the guest's inv
 
 ### New in [v23](../releases/v23.md)
 
-Added a little "pin" icon to the end of the copy/view link when sharing your camera. Pressing it is the same as using `&sticky` on your URL, as next time you visit Vide0Link it will ask you if you wish to reload your [`&push`](../source-settings/push.md) link.
+Added a little "pin" icon to the end of the copy/view link when sharing your camera. Pressing it is the same as using `&sticky` on your URL, as next time you visit VDO.Ninja it will ask you if you wish to reload your [`&push`](../source-settings/push.md) link.
 
 <figure><img src="../.gitbook/assets/image (8) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -12486,7 +12486,7 @@ General Option! ([`&push`](../source-settings/push.md), [`&room`](room.md), [`&v
 
 This parameter lets you specify a STUN server for webRTC negotiation. The default STUN servers use those provided by Google (and recently also Cloudflare), at `stun:stun.l.google.com:19302`, but with this command you can set your own.
 
-`&stun` will overwrite the existing STUN values provided by Vide0Link. If you wish to keep the existing STUN server options, adding additional options, or if you wish to add multiple custom STUN servers, you can use the related [`&addstun`](../newly-added-parameters/and-addstun.md) parameter. This is the same idea, but when used it won't overwrite the existing STUN options.
+`&stun` will overwrite the existing STUN values provided by VDO.Ninja. If you wish to keep the existing STUN server options, adding additional options, or if you wish to add multiple custom STUN servers, you can use the related [`&addstun`](../newly-added-parameters/and-addstun.md) parameter. This is the same idea, but when used it won't overwrite the existing STUN options.
 
 Using `&stun` and [`&addstun`](../newly-added-parameters/and-addstun.md) together will let you specify two custom STUN servers.
 
@@ -12506,7 +12506,7 @@ If your browser has disabled WebRTC IP leaking, then the STUN servers may be pre
 
 Without a STUN server though, you will still share your local IP, the HOST candidate type, as well as any RELAY candidates obtained from available turn servers.
 
-The magic with Vide0Link and peer-to-peer webRTC is largely made possible by STUN servers.
+The magic with VDO.Ninja and peer-to-peer webRTC is largely made possible by STUN servers.
 
 ### More about SRFLX vs PRFLX candidate modes
 
@@ -12515,11 +12515,11 @@ When dealing with ICE (Interactive Connectivity Establishment) candidates, you m
 1. **srflx (Server Reflexive)**:
    * Server reflexive candidates are created when a device behind a Network Address Translator (NAT) sends a request to a STUN (Session Traversal Utilities for NAT) server. The STUN server then sends a response back, and this response contains a reflexive candidate. This reflexive candidate represents the public IP and port of the NAT device.
    * Srflx candidates are used to traverse NATs and allow the devices on both sides to find a route to communicate through the NAT.
-   * Srflx is the most common candidate type seen when making a connection with another remote peer on the Internet, via Vide0Link.
+   * Srflx is the most common candidate type seen when making a connection with another remote peer on the Internet, via VDO.Ninja.
 2. **prflx (Peer Reflexive)**:
    * Peer reflexive candidates are also a result of communication with a STUN server, but unlike server reflexive candidates, they represent the reflexive address of the remote peer, not the local device. In other words, they are the public IP and port of the other side, as observed by the STUN server.
    * Prflx candidates can be helpful in situations where a WebRTC peer wants to communicate with another peer, and it needs to discover the public address of that peer to establish direct communication.
-   * Prflx are not common among Vide0Link connections, but may be seen when tethering, using a symmetrical firewall, or other non-common networking setups.
+   * Prflx are not common among VDO.Ninja connections, but may be seen when tethering, using a symmetrical firewall, or other non-common networking setups.
 
 In summary, srflx and prflx candidates both involve the use of STUN servers to discover reflexive addresses, but srflx represents the public address of the local device (behind NAT), while prflx represents the public address of the remote peer. These types of candidates are crucial for WebRTC communication because they help establish peer-to-peer connections across NAT devices and firewalls.
 
@@ -12557,7 +12557,7 @@ Example: `&turn=steve;setupYourOwnPlease;turn:turn.vdo.ninja:443`
 
 ## Details
 
-Several TURN servers are provided . You may wish to use your own privately hosted TURN server instead though, and the `&turn` is one flexible way to select it.
+Several TURN servers are provided by Steve for free, for now, and these are automatically selected based on your geographic location. You may wish to use your own privately hosted TURN server instead though, and the `&turn` is one flexible way to select it.
 
 ### Locations
 
@@ -12574,7 +12574,7 @@ Note the use of `turn:`, and in the case of TLS/SSL, `turns:`
 
 ### **More Info**
 
-TURN Servers are designed to help certain users connect when they are behind a firewall or other network restriction. About 1 in 10 users need a TURN server to use Vide0Link; if you are having problems, check to see if they are using the TURN server.
+TURN Servers are designed to help certain users connect when they are behind a firewall or other network restriction. About 1 in 10 users need a TURN server to use VDO.Ninja; if you are having problems, check to see if they are using the TURN server.
 
 Sometimes, rarely, using your own TURN server can improve video quality for some users, if the public network routing is very bad and the TURN server is hosted on a high-quality private network, like Google Cloud. Details are provided in the code repo no how to deploy your own (turnserver.md).
 
@@ -12605,19 +12605,19 @@ It is possible to store credentials for your TURN server on a server, pulling th
 [and-tz.md](../newly-added-parameters/and-tz.md)
 # 4K
 
-Sending a 4K video feed with Vide0Link is very CPU intensive. Be prepared to use all of 8 real cpu cores (not threads).
+Sending a 4K video feed with VDO.Ninja is very CPU intensive. Be prepared to use all of 8 real cpu cores (not threads).
 
-## How Vide0Link handles video quality
+## How VDO.Ninja handles video quality
 
-Vide0Link has 3 predefined [`&quality`](../source-settings/quality.md) levels:
+VDO.Ninja has 3 predefined [`&quality`](../source-settings/quality.md) levels:
 
 * `&quality=0` tries to do 1080p (1920x1080 @ 60fps)
 * `&quality=1` is the default. It tries to select 720p (1280x720 @ 30fps ) for both screen capture and webcam.
 * `&quality=2` tries to do 360p (640x360 @ 30 fps).
 
-By “trying”, I mean that if the resolution is not available, Vide0Link defaults to another resolution that the camera supports instead. This way, no errors are thrown and a compatible stream is sent, even if it’s not exactly what you might have desired.
+By “trying”, I mean that if the resolution is not available, VDO.Ninja defaults to another resolution that the camera supports instead. This way, no errors are thrown and a compatible stream is sent, even if it’s not exactly what you might have desired.
 
-Vide0Link is however capable of doing higher resolutions and custom resolutions however; you just need to manually specify the resolution you want. When you manually specify a resolution, if it doesn’t work, an error is thrown.
+VDO.Ninja is however capable of doing higher resolutions and custom resolutions however; you just need to manually specify the resolution you want. When you manually specify a resolution, if it doesn’t work, an error is thrown.
 
 While I could make a selectable option for 4K in the user interface, another problem with 4K is that it requires a LOT of CPU power to encode. Most users will always select the highest resolution allowed, not understanding that it might actually be a bad idea. Maxing out your CPU can actually result in worse quality with lower frame rates than selecting a lower, safer, resolution.
 
@@ -12646,7 +12646,7 @@ As a result, to successfully stream 4K video, you generally need a computer syst
 Lastly, macOS users may find that 4K is simply not possible or very difficult. If you do manage to get it working, it might only operate at 5-fps or so. I don’t quite know why this is, but if you intend on sharing 4K video, you might be better off using a Windows PC. It seems to perform better.
 # High-def camera
 
-You can customize the playback of videos by added parameters to the Vide0Link URL links, along with many other aspects. The default video bitrate of most modern browsers is around 2500-kbps, which is okay, but we can achieve higher video quality if we manually set this to something even higher.
+You can customize the playback of videos by added parameters to the VDO.Ninja URL links, along with many other aspects. The default video bitrate of most modern browsers is around 2500-kbps, which is okay, but we can achieve higher video quality if we manually set this to something even higher.
 
 `https://vdo.ninja/?view=streamid&videobitrate=6000`
 
@@ -12660,16 +12660,16 @@ Higher resolution streams, especially 1080p60, requires a LOT of CPU power. Havi
 
 Using Ethernet instead of Wi-Fi will also help to ensure the frame loss at these higher resolutions is managable. At higher resolutions, frame rates are more likely to be unstable.
 
-4K30 video is achievable with Vide0Link, with a fast enough computer and with very high video bitrates; often in the realm of 30 to 40-Mbps.
+4K30 video is achievable with VDO.Ninja, with a fast enough computer and with very high video bitrates; often in the realm of 30 to 40-Mbps.
 
-As Vide0Link dynamically adjusts video resolution and bitrate to match the available Internet connection bandwidth availability, sometimes 1280x720 video resolutions won’t be maintainable. You can run the [https://vdo.ninja/speedtest](https://vdo.ninja/speedtest) to see if you are able to hit at least 2000-kbps, which is about what is needed for smooth 720p video.
+As VDO.Ninja dynamically adjusts video resolution and bitrate to match the available Internet connection bandwidth availability, sometimes 1280x720 video resolutions won’t be maintainable. You can run the [https://vdo.ninja/speedtest](https://vdo.ninja/speedtest) to see if you are able to hit at least 2000-kbps, which is about what is needed for smooth 720p video.
 ---
 description: Some basic options to achieve higher quality video
 ---
 
 # Even higher quality video
 
-You can customize the capture resolution and playback quality of videos by adding parameters to the Vide0Link URL.
+You can customize the capture resolution and playback quality of videos by adding parameters to the VDO.Ninja URL.
 
 ### Viewer side options
 
@@ -12681,9 +12681,9 @@ You’ll notice that we added [`&videobitrate=6000`](../advanced-settings/video-
 
 You can also play with different video codecs; [`&codec=av1`](../advanced-settings/view-parameters/codec.md#av1) is a viewer side option and tends to offer better colors and quality than the default vp8 or h264 codecs, but av1 will use a up a lot more CPU.
 
-Another viewer side option is [`&scale=100`](../advanced-settings/view-parameters/scale.md), which will disable dynamic fit-to-window scaling optimizations. This is especially valuable if wanting to downlscale 4K to 1080p video, as otherwise Vide0Link would limit the resolution to the size of the OBS Browser source window. It can also help when there is more than one video on screen, but do note that disabling the auto-scale optimizations to achieve better quality will increase the CPU and network load for all parties.
+Another viewer side option is [`&scale=100`](../advanced-settings/view-parameters/scale.md), which will disable dynamic fit-to-window scaling optimizations. This is especially valuable if wanting to downlscale 4K to 1080p video, as otherwise VDO.Ninja would limit the resolution to the size of the OBS Browser source window. It can also help when there is more than one video on screen, but do note that disabling the auto-scale optimizations to achieve better quality will increase the CPU and network load for all parties.
 
-Sometimes adding some sharpness to the video as a digital video effect in OBS can help improve video quality, especially for video containing fine-text, like a screen share or video overlay. By default text might look a bit soft with Vide0Link, and sharpening can resolve it.
+Sometimes adding some sharpness to the video as a digital video effect in OBS can help improve video quality, especially for video containing fine-text, like a screen share or video overlay. By default text might look a bit soft with VDO.Ninja, and sharpening can resolve it.
 <img src="../.gitbook/assets/image (10) (7).png" alt="" data-size="original">![](<../.gitbook/assets/image (4) (1) (1) (1) (2).png>)
 
 ### Sender side options
@@ -12698,7 +12698,7 @@ Up to 4K or beyond is possible as well, but you'll need to manually specify the 
 
 ### Connection Quality
 
-As Vide0Link dynamically also adjusts video resolution and bitrate to match the available Internet connection bandwidth availability, sometimes 1280x720 video resolutions won’t be maintainable. You can run the [https://vdo.ninja/speedtest](https://vdo.ninja/speedtest) to see if you are able to hit at least 2000-kbps, which is about what is needed for smooth 720p video.
+As VDO.Ninja dynamically also adjusts video resolution and bitrate to match the available Internet connection bandwidth availability, sometimes 1280x720 video resolutions won’t be maintainable. You can run the [https://vdo.ninja/speedtest](https://vdo.ninja/speedtest) to see if you are able to hit at least 2000-kbps, which is about what is needed for smooth 720p video.
 
 Using Ethernet instead of Wi-Fi will also help to ensure the quality and frame loss at these higher resolutions is obtainable. At higher resolutions, frame rates are more likely to be unstable and the resolution might be throttled to something lower. Packet loss will impact the quality of a video stream quite a bit, and in rare cases, you may need to use [`&relay`](../general-settings/and-relay.md) or [`&meshcast`](../newly-added-parameters/and-meshcast.md) mode to assist in overcoming network throttling or routing issues.
 
@@ -12716,7 +12716,7 @@ This set of instructions will work for Windows, Mac1 and Linux2.
 ## Simple Steps
 
 1. Go to [https://vdo.ninja/?push](https://vdo.ninja/?push) with your mobile phone and start sharing your camera.
-2. Add your Vide0Link ‘view’ link as a Browser Source in OBS in a Scene.
+2. Add your VDO.Ninja ‘view’ link as a Browser Source in OBS in a Scene.
    1. Select the "Control audio via OBS" option to bring audio in.
    2. Resize the source as you see fit.
 3. Configure OBS' Virtual Camera to use the Scene or Source as the Output Selection
@@ -12727,7 +12727,7 @@ Detailed steps of how to perform this setup and include audio from the device ar
 
 ## Use Cases
 
-OBS VirtualCam is fully compatible with Vide0Link and is useful for connecting MULTIPLE different OBS mixers together remotely, so you can take turn producing a show. You can also use it to turn your smartphone into a webcam. You can also share your “live show” with a small group of friends, perhaps those who are also in the show with you, so everyone has a real-time view of the show that is going on.
+OBS VirtualCam is fully compatible with VDO.Ninja and is useful for connecting MULTIPLE different OBS mixers together remotely, so you can take turn producing a show. You can also use it to turn your smartphone into a webcam. You can also share your “live show” with a small group of friends, perhaps those who are also in the show with you, so everyone has a real-time view of the show that is going on.
 
 ## Notes
 
@@ -12763,7 +12763,7 @@ To create a 3-person setup, you can list multiple streams IDs as VIEW values alo
 `https://vdo.ninja/?view=id2,id3&push=id1`
 # Getting started
 
-Bring remote video and audio streams into your video production software for free. Low-latency and high-quality, Vide0Link is flexible tool ideal for the COVID era of remote participation. As a beginner to Vide0Link you should take a look at these pages:
+Bring remote video and audio streams into your video production software for free. Low-latency and high-quality, VDO.Ninja is flexible tool ideal for the COVID era of remote participation. As a beginner to VDO.Ninja you should take a look at these pages:
 
 * [vdo.ninja-basics.md](vdo.ninja-basics.md "mention")
 * [stream-ids.md](stream-ids.md "mention")
@@ -12774,27 +12774,27 @@ Bring remote video and audio streams into your video production software for fre
 * [mobile-phone-camera-into-webcam.md](mobile-phone-camera-into-webcam.md "mention")
 * [cheat-sheet-of-basic-parameters](../advanced-settings/cheat-sheet-of-basic-parameters/ "mention")
 ---
-description: Details and links if interested in making a gift to the developer of Vide0Link
+description: Details and links if interested in making a gift to the developer of VDO.Ninja
 ---
 
 # Sponsor ❤
 
-[Vide0Link](https://vdo.ninja/) is a passion project and is free to use.
+[VDO.Ninja](https://vdo.ninja/) is a passion project and is free to use.
 
 If you'd like to donate as a way of saying thank you, please visit Steve Seguin's [GitHub Sponsors](https://github.com/sponsors/steveseguin) page. Donations are appreciated.
 
-While GitHub Sponsors is the main way to donate, there is also  and . Some crypto options are also listed on the GitHub Sponsors page, including Bitcoin and Ethereum. If you wish to contribute financially in other ways, please contact Steve directly: [steve@seguin.email](mailto:steve@seguin.email)
+While GitHub Sponsors is the main way to donate, there is also [PayPal](https://paypal.me/steveseguin) and [buymeacoffee](https://www.buymeacoffee.com/steveseguin). Some crypto options are also listed on the GitHub Sponsors page, including Bitcoin and Ethereum. If you wish to contribute financially in other ways, please contact Steve directly: [steve@seguin.email](mailto:steve@seguin.email)
 
 If you do make a gift, be sure to let **@steve** know on Discord so he can thank you personally.
 
-User feedback, bug reports, and suggestions are great ways to contribute to the project; they are highly-valued. Spreading the word of Vide0Link to those who may find it useful is also greatly appreciated. Community involvement, such as helping to support other users, writing user-guides, and even showcasing what you've made with Vide0Link is also appreciated.
+User feedback, bug reports, and suggestions are great ways to contribute to the project; they are highly-valued. Spreading the word of VDO.Ninja to those who may find it useful is also greatly appreciated. Community involvement, such as helping to support other users, writing user-guides, and even showcasing what you've made with VDO.Ninja is also appreciated.
 
-If you'd like to grab a Vide0Link branded sticker or mug, there is a merch store with a 0% commission fee set. It won't financially support the project, but it's always motivating to see them randomly in a stream. [https://zero.vdo.ninja](https://zero.vdo.ninja).
+If you'd like to grab a VDO.Ninja branded sticker or mug, there is a merch store with a 0% commission fee set. It won't financially support the project, but it's always motivating to see them randomly in a stream. [https://zero.vdo.ninja](https://zero.vdo.ninja).
 # What are stream IDs?
 
 Stream IDs are not magical in any way and can be manually or automatically created and reused.
 
-Use [`https://vdo.ninja/?push=STREAMID`](https://vdo.ninja/?\&push=STREAMID) to publish a video and [`https://vdo.ninja/?view=STREAMID`](https://vdo.ninja/?\&view=STREAMID) to remotely view it. If you don't manually specify a stream ID, Vide0Link will sometimes generate one for you. You can reuse the generated stream ID if you wish.
+Use [`https://vdo.ninja/?push=STREAMID`](https://vdo.ninja/?\&push=STREAMID) to publish a video and [`https://vdo.ninja/?view=STREAMID`](https://vdo.ninja/?\&view=STREAMID) to remotely view it. If you don't manually specify a stream ID, VDO.Ninja will sometimes generate one for you. You can reuse the generated stream ID if you wish.
 
 Stream IDs only exist when they are actively used; once you stop using a stream ID, it no longer exists until it is used again.
 
@@ -12808,7 +12808,7 @@ Stream IDs only exist when they are actively used; once you stop using a stream 
 * When a guest shares their screen, while also sharing their webcam, the screen share stream will get its own stream ID. Adding [`&ssid`](../source-settings/screenshareid.md) to the guest link can have the stream ID for that screen share be predictable, appending `_ss` as a value. Otherwise, the screen share stream may have a random stream ID.
 # The power of the URL parameter
 
-You can customize the playback of videos by adding query string parameters to the [Vide0Link](https://vdo.ninja/) URL links, along with many other aspects. Vide0Link is highly flexible in this regard, letting you achieve your desired outcome without needing to code and without additional software.
+You can customize the playback of videos by adding query string parameters to the [VDO.Ninja](https://vdo.ninja/) URL links, along with many other aspects. VDO.Ninja is highly flexible in this regard, letting you achieve your desired outcome without needing to code and without additional software.
 
 For example, a simple viewer URL link such as
 
@@ -12832,7 +12832,7 @@ For example, to view the video stream published at stream ID `streamid` at a vid
 http://vdo.ninja/?view=streamid&videobitrate=500&proaudio=1
 ```
 
-Some parameters, like [`&view`](../advanced-settings/view-parameters/view.md) will accept a comma-separated list of valid values, so you can do some rather powerful combos, such as publishing your own video (using [`&push`](../source-settings/push.md)) while also viewing multiple others videos. Vide0Link will auto-mix the videos together into a single layout for you:
+Some parameters, like [`&view`](../advanced-settings/view-parameters/view.md) will accept a comma-separated list of valid values, so you can do some rather powerful combos, such as publishing your own video (using [`&push`](../source-settings/push.md)) while also viewing multiple others videos. VDO.Ninja will auto-mix the videos together into a single layout for you:
 
 ```
 http://vdo.ninja/?push=aaa&view=bbb,ccc,ddd
@@ -12841,9 +12841,9 @@ http://vdo.ninja/?push=aaa&view=bbb,ccc,ddd
 [advanced-settings.md](../advanced-settings.md)
 
 [cheat-sheet-of-basic-parameters](../advanced-settings/cheat-sheet-of-basic-parameters/)
-# Vide0Link basics
+# VDO.Ninja basics
 
-Vide0Link needs two things to work:
+VDO.Ninja needs two things to work:
 
 * Someone pushing a video feed out from their device
 * Someone viewing that video feed
@@ -12865,9 +12865,9 @@ Vide0Link needs two things to work:
 
 ### Powered by WebRTC
 
-[WebRTC](https://webrtc.org/) is the magic behind Vide0Link. While the magic sauce is so much more than that, WebRTC powers the engine. This way Vide0Link works everywhere there is a modern browser. MS Edge, Google Chrome, Mozilla Firefox, Safari, Opera, Vivaldi, Brave. You name it.
+[WebRTC](https://webrtc.org/) is the magic behind VDO.Ninja. While the magic sauce is so much more than that, WebRTC powers the engine. This way VDO.Ninja works everywhere there is a modern browser. MS Edge, Google Chrome, Mozilla Firefox, Safari, Opera, Vivaldi, Brave. You name it.
 
-Vide0Link is a peer-to-peer system. This means for each new person viewing your feed, a new encode is processed. It also is CPU bound since encoding usually takes place on the CPU. Take care not to overload your system. Keep an eye on your CPU usage.
+VDO.Ninja is a peer-to-peer system. This means for each new person viewing your feed, a new encode is processed. It also is CPU bound since encoding usually takes place on the CPU. Take care not to overload your system. Keep an eye on your CPU usage.
 ---
 description: >-
   A room allows for group chat and enables a director to control the room and
@@ -12892,7 +12892,7 @@ The rooms feature creates a virtual room where multiple devices can connect to s
 
 If you want a room that can handle 30 people, it can be done.  However, everyone in the group needs good internet, a fast computer, or the room needs video previews disabled for guests. The [`&broadcast`](../../advanced-settings/view-parameters/broadcast.md) feature can help accomplish this, for example.
 
-For very large groups (i.e. larger than 40), it's generally advised that you use regular server-based chatting service, like Google Meets, and send a Vide0Link invite link to each person individually. This way, you can record the individual streams of those in the Google Meet at a high resolution but still have all the guests see and hear each other.
+For very large groups (i.e. larger than 40), it's generally advised that you use regular server-based chatting service, like Google Meets, and send a VDO.Ninja invite link to each person individually. This way, you can record the individual streams of those in the Google Meet at a high resolution but still have all the guests see and hear each other.
 
 If you use OBS VirtualCam, now included with OBS v26, you can broadcast from OBS directly into the Google Hangouts or other conferencing software. To avoid audio feedback/echo issues, having the guests wear headphones is suggested.
 
@@ -12931,7 +12931,7 @@ When you create a room, the guest's feeds will show up in the director’s room.
 
 Appended to the bottom of the video control box for each guest video is a SOLO LINK button and a link. You can copy the link with either the button or the link, or you can just drag the link (on Windows) into OBS. This gives you an independent window of that guest’s stream, at high quality.
 
-The controls in the Vide0Link’s director room only will let you adjust the volume (and mute) that solo video. The ‘add to scene’ links do not apply to solo-links.
+The controls in the VDO.Ninja’s director room only will let you adjust the volume (and mute) that solo video. The ‘add to scene’ links do not apply to solo-links.
 
 You can create a solo link by hand by doing [https://vdo.ninja/?room=RID\&view=SID\&solo](https://vdo.ninja/?room=RID\&view=SID\&solo)
 
@@ -12975,14 +12975,14 @@ If you'd like to transfer a user to a new room, along with a new password or set
 There's an option called [`&rooms`](../../director-settings/rooms.md), which allows the director to list multiple room names via the URL. These rooms become buttons that the director can press to pre-arm the transfer button with.&#x20;
 
 ---
-description: A guide on how to use Audio Filters & Bitrate in Vide0Link
+description: A guide on how to use Audio Filters & Bitrate in VDO.Ninja
 ---
 
 # Audio Filters & Bitrate
 
 ## Filter Options
 
-There are several Audio Filters in Vide0Link. Some of them are turned on by default, some are not. To activate these Audio Filters you have to add them to the source side.
+There are several Audio Filters in VDO.Ninja. Some of them are turned on by default, some are not. To activate these Audio Filters you have to add them to the source side.
 So for example:
 [https://vdo.ninja/?push](https://vdo.ninja/?push) (for a basic push link)
 [https://vdo.ninja/?room=SOMEROOMNAME](https://vdo.ninja/?room=SOMEROOMNAME) (for a guest in a room)
@@ -12992,7 +12992,7 @@ So for example:
 * Adding [`&proaudio`](../advanced-settings/audio-parameters/and-proaudio.md) to a source link disables [Auto Gain](../source-settings/autogain.md), [Echo Cancellation](../source-settings/aec.md) and [Noise Suppression](../source-settings/and-denoise.md), sets the audio to stereo and the possible outbound audio bitrate to 256-kbps
 * the [`&proaudio`](../advanced-settings/audio-parameters/and-proaudio.md) parameter is the same as the [`&stereo`](../general-settings/stereo.md) parameter
 
-Default settings of Vide0Link:
+Default settings of VDO.Ninja:
 
 There is a very useful google sheet with a matrix for the [`&proaudio`](../advanced-settings/audio-parameters/and-proaudio.md) ([`&stereo`](../general-settings/stereo.md)) parameter:
 
@@ -13048,7 +13048,7 @@ description: >-
 
 This page contains the standard guide for capturing application-specific audio in Windows. Less complex methods are being developed, with some current [alternative options listed here](audio.md#other-options).
 
-#### Guide: Routing Windows application’s audio to [Vide0Link](https://vdo.ninja/)
+#### Guide: Routing Windows application’s audio to [VDO.Ninja](https://vdo.ninja/)
 
 (For MacOS users, you can use [Loopback by Roguemedia](https://www.google.com/url?q=https://rogueamoeba.com/loopback/\&sa=D\&source=editors\&ust=1622130763272000\&usg=AOvVaw09b4uk6dZqBTznSzHMJcul) instead, or check out this list of free options: [https://docs.vdo.ninja/platform-specific-issues/macos#capturing-audio](https://docs.vdo.ninja/platform-specific-issues/macos#capturing-audio))
 
@@ -13057,7 +13057,7 @@ This page contains the standard guide for capturing application-specific audio i
 
 ![](https://lh5.googleusercontent.com/BJg9POjpwA3Psi0qX\_Ruew9VU8uZkR0wdbIcTL1GLmyfXEwa5lx71k7QdYLj51h\_MRw\_WnkoKoPcd-vVuD5of98OXkmHQRexbEwZnre2hbWQtdCvEi41ne2Om5ghHy1NuVIb-Ou1)
 
-Tip: If you want to configure the VB Audio driver with custom settings, the recommended sample rate is 48000-hz, as that is the sample used by Vide0Link.
+Tip: If you want to configure the VB Audio driver with custom settings, the recommended sample rate is 48000-hz, as that is the sample used by VDO.Ninja.
 
 * 2\) Load up Window Mixer by typing in Mixer to the windows search bar:
 
@@ -13073,14 +13073,14 @@ Tip: If you want to configure the VB Audio driver with custom settings, the reco
   
   You can also add this to the view link, which increases the audio quality even more. For example, [`https://vdo.ninja/?view=myStreamID&proaudio`](https://vdo.ninja/?view=myStreamID\&proaudio)
 
-* 5\) In Vide0Link, select the Cable Output device.
+* 5\) In VDO.Ninja, select the Cable Output device.
   
   Tip: If you hold down `CTRL` (`Command`) while selecting inputs, you can select more than one at a time. 
   ![](https://lh3.googleusercontent.com/VzGq5kxxnObkfu-jLhc1HRzXdlbscE68QDVbOHPTHYa0cDLOF5DHQF3UrqoT\_tk9GrJrBBWKmQh2buUzh8UCERiususMiH7IrI7RiAKWHNuqC33j78Sv6DJVUcvwH9HPVvAqw20N)
 
 * 6\) A simple way to hear the audio as an output is to just unmute the video. Right-click and show the controls, if not visible, then unmute.
   ![](https://lh3.googleusercontent.com/Eu257zu9VlV2ueK\_IGMoQlDARqpkGxoqB8PVl\_aSobcsqk-hndfVgzLB0o3z\_F52O1CrBQuM\_CeslpIrYZBXRg9raG8WCLGi4wzfBOF6phsXRtyeTx9zlY3ABc0tYD8TcMvEYLXJ)![](https://lh4.googleusercontent.com/p\_6XTkNhfGQWi0quBnvEe5Bbsy06nT9jkCFi\_aHTCQbOi8HydOI5XQHtoxp4v0r8WhAHQ\_2c5LWYWnWx9SVtrWTNyyKrDlXElq991W8AyfeATdSZKx1BfzVE1sJ5sU0KXzy3yPlF)
-* 7\) Alternatively, you can also use the Sound properties for the VB cable to “listen to this device” in Windows, so you can hear the audio even if not in Vide0Link. This method might have lower latency than the method in step 6.
+* 7\) Alternatively, you can also use the Sound properties for the VB cable to “listen to this device” in Windows, so you can hear the audio even if not in VDO.Ninja. This method might have lower latency than the method in step 6.
   
   ![](https://lh3.googleusercontent.com/AQwJuAdfBEGqhrSOyjqYmZyoNf8HrfrRRtNK3w2HhFMWiP87NZeoFQ6rh2pznr-InI8gg1OyI3CnPnyWUbtV1tnlTfXMswIchomWpbfwyJtlkFFOt-BnS5nO8ObxwBocmU8NuqlJ)
 
@@ -13092,99 +13092,99 @@ While this option still requires a virtual audio cable, as seen above, you can u
 
 <figure><img src="../.gitbook/assets/image (5) (5).png" alt=""><figcaption><p>Another way of selecting application audio for the Virtual Audio Cable</p></figcaption></figure>
 
-#### Publishing directly from OBS to Vide0Link
+#### Publishing directly from OBS to VDO.Ninja
 
-An alternative to using a virtual audio cable is to use OBS to capture the audio, and then publish the audio to Vide0Link directly using the WHIP-publishing mode.
+An alternative to using a virtual audio cable is to use OBS to capture the audio, and then publish the audio to VDO.Ninja directly using the WHIP-publishing mode.
 
 [WHIP](../advanced-settings/whip-parameters/and-whip.md) is an experimental feature currently in OBS and may require a special version of OBS at the moment to access, but it might be included in OBS by default with the release of OBS v30 or v31.
 
 Check out a demo YouTube video of how to accomplish this:
-Publishing from OBS directly to Vide0Link
+[Publishing from OBS directly to VDO.Ninja](https://www.youtube.com/watch?v=ynSOE2d4Z9Y)
 
 More details will be provided as the feature develops.
 
-Using WHIP to publish to Vide0Link directly from OBS
+Using WHIP to publish to VDO.Ninja directly from OBS
 # How to capture without browser sources
 
 ### Vingester.app
 
-Vingester.app can let you do Vide0Link to NDI. It uses a browser window and can be used to export a copy of the window to FFmpeg, NDI, or make the source available for window-capture. It is a bit heavy on CPU usage, but on a dedicated computer, it works quite well for hosting a few NDI streams.
+Vingester.app can let you do VDO.Ninja to NDI. It uses a browser window and can be used to export a copy of the window to FFmpeg, NDI, or make the source available for window-capture. It is a bit heavy on CPU usage, but on a dedicated computer, it works quite well for hosting a few NDI streams.
 
 [https://github.com/steveseguin/vingester](https://github.com/steveseguin/vingester)
 
 ### Electron Capture
 
-Electron Capture is the officially supported tool for doing window capture of Vide0Link. It's very light weight and has quite a few command line options to batch start several windows at a time, along with support for hotkeys and other nifty Vide0Link specific tasks.
+Electron Capture is the officially supported tool for doing window capture of VDO.Ninja. It's very light weight and has quite a few command line options to batch start several windows at a time, along with support for hotkeys and other nifty VDO.Ninja specific tasks.
 
 [https://github.com/steveseguin/electroncapture](https://github.com/steveseguin/electroncapture)
 
-If using Electron Capture on Windows, you can currently do `Win+Tab` to switch between virtual desktops --- and sometimes this lets you can put all the Vide0Link windows in one desktop, and have a second desktop for vMix etc. It works with some windows setups, and in others, might just show black videos when trying to capture.
+If using Electron Capture on Windows, you can currently do `Win+Tab` to switch between virtual desktops --- and sometimes this lets you can put all the VDO.Ninja windows in one desktop, and have a second desktop for vMix etc. It works with some windows setups, and in others, might just show black videos when trying to capture.
 
 ### Virtual Cameras and Virtual Audio devices
 
-While this approach will still use a browser source, you can ingest Vide0Link into a browser source for an app like OBS Studio, or even something paid like ManyCam, and then export the captured video stream via their Virtual Camera features into another app that supports webcam / video input devices.
+While this approach will still use a browser source, you can ingest VDO.Ninja into a browser source for an app like OBS Studio, or even something paid like ManyCam, and then export the captured video stream via their Virtual Camera features into another app that supports webcam / video input devices.
 
-Audio can be exported directly via Vide0Link into a virtual audio device, either their the [`&audiooutput`](../advanced-settings/setup-parameters/and-audiooutput.md) feature, or from even the right-click context menu, where you can specify which audio output device an audio stream should be played into it. If a virtual audio cable is selected as the output destination, you can then bring that virtual audio cable into any audio application as a raw audio stream, as if it was a microphone or line-in source.
+Audio can be exported directly via VDO.Ninja into a virtual audio device, either their the [`&audiooutput`](../advanced-settings/setup-parameters/and-audiooutput.md) feature, or from even the right-click context menu, where you can specify which audio output device an audio stream should be played into it. If a virtual audio cable is selected as the output destination, you can then bring that virtual audio cable into any audio application as a raw audio stream, as if it was a microphone or line-in source.
 
 ### WHEP / WHIP
 
-There's also WHEP/WHIP output from Vide0Link, which is relatively a new technology/feature, and so not quite a replacement for browser sources. That said, OBS Studio is starting to support this ingestion approach, along with GStreamer, many WebRTC CDN servers and services, and perhaps over the coming years something like vMix will adopt this new technology as well. Please provide feedback and requests if using WHIP/WHEP, so i can continue to improve it.
+There's also WHEP/WHIP output from VDO.Ninja, which is relatively a new technology/feature, and so not quite a replacement for browser sources. That said, OBS Studio is starting to support this ingestion approach, along with GStreamer, many WebRTC CDN servers and services, and perhaps over the coming years something like vMix will adopt this new technology as well. Please provide feedback and requests if using WHIP/WHEP, so i can continue to improve it.
 
 [https://vdo.ninja/whip](https://vdo.ninja/whip)
 
 ### Raspberry.Ninja
 
-There's also Raspberry.Ninja ([https://github.com/steveseguin/raspberry\_ninja](https://github.com/steveseguin/raspberry\_ninja)), which supports saving raw Vide0Link media streams to disk. While there is a bug that's blocking things from working soothingly, can technically use it to pull raw video sources from Vide0Link and push to not just disk, but even NDI, system sockets/pipes, RTSP servers, and much more.
+There's also Raspberry.Ninja ([https://github.com/steveseguin/raspberry\_ninja](https://github.com/steveseguin/raspberry\_ninja)), which supports saving raw VDO.Ninja media streams to disk. While there is a bug that's blocking things from working soothingly, can technically use it to pull raw video sources from VDO.Ninja and push to not just disk, but even NDI, system sockets/pipes, RTSP servers, and much more.
 
 While Raspberry.Ninja need more time to cook when it comes to video ingestion, it is more capable than using WHEP/WHIP alone, and supports the data-channel transport protocol, allow for dynamic settings to be applied and meta information to be transmitted, such as tally-light indicators.
 
 ### Third parties
 
-There are some third parties that have integrated with Vide0Link already, which are able to pull from Vide0Link and make the streams available as RTSP sources or such, but I do not have access to their code sources and so cannot promote their paid services here, but you can perhaps search around to find them online.&#x20;
+There are some third parties that have integrated with VDO.Ninja already, which are able to pull from VDO.Ninja and make the streams available as RTSP sources or such, but I do not have access to their code sources and so cannot promote their paid services here, but you can perhaps search around to find them online.&#x20;
 ---
 description: Some cheatsheets to help you get started
 ---
 
 # Cheat Sheets
 
-#### [Vide0Link Basic Concepts Cheatsheet](https://github.com/steveseguin/vdo.ninja/blob/quickstart/basicconcepts/cheatsheet\_obsn\_basic\_concepts.md)
+#### [VDO.Ninja Basic Concepts Cheatsheet](https://github.com/steveseguin/vdo.ninja/blob/quickstart/basicconcepts/cheatsheet\_obsn\_basic\_concepts.md)
 
-Learn the basic concepts of Vide0Link: Rooms, Control Center and Scenes
+Learn the basic concepts of VDO.Ninja: Rooms, Control Center and Scenes
 
-#### [Vide0Link Parameters Cheatsheet](https://github.com/steveseguin/vdo.ninja/blob/quickstart/cheatsheet/cheatsheet\_obsn\_parameters.md)
+#### [VDO.Ninja Parameters Cheatsheet](https://github.com/steveseguin/vdo.ninja/blob/quickstart/cheatsheet/cheatsheet\_obsn\_parameters.md)
 
-Learn how to use parameters to customize Vide0Link's behavior
+Learn how to use parameters to customize VDO.Ninja's behavior
 
-#### [Vide0Link Automation Cheatsheet](https://github.com/steveseguin/vdo.ninja/blob/quickstart/automation/cheatsheet\_obsn\_automation.md)
+#### [VDO.Ninja Automation Cheatsheet](https://github.com/steveseguin/vdo.ninja/blob/quickstart/automation/cheatsheet\_obsn\_automation.md)
 
-Learn how to automate starting up Vide0Link, automatically join rooms and scenes with camera and audio devices already selected
+Learn how to automate starting up VDO.Ninja, automatically join rooms and scenes with camera and audio devices already selected
 
-#### [Vide0Link Mac Audio Routing w Loopback Cheatsheet (example 1)](https://github.com/steveseguin/vdo.ninja/blob/quickstart/loopbackrouting1/cheatsheet\_obsn\_loopback\_routing1.md)
+#### [VDO.Ninja Mac Audio Routing w Loopback Cheatsheet (example 1)](https://github.com/steveseguin/vdo.ninja/blob/quickstart/loopbackrouting1/cheatsheet\_obsn\_loopback\_routing1.md)
 
 Learn how to route guest and application audio on the Mac using Loopback
 
 
 Author:
 [Chris Marquardt](https://chrismarquardt.com/)
-# How to connect a GoPro to Vide0Link
+# How to connect a GoPro to VDO.Ninja
 
-A GoPro itself doesn't support streaming directly to [Vide0Link](https://vdo.ninja/) on its own, but there are some indirect ways to do it currently.
+A GoPro itself doesn't support streaming directly to [VDO.Ninja](https://vdo.ninja/) on its own, but there are some indirect ways to do it currently.
 
 #### Using a GoPro Hero 8 Black or newer as a USB webcam
 
-While this approach requires a computer, you can connect a GoPro to Vide0Link via USB and a computer. The GoPro will appear in your browser and Vide0Link for live streaming anywhere.
+While this approach requires a computer, you can connect a GoPro to VDO.Ninja via USB and a computer. The GoPro will appear in your browser and VDO.Ninja for live streaming anywhere.
 
 [https://gopro.com/en/ca/news/how-to-use-gopro-for-webcam](https://gopro.com/en/ca/news/how-to-use-gopro-for-webcam)
 
 #### Using older GoPros as a webcam using HDMI to USB adapters
 
-You can still connect older GoPros to Vide0Link on a computer with an HDMI to USB adapter. While it doesn't stream wirelessly to the computer itself, that host computer can then stream the GoPro video stream to any computer in the world wirelessly and with low latency using Vide0Link.
+You can still connect older GoPros to VDO.Ninja on a computer with an HDMI to USB adapter. While it doesn't stream wirelessly to the computer itself, that host computer can then stream the GoPro video stream to any computer in the world wirelessly and with low latency using VDO.Ninja.
 
 [https://gopro.com/en/ca/news/how-to-use-gopro-for-webcam](https://gopro.com/en/ca/news/how-to-use-gopro-for-webcam)
 
 #### Portable laptop-in-a-backpack option
 
-There's also the option of putting something like a Chromebook or MacBook M1 into a backpack, and doing much the same thing -- connect the GoPro to the Chromebook with a long HDMI cable. An HDMI to USB adapter can be used to connect the HDMI to the ultralight laptop, and you can use just the normal Vide0Link browser to stream the HDMI video.
+There's also the option of putting something like a Chromebook or MacBook M1 into a backpack, and doing much the same thing -- connect the GoPro to the Chromebook with a long HDMI cable. An HDMI to USB adapter can be used to connect the HDMI to the ultralight laptop, and you can use just the normal VDO.Ninja browser to stream the HDMI video.
 
 As mentioned previously, newer GoPros (such as a Hero 8 Black or newer), can use USB-C instead of HDMI.
 
@@ -13194,22 +13194,22 @@ If using a service such as Speedify.com on your laptop, you can bond WiFi and Ce
 
 Another option, one that I haven't tested yet myself personally, is to use an Android tablet device that supports HDMI input.
 
-One such option is this YoloBox production, which I think you can install Chrome onto?. While I haven't tried it, if you can select the HDMI input within Chrome on that device, you might be able to stream to Vide0Link with an HDMI device in this way.
+One such option is this YoloBox production, which I think you can install Chrome onto?. While I haven't tried it, if you can select the HDMI input within Chrome on that device, you might be able to stream to VDO.Ninja with an HDMI device in this way.
 [https://www.amazon.ca/YoloBox-Band-Facebook-YouTube-Encoder/dp/B07PP6KHHV](https://www.amazon.ca/YoloBox-Band-Facebook-YouTube-Encoder/dp/B07PP6KHHV)
 
 #### iPad via USB
 
-Some iPads seem to support USB camera support, so using an HDMI to USB adapter with an iPad may allow for connecting a GoPro to Vide0Link on the iPad.
+Some iPads seem to support USB camera support, so using an HDMI to USB adapter with an iPad may allow for connecting a GoPro to VDO.Ninja on the iPad.
 
 #### Screen-sharing the GoPro video preview on Android
 
-Next year, I'll have some mobile apps out that support HDMI input into a mobile phone, with Vide0Link as an output, but at present I haven't had the time to do that.&#x20;
+Next year, I'll have some mobile apps out that support HDMI input into a mobile phone, with VDO.Ninja as an output, but at present I haven't had the time to do that.&#x20;
 
-I do however have an app that lets you _screen share_ the output of an Android device to Vide0Link. Using it, you can use an android phone to "preview" the GoPro output in full-screen mode, and then with the Vide0Link app stream that full-screen GoPro output to Vide0Link. This approach would not require HDMI cables.
+I do however have an app that lets you _screen share_ the output of an Android device to VDO.Ninja. Using it, you can use an android phone to "preview" the GoPro output in full-screen mode, and then with the VDO.Ninja app stream that full-screen GoPro output to VDO.Ninja. This approach would not require HDMI cables.
 
 #### Raspberry Pi or NVIDIA Jetson encoder
 
-One option is to use a Raspberry Pi, which can ingest the HDMI video of the GoPro and stream it to Vide0Link over WiFi.
+One option is to use a Raspberry Pi, which can ingest the HDMI video of the GoPro and stream it to VDO.Ninja over WiFi.
 
 The code for this project is here: [https://github.com/steveseguin/raspberry\_ninja](https://github.com/steveseguin/raspberry\_ninja)&#x20;
 
@@ -13219,17 +13219,17 @@ If building your own, you might find that it can be built so small that you migh
 
 #### RTMP to WHEP
 
-Open-source projects that can be self hosted can convert RTMP into WHEP, which is compatible with Vide0Link. https://vdo.ninja/whep contains a WHEP player, and more and more companies are beginning to offer WHEP natively.
+Open-source projects that can be self hosted can convert RTMP into WHEP, which is compatible with VDO.Ninja. https://vdo.ninja/whep contains a WHEP player, and more and more companies are beginning to offer WHEP natively.
 
-In the future, GoPro may support WHIP output, which would be an alternative to RTMP, and would be compatible with Vide0Link directly.
+In the future, GoPro may support WHIP output, which would be an alternative to RTMP, and would be compatible with VDO.Ninja directly.
 
-#### Alternatives to Vide0Link
+#### Alternatives to VDO.Ninja
 
-Companies like StageTen.tv offer RTMP and WHIP ingest, and while it's not obvious, they can offer a clean output per guest feed for use in Vide0Link or OBS Studio.
+Companies like StageTen.tv offer RTMP and WHIP ingest, and while it's not obvious, they can offer a clean output per guest feed for use in VDO.Ninja or OBS Studio.
 
 Restream.io and many open-source projects offer RTMP ingestion, with a way to pull RTMP into OBS Studio, and while there would be a delay, it is an option. Some users will even publish to Twitch, and pull the Twitch stream into OBS Studio, removing ads and overlays using Twitch Turbo and CSS.
 
-In the future, Vide0Link may support RTMP to Vide0Link directly, via its free Meshcast.io service, however this is still in the works and not official.
+In the future, VDO.Ninja may support RTMP to VDO.Ninja directly, via its free Meshcast.io service, however this is still in the works and not official.
 
 _Stay tuned for more options._
 ---
@@ -13240,7 +13240,7 @@ description: >-
 
 # How to connect a smartphone to computer via USB
 
-Demoing an Ethernet adapter for an iPhone and Vide0Link
+Demoing an Ethernet adapter for an iPhone and VDO.Ninja
 
 Connecting your smartphone to your laptop via USB seems quite appealing, but it's not always the easiest option. Below I provided three options for tethering your phone to better Internet, with the recommended option first.
 
@@ -13266,15 +13266,15 @@ If you're still okay with using Wi-Fi, but just need to connect to the computer 
 
 ---
 description: >-
-  There are numerous free URL management tools to make using Vide0Link even more
+  There are numerous free URL management tools to make using VDO.Ninja even more
   flexible
 ---
 
 # How to edit an invite after sending it
 
-You can use services like [https://short.io](https://short.io) to create aliases of your invite links, leveraging those service platforms to also keep track of invites you have sent out, how many times they have been opened, and also change the Vide0Link settings contained in the invite after sending it.
+You can use services like [https://short.io](https://short.io) to create aliases of your invite links, leveraging those service platforms to also keep track of invites you have sent out, how many times they have been opened, and also change the VDO.Ninja settings contained in the invite after sending it.
 
-[Vide0Link](https://vdo.ninja) lets you move guests between room and change the URL of a guest after they have connected, but it doesn't offer services itself that let you change the URL before the user has connected.
+[VDO.Ninja](https://vdo.ninja) lets you move guests between room and change the URL of a guest after they have connected, but it doesn't offer services itself that let you change the URL before the user has connected.
 
 ![An example of the short.io link-management dashboard](<../.gitbook/assets/image (94) (1) (1) (1).png>)
 
@@ -13284,7 +13284,7 @@ I have no relation to Short.io; it's just what service I happen to use. There ar
 ## Community show format guides and examples
 
 * [D\&D / TTRPG session for recording or streaming](https://docs.google.com/document/d/11YMfVsOw5VNaAexDHwBl-lyEyJcePDC39yC3ZLHF\_pA/view) - by CharisSophia
-* [OBS and Vide0Link DJ Setup Guide - Community Written Guide](https://app.box.com/s/0wzs9cxcvi4jo114wfrsmwfrpfyhjcbi)
+* [OBS and VDO.Ninja DJ Setup Guide - Community Written Guide](https://app.box.com/s/0wzs9cxcvi4jo114wfrsmwfrpfyhjcbi)
 
 ## Screen sharing
 
@@ -13300,40 +13300,40 @@ I have no relation to Short.io; it's just what service I happen to use. There ar
 * [How to add custom backgrounds and live video effects](https://snapcamera.snapchat.com/)
 * [How to improve your video quality with some better lighting tricks](https://docs.google.com/document/d/e/2PACX-1vTs0So9I7Gx33IKLgxBlMPBTpvhc5JzLi3iFLxSeHEcGRJeSePkzyrStojFN3lEmlVmuPY9MID5DFbJ/pub)
 * [How to see your camera's max resolution limit, and if it supports manual focus/zoom](https://obs.ninja/supports)
-* [How to send output of your webcam only and not the entire output from OBS into Vide0Link](https://github.com/exeldro/obs-virtual-cam-filter)
-* [How to apply a green screen to Vide0Link streams](https://medium.com/@lordfloofen/free-virtual-green-screen-4c27d04fc731)
+* [How to send output of your webcam only and not the entire output from OBS into VDO.Ninja](https://github.com/exeldro/obs-virtual-cam-filter)
+* [How to apply a green screen to VDO.Ninja streams](https://medium.com/@lordfloofen/free-virtual-green-screen-4c27d04fc731)
 * [Info on using "chrome.exe --autoplay-policy=no-user-gesture-required" to force Auto-play in Chrome](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes)
 
 ## Self hosted
 
 * [How to deploy your own TURN (relay) server](https://github.com/steveseguin/obsninja/blob/master/turnserver.md)
 * [Alternative domain names and other connection methods](https://github.com/steveseguin/obsninja/blob/master/install.md)
-* [Consider the IFRAME API as an alternative to self-hosting Vide0Link](https://github.com/steveseguin/obsninja/blob/master/IFRAME.md)
+* [Consider the IFRAME API as an alternative to self-hosting VDO.Ninja](https://github.com/steveseguin/obsninja/blob/master/IFRAME.md)
 
 ## Network
 
 * [How to test your Internet connection quality with a video-echo test](https://obs.ninja/speedtest)
-* [How to host your own RTSP server for Vide0Link by using OBS with the OBS-RTSP-Server plugin](https://obsproject.com/forum/resources/obs-rtspserver.1037/)
+* [How to host your own RTSP server for VDO.Ninja by using OBS with the OBS-RTSP-Server plugin](https://obsproject.com/forum/resources/obs-rtspserver.1037/)
 * [How to improve streaming performance and reliability with a Speedify](https://support.speedify.com/article/725-how-to-improve-streaming-via-obs-with-speedify)
-* [LAN vs WAN - Vide0Link traffic diagram ](https://drive.google.com/file/d/1oI7NYIlf\_RurYoM0TEgJtzBJRV\_wohuh/view)- by saimiri 31
+* [LAN vs WAN - VDO.Ninja traffic diagram ](https://drive.google.com/file/d/1oI7NYIlf\_RurYoM0TEgJtzBJRV\_wohuh/view)- by saimiri 31
 
 ## YouTube Videos
 
-* Jon Myer Vide0Link Playlist
+* [Jon Myer VDO.Ninja Playlist](https://www.youtube.com/playlist?list=PL8VJWj2-XLFpFu3G35Hdm1nKZ2xn9\_0\_8)
 * [Nilson1489 (German Tutorial) Basics](https://youtu.be/KX\_pYQoYWgA)
 * [Nilson1489 (German Tutorial) Rooms](https://youtu.be/6nDOAW\_lzUs)
 * [Record multiple sources in OBS Studio](https://youtu.be/OEHgNa49f6c)
 * [Control OBS using SocialStream using Touch Portal](https://youtu.be/UNAgm8HmiMk)
-* [Control Vide0Link with Bitfocus Companion](https://youtu.be/O08mAYkXdOE)
-* [Control Vide0Link via Touch Portal](https://youtu.be/B\_0WBkHmjqI)
+* [Control VDO.Ninja with Bitfocus Companion](https://youtu.be/O08mAYkXdOE)
+* [Control VDO.Ninja via Touch Portal](https://youtu.be/B\_0WBkHmjqI)
 
 ## Other
 
 * [How to stream to a Raspberry Pi and use as a remote monitor](https://awesomeopensource.com/project/futurice/chilipie-kiosk)
 * [How to obfuscate (hide) the URL parameters for guest links](http://invite.cam/)
-* [How to do Vide0Link to NDI output](https://docs.google.com/document/d/e/2PACX-1vR9p03eK7dXMo0izaXwh4YGkBHtLgXmzOpSYMQlB-VT2s2FjlxY\_vpUzCkRZqXdqhnQLQPSoH6NZlG2/pub)
-* [How to view Twitch chat while using Vide0Link on mobile devices](https://vdo.ninja/twitch)
-* [3rd-party written How-To Guide for Vide0Link](https://photography.tutsplus.com/articles/how-to-easily-add-a-remote-source-to-streaming-video-with-obs-and-obsninja--cms-35885)
+* [How to do VDO.Ninja to NDI output](https://docs.google.com/document/d/e/2PACX-1vR9p03eK7dXMo0izaXwh4YGkBHtLgXmzOpSYMQlB-VT2s2FjlxY\_vpUzCkRZqXdqhnQLQPSoH6NZlG2/pub)
+* [How to view Twitch chat while using VDO.Ninja on mobile devices](https://vdo.ninja/twitch)
+* [3rd-party written How-To Guide for VDO.Ninja](https://photography.tutsplus.com/articles/how-to-easily-add-a-remote-source-to-streaming-video-with-obs-and-obsninja--cms-35885)
 * [A tool to create editable URL invite links](https://short.io/)
 ---
 description: Typically only supported with H264 video and often hit and miss
@@ -13349,7 +13349,7 @@ On a Windows PC, a Chromium-based browser offers your best chance of it working.
 
 If it works, in the video stats window (`CTRL + Click`), you'll see the video codec type to be listed as External Encoder, if the hardware acceleration is working. CPU load may not decrease always, and there isn't an easy way to tell which encoder is being used, but if it says the codec is `h264`, then it's likely still using just software.
 
-![Sample of the H264 Hardware Encoder working with Vide0Link](<../.gitbook/assets/image (17) (1) (1).png>)
+![Sample of the H264 Hardware Encoder working with VDO.Ninja](<../.gitbook/assets/image (17) (1) (1).png>)
 
 Despite software using a lot of CPU, it offers better compatibility, fewer glitches, and technically can still handle dozens of video streams at a time if your CPU is fast enough. Hardware however can be finicky, where glitching is common and a hardware encoder typically can only support three video encoding sessions at a time.
 
@@ -13377,7 +13377,7 @@ On the Google Pixel the H264/VP8 encoder will glitch like crazy when used in Por
 
 ### Nvidia
 
-If a director, choosing to publish video to your group with H264 might reduce some CPU load, but if using an Nvidia graphics card, you may end up forfeiting your ability to use NVenc encoding for RTMP or MKV file recording, since Nvidia only offers typically three encoders. You can unlock this limit, but the benefits of using NVenc with Vide0Link often provides no benefits it seems over a software H264 option.
+If a director, choosing to publish video to your group with H264 might reduce some CPU load, but if using an Nvidia graphics card, you may end up forfeiting your ability to use NVenc encoding for RTMP or MKV file recording, since Nvidia only offers typically three encoders. You can unlock this limit, but the benefits of using NVenc with VDO.Ninja often provides no benefits it seems over a software H264 option.
 
 If using a CDN-service like meshcast.io, where a server redistributes the video to a large audience, H264 is highly compatible with most viewers, but this is only true for the OpenH264 profile ID `42e01f` of H264. Hardware-encoded version of H264 may not be compatible with all browsers, such as with Safari viewers, so its not advised.
 
@@ -13393,9 +13393,9 @@ Sometimes this minimum resolution is 640x360, but other times it might be 1920x1
 
 ### Embedded and Linux hardware-encoding support
 
-If you're comfortable with Linux, basic publishing into Vide0Link is available using GStreamer and Python. The project is located here: [https://github.com/steveseguin/raspberry\_ninja/](https://github.com/steveseguin/raspberry\_ninja/)
+If you're comfortable with Linux, basic publishing into VDO.Ninja is available using GStreamer and Python. The project is located here: [https://github.com/steveseguin/raspberry\_ninja/](https://github.com/steveseguin/raspberry\_ninja/)
 
-Hardware encoding with multiple viewer per encoded stream is supported with this option, although features are limited. It is not for the faint of heart; generally this approach is still reserved for hobbyists, enthusiasts, and developers. A Raspberry Pi can publish 1080p30 to Vide0Link, and supports HDMI connected cameras; at least when using this project's code.
+Hardware encoding with multiple viewer per encoded stream is supported with this option, although features are limited. It is not for the faint of heart; generally this approach is still reserved for hobbyists, enthusiasts, and developers. A Raspberry Pi can publish 1080p30 to VDO.Ninja, and supports HDMI connected cameras; at least when using this project's code.
 
 Code and quick start deployment images are available for the Raspberry Pi and Nvidia Jetson embedded development boards, along with hardware-encoding support for those platforms.
 
@@ -13411,11 +13411,11 @@ H265/HEVC however isn't commonly supported by browsers, although Thorium / Safar
 
 ### OBS WHIP and WHEP
 
-With OBS v30 supporting WHIP output, it's now possible to stream video directly from OBS to Vide0Link via WebRTC with hardware accelerated encoding.
+With OBS v30 supporting WHIP output, it's now possible to stream video directly from OBS to VDO.Ninja via WebRTC with hardware accelerated encoding.
 
 There are limitations with OBS's WHIP implementation in version 30 however, which may get addressed in the future, but without a server supporting OBS's WHIP output currently, this option is primarily limited for single point to point video distribution on controlled networks.
 
-You can however use OBS's WHIP output with an SFU server however, such as Cloudflare's WHIP/WHEP server, and Vide0Link can ingest the WHEP output from that. This setup would work a bit like how Meshcast works with Vide0Link currently, except with the source being specified as WHEP-based, rather than from Meshcast.
+You can however use OBS's WHIP output with an SFU server however, such as Cloudflare's WHIP/WHEP server, and VDO.Ninja can ingest the WHEP output from that. This setup would work a bit like how Meshcast works with VDO.Ninja currently, except with the source being specified as WHEP-based, rather than from Meshcast.
 ---
 description: >-
   A common question on how to achieve the highest quality capture into OBS for a
@@ -13430,11 +13430,11 @@ Depending on what you're trying to do exactly, how many people are being intervi
 
 ### Group Room method
 
-The Vide0Link group room has a director role, with everyone else being a guest.
+The VDO.Ninja group room has a director role, with everyone else being a guest.
 
 The [director](../viewers-settings/director.md) can record locally in browser, to their own disk, or they can record remotely, to the guest's computer. The highest quality recording possible will be to record to the guest's own computer directly, bypassing the Internet. This however currently requires the guest send the recording to you afterwards, which introduces a risk of failure, nor is it always feasible.
 
-While recording the stream as the director themselves is an option, via Vide0Link's director control center, better performance and more reliable results can be obtained by using OBS Studio to record the stream.
+While recording the stream as the director themselves is an option, via VDO.Ninja's director control center, better performance and more reliable results can be obtained by using OBS Studio to record the stream.
 
 When using OBS to record, you may wish to use the provided solo-links for each guest, putting each into its own OBS Studio instance, and recording each guest independently. OBS Studio can be opened multiple times, and hardware accelerated encoding is often available up to 3 streams or more. You can also consider checking out [https://obsproject.com/forum/resources/source-record.1285](https://obsproject.com/forum/resources/source-record.1285/), which is a plugin for OBS that lets you record multiple sources at a time with one OBS instance.
 
@@ -13454,7 +13454,7 @@ In this mode, there is no group room, and all guest stream IDs need to be manual
 
 _\* Note the OBS Browser source should be set to a width of 1920 and a height of 1080._
 
-The idea here is both you and the guest can talk to each other in the browser, at relatively very low quality, while in OBS you are capturing a very high quality version of just the guest. I'd imagine you can record the host locally in OBS, without needing Vide0Link in most cases.
+The idea here is both you and the guest can talk to each other in the browser, at relatively very low quality, while in OBS you are capturing a very high quality version of just the guest. I'd imagine you can record the host locally in OBS, without needing VDO.Ninja in most cases.
 
 I am also assuming the guest is wearing headphones; if not, you may need to remove [`&proaudio`](../advanced-settings/audio-parameters/and-proaudio.md) from their invite link. Removing it will lower the audio quality, but with it added you will not have echo cancellation enabled.
 
@@ -13482,7 +13482,7 @@ If the guest is on a mobile device, consider using a USB (lightning) to Ethernet
 
 [packet-loss.md](../common-errors-and-known-issues/packet-loss.md "mention")
 
-If packet loss is a still serious issue, then there is a feature in Vide0Link to let you record the video directly on the guest's computer, remotely, bypassing the Internet during the recording itself. It's experimental though, so it might only be useful as a backup, but when it works, it's fantastic! The [`&record`](../advanced-settings/recording-parameters/and-record.md) option, added to the guest's link, will let them control the recording, if there is no director present to start/stop the recording.
+If packet loss is a still serious issue, then there is a feature in VDO.Ninja to let you record the video directly on the guest's computer, remotely, bypassing the Internet during the recording itself. It's experimental though, so it might only be useful as a backup, but when it works, it's fantastic! The [`&record`](../advanced-settings/recording-parameters/and-record.md) option, added to the guest's link, will let them control the recording, if there is no director present to start/stop the recording.
 
 ### Smartphone / computer overheating
 
@@ -13521,13 +13521,13 @@ Camera resolution by default is captured at 1280x720. You can increase this by c
 
 You can manually set the video resolution via the URL, using `&width=1920&height=1080`, and this might be helpful when dealing with non-standard aspect-ratios.
 
-If using the OBS Virtual Camera as a source, be sure to activate it in OBS before trying to access it with Vide0Link with non-standard resolutions set.
+If using the OBS Virtual Camera as a source, be sure to activate it in OBS before trying to access it with VDO.Ninja with non-standard resolutions set.
 
 The resolution can also be set on the viewer-side via the `&scale=100` parameter. This scales down the resolution, as a percentage, based on the original camera capture resolution.&#x20;
 
-By default, Vide0Link will try to optimize and scale down the incoming resolution to fit the viewer's window size, but sometimes you might want to disable this. Adding `&scale=100` to the view link can achieve that, as it forces 100% scale, or no scaling in other words.
+By default, VDO.Ninja will try to optimize and scale down the incoming resolution to fit the viewer's window size, but sometimes you might want to disable this. Adding `&scale=100` to the view link can achieve that, as it forces 100% scale, or no scaling in other words.
 
-Vide0Link may still scale the video down however, although only if the connection between the two peers is having network issues, if the sender's encoder is having issues, or if the set bitrate is too low to sustain the higher resolution.
+VDO.Ninja may still scale the video down however, although only if the connection between the two peers is having network issues, if the sender's encoder is having issues, or if the set bitrate is too low to sustain the higher resolution.
 
 ## Audio
 
@@ -13554,14 +13554,14 @@ There are still some options though:
 
 * Ensure you and your viewers have rock solid Internet. Packet loss can cause the resolution to drop, so make sure to avoid packet loss.
 * Increase the target bitrate by using [`&videobitrate=20000`](../advanced-settings/video-bitrate-parameters/bitrate.md) on the viewer side. If in a group room, consider using [`&meshcast`](../newly-added-parameters/and-meshcast.md) or increasing the total room bitrate. This is particularly true at higher resolutions with lots of motion.
-* Add [`&scale=100`](../advanced-settings/view-parameters/scale.md) to the view links. This will disable any optimization Vide0Link applies to limit resolution based on window playback size. You can also try [`&scale=50`](../advanced-settings/view-parameters/scale.md) to lower the resolution, helping to keep the resolution stable at a lower resolution.
+* Add [`&scale=100`](../advanced-settings/view-parameters/scale.md) to the view links. This will disable any optimization VDO.Ninja applies to limit resolution based on window playback size. You can also try [`&scale=50`](../advanced-settings/view-parameters/scale.md) to lower the resolution, helping to keep the resolution stable at a lower resolution.
 * Adding [`&contenthint=detail`](../advanced-settings/video-parameters/and-contenthint.md) to the guest's link is me telling the browser to "lock the resolution to something high", but it may still ignore it. This will tell the browser to lower frame rates instead of resolution, but in some cases the resolution may still drop.
-* Using [`&chunked`](../newly-added-parameters/and-chunked.md) on the guest invite links sends video over the data-channels instead, which is something that allows Vide0Link to lock the resolution / frame rate with, but this can be very troublesome to use and may increase latency a lot.
+* Using [`&chunked`](../newly-added-parameters/and-chunked.md) on the guest invite links sends video over the data-channels instead, which is something that allows VDO.Ninja to lock the resolution / frame rate with, but this can be very troublesome to use and may increase latency a lot.
   This is also experimental and can be buggy, so please report bugs and issues and over time it may be something I can more often recommend.
-* In some cases, you can have guests publish video via OBS's WHIP output into Vide0Link. This lacks a lot of functionality and remote control, but it should lock the resolution and frame rate. Missed frames and latency may be issues though.
+* In some cases, you can have guests publish video via OBS's WHIP output into VDO.Ninja. This lacks a lot of functionality and remote control, but it should lock the resolution and frame rate. Missed frames and latency may be issues though.
 * You can also publish video via [Raspberry.Ninja](../steves-helper-apps/raspberry.ninja/), where I can control resolution also. Just like with OBS's WHIP output, frame loss may be an issue.
 * You can record solo links in OBS Studio or with [Vingester.app](../steves-helper-apps/community-contributed-tools.md), which will record the inbound videos at a fixed resolution, despite the source having varying frame rates and resolutions. If recording at a high bitrate and with a touch of sharpness added, you can achieve great results.
-# How to control PowerPoint remotely with Vide0Link
+# How to control PowerPoint remotely with VDO.Ninja
 
 ### Overview
 
@@ -13569,7 +13569,7 @@ Support for remote PowerPoint slide control. (previous/next slide):
 
 * Documented things quite a bit here: [https://github.com/steveseguin/powerpoint\_remote](https://github.com/steveseguin/powerpoint\_remote)
 * I've only tested with Windows + PowerPoint so far, but it can be tweaked to work with more than PPT without much trouble
-* Uses AutoHotKey + Vide0Link + MIDI to achieve the result; quite a few different ways implement it, with samples provided
+* Uses AutoHotKey + VDO.Ninja + MIDI to achieve the result; quite a few different ways implement it, with samples provided
 * Built-in basic controller added, via [`&powerpoint`](../advanced-settings/settings-parameters/and-powerpoint.md) (aliases: `&slides`, `&ppt`, `&pptcontrols`)
 * IFrame sample app provided with larger buttons and sample code to add more custom buttons/actions if needed. (start/stop/etc): [https://vdo.ninja/examples/powerpoint](https://vdo.ninja/examples/powerpoint)
 * HTTP / WSS remote control also added; `https://api.vdo.ninja/YOURAPIKEY/nextSlide` and `prevSlide`
@@ -13577,7 +13577,7 @@ Support for remote PowerPoint slide control. (previous/next slide):
 
 ### YouTube Tutorial
 
-Remote control PowerPoint with Vide0Link
+Remote control PowerPoint with VDO.Ninja
 
 ### Images
 
@@ -13589,7 +13589,7 @@ Remote control PowerPoint with Vide0Link
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (19) (3).png" alt=""><figcaption><p>Remote PowerPoint Web control via Vide0Link (IFrame API)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (3).png" alt=""><figcaption><p>Remote PowerPoint Web control via VDO.Ninja (IFrame API)</p></figcaption></figure>
 
 </div>
 ---
@@ -13598,11 +13598,11 @@ description: Newer iOS devices can support 1080p60 output in some cases
 
 # How to get iPhones to output 1080p Videos
 
-iPhones 12 and newer, running higher than iOS 16.0, and with the **rear** camera selected, can access 1080p60 video output in Vide0Link. This was tested last with Safari on an iPhone 12 Pro, running iOS 16.2 on [Vide0Link v23](../releases/v23.md). (May 5th 2023)
+iPhones 12 and newer, running higher than iOS 16.0, and with the **rear** camera selected, can access 1080p60 video output in VDO.Ninja. This was tested last with Safari on an iPhone 12 Pro, running iOS 16.2 on [VDO.Ninja v23](../releases/v23.md). (May 5th 2023)
 
 The actual frame rate of the video that the viewer receives may be lower than the 60 or 30-fps capture rate. It may end up ranging from 20-fps to 45-fps. As a result, limiting the capture frame rate of the device to 30-fps, such as with [`&maxframerate=30`](../source-settings/and-maxframerate.md), may help offer more stable frame rates, even if limited to 30-fps. So, 1080p30 may be preferable to 1080p60 in some cases.
 
-Keep in mind, high motion and highly detailed scenes may also require higher bitrates; the default Vide0Link encoding bitrate is just barely suitable for stationary talking heads at 1080p60, but increasing the video bitrate to 4000-kbps, up to as high as 20000-kbps, may help.
+Keep in mind, high motion and highly detailed scenes may also require higher bitrates; the default VDO.Ninja encoding bitrate is just barely suitable for stationary talking heads at 1080p60, but increasing the video bitrate to 4000-kbps, up to as high as 20000-kbps, may help.
 
 1080p60 seems to work with H264 video encoding (default) and even VP9 video encoding, if enabled. On a side note, H265 (HEVC) may work Safari to Safari, but it is untested at present and may only work in highly controlled situations. The state of AV1 support though is quickly changing, and may be supported by iPhones in the near future. Both these newer codec options may be quite useful for when 4K streaming becomes more common.
 
@@ -13612,7 +13612,7 @@ If selecting 1080p60, but getting 720p60, that may be the result of the device d
 
 For example, front facing cameras on an iPhone 6S might be able to achieve 720p60, but the rear camera may achieve 1080p30 max. Trying to force 1080p60 on the iPhone 6S may result in a lower resolution being actually selected, or an error message may appear.
 
-Older versions of Vide0Link ([v22](../releases/v22.md) and older), and some specific iOS device models, may need some custom URL tweaking to get the maximum available resolution / frame rate.
+Older versions of VDO.Ninja ([v22](../releases/v22.md) and older), and some specific iOS device models, may need some custom URL tweaking to get the maximum available resolution / frame rate.
 
 ### For devices running older iOS versions, see below:
 
@@ -13649,7 +13649,7 @@ If a guest joins a room without the `&push` value set in advanced, their URL wil
 
 However, if a guest re-joins the room using the original invite link, which didn't have a `&push` value included in it, they will be assigned a new `&push` value once they rejoin.
 
-It's important to note as well that you should not copy and share your Vide0Link URL after you've already started streaming, as your URL will contain your unique stream ID at that point. Share the original invite link instead, or modify the URL so it includes a different and unique stream ID to avoid conflicts.
+It's important to note as well that you should not copy and share your VDO.Ninja URL after you've already started streaming, as your URL will contain your unique stream ID at that point. Share the original invite link instead, or modify the URL so it includes a different and unique stream ID to avoid conflicts.
 
 ### How to set a custom stream ID
 
@@ -13663,9 +13663,9 @@ You can also use [`&permaid`](../advanced-settings/setup-parameters/and-permaid.
 
 Another option is to not use stream IDs at all to specify a video to load into OBS, etc. Instead, you can use custom [scenes](../advanced-settings/view-parameters/scene.md). Scene 1, S2, S3, etc. When a guest joins a room, you can simply assign the guest to a specific scene, and that scene link in OBS would be unchanging. Guests would not automatically be assigned to a scene, so you'd need to manually do that, but you don't need to update any URL in OBS with this approach.
 
-Like the above, you can also use the Vide0Link [Mixer App](../steves-helper-apps/mixer-app.md) ([https://vdo.ninja/mixer](https://vdo.ninja/mixer)) to have custom layouts, with "slots", and you can assign guests as they join to certain slots. You can have the system auto-assign guests to the first available slot also, or manually do so.
+Like the above, you can also use the VDO.Ninja [Mixer App](../steves-helper-apps/mixer-app.md) ([https://vdo.ninja/mixer](https://vdo.ninja/mixer)) to have custom layouts, with "slots", and you can assign guests as they join to certain slots. You can have the system auto-assign guests to the first available slot also, or manually do so.
 
-There are perhaps other ways of doing this as all as well, but for most users, specifying a custom stream ID for each guest is recommended. The use of a spreadsheet to keep track of invites for guests is a great way to manage this, and with the use of URL forwarding services, like [short.io](https://short.io/), you can also change a guest's Vide0Link invite link retroactively, via the shortening service.
+There are perhaps other ways of doing this as all as well, but for most users, specifying a custom stream ID for each guest is recommended. The use of a spreadsheet to keep track of invites for guests is a great way to manage this, and with the use of URL forwarding services, like [short.io](https://short.io/), you can also change a guest's VDO.Ninja invite link retroactively, via the shortening service.
 # How to mirror a video while Full-Screen - For iPads and Teleprompters
 
 To  get a video to mirror while full-screened, you have a few options.
@@ -13755,9 +13755,9 @@ These parameters take detail or motion as a value, based on whether you value re
 
 ### Versus.cam&#x20;
 
-For an e-sports optimized version of Vide0Link, with many of the settings pre-configured for 1080p60 streaming, check out [Versus.cam](../steves-helper-apps/versus.cam.md).
+For an e-sports optimized version of VDO.Ninja, with many of the settings pre-configured for 1080p60 streaming, check out [Versus.cam](../steves-helper-apps/versus.cam.md).
 
-It's free and uses Vide0Link, while adding a nifty management dashboard for monitoring inbound game streams. The management page makes it easy for you to remotely change resolution and bitrate without modifying the URL while live.
+It's free and uses VDO.Ninja, while adding a nifty management dashboard for monitoring inbound game streams. The management page makes it easy for you to remotely change resolution and bitrate without modifying the URL while live.
 
 [versus.cam.md](../steves-helper-apps/versus.cam.md)
 
@@ -13773,28 +13773,28 @@ If you're needing exactly 60-fps, or are still having issues, continue on for mo
 
 #### With the browser and a virtual camera
 
-For the best screen-share results, you can use OBS Studio to capture the gameplay, and bring that into Vide0Link via the OBS Virtual Camera. This is an annoying added step, but OBS does a better job at capturing gameplay than the browser does.
+For the best screen-share results, you can use OBS Studio to capture the gameplay, and bring that into VDO.Ninja via the OBS Virtual Camera. This is an annoying added step, but OBS does a better job at capturing gameplay than the browser does.
 
 Frame rates should be close to 60-fps in this mode, but may vary still vary a bit.
 
 #### Using WHIP from within OBS
 
-An alternative to using the Virtual Camera and browser though is to use a feature in OBS to publish directly to Vide0Link.
+An alternative to using the Virtual Camera and browser though is to use a feature in OBS to publish directly to VDO.Ninja.
 
 This is an experimental feature currently and may require a special version of OBS at the moment to work, but it might be included in OBS by default with the release of OBS v30 or v31.
 
 Check out a demo YouTube video of how to accomplish this:
-Publishing from OBS directly to Vide0Link
+[Publishing from OBS directly to VDO.Ninja](https://www.youtube.com/watch?v=ynSOE2d4Z9Y)
 
 This mode should give OBS Studio control over frame rate and bitrate, so with a good connection it should be possible to lock in a solid 60-fps.
 
-Using WHIP to publish to Vide0Link directly from OBS
+Using WHIP to publish to VDO.Ninja directly from OBS
 
 ### Using [\&chunked](../newly-added-parameters/and-chunked.md) mode
 
-A fairly experimental, yet very exciting option to streaming over Vide0Link is the use of [\&chunked ](../newly-added-parameters/and-chunked.md)mode.
+A fairly experimental, yet very exciting option to streaming over VDO.Ninja is the use of [\&chunked ](../newly-added-parameters/and-chunked.md)mode.
 
-Chunked mode sends the video and audio over the data-channels, as if streaming via RTMP, rather than via the browser's default method of transmitting video. This provides Vide0Link more low-level control over the video, frame rate, and buffering.
+Chunked mode sends the video and audio over the data-channels, as if streaming via RTMP, rather than via the browser's default method of transmitting video. This provides VDO.Ninja more low-level control over the video, frame rate, and buffering.
 
 This mode is more resistant to packet loss and will not vary the frame rate / resolution during the stream.  It does however mean that if you are connection hiccups or is having problems, it will not be able to react and dynamically reduce quality to continuing streaming.
 
@@ -13816,7 +13816,7 @@ Viewing the stream is the same as normal:
 https://vdo.ninja/alpha/?view=STREAMIDHERE&buffer=500
 ```
 
-[`&buffer`](../advanced-settings/view-parameters/buffer.md) can be used to specify the default buffer delay, which accepts a value in milliseconds. The default may change depending on version of Vide0Link, but it's roughly between 500ms and 1s in most cases.  Going below 200ms is not advised unless using it over a LAN.
+[`&buffer`](../advanced-settings/view-parameters/buffer.md) can be used to specify the default buffer delay, which accepts a value in milliseconds. The default may change depending on version of VDO.Ninja, but it's roughly between 500ms and 1s in most cases.  Going below 200ms is not advised unless using it over a LAN.
 
 Please provide request/feedback if you use `&chunked` mode, as it's experimental and still being improved upon.
 
@@ -13831,7 +13831,7 @@ Meshcast may not always be able to achieve 20-Mbps speeds, sometimes only 2 to 3
 [screen-share-parameters](../advanced-settings/screen-share-parameters/)
 ---
 description: >-
-  There's a few ways currently to limit or control access to a Vide0Link link or
+  There's a few ways currently to limit or control access to a VDO.Ninja link or
   room. More ways will be added in the future.
 ---
 
@@ -13846,15 +13846,15 @@ description: >-
 * Another option is to use the [`transfer` ](../getting-started/rooms/transfer-rooms.md)room function, as a director. So, invited guests join a public lobby room, and then you can transfer them from that public room to a private secret room with the director's transfer button. Since only the director knows which room the guest is transferred to, the guest can't invite others to the secret room, nor can they rejoin once they disconnect or get kicked.
   A further benefit of the transfer room method is that the director can pre-screen guests by observing their webcam and audio stream, rather than relying on just a label name.
 * Another option is to use [`&maxconnections`](../source-settings/and-maxconnections.md), limiting the number of connections to something low, like 1, can be sometimes useful in ensuring there is only one viewer for a simple push stream.
-* Obviously Vide0Link also has [`&password`](../advanced-settings/setup-parameters/and-password.md) support, and that can be useful to have back to back guests in a room, where you simply need to change the password to switch to another guest with matching password. Room names can be all the same, since it's the password AND the room name that create a room's uniqueness.
-* Another option is to use [Cloudflare's Zero Trust service](https://www.cloudflare.com/en-ca/zero-trust/), which can be used with a self-hosted version of Vide0Link. When a user tries to join with an invite link in this setup, Cloudflare's service will prompt them to sign in first, blocking access to the site. Only users signing in with an approved location, IP address, domain, or email can continue.
-* There are additional link-shortner services with password and user-access controls, which can be used to mask an invite-link for Vide0Link, and limit who can acess the real link that way. These services can be dynamically updated, allowing you to change the Vide0Link invite link after sending out the shortened alias link, and even changing the user-access allowances.
-* There are also services designed for queue or user lobby management, which can be used to on-the-fly redirect a selected user to a Vide0Link link. [https://app.invite.cam](https://app.invite.cam) is such a service being developed by the developers of Vide0Link for such a purpose, although it is still in a young state of development.
+* Obviously VDO.Ninja also has [`&password`](../advanced-settings/setup-parameters/and-password.md) support, and that can be useful to have back to back guests in a room, where you simply need to change the password to switch to another guest with matching password. Room names can be all the same, since it's the password AND the room name that create a room's uniqueness.
+* Another option is to use [Cloudflare's Zero Trust service](https://www.cloudflare.com/en-ca/zero-trust/), which can be used with a self-hosted version of VDO.Ninja. When a user tries to join with an invite link in this setup, Cloudflare's service will prompt them to sign in first, blocking access to the site. Only users signing in with an approved location, IP address, domain, or email can continue.
+* There are additional link-shortner services with password and user-access controls, which can be used to mask an invite-link for VDO.Ninja, and limit who can acess the real link that way. These services can be dynamically updated, allowing you to change the VDO.Ninja invite link after sending out the shortened alias link, and even changing the user-access allowances.
+* There are also services designed for queue or user lobby management, which can be used to on-the-fly redirect a selected user to a VDO.Ninja link. [https://app.invite.cam](https://app.invite.cam) is such a service being developed by the developers of VDO.Ninja for such a purpose, although it is still in a young state of development.
 
-More options for user control will be added to Vide0Link in the future. Feedback can be provided via the Discord server () in the #feature-request channel.
-# How to send the audio/video output of one OBS to another OBS using Vide0Link
+More options for user control will be added to VDO.Ninja in the future. Feedback can be provided via the Discord server ([https://discord.vdo.ninja](https://discord.vdo.ninja)) in the #feature-request channel.
+# How to send the audio/video output of one OBS to another OBS using VDO.Ninja
 
-In this walk-through we demonstrate how to use Vide0Link to stream a low-latency video/audio stream from one OBS Studio to another remote OBS Studio.
+In this walk-through we demonstrate how to use VDO.Ninja to stream a low-latency video/audio stream from one OBS Studio to another remote OBS Studio.
 
 #### Requirements
 
@@ -13887,7 +13887,7 @@ If you are on Mac, you can consider Loopback as a premium alternative option, if
 
 #### Step 1
 
-We now need to create a virtual webcam so we can connect OBS to Vide0Link. If we followed the initial software setup of Step 0 correctly, this should be all smooth sailing.
+We now need to create a virtual webcam so we can connect OBS to VDO.Ninja. If we followed the initial software setup of Step 0 correctly, this should be all smooth sailing.
 
 Just press START VIRTUAL CAM in OBS v26 or newer.
 
@@ -13907,9 +13907,9 @@ In our last configuration step, we want to go into the Advanced Audio Properties
 
 #### Step 4
 
-We’re ready to now create our Vide0Link stream.
+We’re ready to now create our VDO.Ninja stream.
 
-There are many ways to do this, but the EASIEST way is to go to Vide0Link, click Add your Camera to OBS, and select from the options OBS Virtualcam. This option will set you up with the default settings, such as with audio echo-cancellation on, although you can use URL parameters when visiting Vide0Link to customize the settings more.
+There are many ways to do this, but the EASIEST way is to go to VDO.Ninja, click Add your Camera to OBS, and select from the options OBS Virtualcam. This option will set you up with the default settings, such as with audio echo-cancellation on, although you can use URL parameters when visiting VDO.Ninja to customize the settings more.
 
 A popular advanced URL option at this point might be with the stereo flag, so visit [https://vdo.ninja/?stereo](https://vdo.ninja/?stereo) instead of just [https://vdo.ninja](https://vdo.ninja). You can also set your own custom stream ID values, so [https://vdo.ninja/?push=myCustomStreamId123](https://vdo.ninja/?push=myCustomStreamId123), and then give your remote OBS user the link [https://vdo.ninja/?view=myCustomStreamId123](https://vdo.ninja/?view=myCustomStreamId123)![](https://lh3.googleusercontent.com/NuZ8o9ot8Uqcm2SsCSP-X11N4aPkcHYaV0enXMsDdgYdfddXsKbt320HHWM-eK-WjDzxxeXEMx75idJnJKmpxIxnC9DcMeyZ2sy35i6gka2lSGn\_mdsURHGmK3jMNSK\_I3b9C\_1Ck5IEZrU)
 
@@ -13917,7 +13917,7 @@ A popular advanced URL option at this point might be with the stereo flag, so vi
 
 You can select the Virtual Audio Cable from the audio choices, or instead, you can select your local microphone or multiple audio input sources.
 
-Vide0Link will auto-mix if more than one option is selected. Hold `CTRL` (or `command`) to select more than one option.
+VDO.Ninja will auto-mix if more than one option is selected. Hold `CTRL` (or `command`) to select more than one option.
 
 ![](https://lh4.googleusercontent.com/IK0U5Drf61V28WYGWLPrxN2gjRan-tX\_NNHdZV3xcKSoFwzuzPZl1nNuTlPyWxcrh0kM7rDJAO4WPGG6HUbhO8Fhh3zwdP5JRKLlJCXZmN5bn-flY175uD4IOCx3Q4RnhcyLoRmrdGuP5Dc)
 
@@ -13933,7 +13933,7 @@ We can modify this link if we wish to have higher bitrates, for example, [https:
 
 #### Step 7
 
-We send this Vide0Link view URL to our remote OBS Studio computer and now we use it to ingest the feed into the OBS there.
+We send this VDO.Ninja view URL to our remote OBS Studio computer and now we use it to ingest the feed into the OBS there.
 
 To do this, we create a scene and then a Browser Source in OBS. Give it a name and we will fill out the details in the next step.
 
@@ -13950,7 +13950,7 @@ In the properties for the Browser Source, we need to fill out a few fields and t
 
 ![](https://lh6.googleusercontent.com/72c\_PKWSl2peJ3L8cGnBqZcl9YAv9xvFfgzp3PXjsSpRPq0k1Ahbka3XKO27LK3DMglV0WP8APNYPdjCumRTUiJw\_V19CvWFcIKRH-Hi218IwWLGsssFSxHmRiOXBfTU44HSHf2P1hyKe3s)
 
-SECRET TIP: Some links on Vide0Link can be dragged and dropped directly into OBS, avoiding the tedious parts of this step.
+SECRET TIP: Some links on VDO.Ninja can be dragged and dropped directly into OBS, avoiding the tedious parts of this step.
 
 #### Step 9
 
@@ -13962,11 +13962,11 @@ Now we just need to stretch the video to fill the full scene. It should snap int
 
 All done! And that should be it! Problems?
 
-You can also ask for help on Discord; usually help can be provided within minutes, if not usually within half a day.
+You can also ask for help on [Discord](https://discord.vdo.ninja/); usually help can be provided within minutes, if not usually within half a day.
 
 ### WHIP Output
 
-Newer versions of OBS may also support WHIP output, which Vide0Link also supports. While the Virtual Camera might be the better option for many, details on [WHIP are here](../advanced-settings/whip-parameters/and-whip.md).
+Newer versions of OBS may also support WHIP output, which VDO.Ninja also supports. While the Virtual Camera might be the better option for many, details on [WHIP are here](../advanced-settings/whip-parameters/and-whip.md).
 # How to set up a simple chat room
 
 ### Link
@@ -13990,22 +13990,22 @@ Copy one of the two links above and change SOMEROOMNAME into a different name.
 | [`&cleanoutput`](../advanced-settings/design-parameters/cleanoutput.md) | keeps the room as clean as possible from UI elements |
 | [`&label`](../general-settings/label.md)                                | asks for a name when joining the room                |
 
-# How to stream 4K video using Vide0Link
+# How to stream 4K video using VDO.Ninja
 
-Sending a 4K video feed with Vide0Link is very CPU intensive. Be prepared to use all of 8 real cpu cores (not threads).
+Sending a 4K video feed with VDO.Ninja is very CPU intensive. Be prepared to use all of 8 real cpu cores (not threads).
 
-## How Vide0Link handles video quality
+## How VDO.Ninja handles video quality
 
-Vide0Link has 3 predefined [`&quality`](../advanced-settings/video-parameters/and-quality.md) levels:
+VDO.Ninja has 3 predefined [`&quality`](../advanced-settings/video-parameters/and-quality.md) levels:
 
 * `&quality=0` tries to do 1080p (1920x1080 @ 60fps).
 * `&quality=1` is the default. It tries to select 720p (1280x720 @ 30fps ) for both screen capture and webcam.
 * `&quality=2` tries to do 360p (640x360 @ 30 fps).
 * also there's `&quality=-1` , which will use the device's default resolution, but this could be anything, low or high, so it's a niche option.
 
-By “trying”, I mean that if the resolution is not available, Vide0Link defaults to another resolution that the camera supports instead. This way, no errors are thrown and a compatible stream is sent, even if it’s not exactly what you might have desired.
+By “trying”, I mean that if the resolution is not available, VDO.Ninja defaults to another resolution that the camera supports instead. This way, no errors are thrown and a compatible stream is sent, even if it’s not exactly what you might have desired.
 
-Vide0Link is however capable of doing higher resolutions and custom resolutions however; you just need to manually specify the resolution you want. When you manually specify a resolution, if it doesn’t work, an error is thrown.
+VDO.Ninja is however capable of doing higher resolutions and custom resolutions however; you just need to manually specify the resolution you want. When you manually specify a resolution, if it doesn’t work, an error is thrown.
 
 While I could make a selectable option for 4K in the user interface, another problem with 4K is that it requires a LOT of CPU power to encode. Most users will always select the highest resolution allowed, not understanding that it might actually be a bad idea. Maxing out your CPU can actually result in worse quality with lower frame rates than selecting a lower, safer, resolution.
 
@@ -14023,13 +14023,13 @@ The default frame rate is 60-fps, although if their device does not support that
 
 ### Smartphones
 
-If streaming from a smartphone, not all phones can do 4K; my old LG V30 I believe could do 4K30 via [Vide0Link](https://vdo.ninja), but my Pixel 4a seems stuck at 1080p30. As well, an iPhone 11 might only be able to 1080p30, an iPhone 12 might be able to do 1080p60, while an iPhone 15 might be able to do 4K30. It might depend on the iOS version, where older iOS versions are pretty limited, so things will change overtime.
+If streaming from a smartphone, not all phones can do 4K; my old LG V30 I believe could do 4K30 via [VDO.Ninja](https://vdo.ninja), but my Pixel 4a seems stuck at 1080p30. As well, an iPhone 11 might only be able to 1080p30, an iPhone 12 might be able to do 1080p60, while an iPhone 15 might be able to do 4K30. It might depend on the iOS version, where older iOS versions are pretty limited, so things will change overtime.
 
-A common question I also get is that a certain phone can record 4K60 in the native phone app, so why not also in Vide0Link? Well, just because you can record to disk at 4K does not mean the manufacture has added support for 4K streaming via the browser. It requires additional development, nor is it always possible if the hardware encoder used does not support the advanced requirements of WebRTC.
+A common question I also get is that a certain phone can record 4K60 in the native phone app, so why not also in VDO.Ninja? Well, just because you can record to disk at 4K does not mean the manufacture has added support for 4K streaming via the browser. It requires additional development, nor is it always possible if the hardware encoder used does not support the advanced requirements of WebRTC.
 
 Samsung devices can sometimes use the built in Samsung Internet browser instead of Chrome to get access to higher resolutions and frame rates; 1080p60 for example with new flagship devices. Sometimes changing cameras or video codecs can allow for higher resolutions as well.
 
-The native mobile app version of Vide0Link may at some point support additional cameras that the browser does not, but at present there are not enough development resources available for this. It's desired however.
+The native mobile app version of VDO.Ninja may at some point support additional cameras that the browser does not, but at present there are not enough development resources available for this. It's desired however.
 
 ## What about the bitrate?
 
@@ -14039,7 +14039,7 @@ To set a target bitrate add [`&videobitrate=20000`](../advanced-settings/video-b
 
 ## Scaling
 
-You may need to add [`&scale=100`](../advanced-settings/view-parameters/scale.md) to the view link to have the video stream at 4K, if the playback window is smaller than 4K. Vide0Link by default resizes incoming videos to fit the playback area, and [`&scale=100`](../advanced-settings/view-parameters/scale.md) overrides that, requesting 100% of the available resolution; so unscaled if possible.
+You may need to add [`&scale=100`](../advanced-settings/view-parameters/scale.md) to the view link to have the video stream at 4K, if the playback window is smaller than 4K. VDO.Ninja by default resizes incoming videos to fit the playback area, and [`&scale=100`](../advanced-settings/view-parameters/scale.md) overrides that, requesting 100% of the available resolution; so unscaled if possible.
 
 ### Codec
 
@@ -14053,22 +14053,22 @@ As a result, to successfully stream 4K video, you generally need a computer syst
 
 Lastly, MacOS users may find that 4K is simply not possible or very difficult. If you do manage to get it working, it might only operate at 5-fps or so. I don’t quite know why this is, but if you intend on sharing 4K video, you might be better off using a Windows PC. It seems to perform better.
 
-We've successfully streamed 4K50 over 5G cellular Internet at 65-Mbps using a MacBook Air M1 and Vide0Link.
+We've successfully streamed 4K50 over 5G cellular Internet at 65-Mbps using a MacBook Air M1 and VDO.Ninja.
 ---
 description: Window sharing into Zoom with the Electron Capture app
 ---
 
 # How to stream into Zoom without OBS
 
-This guide will let you stream video from Vide0Link into Zoom as a window share (screen share).
+This guide will let you stream video from VDO.Ninja into Zoom as a window share (screen share).
 
-Window sharing into Zoom allows for higher quality video into Zoom, but it may also result in lower frame rates. In this guide, we will assume you are using a Vide0Link group room with the desire to share a group scene with Zoom.  Sharing a group scene is not required though.
+Window sharing into Zoom allows for higher quality video into Zoom, but it may also result in lower frame rates. In this guide, we will assume you are using a VDO.Ninja group room with the desire to share a group scene with Zoom.  Sharing a group scene is not required though.
 
 We will be using some software to make window sharing into Zoom more effective and clean. It is technically optionally.
 
 #### Alternative approach for sharing video into Zoom
 
-There is another guide for publishing from Vide0Link into Zoom using OBS Studio, which will have the video appear as a webcam in Zoom.  As a webcam source, the video will be smooth, but the resolution will be relatively low.
+There is another guide for publishing from VDO.Ninja into Zoom using OBS Studio, which will have the video appear as a webcam in Zoom.  As a webcam source, the video will be smooth, but the resolution will be relatively low.
 
 Check out that guide below:
 
@@ -14134,7 +14134,7 @@ Since we will be using the Electron Capture app instead, we can close the scene 
 
 Next, we **download the** [**Electron Capture app**](../steves-helper-apps/electron-capture.md) – [https://github.com/steveseguin/electroncapture/releases](https://github.com/steveseguin/electroncapture/releases) (free)
 
-The Electron Capture will let us share our video into Zoom without any borders and allow us to capture the audio. It also is optimized in resolution for maximum quality transfer from Vide0Link to Zoom.
+The Electron Capture will let us share our video into Zoom without any borders and allow us to capture the audio. It also is optimized in resolution for maximum quality transfer from VDO.Ninja to Zoom.
 
 ### Step 8.
 
@@ -14152,7 +14152,7 @@ We now can put our GROUP SCENE link in Electron Capture's top input field.&#x20;
 
 The AUDIO OUTPUT DESTINATION needs to point to the Virtual Audio Cable.&#x20;
 
-Once ready, press GO to load our Vide0Link video.
+Once ready, press GO to load our VDO.Ninja video.
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
@@ -14188,17 +14188,17 @@ If we do close the director's control center though, we can still add our audio 
 
 ### Need help?
 
-If stuck, join our Discord support server at .
+If stuck, join our Discord support server at [https://discord.vdo.ninja](https://discord.vdo.ninja).
 
 ### More information
 
 More on the **ROOM** here:
 
-[Getting started: The Room (Vide0Link Podcast ep02)](https://youtu.be/m1cIT1kdlEo)
+[Getting started: The Room (VDO Ninja Podcast ep02)](https://youtu.be/m1cIT1kdlEo)
 
 More on **Advanced settings** here:
 
-[Getting started: Power Parameters (Vide0Link Podcast ep06)](https://youtu.be/l9BNTTNY08s)
+[Getting started: Power Parameters (VDO Ninja Podcast ep06)](https://youtu.be/l9BNTTNY08s)
 ---
 description: >-
   Sending video with a transparent background, or with an alpha-channel (RGBA),
@@ -14207,7 +14207,7 @@ description: >-
 
 # How to stream transparent video
 
-If you wanted to stream yourself with a transparent background, or use a WebM file as a transparent effects overlay, it's possible with Vide0Link, however a bit limited still.
+If you wanted to stream yourself with a transparent background, or use a WebM file as a transparent effects overlay, it's possible with VDO.Ninja, however a bit limited still.
 
 There's not many ways to bring transparent sources into the browser, nor are there many ways current to stream transparent video.
 
@@ -14235,7 +14235,7 @@ As with the above example, you can also send a webcam feed of a person, with the
 
 Like above, we need to include `&alpha` and [`&webp`](../advanced-settings/view-parameters/webp.md), but we also need need to include [`&effects=5`](../source-settings/effects.md).
 
-The goal here is to remove the background using the Vide0Link background removal tool, and then use a transparent image as the background, instead of a normal virtual background image. In the link below, we include a transparent pixel in the URL, so no external file is needed.
+The goal here is to remove the background using the VDO.Ninja background removal tool, and then use a transparent image as the background, instead of a normal virtual background image. In the link below, we include a transparent pixel in the URL, so no external file is needed.
 
 [https://vdo.ninja/alpha/?webp\&push=rPJ5bEb\&effects=5\&alpha\&webcam\&imagelist=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII%3D](https://vdo.ninja/alpha/?webp\&push=rPJ5bEb\&effects=5\&alpha\&webcam\&imagelist=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII%3D)
 
@@ -14247,7 +14247,7 @@ This option is highly CPU intensive though; I'd recommend at least a fast 8-core
 
 ## Green screening
 
-As with the above option, you can use the digital background effect ([`&effects=4`](../source-settings/effects.md), in this case) to replace your background in Vide0Link with a green solid color.
+As with the above option, you can use the digital background effect ([`&effects=4`](../source-settings/effects.md), in this case) to replace your background in VDO.Ninja with a green solid color.
 
 If using an application like OBS or vMix, during playback of the stream you can use a Chroma filter to remove the green background.
 
@@ -14261,7 +14261,7 @@ When green screening, since color is so important, try using [`&codec=av1`](../a
 
 ## Chunked mode - partially working
 
-Vide0Link has a mode called Chunked, which can be activated on Chromium browsers by adding [`&chunked`](../newly-added-parameters/and-chunked.md) to the push URL.
+VDO.Ninja has a mode called Chunked, which can be activated on Chromium browsers by adding [`&chunked`](../newly-added-parameters/and-chunked.md) to the push URL.
 
 When also used with `&alpha`, ie:
 
@@ -14279,24 +14279,24 @@ I'm hoping this isn't the case in the future with Chrome and other Chromium brow
 
 ### Raspberry.Ninja and OBS WHIP output - future possiblities
 
-I've not really sure about this, but you can force video into [Raspberry.Ninja](../steves-helper-apps/raspberry.ninja/), with transparent backgrounds, and Vide0Link will play them back. In my previous testing, Chrome refused to play back transparent video streams from Raspberry.Ninja with transparencies, dropping them for black backgrounds instead, but this might change in the future.
+I've not really sure about this, but you can force video into [Raspberry.Ninja](../steves-helper-apps/raspberry.ninja/), with transparent backgrounds, and VDO.Ninja will play them back. In my previous testing, Chrome refused to play back transparent video streams from Raspberry.Ninja with transparencies, dropping them for black backgrounds instead, but this might change in the future.
 
-If this does change, you might then be able to use OBS as well for streaming transparent video to Vide0Link. Or perhaps you'll be able to go from Raspberry.Ninja into OBS via WHEP at some point, but these are all not yet available and are likely years away from being materialized.
+If this does change, you might then be able to use OBS as well for streaming transparent video to VDO.Ninja. Or perhaps you'll be able to go from Raspberry.Ninja into OBS via WHEP at some point, but these are all not yet available and are likely years away from being materialized.
 ---
-description: You can host a Vide0Link media stream on a website, via the IFRAME API
+description: You can host a VDO.Ninja media stream on a website, via the IFRAME API
 ---
 
-# How to use Vide0Link on a website
+# How to use VDO.Ninja on a website
 
 ### Basic embedding
 
-Embedding VDO.NInja into a website should be pretty simple; we're just using the IFRAME element and setting the source to the Vide0Link URL we wish to load
+Embedding VDO.NInja into a website should be pretty simple; we're just using the IFRAME element and setting the source to the VDO.Ninja URL we wish to load
 
 ```
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vide0Link Embedded Iframe</title>
+    <title>VDO.Ninja Embedded Iframe</title>
 </head>
 <body>
     <iframe 
@@ -14309,13 +14309,13 @@ Embedding VDO.NInja into a website should be pretty simple; we're just using the
 </html>
 ```
 
-You may want to add or remove certain permissions, such as geolocation. Please note that while enabling auto-play is an IFRAME option, unless the parent window has already had a user-gesture interaction, the video inside Vide0Link will not autoplay; at least not with audio. Auto-playing of audio is controlled by the browser to limit annoying ads from auto-playing also; overriding this isn't really feasible.
+You may want to add or remove certain permissions, such as geolocation. Please note that while enabling auto-play is an IFRAME option, unless the parent window has already had a user-gesture interaction, the video inside VDO.Ninja will not autoplay; at least not with audio. Auto-playing of audio is controlled by the browser to limit annoying ads from auto-playing also; overriding this isn't really feasible.
 
 ### Adding some security for public deployments
 
 If wanting to use this page for public use, I'd probably want to secure things a bit more.  Such as using the `&audience` parameter, which makes it so the viewer can't just publish to your stream ID when you stop streaming yourself. 
 
-The audience parameter is available with Vide0Link v25.2 and newer.
+The audience parameter is available with VDO.Ninja v25.2 and newer.
 
 1. An example push link is this: [https://vdo.ninja/alpha/?audience=12345abcPublishingToken\&push=JkYwyxy](https://vdo.ninja/alpha/?audience=12345abcPublishingToken\&push=JkYwyxy)
 2. The view link you'd be provided woudl be something then like this: [https://vdo.ninja/alpha/?audience=HrDrNy3jiA50QzlU\&view=JkYwyxy](../getting-started/vdo.ninja-basics.md)
@@ -14330,7 +14330,7 @@ More about the[ ](how-to-use-vdo.ninja-on-a-website.md#advanced-iframe-api-optio
 
 ### Transparency
 
-Setting the `allowtransparency` attribute on the IFrame to `true` will allow for the contents to be transparent. You can then make Vide0Link transparent by adding `&transparent` to the URL, which sets the page's background to `rgba(0,0,0,0)`.&#x20;
+Setting the `allowtransparency` attribute on the IFrame to `true` will allow for the contents to be transparent. You can then make VDO.Ninja transparent by adding `&transparent` to the URL, which sets the page's background to `rgba(0,0,0,0)`.&#x20;
 
 [https://vdo.ninja/iframe ](https://vdo.ninja/iframe)can demonstrate this by opening [https://vdo.ninja/?transparent](https://vdo.ninja/?transparent) with it.
 
@@ -14338,24 +14338,24 @@ Setting the `allowtransparency` attribute on the IFrame to `true` will allow for
 
 This is a more complex request, but it's possible.
 
-https://versus.cam makes use of the `&sendframes` parameter to send raw video frames to the parent IFRAME, for use in a video element. This requires the Vide0Link deployment and the parent frame to share the same site origins, however depending on how you want the domains to appear, this could require some fancy request header manipulation, etc.
+https://versus.cam makes use of the `&sendframes` parameter to send raw video frames to the parent IFRAME, for use in a video element. This requires the VDO.Ninja deployment and the parent frame to share the same site origins, however depending on how you want the domains to appear, this could require some fancy request header manipulation, etc.
 
 Another easier option is to use the IFRAME API to make a request using `getVideoFrame`, such as: `{getVideoFrame:true, streamID:"abc123xyc"}`.  This will return a video frame, a PNG image of the current video stream with stream ID `abc123xyc`, which allows for a crude video stream. If perhaps a guest's browser doesn't support the `&sendframes` option, this could be a fallback.
 
-Anyways, these are advanced and complex options of loading a video element with a Vide0Link source. Normally just using the IFRAME as the playback window, and interacting with it via the IFRAME API is suggested.
+Anyways, these are advanced and complex options of loading a video element with a VDO.Ninja source. Normally just using the IFRAME as the playback window, and interacting with it via the IFRAME API is suggested.
 
-If you really want another way to access Vide0Link streams,  you may need to consider using a server to convert from Vide0Link into an HLS stream, however that both carries cost and incrasese the latency of the stream dramatically.
+If you really want another way to access VDO.Ninja streams,  you may need to consider using a server to convert from VDO.Ninja into an HLS stream, however that both carries cost and incrasese the latency of the stream dramatically.
 ---
-description: How to embed Vide0Link into your own website with the IFRAME API
+description: How to embed VDO.Ninja into your own website with the IFRAME API
 ---
 
-# How to embed Vide0Link into a site with iFrames
+# How to embed VDO.Ninja into a site with iFrames
 
-[Vide0Link](https://vdo.ninja/) offers here a simple and free solution to quickly enable real-time video streaming in their websites. VDON wishes to make live video streaming development accessible to any developer, even novices, yet still remain flexible and powerful.
+[VDO.Ninja](https://vdo.ninja/) offers here a simple and free solution to quickly enable real-time video streaming in their websites. VDON wishes to make live video streaming development accessible to any developer, even novices, yet still remain flexible and powerful.
 
-While Vide0Link does offer source-code to customize the application and UI at a low level, this isn't for beginners and it is rather hard to maintain. As well, due to the complexity of video streaming in the web, typical approaches for offering API access isn't quite feasible either.
+While VDO.Ninja does offer source-code to customize the application and UI at a low level, this isn't for beginners and it is rather hard to maintain. As well, due to the complexity of video streaming in the web, typical approaches for offering API access isn't quite feasible either.
 
-The solution decided on isn't an SDK framework, but rather the use of embeddable _IFrames_ and a corresponding bi-directional IFrame API. An [IFrame](https://www.w3schools.com/tags/tag\_iframe.ASP) allows us to embed a webpage inside a webpage, including Vide0Link into your own website.
+The solution decided on isn't an SDK framework, but rather the use of embeddable _IFrames_ and a corresponding bi-directional IFrame API. An [IFrame](https://www.w3schools.com/tags/tag\_iframe.ASP) allows us to embed a webpage inside a webpage, including VDO.Ninja into your own website.
 
 Modern web browsers allow the parent website to communicate with the child webpage, giving a high-level of control to a developer, while also abstracting the complex code and hosting requirements. Functionality, we can make an VDON video stream act much like an HTML video element tag, where you can issue commands like play, pause, or change video sources with ease.
 
@@ -14367,18 +14367,18 @@ iframe.allow = "autoplay;camera;microphone;fullscreen;picture-in-picture;display
 iframe.src = "https://vdo.ninja/?push=vhX5PYg&cleanoutput&transparent";
 ```
 
-You can also make an Vide0Link without Javascript, using just HTML, like
+You can also make an VDO.Ninja without Javascript, using just HTML, like
 
 `<iframe allow="autoplay;camera;microphone;fullscreen;picture-in-picture;display-capture;midi;geolocation;gyroscope;" src="https://vdo.ninja/?push=vhX5PYg&cleanoutput&transparent"></iframe>`
 
 Adding that iframe to the DOM will reveal a simple page for accessing for a user to select and share their webcam. For a developer wishing to access a remote guest's stream, this makes the ingestion of that stream into production software like OBS Studios very easy. The level of customization and control opens up opportunities, such as a pay-to-join audience option for a streaming interactive broadcast experience.
 
-An example of how this API is used by Vide0Link is with its Internet Speedtest, which has two Vide0Link IFrames on a single page. One IFrame feeds video to the other IFrame, and the speed at which it does this is a measure of the system's performance. Detailed stats of the connection are made available to the parent window, which displays the results. [https://vdo.ninja/speedtest](https://vdo.ninja/speedtest)
+An example of how this API is used by VDO.Ninja is with its Internet Speedtest, which has two VDO.Ninja IFrames on a single page. One IFrame feeds video to the other IFrame, and the speed at which it does this is a measure of the system's performance. Detailed stats of the connection are made available to the parent window, which displays the results. [https://vdo.ninja/speedtest](https://vdo.ninja/speedtest)
 
 More community-contributed IFrame examples can be found here:
 [https://github.com/steveseguin/vdoninja/tree/master/examples](https://github.com/steveseguin/vdoninja/tree/master/examples)
 
-A sandbox of options is available at this page, too: [https://vdo.ninja/iframe](https://vdo.ninja/iframe) You can enter an Vide0Link URL in the input box to start using it. For developers, viewing the source of that page will reveal examples of how all the available functions work, along with a way to test and play with each of them. You can also see here for the source-code on GitHub:
+A sandbox of options is available at this page, too: [https://vdo.ninja/iframe](https://vdo.ninja/iframe) You can enter an VDO.Ninja URL in the input box to start using it. For developers, viewing the source of that page will reveal examples of how all the available functions work, along with a way to test and play with each of them. You can also see here for the source-code on GitHub:
 [https://github.com/steveseguin/vdoninja/blob/master/iframe.html](https://github.com/steveseguin/vdoninja/blob/master/iframe.html)
 
 I also have an example of how you can transfer virtually any data (JSON, text, small images) via the IFrame API with just a few lines of code here:
@@ -14386,9 +14386,9 @@ I also have an example of how you can transfer virtually any data (JSON, text, s
 
 There's dozens of other examples of how the IFrame API can be used to communicate via p2p, easily with any website, such as controlling PowerPoint remotely, but here's an example of how to use it to control OBS Studio remotely. [https://github.com/steveseguin/sample-p2p-tunnel](https://github.com/steveseguin/sample-p2p-tunnel)
 
-Please note that since Vide0Link requires SSL to be strictly enabled site wide, any website you embed a Vide0Link IFrame into also will require SSL enabled site wide. Using a service like Cloudflare can provide SSL-enabled caching for websites to make this fairly easy to do.
+Please note that since VDO.Ninja requires SSL to be strictly enabled site wide, any website you embed a VDO.Ninja IFrame into also will require SSL enabled site wide. Using a service like Cloudflare can provide SSL-enabled caching for websites to make this fairly easy to do.
 
-Something else to note about this IFrame API is that it can not only be controlled via URL parameters given to the IFrame _src_ URL, but also using `postMessage` and `addEventListener` methods of the browser. The later is used to dynamically control Vide0Link, while the former is used to initiate the instance to a desired state.
+Something else to note about this IFrame API is that it can not only be controlled via URL parameters given to the IFrame _src_ URL, but also using `postMessage` and `addEventListener` methods of the browser. The later is used to dynamically control VDO.Ninja, while the former is used to initiate the instance to a desired state.
 
 Some of the more interesting ones primarily for IFrame users might include:
 
@@ -14653,11 +14653,11 @@ eventer(messageEvent, function (e) {
 });
 ```
 
-This Vide0Link API is developed and expanded based on user feedback and requests. It is by no means complete, but it is getting better every week.
+This VDO.Ninja API is developed and expanded based on user feedback and requests. It is by no means complete, but it is getting better every week.
 
 ### Transparency
 
-Setting the `allowtransparency` attribute on the IFrame to `true` will allow for the contents to be transparent. You can then make Vide0Link transparent by adding `&transparent` to the URL, which sets the page's background to `rgba(0,0,0,0)`.&#x20;
+Setting the `allowtransparency` attribute on the IFrame to `true` will allow for the contents to be transparent. You can then make VDO.Ninja transparent by adding `&transparent` to the URL, which sets the page's background to `rgba(0,0,0,0)`.&#x20;
 
 https://vdo.ninja/iframe can demonstrate this by opening https://vdo.ninja/?transparent with it.
 
@@ -14665,28 +14665,28 @@ https://vdo.ninja/iframe can demonstrate this by opening https://vdo.ninja/?tran
 
 There's some users who wish to have an SDK instead of an IFrame API. While an SDK may happen eventually, currently the IFram API is surprisingly capable.
 
-If you wish to use your own video mixer logic for example, you can disable the existing auto-mixer logic that currently exists using the [`&manual`](../advanced-settings/view-parameters/manual.md) flag. You can then access the `srcObject` of each of the video elements in Vide0Link and pull those streams into the parent frame to manipulate or to connect to the parent DOM.&#x20;
+If you wish to use your own video mixer logic for example, you can disable the existing auto-mixer logic that currently exists using the [`&manual`](../advanced-settings/view-parameters/manual.md) flag. You can then access the `srcObject` of each of the video elements in VDO.Ninja and pull those streams into the parent frame to manipulate or to connect to the parent DOM.&#x20;
 
-If you aren't self-hosting the code, you may run into cross origin permission issues or limitations on cross-origin permissions with certain features. You can get around these issues usually by hosting Vide0Link as a subdomains though, in certain cases at least, along with the correct web hosting settings set.
+If you aren't self-hosting the code, you may run into cross origin permission issues or limitations on cross-origin permissions with certain features. You can get around these issues usually by hosting VDO.Ninja as a subdomains though, in certain cases at least, along with the correct web hosting settings set.
 
 [https://javascript.info/cross-window-communication#windows-on-subdomains-document-domain](https://javascript.info/cross-window-communication#windows-on-subdomains-document-domain)
 
-See the video below for an advanced demo of the IFRAME API and how videos hosted within Vide0Link can be accessed and manipulated by the parent window. Video works well in this fashion; pulling audio from the IFRAME is a bit trickier however. 
+See the video below for an advanced demo of the IFRAME API and how videos hosted within VDO.Ninja can be accessed and manipulated by the parent window. Video works well in this fashion; pulling audio from the IFRAME is a bit trickier however. 
 
 \[update:  document.domain or such is a bit depreciated now, and while it is possible to use a sub-domain still, you'll need to specify certain headers and permissions with your webserver to allow for it.  https://versus.cam for example uses vdo.ninja as a subdomain to access frames across the IFRAME API]
 
 ### Basic full window IFRAME control
 
-Below is a simple code example of a website that can use Vide0Link as normal, full-window, while having a wrapper around it that controls it using the IFrame API.
+Below is a simple code example of a website that can use VDO.Ninja as normal, full-window, while having a wrapper around it that controls it using the IFrame API.
 
 It also will query the IFRAME every second for detailed state of the current setup, such as who is connected and visible.
 
-This approach can allow you to do very advanced and dynamic configurations for Vide0Link, which might not be possible with the normal HTTPS/WSS API or URL parameters. Code injection is also supported, so there's no limit really to what you can do. If you would like to use Vide0Link with a custom API or inside an application as a webview, this is also a simple example of the concept.
+This approach can allow you to do very advanced and dynamic configurations for VDO.Ninja, which might not be possible with the normal HTTPS/WSS API or URL parameters. Code injection is also supported, so there's no limit really to what you can do. If you would like to use VDO.Ninja with a custom API or inside an application as a webview, this is also a simple example of the concept.
 
 ```
 <style>body,iframe{width:100%;height:100%;margin:0;padding:0;border:0;background-color:#0000;}</style><body></body><script>
 
-var IFRAMEWINDOW = document.createElement("iframe"); // create Vide0Link in an IFRAME
+var IFRAMEWINDOW = document.createElement("iframe"); // create VDO.Ninja in an IFRAME
 IFRAMEWINDOW.src = "https://vdo.ninja/alpha/?scene&transparent&room=sssss123";
 
 IFRAMEWINDOW.onload = function(){ // start polling shortly after we connect
@@ -14705,19 +14705,19 @@ window.addEventListener("message", (e) => {
 
 ### WebViews
 
-The IFrame API is is also a WebView API, using the same concept of listening for events and post-messaging into the Vide0Link window.
+The IFrame API is is also a WebView API, using the same concept of listening for events and post-messaging into the VDO.Ninja window.
 
 WebViews are available within iOS and Android native apps, Electron.js apps, and other applications, like Unity or Unreal.
 
-This is a great way to configure, edit, listen to, and control Vide0Link, without a web or MIDI API.
+This is a great way to configure, edit, listen to, and control VDO.Ninja, without a web or MIDI API.
 
 ### Raw video and audio transport
 
-It's possible to transmit uncompressed video frames and audio data from Vide0Link to the parent window using the post-mesasging API. This allows video playback to happen outside the IFrame itself, using your own custom mixing logic. See[ https://versus.cam](https://versus.cam) for a code example; the website is on Steve's GitHub for reference.  Please note, this may require a custom deployment of Vide0Link's website code (SameOriginPolicy), and likely will also require a recent Chromium-based browser to use.
+It's possible to transmit uncompressed video frames and audio data from VDO.Ninja to the parent window using the post-mesasging API. This allows video playback to happen outside the IFrame itself, using your own custom mixing logic. See[ https://versus.cam](https://versus.cam) for a code example; the website is on Steve's GitHub for reference.  Please note, this may require a custom deployment of VDO.Ninja's website code (SameOriginPolicy), and likely will also require a recent Chromium-based browser to use.
 
 ### All to happy to support the IFRAME API
 
-Please feel free to follow me in the Vide0Link Discord channel (discord.vdo.ninja) where I post news about updates and listen to requests. The upcoming version of Vide0Link is also often hosted at [https://vdo.ninja/beta](https://vdo.ninja/beta), where you can explore new features and help crush any unexpected bugs.
+Please feel free to follow me in the VDO.Ninja Discord channel ([discord.vdo.ninja](https://discord.com/invite/T4xpQVv)) where I post news about updates and listen to requests. The upcoming version of VDO.Ninja is also often hosted at [https://vdo.ninja/beta](https://vdo.ninja/beta), where you can explore new features and help crush any unexpected bugs.
 
 I am keen to continue to support the IFrame API, so please reach out if you have questions or requests.
 
@@ -14728,7 +14728,7 @@ description: Improve quality of video if using iOS or Android native app version
 
 # How to improve quality of the native app
 
-The [native app version](../steves-helper-apps/native-mobile-app-versions.md) of Vide0Link isn't as feature rich as the web-app version, so control over exactly resolutions, frame rates, and more are a bit limited. Still, there are ways to encourage the quality to be as high as it can go.
+The [native app version](../steves-helper-apps/native-mobile-app-versions.md) of VDO.Ninja isn't as feature rich as the web-app version, so control over exactly resolutions, frame rates, and more are a bit limited. Still, there are ways to encourage the quality to be as high as it can go.
 
 ## Increase the bitrate
 
@@ -14792,9 +14792,9 @@ description: Two-way low-latency audio-only transmissions
 
 # How to get lowest audio latency possible
 
-If you are a musician looking to jam out with a friend, you should be able to achieve under 40ms of latency using [Vide0Link](https://vdo.ninja) if both you and them have a good Internet connections. This implies being directly connected via wired Ethernet with low packet loss, rather than via Wi-Fi or cellular.&#x20;
+If you are a musician looking to jam out with a friend, you should be able to achieve under 40ms of latency using [VDO.Ninja](https://vdo.ninja) if both you and them have a good Internet connections. This implies being directly connected via wired Ethernet with low packet loss, rather than via Wi-Fi or cellular.&#x20;
 
-The following link is an example of settings optimized for low-latency audio-only two-way communications. I find most of the latency with a setup like this is outside the scope of Vide0Link; so the sound card settings, the capture device, how far away I am from the mic / speakers, etc.
+The following link is an example of settings optimized for low-latency audio-only two-way communications. I find most of the latency with a setup like this is outside the scope of VDO.Ninja; so the sound card settings, the capture device, how far away I am from the mic / speakers, etc.
 
 ```
 https://vdo.ninja/?push=MystreamID123&view=TheirStreamID123&aec=0&agc=0&denoise=0&ab=16&enhance&ptime=10&maxptime=10&novideo&noap
@@ -14810,7 +14810,7 @@ Looking at the link, let's explore:
 
 [`&ab=16`](../advanced-settings/view-parameters/audiobitrate.md) gives us a constant audio bitrate of 16-kbps. Consistency will ensure more reliable latencies, and 16-kbps is so light-weight it shouldn't be boggled down on bad connections. You can increase this value depending on the audio fidelity that you want, but higher could introduce more latency.
 
-[`&enhance`](../advanced-settings/view-parameters/enhance.md), [`&ptime=10`](../advanced-settings/view-parameters/and-ptime.md), and [`&maxptime=10`](../advanced-settings/view-parameters/and-maxptime.md) are advanced settings, that tell the system to prioritize audio packets and limit their size to 10ms. This is the lowest we can set them using a browser, but it might be possible to go lower if using something like the Raspberry\_Ninja hardware project that Vide0Link has available for advanced users.
+[`&enhance`](../advanced-settings/view-parameters/enhance.md), [`&ptime=10`](../advanced-settings/view-parameters/and-ptime.md), and [`&maxptime=10`](../advanced-settings/view-parameters/and-maxptime.md) are advanced settings, that tell the system to prioritize audio packets and limit their size to 10ms. This is the lowest we can set them using a browser, but it might be possible to go lower if using something like the Raspberry\_Ninja hardware project that VDO.Ninja has available for advanced users.
 
 [`&novideo`](../advanced-settings/video-parameters/and-novideo.md) disables video, which can make a big impact on latency, as not streaming video will free up a lot of bandwidth, but also not force the audio to stay in sync with the video. You can send the video in a second tab/session if needed, and that way, it won't try to stay in sync.
 
@@ -14843,13 +14843,13 @@ You can use this to create your own hotkeys for pretty any device, application, 
 
 ## IFRAME API
 
-The HTTP and websocket make use of a server to route API calls. If you'd like to create your own API server or don't need remote hotkey support, you can used the provide IFRAME API and send commands instead to Vide0Link via an IFRAME wrapper.&#x20;
+The HTTP and websocket make use of a server to route API calls. If you'd like to create your own API server or don't need remote hotkey support, you can used the provide IFRAME API and send commands instead to VDO.Ninja via an IFRAME wrapper.&#x20;
 
 The IFRAME API is the most powerful option, but it requires some basic coding on your own part to have it provide hotkey functionality for your specific requirement.
 
 [iframe-api-documentation.md](iframe-api-documentation.md)
 
-Below is an example of how to remotely control OBS anywhere online using the Vide0Link IFrame API; the code is just an example of how to use the IFrame API with OBS in this case, and it not intended to be used in production as is. The core concept lets you relay data messages from one website page to another, peer to peer, with just a few lines of code!
+Below is an example of how to remotely control OBS anywhere online using the VDO.Ninja IFrame API; the code is just an example of how to use the IFrame API with OBS in this case, and it not intended to be used in production as is. The core concept lets you relay data messages from one website page to another, peer to peer, with just a few lines of code!
 
 ## WebHID
 
@@ -14865,7 +14865,7 @@ description: Encoder options that can offer smooth playback
 
 # How to set up OBS WHIP output settings
 
-OBS Studio v30 now has WHIP output, which can stream into Vide0Link. While there are a few limitations of using OBS Studio with Vide0Link directly, some H264 settings that have reported offered good results are the following:
+OBS Studio v30 now has WHIP output, which can stream into VDO.Ninja. While there are a few limitations of using OBS Studio with VDO.Ninja directly, some H264 settings that have reported offered good results are the following:
 
 * Rate Control: CRF
 * CRF: 23
@@ -14875,26 +14875,26 @@ OBS Studio v30 now has WHIP output, which can stream into Vide0Link. While there
 * Tune: Fastdecode (required for WebRTC playback)
 * x264 Options: bframes=0 (required for WebRTC playback)
 
-In some cases, adding [`&buffer=2500`](../advanced-settings/view-parameters/buffer.md) to the Vide0Link view link can further help reduce any lost of skipped frames, but at the cost of increased latency.
+In some cases, adding [`&buffer=2500`](../advanced-settings/view-parameters/buffer.md) to the VDO.Ninja view link can further help reduce any lost of skipped frames, but at the cost of increased latency.
 
-If looking for alternatives to publishing into Vide0Link, consider checking out [Raspberry.Ninja](../updates/updates-raspberry.ninja.md) also, which supports a broad range of encoders, including AV1-AOM, Intel QuickSync, Raspberry Pis, Nvidia Jetson, and many other hardware and software options. Playback is smooth, with support for multiple viewers. Runs on most systems, including Linux and _Windows for Linux Subsystem_ (WSL).
+If looking for alternatives to publishing into VDO.Ninja, consider checking out [Raspberry.Ninja](../updates/updates-raspberry.ninja.md) also, which supports a broad range of encoders, including AV1-AOM, Intel QuickSync, Raspberry Pis, Nvidia Jetson, and many other hardware and software options. Playback is smooth, with support for multiple viewers. Runs on most systems, including Linux and _Windows for Linux Subsystem_ (WSL).
 # Options to record streams
 
 There are several ways to record, with more ways coming. I'll list some of the ways here, although they may not be exactly what you had in mind.
 
-### Local / Remote Recording in Vide0Link
+### Local / Remote Recording in VDO.Ninja
 
-The Vide0Link room director has the option to record streams locally and remotely.
+The VDO.Ninja room director has the option to record streams locally and remotely.
 
 You can also add \&record to guest invite URL to introduce a recording button, for that publisher to start/stop their own local recording. Local recordings of this type are often of high quality.
 
-You can also right-click and record any video within Vide0Link.
+You can also right-click and record any video within VDO.Ninja.
 
 Depending on the type of video, and whether its local or remote, recording the video with this method may use up extra resources from the publisher's computer, including CPU and bandwidth.
 
 Another issue is the format saved is WebM, which sometimes will need post-processing to make it compatible with many popular video editors. If the browser crashes, that also may cause the video recording to become lost, so it might not be the most reliable option.
 
-That said, this is an easy option and available for free within Vide0Link.
+That said, this is an easy option and available for free within VDO.Ninja.
 
 ### Using OBS to record; or multiple OBS
 
@@ -14906,7 +14906,7 @@ OBS has advanced hardware accelerated encoding options, and so this is good opti
 
 For OBS, there is a source-record plugin that allows you to record each Guest in OBS as its own dedicated video source. By pulling in a single high quality ISO (solo) feed per guest into OBS, and mixing videos using OBS, you can get high quality footage for post-production efforts. [https://obsproject.com/forum/resources/source-record.1285/](https://obsproject.com/forum/resources/source-record.1285/)
 
-This is nice because you can have one OBS Studio open, and that's it. The downside is, you won't be able to use the Vide0Link auto-mixer if using solo-links instead.
+This is nice because you can have one OBS Studio open, and that's it. The downside is, you won't be able to use the VDO.Ninja auto-mixer if using solo-links instead.
 
 ### Electron Capture et al
 
@@ -14917,25 +14917,25 @@ If interested in Vingester, as it has NDI output options, consider downloading i
 
 ### Chunked mode
 
-If using the [`&chunked`](../newly-added-parameters/and-chunked.md) mode of [Vide0Link](https://vdo.ninja/), a video stream is encoded once, and that is sent to all viewers and even the local/remote recordings. This is experimental and still pretty high CPU, due to the high quality of the stream being shared, but it might be lower CPU than trying to do two high quality encodings.
+If using the [`&chunked`](../newly-added-parameters/and-chunked.md) mode of [VDO.Ninja](https://vdo.ninja/), a video stream is encoded once, and that is sent to all viewers and even the local/remote recordings. This is experimental and still pretty high CPU, due to the high quality of the stream being shared, but it might be lower CPU than trying to do two high quality encodings.
 
 There is no server-side support for chunked mode at the moment, but I will continue to improve it and work on it as requests come in.
 
 ### Recording via WHIP/WHEP service
 
-On the upcoming version of [Vide0Link](https://vdo.ninja/), you can use a WHIP/WHEP services to relay video via a server. In this case, the server itself can make a copy of the stream; the same stream everyone else in the room will see. There's also [SVC scalability support](../advanced-settings/whip-parameters/and-svc.md), so if your server supports that, you can push high-bitrates. ([https://vdo.ninja/alpha/whip](https://vdo.ninja/alpha/whip) for some common tooling)
+On the upcoming version of [VDO.Ninja](https://vdo.ninja/), you can use a WHIP/WHEP services to relay video via a server. In this case, the server itself can make a copy of the stream; the same stream everyone else in the room will see. There's also [SVC scalability support](../advanced-settings/whip-parameters/and-svc.md), so if your server supports that, you can push high-bitrates. ([https://vdo.ninja/alpha/whip](https://vdo.ninja/alpha/whip) for some common tooling)
 
-To demo this concept, you can try out using Cloudflare's Stream service, as it has a free tier and I've done the heavily lifting to make it easy to use. Instructions and tool to setup Cloudflare with Vide0Link are here: [vdo.ninja/alpha/cloudflare](https://vdo.ninja/alpha/cloudflare). Cloudflare should technically be saving each stream to disk automatically, but I haven't actually tried downloading their videos recordings to see if they work well.
+To demo this concept, you can try out using Cloudflare's Stream service, as it has a free tier and I've done the heavily lifting to make it easy to use. Instructions and tool to setup Cloudflare with VDO.Ninja are here: [vdo.ninja/alpha/cloudflare](https://vdo.ninja/alpha/cloudflare). Cloudflare should technically be saving each stream to disk automatically, but I haven't actually tried downloading their videos recordings to see if they work well.
 
 There are other premium providers other than Cloudflare, and specialized support for them and open-source projects will be added in time.
 
 ### Recording via self-hosted SFU server
 
-If running on Linux, you can do the same concept as about with your own WHIP/WHEP/SFU service. It's a bit advanced, but you can deploy such a service and [Vide0Link](https://vdo.ninja/)'s (+v24) will be able to use it.
+If running on Linux, you can do the same concept as about with your own WHIP/WHEP/SFU service. It's a bit advanced, but you can deploy such a service and [VDO.Ninja](https://vdo.ninja/)'s (+v24) will be able to use it.
 
-So, instead of direct p2p connections for video/audio streams between peers, streams are broadcasted via the hosted server. This is essentially like deploying your own Meshcast service, which [Vide0Link](https://vdo.ninja/) offers, but one that you control. In this case, you'd configure your service to record to disk, which is something Meshcast does not do or offer.
+So, instead of direct p2p connections for video/audio streams between peers, streams are broadcasted via the hosted server. This is essentially like deploying your own Meshcast service, which [VDO.Ninja](https://vdo.ninja/) offers, but one that you control. In this case, you'd configure your service to record to disk, which is something Meshcast does not do or offer.
 
-While I'm happy to support users from the [Vide0Link](https://vdo.ninja/) side of this all, I don't have the time to offer support to users wanting to deploy own WHIP/WHEP servers. There are many such WHIP/WHEP/SFU open source projects available, although they are perhaps targeted towards more technical users.
+While I'm happy to support users from the [VDO.Ninja](https://vdo.ninja/) side of this all, I don't have the time to offer support to users wanting to deploy own WHIP/WHEP servers. There are many such WHIP/WHEP/SFU open source projects available, although they are perhaps targeted towards more technical users.
 
 ### Recording to Dropbox / Cloud
 
@@ -14945,7 +14945,7 @@ If there is of great interest to users, please let me know on Discord in the Fea
 
 ### Headless recording
 
-This is a bit like having a headless version of OBS in the cloud, where it's configured to take a [Vide0Link](https://vdo.ninja/) browser link and publish it using FFMPEG to RTMP. Works with DigitalOcean or even an Orange pi.
+This is a bit like having a headless version of OBS in the cloud, where it's configured to take a [VDO.Ninja](https://vdo.ninja/) browser link and publish it using FFMPEG to RTMP. Works with DigitalOcean or even an Orange pi.
 
 [https://github.com/steveseguin/browser-to-rtmp-docker](https://github.com/steveseguin/browser-to-rtmp-docker)
 
@@ -14955,31 +14955,31 @@ You can very easily configure the FFmpeg script to save to MP4/MKV format though
 
 [Raspberry.Ninja](https://raspberry.ninja/) is my project for Linux systems (and Windows WSL also), which lets you both publish and record Raspberry Ninja streams, without a browser at all.
 
-While it's mainly used for publishing video to [Vide0Link](https://vdo.ninja/) using the hardware encoder in small embedded computers, like the Raspberry Pi, it can also record video streams to disk, as perfect copies. No transcoding is done.
+While it's mainly used for publishing video to [VDO.Ninja](https://vdo.ninja/) using the hardware encoder in small embedded computers, like the Raspberry Pi, it can also record video streams to disk, as perfect copies. No transcoding is done.
 
 If you are enterprising, you can have [Raspberry.Ninja](https://raspberry.ninja/) record the incoming guest streams to disk without transcoding, and then transcode them, before window-sharing them or publishing them to NDI. Doing this would require some Python coding, not too much, and all the code needed to achieve it is scattered around my Github. Still, this wouldn't be a task for novice developers.
 
 ### Contact me for more discussion / updates
 
-If you want to follow up with me on some of these options, please contact me on Discord at .
+If you want to follow up with me on some of these options, please contact me on Discord at [https://discord.vdo.ninja](https://discord.vdo.ninja/).
 
-As well, things change quickly with Vide0Link; this post may already be out of date by the time you read it. Feel free to ask for updates.
+As well, things change quickly with VDO.Ninja; this post may already be out of date by the time you read it. Feel free to ask for updates.
 ---
-description: How to share audio and video from OBS Studio into Vide0Link
+description: How to share audio and video from OBS Studio into VDO.Ninja
 ---
 
-# Publish from OBS into Vide0Link
+# Publish from OBS into VDO.Ninja
 
-In this walk-through we demonstrate how to use Vide0Link with the OBS Virtual camera and Virtual Audio Cable.
+In this walk-through we demonstrate how to use VDO.Ninja with the OBS Virtual camera and Virtual Audio Cable.
 
-This combination is powerful and opens the world to numerous new live show formats. You could also push back audio and/or video from OBS into Vide0Link to share with a group there, or into a large Zoom call, all with super low latency.
+This combination is powerful and opens the world to numerous new live show formats. You could also push back audio and/or video from OBS into VDO.Ninja to share with a group there, or into a large Zoom call, all with super low latency.
 
-Combining this OBS to Vide0Link approach with \&broadcast mode or a server-assisted approach, you can enable larger room sizes, with around 10 to 30 people in a room being feasible.
+Combining this OBS to VDO.Ninja approach with \&broadcast mode or a server-assisted approach, you can enable larger room sizes, with around 10 to 30 people in a room being feasible.
 
 #### Requirements
 
 * OBS Studio v26 or newer
-  * This ideally will run on OBS on the same system as Vide0Link
+  * This ideally will run on OBS on the same system as VDO.Ninja
   * For Windows, OBS version 26 or newer is recommended: [https://obsproject.com/download](https://www.google.com/url?q=https://obsproject.com/download\&sa=D\&source=editors\&ust=1626144550329000\&usg=AOvVaw1SHwecfzt\_otZPz1YNkN3r)
 
 * Virtual Audio Cable Software
@@ -15023,7 +15023,7 @@ We also want to disable Windows audio ducking.
 
 In our last configuration step, we want to go into the Advanced Audio Properties in OBS. When there, we want to set the audio sources we want to output have its Audio Monitoring setting be set to Monitor and Output.
 
-If you intend to feed audio from OBS back into an Vide0Link group call, you can use this step to also mix-minus the audio; selecting just the audio sources you want the remote guests to hear, excluding their own audio to prevent echo.
+If you intend to feed audio from OBS back into an VDO.Ninja group call, you can use this step to also mix-minus the audio; selecting just the audio sources you want the remote guests to hear, excluding their own audio to prevent echo.
 
 
 ![](https://lh3.googleusercontent.com/772ztsgbSiy\_1wb-Y83MwD3s9A7M1Xy9Ndoag8TiKZO74ROCNqYa3M6PGhFSCq6rsziOYvtDVj84gVWy7EKJKoYOk377ZSoOteqWE\_yf8NeJmyzGokpKmvuT0KvELL2O7iS\_SpiC)
@@ -15032,15 +15032,15 @@ If you intend to feed audio from OBS back into an Vide0Link group call, you can 
 
 ### Step 4
 
-We’re READY to go! Using this setup we can publish from OBS into Vide0Link with near zero latency; going forward it's just like selecting a second Webcam and microphone.
+We’re READY to go! Using this setup we can publish from OBS into VDO.Ninja with near zero latency; going forward it's just like selecting a second Webcam and microphone.
 
-If you are already in Vide0Link, you can switch between your webcam and the virtual camera and normal camera in the settings. If you're a director of a room in Vide0Link, you can even share you audio and video from OBS into a room and not have it show up in any scene; just have it been seen by guests.
+If you are already in VDO.Ninja, you can switch between your webcam and the virtual camera and normal camera in the settings. If you're a director of a room in VDO.Ninja, you can even share you audio and video from OBS into a room and not have it show up in any scene; just have it been seen by guests.
 
 It is important to remember that you need to select the VB-Audio Virtual Cable in the call as well, if you also want to share the audio from it that is. 
 
-If publishing to Vide0Link, remember that you can select multiple audio sources in Vide0Link by holding down `CTRL` (or command) when selecting them. You could include the VB Audio Cable and your local microphone together, for example.
+If publishing to VDO.Ninja, remember that you can select multiple audio sources in VDO.Ninja by holding down `CTRL` (or command) when selecting them. You could include the VB Audio Cable and your local microphone together, for example.
 
-![Example of how things look in Vide0Link when selecting OBS Virtualcam + VB Cable](<../.gitbook/assets/image (80).png>)
+![Example of how things look in VDO.Ninja when selecting OBS Virtualcam + VB Cable](<../.gitbook/assets/image (80).png>)
 
 
 All done! You can switch between the webcam and the OBS live video as needed.
@@ -15051,13 +15051,13 @@ If you need to listen to your VB-Audio cable at the same time still, you can ref
 
 If you aren't getting 60-fps from the OBS Virtual Camera into `&framerate=60` to the sender's URL.  The OBS Virtual Camera doesn't always report what framerates it can handle correctly to the browser, but if you manually specify it, it should work.
 
-It's sometimes important to activate the OBS Virtual Camera in OBS before selecting it with Vide0Link.  If you start the Virtual Camera \*after\* it has been selected, settings may not correctly work, such as the correct aspect ratio
+It's sometimes important to activate the OBS Virtual Camera in OBS before selecting it with VDO.Ninja.  If you start the Virtual Camera \*after\* it has been selected, settings may not correctly work, such as the correct aspect ratio
 
-If looking to do custom aspect-ratios with the OBS Virtual Camera into Vide0Link, you can specify the exact width and height via the URL in Vide0Link; `&width=720&height=1280,` for example.
+If looking to do custom aspect-ratios with the OBS Virtual Camera into VDO.Ninja, you can specify the exact width and height via the URL in VDO.Ninja; `&width=720&height=1280,` for example.
 
 It's important that the resolution be exactly the same as what is specified in OBS video settings; deviations will cause issues.
 
-It is also important that you activate the OBS Virtual Camera in OBS before select it in Vide0Link. If you do it after, the aspect ratio may not work correctly.
+It is also important that you activate the OBS Virtual Camera in OBS before select it in VDO.Ninja. If you do it after, the aspect ratio may not work correctly.
 
 ## Share webcam directly from OBS
 
@@ -15067,19 +15067,19 @@ Please see this article for more on that: [https://docs.vdo.ninja/guides/share-w
 
 # How to publish to Facebook Live
 
-There's a video guide on how to publish from Vide0Link to Facebook Live here: 
+There's a video guide on how to publish from VDO.Ninja to Facebook Live here: [https://www.youtube.com/watch?v=Zk345qg0U6U](https://www.youtube.com/watch?v=Zk345qg0U6U)
 
 Some options that you can use to achieve this include:
 
 RTMP is an option, typically done via OBS Studio. You can get a stream key for publishing from the Facebook Live production dashboard:
 [https://www.facebook.com/live/producer/](https://www.facebook.com/live/producer/)
 
-You'd use the OBS Browser source to bring Vide0Link into OBS Studio.
+You'd use the OBS Browser source to bring VDO.Ninja into OBS Studio.
 
 You can also publish via OBS into Facebook via the Virtual camera, as Facebook supports webcam publishing. This will require the use of a virtual audio cable though, and since OBS does not yet include its own virtual audio cable, you'll have to download one.
 For example: [https://vb-audio.com/Cable/](https://vb-audio.com/Cable/)
 
-You can also screen share Vide0Link into Facebook, bypassing the need for OBS altogether. Facebook doesn't support audio cable via screen share sadly, so you'll need to use a virtual audio cable still for audio routing.
+You can also screen share VDO.Ninja into Facebook, bypassing the need for OBS altogether. Facebook doesn't support audio cable via screen share sadly, so you'll need to use a virtual audio cable still for audio routing.
 
 You can use the Electron Capture app instead of Chrome as a screen sharing source, which provides exact resolution and always-on-top options. It also makes it easier to select the virtual audio cable output as the output destination.
 
@@ -15132,27 +15132,27 @@ With Chrome, you can select the virtual audio cable as the output source by addi
 * [how-to-stream-transparent-video.md](how-to-stream-transparent-video.md "mention")
 * [obs-whip-output-settings.md](obs-whip-output-settings.md "mention")
 ---
-description: How to screen-share your iPhone or iPad to Vide0Link
+description: How to screen-share your iPhone or iPad to VDO.Ninja
 ---
 
 # How to screen share your iPhone/iPad
 
 If on iOS, there isn't an option available to screen share from within the browser (Safari), but there are some alternatives.
 
-One recently added way to screen share is with the Vide0Link native mobile app. It now supports screen sharing, however system audio capture may be missing.
+One recently added way to screen share is with the VDO.Ninja native mobile app. It now supports screen sharing, however system audio capture may be missing.
 
 [native-mobile-app-versions.md](../steves-helper-apps/native-mobile-app-versions.md)
 
 
 <img src="../.gitbook/assets/image (192).png" alt="" data-size="original"><img src="../.gitbook/assets/image (193).png" alt="" data-size="original">
 
-When using the native app to screen share, be sure to select the Vide0Link Screen Recorder option once prompted by Apple. Then click Start Broadcast.
+When using the native app to screen share, be sure to select the VDO.Ninja Screen Recorder option once prompted by Apple. Then click Start Broadcast.
 
 If you do not see the option, try scrolling down. If you don't see it still, update your iOS system version to the newest available version. Old versions may not support screen sharing, such as v15.x.
 
 If you still cannot find it, check that the app has the correct permissions in your iOS settings, seek support, or try one of the other options below.
 
-You can leave all other settings as default when using the [Vide0Link native app](../steves-helper-apps/native-mobile-app-versions.md). Once you start your broadcast, you will be provided a link at the top of the app that you can put into your browser or OBS browser source.
+You can leave all other settings as default when using the [VDO.Ninja native app](../steves-helper-apps/native-mobile-app-versions.md). Once you start your broadcast, you will be provided a link at the top of the app that you can put into your browser or OBS browser source.
 
 ### Other options
 
@@ -15160,9 +15160,9 @@ Another option to screen share is to use Apple Airplay to wirelessly cast your s
 
 Better than Airplay though, if you can connect your iPhone to a mac via USB, as QuickTime supports USB-connected access to an iPhone's camera. This does not require any downloads and offers a high-quality stream. Using a virtual audio device, you can even capture IOS audio with this method.
 
-In this guide we will show you how to screen-share to Vide0Link using QuickTime over USB with a MacBook and an iPhone. On Windows, you may wish to use Airplay instead, leveraging one of the free Airplay clients designed for PC.
+In this guide we will show you how to screen-share to VDO.Ninja using QuickTime over USB with a MacBook and an iPhone. On Windows, you may wish to use Airplay instead, leveraging one of the free Airplay clients designed for PC.
 
-Android users can use the native Vide0Link Android app to screen share directly to Vide0Link.
+Android users can use the native VDO.Ninja Android app to screen share directly to VDO.Ninja.
 
 1. Connect your iPhone to your mac via a USB cable. You may need a USB to USB-C adapter if you do not have a lightning to USB-C adapter already.
 
@@ -15182,28 +15182,28 @@ There are several choices, although the popular ones are [Loopback ](https://rog
 
 5.c. OPTIONAL: Assuming QuickTime Player is capturing audio from the iPhone, we simply just need to unmute the QuickTime Player. You won't hear audio playback, as it is being streamed to the Blackhole virtual audio device instead, but you should be able to see the audio meter bouncing around if there is audio.
 
-6\. We can now start streaming to Vide0Link; we just need to visit the site and click Share Screen. Using Chrome or another Chromium-based browser is required, such as the Electron Capture app. Safari will not work as it lacks the ability to select a window.
+6\. We can now start streaming to VDO.Ninja; we just need to visit the site and click Share Screen. Using Chrome or another Chromium-based browser is required, such as the Electron Capture app. Safari will not work as it lacks the ability to select a window.
 
 .![](<../.gitbook/assets/image (120) (1) (1).png>)![](<../.gitbook/assets/image (131) (1).png>)
 
 7\. To start screen sharing, we will want to select "Window" as the capture source, and then select the QuickTime, which should be showing our iPhone.&#x20;
 
-If we want to capture audio, we can also select the Blackhole virtual audio device from the Audio Sources menu in Vide0Link, but we can also do this after we start streaming. We can also select our local macBook microphone if we wanted.
+If we want to capture audio, we can also select the Blackhole virtual audio device from the Audio Sources menu in VDO.Ninja, but we can also do this after we start streaming. We can also select our local macBook microphone if we wanted.
 
 8\. Once we start streaming, there is a settings menu that we can use to select audio sources. If we select the Blackhole virtual audio device (or Loopback / VB Cable), we will be sharing our audio that we are capturing from the iPhone. We can hold down the `CMD` (⌘) key while selecting audio sources to select and mix more than one audio source.
 
 &#x20;![](<../.gitbook/assets/image (128).png>)
 
-9\. Finally, we can add the Vide0Link view link to our remote OBS Studio or share it with friends.&#x20;
+9\. Finally, we can add the VDO.Ninja view link to our remote OBS Studio or share it with friends.&#x20;
 
-The view link is normally found at the top of the Vide0Link page, but it can be formed based on the stream ID found in the site's URL as well. You can customize it the link and add it to OBS, making sure to enable "Control audio via OBS" and ensuring the resolution matches what you want.
+The view link is normally found at the top of the VDO.Ninja page, but it can be formed based on the stream ID found in the site's URL as well. You can customize it the link and add it to OBS, making sure to enable "Control audio via OBS" and ensuring the resolution matches what you want.
 
-10\. If you want to increase the frame rate and quality of the Vide0Link stream, adding [`&videobitrate=6000`](../advanced-settings/video-bitrate-parameters/bitrate.md) to the URL will increase the quality by more than double. If you're looking to stream a game, you may want to increase this value even higher, although the default bitrate is more than enough for text and basic screen sharing.
+10\. If you want to increase the frame rate and quality of the VDO.Ninja stream, adding [`&videobitrate=6000`](../advanced-settings/video-bitrate-parameters/bitrate.md) to the URL will increase the quality by more than double. If you're looking to stream a game, you may want to increase this value even higher, although the default bitrate is more than enough for text and basic screen sharing.
 
-Please see the rest of the documentation for more details on customizing Vide0Link.
+Please see the rest of the documentation for more details on customizing VDO.Ninja.
 ---
 description: >-
-  Share your webcam, virtual-camera, and audio source from using Vide0Link
+  Share your webcam, virtual-camera, and audio source from using VDO.Ninja
   inside OBS
 ---
 
@@ -15219,7 +15219,7 @@ We want to add `--enable-media-stream` to the Target field; we want to add this 
 
 From there, we are good to go. We can add a dock to OBS or a browser source, and we should be able to now activate our webcam source, such as the built-in OBS virtual webcam.
 
-If we use the following Vide0Link URL as a dock source, we can have Vide0Link auto-start every time, create a new link that you can share with others. This link is setup to auto-select the OBS virtual camera and the first VB virtual audio cable, if one is available.&#x20;
+If we use the following VDO.Ninja URL as a dock source, we can have VDO.Ninja auto-start every time, create a new link that you can share with others. This link is setup to auto-select the OBS virtual camera and the first VB virtual audio cable, if one is available.&#x20;
 
 `https://vdo.ninja/?webcam&vd=obs&ad=virtual&autostart&cover`
 
@@ -15227,24 +15227,24 @@ If we use the following Vide0Link URL as a dock source, we can have Vide0Link au
 
 # How to use the green screen just locally
 
-Since OBS is using a very old browser inside, the green screen effect inside [Vide0Link](https://vdo.ninja/) wouldn't really run well within OBS itself, and even if it did, accessing the camera from a browser-source is a hassle to setup.
+Since OBS is using a very old browser inside, the green screen effect inside [VDO.Ninja](https://vdo.ninja/) wouldn't really run well within OBS itself, and even if it did, accessing the camera from a browser-source is a hassle to setup.
 
 &#x20;What you could do though is use the Electron Capture app, and then just window capture the local preview output. You can hide the interface UI and access any camera/microphone changes via the Electron Capture's right-click context menu of options instead.
 
 Electron download link: [https://github.com/steveseguin/electroncapture/releases](https://github.com/steveseguin/electroncapture/releases)
 
-Getting this working is not complex; pretty easy once you do it once actually. Sample URL to enter into Vide0Link:
+Getting this working is not complex; pretty easy once you do it once actually. Sample URL to enter into VDO.Ninja:
 
 [`https://vdo.ninja/?cleanoutput&webcam&effects=4`](https://vdo.ninja/?cleanoutput\&webcam\&effects=4)
 
 Cheers.
-# How to use Vide0Link as a webcam for Google Hangouts, Zoom, and more
+# How to use VDO.Ninja as a webcam for Google Hangouts, Zoom, and more
 
-In this walk-through we demonstrate how to use Vide0Link and the OBS Virtual Camera to bring remote cameras, smartphones, and other media sources into third-party video software as a virtual webcam.
+In this walk-through we demonstrate how to use VDO.Ninja and the OBS Virtual Camera to bring remote cameras, smartphones, and other media sources into third-party video software as a virtual webcam.
 
 We will also be including audio in this guide, however that may not be needed in all situations. You can skip the audio-related portions if not needed for your application.
 
-Some third-party applications support Browser Sources as an input, negating the need for a virtual camera, as Vide0Link can be used directly in such scenarios.
+Some third-party applications support Browser Sources as an input, negating the need for a virtual camera, as VDO.Ninja can be used directly in such scenarios.
 
 
 **Requirements for this guide**
@@ -15277,7 +15277,7 @@ On the computer that will be using Zoom or Google Hangouts to broadcast, please 
 
 ### **Step 1.** &#x20;
 
-Generate an Vide0Link invite. You will get an Invite link and a Browser Source link.
+Generate an VDO.Ninja invite. You will get an Invite link and a Browser Source link.
 
 The <mark style="color:red;">Guest Invite Link</mark> is what you send to a person who you wish to join your live stream in OBS.  We will also be calling this a PUSH link, as it contains \&push in the URL.&#x20;
 
@@ -15289,7 +15289,7 @@ The <mark style="color:green;">OBS Browser Source link</mark> is what we will be
 
 ### Step 2.
 
-For ease of setup, the "Generate Invite Link" button found at [Vide0Link](https://vdo.ninja) can provide you with both a <mark style="color:red;">PUSH (</mark><mark style="color:red;">**Guest Invite**</mark><mark style="color:red;">) link</mark> and an <mark style="color:green;">VIEW (</mark><mark style="color:green;">**OBS Source**</mark><mark style="color:green;">) link.</mark> &#x20;
+For ease of setup, the "Generate Invite Link" button found at [VDO.Ninja](https://vdo.ninja) can provide you with both a <mark style="color:red;">PUSH (</mark><mark style="color:red;">**Guest Invite**</mark><mark style="color:red;">) link</mark> and an <mark style="color:green;">VIEW (</mark><mark style="color:green;">**OBS Source**</mark><mark style="color:green;">) link.</mark> &#x20;
 
 We will want to send the PUSH link to our guest, or if using a mobile phone, use the QR code to open the link. We can select our camera, microphone, and then click START.
 
@@ -15314,7 +15314,7 @@ In the properties for the Browser Source, we need to fill out a few fields and t
 
 ![When you hit OK, you should see your remote camera source appear in OBS](<../.gitbook/assets/image (108) (1).png>)
 
-_SECRET TIP_: Some links in Vide0Link can be dragged and dropped directly into OBS from the Chrome browser, avoiding the tedious parts of step 2 and 3. You will still need to select “Control audio via OBS” however, if you wish audio to function.
+_SECRET TIP_: Some links in VDO.Ninja can be dragged and dropped directly into OBS from the Chrome browser, avoiding the tedious parts of step 2 and 3. You will still need to select “Control audio via OBS” however, if you wish audio to function.
 
 ### Step 5.
 
@@ -15346,7 +15346,7 @@ We also want to disable Windows audio ducking.
 
 In our last configuration step, we want to go into the Advanced Audio Properties in OBS. When there, we want to set the audio sources we want to output have its Audio Monitoring setting be set to Monitor and Output.
 
-If you intend to feed audio from OBS back into an Vide0Link group call, you can use this step to also mix-minus the audio; selecting just the audio sources you want the remote guests to hear, excluding their own audio to prevent echo.
+If you intend to feed audio from OBS back into an VDO.Ninja group call, you can use this step to also mix-minus the audio; selecting just the audio sources you want the remote guests to hear, excluding their own audio to prevent echo.
 
 <div align="left">
 
@@ -15358,13 +15358,13 @@ If you intend to feed audio from OBS back into an Vide0Link group call, you can 
 
 ### Step 9.
 
-We’re READY to go!  Using this setup in Vide0Link or Zoom or Google Hangouts is just like selecting a second Webcam and microphone.
+We’re READY to go!  Using this setup in VDO.Ninja or Zoom or Google Hangouts is just like selecting a second Webcam and microphone.
 
 If you are already in the Zoom / Google Hangout call, you can switch between your webcam and the virtual camera and normal camera in the settings.
 
 It is important to remember that you need to select the VB-Audio Virtual Cable in the call as well, if you also want to share the audio from it that is.
 
-If publishing to Vide0Link, remember that you can select multiple audio sources in Vide0Link by holding down CTRL (or command) when selecting them. You could include the VB Audio Cable and your local microphone together, for example.
+If publishing to VDO.Ninja, remember that you can select multiple audio sources in VDO.Ninja by holding down CTRL (or command) when selecting them. You could include the VB Audio Cable and your local microphone together, for example.
 
 <div align="left">
 
@@ -16493,10 +16493,10 @@ iframe.contentWindow.postMessage({
 });
 ```
 ---
-description: Controlling Vide0Link with Touch Portal using API commands
+description: Controlling VDO.Ninja with Touch Portal using API commands
 ---
 
-# How to control Vide0Link with Touch Portal
+# How to control VDO.Ninja with Touch Portal
 
 ## How to
 
@@ -16512,7 +16512,7 @@ Replacing the APIKEY with a string of your choosing.&#x20;
 
 </div>
 
-Thanks to <mark style="color:red;">djlefave</mark> on Discord for this guide.
+Thanks to <mark style="color:red;">djlefave</mark> on [Discord](https://discord.vdo.ninja/) for this guide.
 
 ## Switching the layout of a scene in OBS
 
@@ -16556,11 +16556,11 @@ When using the [Electron Capture App](../../steves-helper-apps/electron-capture.
 
 Low-latency Live streaming is inherently challenging, and as more remote streams that are added to a live production, the more likely a problem will occur.
 
-[Vide0Link](https://vdo.ninja/) acknowledges these risks and attempts to mitigate them when possible.
+[VDO.Ninja](https://vdo.ninja/) acknowledges these risks and attempts to mitigate them when possible.
 
 ## Back-up site
 
-If the main website and service goes down, [https://backup.vdo.ninja](https://backup.vdo.ninja) is a backup deployment of Vide0Link. It is independent of the main service, so if the main site is down for whatever reason, the backup site should still be up. 
+If the main website and service goes down, [https://backup.vdo.ninja](https://backup.vdo.ninja) is a backup deployment of VDO.Ninja. It is independent of the main service, so if the main site is down for whatever reason, the backup site should still be up. 
 
 Both the backup and main site share the same DNS provider; DNS server 1.1.1.1 should be used if there are DNS issues.
 
@@ -16568,7 +16568,7 @@ There's also the Github version of the code hosted at [https://steveseguin.githu
 
 ## Fixed versions
 
-Vide0Link does update the application code every few weeks, and with new code comes potentially new bugs and/or feature changes.
+VDO.Ninja does update the application code every few weeks, and with new code comes potentially new bugs and/or feature changes.
 
 To mitigate any surprises, past versions of the app remain hosted long after a new release. For example, version 18 can be found at [https://vdo.ninja/v18/](https://vdo.ninja/v18/) with **the current previous version being listed on the main site**. Most new releases become bug-free within a few days of their release, thanks to prompt user bug reports.
 
@@ -16578,17 +16578,17 @@ There are multiple TURN servers, which help support guests that are unable to co
 
 ## Self-hosting
 
-The option to self-host Vide0Link is available, to different degrees of isolation. Refer to the[ Github repo](https://github.com/steveseguin/vdo.ninja) for [installation instructions](https://github.com/steveseguin/vdo.ninja/blob/master/install.md). 
+The option to self-host VDO.Ninja is available, to different degrees of isolation. Refer to the[ Github repo](https://github.com/steveseguin/vdo.ninja) for [installation instructions](https://github.com/steveseguin/vdo.ninja/blob/master/install.md). 
 
 Hosting just the website code is the easiest option, providing further customization support, but hosting also the STUN, TURN, and handshake server will provide total hosting independence.
 
 ### Third-party managed hosting
 
-While self-hosting on your own servers works, you can also host Vide0Link on unaffliated third party services.&#x20;
+While self-hosting on your own servers works, you can also host VDO.Ninja on unaffliated third party services.&#x20;
 
-* The website code for Vide0Link can be forked and hosted by Github Pages for free or any website provider really.
+* The website code for VDO.Ninja can be forked and hosted by Github Pages for free or any website provider really.
 * There are companies that offer hosted STUN and TURN services for a fee.
-* Vide0Link's handshake server is of an agnostic design and can be replaced with a third-party websocket provider, such as piesocket.com
+* VDO.Ninja's handshake server is of an agnostic design and can be replaced with a third-party websocket provider, such as piesocket.com
 
 ## Debugging tools
 
@@ -16596,7 +16596,7 @@ Speed-tests and Debug tools are provided, either via the `Left-Click + CTRL` (co
 
 ## Active free support
 
-There is active support on the DISCORD channel, Reddit, and limited support via email: steve@seguin.email If paid support is requested, there are capable users in the community who can be recommended.
+There is active support on the [DISCORD channel](https://discord.gg/sk4caKg), Reddit, and limited support via email: steve@seguin.email If paid support is requested, there are capable users in the community who can be recommended.
 
 ## Listed known issues
 
@@ -16614,8 +16614,8 @@ The best way to track submissions is to make them feature requests and bug repor
 You can also submit bug reports or feature requests elsewhere, though they are more likely to be lost or missed:
 
 **developer/maintainer**: [steve@seguin.email](mailto:steve@seguin.email)
-**Discord**: 
-**Reddit**: [)
+**Discord**: [https://discord.vdo.ninja](https://discord.vdo.ninja)
+**Reddit**: [https://www.reddit.com/r/VDONinja/](https://www.reddit.com/r/VDONinja/)
 ---
 description: Group Chat (aka, a room)
 ---
@@ -16636,9 +16636,9 @@ The group chat feature creates a virtual room where multiple devices can connect
 Using OBS VirtualCam (or the Mac equivalent), you can let your guests view the OBS live stream itself with sub-100ms of latency. In this case, each guest only needs to view one video stream, the main mixed OBS stream, freeing up group resources to allow for even larger group rooms. This is usually called [`&broadcast`](../advanced-settings/view-parameters/broadcast.md) mode.
 # Logos and media assets
 
-For a collection of [Vide0Link](https://vdo.ninja/) media assets, there is a Google Drive containing them below. 
+For a collection of [VDO.Ninja](https://vdo.ninja/) media assets, there is a Google Drive containing them below. 
 
-You're welcome to use them for purposes of promoting or crediting Vide0Link. For other uses, please use common sense as to what might be appropriate or reach out and ask.
+You're welcome to use them for purposes of promoting or crediting VDO.Ninja. For other uses, please use common sense as to what might be appropriate or reach out and ask.
 
 [https://drive.google.com/drive/folders/1gYfxKEvFbKl\_UgHBT5PeGc5PJ-8yrGqW?usp=sharing](https://drive.google.com/drive/folders/1gYfxKEvFbKl\_UgHBT5PeGc5PJ-8yrGqW?usp=sharing)
 
@@ -16646,69 +16646,69 @@ You can also find stickers and mugs (0% commission rate set) using the logos her
 
 ![](../.gitbook/assets/vdoninja\_logo\_2.png)
 
-Media assets were created and contributed to Vide0Link by the community. Thank you.
+Media assets were created and contributed to VDO.Ninja by the community. Thank you.
 
-![](../.gitbook/assets/1113931\_Vide0LinkCustomEmotes\_InLove1\_070621.png)
+![](../.gitbook/assets/1113931\_VDONinjaCustomEmotes\_InLove1\_070621.png)
 ---
 description: Privacy, Policies, and Data-collection
 ---
 
 # Privacy and security details
 
-[Vide0Link](https://vdo.ninja/) is a peer-to-peer network, which implies it naturally will share your IP address with the remote guests you are connecting with. There are ways to prevent this, such as using VPNs, TURN-servers, and/or enabling IP-leak protection in your browser, but this is not the default behavior. In no way does Vide0Link accept responsibility if your IP address is leaked. Connecting only with trusted peers, such as people you know and trust, is recommended for most use cases.
+[VDO.Ninja](https://vdo.ninja/) is a peer-to-peer network, which implies it naturally will share your IP address with the remote guests you are connecting with. There are ways to prevent this, such as using VPNs, TURN-servers, and/or enabling IP-leak protection in your browser, but this is not the default behavior. In no way does VDO.Ninja accept responsibility if your IP address is leaked. Connecting only with trusted peers, such as people you know and trust, is recommended for most use cases.
 
-Vide0Link does not store IP addresses or other personal information for longer than is needed to provide the service. This might include for purposes of TURN relay server, error reporting, rate-limiting, or for Denial of Service abuse prevention (anti-flooding). There are no user-accounts, although you may use third-party services such as Discord, Reddit, Email, or YouTube to communicate with the Vide0Link developers, support, and community.
+VDO.Ninja does not store IP addresses or other personal information for longer than is needed to provide the service. This might include for purposes of TURN relay server, error reporting, rate-limiting, or for Denial of Service abuse prevention (anti-flooding). There are no user-accounts, although you may use third-party services such as Discord, Reddit, Email, or YouTube to communicate with the VDO.Ninja developers, support, and community.
 
-Vide0Link and Meshcast uses Cloudflare as a web server caching service and DNS service, and for some of the site's security. Cloudflare may use technical cookies and data-collection to provide reliable service and very basic analytics. These general usage analytics may be shared with the community, such as when the service sees a large spike in usage, and Cloudflare claims this data is all GDPR-compliant.
+VDO.Ninja and Meshcast uses Cloudflare as a web server caching service and DNS service, and for some of the site's security. Cloudflare may use technical cookies and data-collection to provide reliable service and very basic analytics. These general usage analytics may be shared with the community, such as when the service sees a large spike in usage, and Cloudflare claims this data is all GDPR-compliant.
 
 Video data may at times be transferred via a hosted TURN video relay server, but this is done only to ensure service. This media data is not stored and is only accessible to the intended remote peer. In most cases though, the video data is directly transferred between two peers, without the use of such servers. Any data that passes through the TURN server remains encrypted per the WebRTC standard, and some TURN servers provided offer further TLS encryption on top of it.
 
-There is basic debug and statistic information transmitted between connected peers when using Vide0Link; this may include browser information, GPU, operating system details, and other browser-accessible details. Speed tests that knowingly upload user preferences to a Vide0Link server for later review also may contain such information, but it is deleted automatically after no more than a week.
+There is basic debug and statistic information transmitted between connected peers when using VDO.Ninja; this may include browser information, GPU, operating system details, and other browser-accessible details. Speed tests that knowingly upload user preferences to a VDO.Ninja server for later review also may contain such information, but it is deleted automatically after no more than a week.
 
-Vide0Link on its own does not use tracking cookies, though it may use the local storage for storing user preferences, physical media device names, settings, or history for the purpose of improved user experience. These are not used for tracking, nor are they transferred anywhere. Cloudflare may use its own technical cookies, as mentioned previously.
+VDO.Ninja on its own does not use tracking cookies, though it may use the local storage for storing user preferences, physical media device names, settings, or history for the purpose of improved user experience. These are not used for tracking, nor are they transferred anywhere. Cloudflare may use its own technical cookies, as mentioned previously.
 
-If accessing the Twitch API, Youtube API, or other service remotely via Vide0Link, user auth credentials may be cached within local browser storage until it expires. A complete and future-proof list of what may be stored in local browser storage will be hard to list here, but questions can be asked to Steve directly if it is a concerned.
+If accessing the Twitch API, Youtube API, or other service remotely via VDO.Ninja, user auth credentials may be cached within local browser storage until it expires. A complete and future-proof list of what may be stored in local browser storage will be hard to list here, but questions can be asked to Steve directly if it is a concerned.
 
-Deploying the Vide0Link website code yourself will still reveal your IP address to some servers, such as STUN/TURN/WSS servers, which are needed for WebRTC to function. The Vide0Link hosted and operated servers do not collect personal data, although it may be possible that error or system logs will occasionally capture an IP address. These logs are generally cleared and are not stored longer than needed to ensure reliable and bug-free service.
+Deploying the VDO.Ninja website code yourself will still reveal your IP address to some servers, such as STUN/TURN/WSS servers, which are needed for WebRTC to function. The VDO.Ninja hosted and operated servers do not collect personal data, although it may be possible that error or system logs will occasionally capture an IP address. These logs are generally cleared and are not stored longer than needed to ensure reliable and bug-free service.
 
-The option to host your own STUN, TURN and WSS servers exists, allowing for fully isolated hosting, but limited support is available for users choosing this route. Please see the Vide0Link GitHub repo for information on deploying server-side software, where links to code and detailed instructions are provided.
+The option to host your own STUN, TURN and WSS servers exists, allowing for fully isolated hosting, but limited support is available for users choosing this route. Please see the VDO.Ninja GitHub repo for information on deploying server-side software, where links to code and detailed instructions are provided.
 
-Some third-party services used by Vide0Link, such as [Meshcast.io](https://meshcast.io/), may be used with Vide0Link by means of IFRAMES or the [`&meshcast`](../newly-added-parameters/and-meshcast.md) parameter, but these third-party services are out of the scope of this privacy document. Briefly worth nothing though, being SFU server-based, Meshcast does not offer full end-to-end video encryption like Vide0Link alone currently offers. Meshcast does not create recordings, does not access personal streams without permission, and does not store personal data beyond what the user explicitly allows or what is technically required to offer the service.
+Some third-party services used by VDO.Ninja, such as [Meshcast.io](https://meshcast.io/), may be used with VDO.Ninja by means of IFRAMES or the [`&meshcast`](../newly-added-parameters/and-meshcast.md) parameter, but these third-party services are out of the scope of this privacy document. Briefly worth nothing though, being SFU server-based, Meshcast does not offer full end-to-end video encryption like VDO.Ninja alone currently offers. Meshcast does not create recordings, does not access personal streams without permission, and does not store personal data beyond what the user explicitly allows or what is technically required to offer the service.
 
-Please also note that Meshcast hosted streams are accessible by users outside of a Vide0Link group room, without a password, so long as they have the Meshcast stream ID. The stream ID is accessible to anyone viewing the Meshcast stream, which they can then leak to others outside of the room. This is a typical security concern of server-based streaming services of course, so if this is a concern, do not use Meshcast in conjunction with Vide0Link.
+Please also note that Meshcast hosted streams are accessible by users outside of a VDO.Ninja group room, without a password, so long as they have the Meshcast stream ID. The stream ID is accessible to anyone viewing the Meshcast stream, which they can then leak to others outside of the room. This is a typical security concern of server-based streaming services of course, so if this is a concern, do not use Meshcast in conjunction with VDO.Ninja.
 
-Vide0Link does have a domain-isolated hosted version to third-party though from being used in Vide0Link directly, located at [https://isolated.vdo.ninja](https://isolated.vdo.ninja), which tries to block third-party domains from functioning within Vide0Link's website code.&#x20;
+VDO.Ninja does have a domain-isolated hosted version to third-party though from being used in VDO.Ninja directly, located at [https://isolated.vdo.ninja](https://isolated.vdo.ninja), which tries to block third-party domains from functioning within VDO.Ninja's website code.&#x20;
 
-When using the Vide0Link service, stream ID values and room names should be kept secure and treated like passwords when possible. Actual passwords are available additionally though, which are used to enable a client-side encryption mechanism that ensure two peers are unable to connect if passwords do not match. It is not recommended to the include the raw password in the URL, where possible, for maximum security.
+When using the VDO.Ninja service, stream ID values and room names should be kept secure and treated like passwords when possible. Actual passwords are available additionally though, which are used to enable a client-side encryption mechanism that ensure two peers are unable to connect if passwords do not match. It is not recommended to the include the raw password in the URL, where possible, for maximum security.
 
 Room names (typically encrypted) and salted stream IDs are transmitted to the handshake server, as they are required for making connections between peers. Passwords are intended to remain client-side only, and unless set in the URL, remain always entirely client-side. Passwords also are used to encrypt room names, further salt stream IDs, and to further encrypt IP-containing initial handshake connection data.
 
-To further protect the user, any deployment of Vide0Link to a private domain name will be further secured, as the domain name will be used as a salting mechanism for both room names, stream IDs, and encryption. As a result, a stream or room on one domain will not be accessible from another hosted deployment on another domain without tampering; at least the odds are astronomical.
+To further protect the user, any deployment of VDO.Ninja to a private domain name will be further secured, as the domain name will be used as a salting mechanism for both room names, stream IDs, and encryption. As a result, a stream or room on one domain will not be accessible from another hosted deployment on another domain without tampering; at least the odds are astronomical.
 
-While nearly all data transfer is peer to peer based, the initial handshake between two peers is still handled by a server, as per a technical requirement. Once the peer connection is established, any further data between peers is then transferred directly between peers, if possible. This includes the media streams, chat messages, and other aspects, including display names and system information. A Vide0Link server may still transmit/receive data if using the remote control HTTPS/WSS API, for ping/pong keep alive requests, for reconnection or ice-restart events, and as a backup for failed peer to peer messages.
+While nearly all data transfer is peer to peer based, the initial handshake between two peers is still handled by a server, as per a technical requirement. Once the peer connection is established, any further data between peers is then transferred directly between peers, if possible. This includes the media streams, chat messages, and other aspects, including display names and system information. A VDO.Ninja server may still transmit/receive data if using the remote control HTTPS/WSS API, for ping/pong keep alive requests, for reconnection or ice-restart events, and as a backup for failed peer to peer messages.
 
 Once a user disconnects from the handshake-server, any cached information about their connection is promptly cleared from memory. Such cached information is a technical requirement to offer public service at scale.
 
-Future and auxiliary services that use Vide0Link as a component, such as [SocialStream](../steves-helper-apps/social-stream-ninja/), Invite.cam, or [Versus.cam](../steves-helper-apps/versus.cam.md), may have their own data-privacy or user-storage policies.
+Future and auxiliary services that use VDO.Ninja as a component, such as [SocialStream](../steves-helper-apps/social-stream-ninja/), Invite.cam, or [Versus.cam](../steves-helper-apps/versus.cam.md), may have their own data-privacy or user-storage policies.
 
 Backup handshake servers are hosted to ensure reliability, such as with [https://backup.vdo.ninja](https://backup.vdo.ninja), and managed third-party handshake servers are supported, such as piesocket.com.
 
 There are several hosted handshake, website, and TURN servers across the globe, with the primary servers hosted in the USA. Details for hosting a personal-sized handshake-server is here, [https://github.com/steveseguin/websocket\_server/](https://github.com/steveseguin/websocket\_server/). Self-hosting with the provided handshake server is intended for limited private/personal use, as message routing is handled in a fanout fashion, so large scale public use isn't advised without further deployment or development considerations.
 
-Vide0Link cannot guarantee privacy, service, or security, despite its efforts to protect you. You use the site, code, or service at your own risk and acceptance. Questions or requests related to privacy can be made out to steve@seguin.email.
+VDO.Ninja cannot guarantee privacy, service, or security, despite its efforts to protect you. You use the site, code, or service at your own risk and acceptance. Questions or requests related to privacy can be made out to steve@seguin.email.
 # Project Contact Info
 
 ## Project Information and Support Links
 
-**web service URL**: [https://Vide0Link](https://obs.ninja)
+**web service URL**: [https://VDO.Ninja](https://obs.ninja)
 **project development URL**: [https://github.com/steveseguin/vdo.ninja](https://github.com/steveseguin/vdo.ninja)
 **developer/maintainer**: [steve@seguin.email](mailto:steve@seguin.email)
 **donations**: [via GitHub Sponsors](https://github.com/steveseguin/obsninja/wiki/Sponsor-%E2%9D%A4)
 
 ### Community Support
 
-**Discord**: 
-**Reddit**: 
+**Discord**: [https://discord.vdo.ninja](https://discord.vdo.ninja)
+**Reddit**: [https://reddit.com/r/vdoninja](https://reddit.com/r/vdoninja)
 # Help!
 
 * [fail-safes-and-backups.md](fail-safes-and-backups.md "mention")
@@ -16723,7 +16723,7 @@ Vide0Link cannot guarantee privacy, service, or security, despite its efforts to
 * [what-does-vdo-stand-for.md](what-does-vdo-stand-for.md "mention")
 # Where can I report a bug?
 
-It is most helpful to report bugs via the official [Github]() and Discord channels, though it is easier to miss reports that occur there.
+It is most helpful to report bugs via the official [Github](https://github.com/steveseguin/obsninja). We also monitor the [Reddit](https://www.reddit.com/r/VDONinja/) and [Discord](https://discord.gg/qWDshMsTar) channels, though it is easier to miss reports that occur there.
 ---
 description: '"VeeDeeOh"'
 ---
@@ -16734,29 +16734,29 @@ VDO is the loose phonetic spelling of the world _video_.  "VeeDeeOh".  It is not
 
 # Where can I get support?
 
-The preferred support mechanism is via [Reddit]() or Discord, which offer community-assisted support. Development issues, feature requests, and bugs are tracked on [Github](https://github.com/steveseguin/obsninja). For mission critical support issues, or business-related inquiries, you can contact Steve directly.
+The preferred support mechanism is via [Reddit](https://www.reddit.com/r/VDONinja/) or [Discord](https://discord.gg/feenJm8HTa), which offer community-assisted support. Development issues, feature requests, and bugs are tracked on [Github](https://github.com/steveseguin/obsninja). For mission critical support issues, or business-related inquiries, you can contact Steve directly.
 ---
-description: We strive to protect your privacy, but you use Vide0Link at your own risk
+description: We strive to protect your privacy, but you use VDO.Ninja at your own risk
 ---
 
-# Vide0Link Privacy Policy
+# VDO.Ninja Privacy Policy
 
 **Effective Date:** November 18, 2023
 
-Welcome to Vide0Link, a peer-to-peer networking service designed to facilitate seamless video and audio communication. This Privacy Policy outlines our practices regarding the collection, use, and protection of your information.
+Welcome to VDO.Ninja, a peer-to-peer networking service designed to facilitate seamless video and audio communication. This Privacy Policy outlines our practices regarding the collection, use, and protection of your information.
 
 **1. Data Collection and Use**
 
-* **IP Addresses:** Vide0Link operates as a peer-to-peer network, which may share your IP address and basic system information with remote guests you connect with. Using VPNs, TURN servers, or enabling IP-leak protection will offer enhanced privacy, however doing so could be detrimental to the performance of the service.
+* **IP Addresses:** VDO.Ninja operates as a peer-to-peer network, which may share your IP address and basic system information with remote guests you connect with. Using VPNs, TURN servers, or enabling IP-leak protection will offer enhanced privacy, however doing so could be detrimental to the performance of the service.
 * **Personal Information:** We do not store personal information longer than necessary. This may include data for TURN relay servers, error reporting, rate-limiting, speed-test results, and anti-flooding measures.
-* **Cookies and Local Storage:** Vide0Link does not use tracking cookies. Local browser storage may be used for storing user preferences and settings; not for tracking purposes.
+* **Cookies and Local Storage:** VDO.Ninja does not use tracking cookies. Local browser storage may be used for storing user preferences and settings; not for tracking purposes.
 * **Third-Party Services:** When using third-party services like Discord or YouTube, their respective privacy policies apply.
 
 **2. Data Deletion Policy**
 
-* **No User Accounts:** Vide0Link does not create user accounts in its web or mobile app versions, thus eliminating the need for a mechanism to delete user accounts. However, related products or services may have their own privacy policies and data management procedures.
-* **Web Version:** In the web version of Vide0Link, users can delete any local preference data, such as camera configuration settings.  An option to do so is provided in the user settings menu, or it may be done using their browser's built-in clear local storage options.
-* **Mobile App:** The native mobile app versions of Vide0Link may store stream IDs, room names, and user settings locally. This data can be manually cleared or overridden by the user at any time. Additionally, all such local data is deleted when the app is uninstalled.
+* **No User Accounts:** VDO.Ninja does not create user accounts in its web or mobile app versions, thus eliminating the need for a mechanism to delete user accounts. However, related products or services may have their own privacy policies and data management procedures.
+* **Web Version:** In the web version of VDO.Ninja, users can delete any local preference data, such as camera configuration settings.  An option to do so is provided in the user settings menu, or it may be done using their browser's built-in clear local storage options.
+* **Mobile App:** The native mobile app versions of VDO.Ninja may store stream IDs, room names, and user settings locally. This data can be manually cleared or overridden by the user at any time. Additionally, all such local data is deleted when the app is uninstalled.
 * **Data Retention:** Data collected during optional pre-check performance tests is automatically deleted after a period of typically 7 days. Any personal data in general is not retained longer than necessary for the technical functioning of the service.
 
 **3. Data Security and Responsibility**
@@ -16768,8 +16768,8 @@ Welcome to Vide0Link, a peer-to-peer networking service designed to facilitate s
 **4. Third-Party Services and Cloudflare**
 
 * **Cloudflare:** We use Cloudflare for web server caching, DNS, STUN, TURN geo-routing, security services, bandwidth testing, and probably more. Cloudflare's use of data is GDPR-compliant.
-* **Meshcast.io:** This third-party service, when used with Vide0Link, operates independently of our privacy practices.
-* **Invite.cam:** May retain details of social-sign-in credentials within a database for purposes of authenticating users and store Vide0Link related settings.
+* **Meshcast.io:** This third-party service, when used with VDO.Ninja, operates independently of our privacy practices.
+* **Invite.cam:** May retain details of social-sign-in credentials within a database for purposes of authenticating users and store VDO.Ninja related settings.
 * **Google:** We may use Google for STUN services and host the core servers on Google Cloud.
 * **SSO:** We may offer Social Sign In (SSO) options for additional functionality using services such as Dropbox, Google Drive, Discord, and YouTube chat.
 
@@ -16777,56 +16777,56 @@ Welcome to Vide0Link, a peer-to-peer networking service designed to facilitate s
 
 * **Stream ID and Room Names:** Treat these as sensitive information and choose secure values that cannot be guessed. We provide options for additional client-side encryption for added security, but the system may choose to fail-safe rather than to fail-securely in some cases.
 * **Handshake Server:** The initial connection is managed by a server, but subsequent data transfers are peer-to-peer when possible. While connected to the handshake server new peer connections can potentially be established.&#x20;
-* **Self-Hosting:** Unless specified, self-hosting Vide0Link will still result in the the system still using the official handshake servers and other such services by default. You must configure your Vide0Link deployment to use your own such services if desired. Any self-hosted handshake server code provided is intended for private personal use; it's not secured for public use or access.
+* **Self-Hosting:** Unless specified, self-hosting VDO.Ninja will still result in the the system still using the official handshake servers and other such services by default. You must configure your VDO.Ninja deployment to use your own such services if desired. Any self-hosted handshake server code provided is intended for private personal use; it's not secured for public use or access.
 
 **6. Legal Disclaimer**
 
-* **No Guarantee of Privacy or Security:** While we strive to protect your information, we cannot guarantee absolute privacy or security. Use of Vide0Link in any capacity is at your own risk.
+* **No Guarantee of Privacy or Security:** While we strive to protect your information, we cannot guarantee absolute privacy or security. Use of VDO.Ninja in any capacity is at your own risk.
 * **Contact Information:** For privacy-related inquiries, contact [steve@seguin.email](mailto:steve@seguin.email).
 
 **7. Amendments**
 
 * This policy may be updated periodically. We encourage users to review it regularly.
-# Vide0Link Terms of Service
+# VDO.Ninja Terms of Service
 
 **Effective Date:** November 18th, 2023
 
 
-Welcome to Vide0Link! By using our service, you agree to be bound by the following terms and conditions. Please read them carefully.
+Welcome to VDO.Ninja! By using our service, you agree to be bound by the following terms and conditions. Please read them carefully.
 
 **1. Acceptance of Terms**
 
-* By accessing or using Vide0Link, you agree to these Terms of Service and our Privacy Policy.
+* By accessing or using VDO.Ninja, you agree to these Terms of Service and our Privacy Policy.
 
 **2. Description of Service**
 
-* Vide0Link provides a peer-to-peer networking platform for video and audio communication. We offer this service free of charge.
+* VDO.Ninja provides a peer-to-peer networking platform for video and audio communication. We offer this service free of charge.
 
 **3. User Obligations**
 
-* You agree to use Vide0Link lawfully and ethically.
+* You agree to use VDO.Ninja lawfully and ethically.
 * You are responsible for maintaining the confidentiality of any stream ID or room name used in the service.
 
 **4. Prohibited Uses**
 
-* You may not use Vide0Link for any illegal or unauthorized purpose.
+* You may not use VDO.Ninja for any illegal or unauthorized purpose.
 * Harassment, abuse, or harm to another person or group is strictly prohibited.
 
 **5. Intellectual Property**
 
-* Vide0Link and its original content, features, and functionality are owned by the service provider and are protected by copyright, trademark, and other intellectual property laws.
+* VDO.Ninja and its original content, features, and functionality are owned by the service provider and are protected by copyright, trademark, and other intellectual property laws.
 
 **6. User-Generated Content**
 
-* You are solely responsible for the content you transmit or share on Vide0Link.
+* You are solely responsible for the content you transmit or share on VDO.Ninja.
 
 **7. Privacy**
 
-* Your use of Vide0Link is subject to our Privacy Policy.
+* Your use of VDO.Ninja is subject to our Privacy Policy.
 
 **8. Disclaimers**
 
-* Vide0Link is provided "as is" without any warranties, express or implied.
+* VDO.Ninja is provided "as is" without any warranties, express or implied.
 * We do not guarantee the continuous, uninterrupted or error-free operability of the services.
 
 **9. Limitation of Liability**
@@ -18004,21 +18004,21 @@ General Option! ([`&push`](../source-settings/push.md), [`&room`](../general-set
 
 ## Details
 
-You can use a MIDI controller, virtual or real, to issue commands to Vide0Link. This option is compatible with an Elegato Streamdeck, allowing for both control over things like mute, but also control over remote guests if a director.
+You can use a MIDI controller, virtual or real, to issue commands to VDO.Ninja. This option is compatible with an Elegato Streamdeck, allowing for both control over things like mute, but also control over remote guests if a director.
 
 A web-based dashboard for issuing MIDI commands from a virtual MIDI device can be found here: [https://vdo.ninja/midi](https://vdo.ninja/midi). It can also offer debugging information, listing MIDI event data in the browser's developer console, helping to identity what certain MIDI buttons do.
 
-The MIDI capabilities of Vide0Link go beyond just controlling Vide0Link though. Options to seamlessly send and receive MIDI commands with remote computers at very low latency is also possible.
+The MIDI capabilities of VDO.Ninja go beyond just controlling VDO.Ninja though. Options to seamlessly send and receive MIDI commands with remote computers at very low latency is also possible.
 
 More information, details, guides, and tools can be found closer to the bottom of this page.
 
 Currently a Chromium-browser, like Google Chrome, is recommended when using the MIDI features. Other browsers may not be compatible at this time.
 
-**Notice:** The Vide0Link's MIDI API is still constantly evolving, so check back for updates if you face problems or to discover new available features and options.
+**Notice:** The VDO.Ninja's MIDI API is still constantly evolving, so check back for updates if you face problems or to discover new available features and options.
 
 ### Options for \&midi={value}
 
-There are two MIDI standards; one where value 33 is note A0, and the more common standard where value 33 is note A1. Vide0Link uses the A1 standard. Decrease your octave by one if having problems, such as if using TouchOSC.
+There are two MIDI standards; one where value 33 is note A0, and the more common standard where value 33 is note A1. VDO.Ninja uses the A1 standard. Decrease your octave by one if having problems, such as if using TouchOSC.
 
 <table><thead><tr><th width="160">Value</th><th>Description</th></tr></thead><tbody><tr><td>&#x26;midi=N</td><td>Description of MIDI </td></tr><tr><td><code>1</code></td><td>Hotkeys using A3 to G4 notes </td></tr><tr><td><code>2</code></td><td>Hotkeys using A1 to G2 notes</td></tr><tr><td><code>3</code></td><td>Hotkeys using Note C1 + velocities</td></tr><tr><td><code>4</code></td><td><p>Hotkeys using control-change inputs.</p><p></p><p>Designed mainly for the director to control multiple guests, as well as themselves.</p></td></tr></tbody></table>
 
@@ -18053,13 +18053,13 @@ In this case, for hotkeying remote guests as a director:
 
 <table><thead><tr><th width="209">MIDI message</th><th>Function</th></tr></thead><tbody><tr><td>Value 0</td><td>Opens the Transfer Popup</td></tr><tr><td>Value 1</td><td>Add/remove from scene 1</td></tr><tr><td>Value 2</td><td>Mute guest in scene</td></tr><tr><td>Value 3</td><td>Mute guest everywhere</td></tr><tr><td>Value 4</td><td>Hang-up the guest</td></tr><tr><td>Value 5</td><td>Toggle Solo Chat with this guest</td></tr><tr><td>Value 6</td><td>Toggle the remote speaker</td></tr><tr><td>Value 7</td><td>Toggle the remote display</td></tr><tr><td>Value 8</td><td>Fixes Rainbow Puke of this guest in scenes</td></tr><tr><td>Value 12 to 18</td><td>Add/remove from scene 2 to 8</td></tr></tbody></table>
 
-All the above hotkey mappings are purely experimental at this time and will change based on user feedback. These mappings should allow a user to use a StreamDeck with Vide0Link.
+All the above hotkey mappings are purely experimental at this time and will change based on user feedback. These mappings should allow a user to use a StreamDeck with VDO.Ninja.
 
 ### Configuring MIDI device and channel
 
 By default, any MIDI device on any MIDI channel can trigger the \&midi actions if their command and values match.&#x20;
 
-Starting with version 20 of Vide0Link, you can filter inputs based on channel and device using `&mididevice` and `&midichannel`.
+Starting with version 20 of VDO.Ninja, you can filter inputs based on channel and device using `&mididevice` and `&midichannel`.
 
 #### &mididevice
 
@@ -18069,15 +18069,15 @@ If you don't specify a MIDI device, all devices will be used.  This \&mididevice
 
 #### &midichannel
 
-MIDI supports channel 1 to 16. Prior to Vide0Link v20, channel 1 was the only channel that worked, but in v20, any channel will be treated as a trigger by default.&#x20;
+MIDI supports channel 1 to 16. Prior to VDO.Ninja v20, channel 1 was the only channel that worked, but in v20, any channel will be treated as a trigger by default.&#x20;
 
-By using \&midichannel=1, you can again set Vide0Link to only trigger on inputs sent over channel 1. You can specify any single channel to trigger on though, from 1 to 16, if that level of control is needed.
+By using \&midichannel=1, you can again set VDO.Ninja to only trigger on inputs sent over channel 1. You can specify any single channel to trigger on though, from 1 to 16, if that level of control is needed.
 
 This command is not compatible with \&midiout or \&midiin.&#x20;
 
 ## Elgato Streamdeck support
 
-You can configure a Streamdeck to issue MIDI commands, via the use of a MIDI plugin for Streamdeck. This allows you to send hotkey commands from your Streamdeck to Vide0Link locally, on the same computer, or even remotely, via the MIDI remote control feature.
+You can configure a Streamdeck to issue MIDI commands, via the use of a MIDI plugin for Streamdeck. This allows you to send hotkey commands from your Streamdeck to VDO.Ninja locally, on the same computer, or even remotely, via the MIDI remote control feature.
 
 You'll need to find a MIDI plugin within the Streamdeck store, or add one from source. Normally you can just search for MIDI and have some options appear.
 
@@ -18085,15 +18085,15 @@ For macOS, one Streamdeck plugin available is [https://github.com/tsbkelly/Strea
 
 For PC, there's this one [https://trevligaspel.se/streamdeck/midi/index.html](https://trevligaspel.se/streamdeck/midi/index.html)
 
-You will also need a Virtual MIDI loopback interface on your computer, if intending to send MIDI commands to Vide0Link.  There's free options available, such as:
+You will also need a Virtual MIDI loopback interface on your computer, if intending to send MIDI commands to VDO.Ninja.  There's free options available, such as:
 
-See below for a community-created video guide on setting up the Streamdeck with a mac and Vide0Link. Let me know if this documentation could use more details.
+See below for a community-created video guide on setting up the Streamdeck with a mac and VDO.Ninja. Let me know if this documentation could use more details.
 
 ## Remote MIDI control
 
 This is available for version 19 and higher.
 
-This lets you route all MIDI messages from one computer to another computer, with the purpose of remote trigger the Vide0Link hotkeys.
+This lets you route all MIDI messages from one computer to another computer, with the purpose of remote trigger the VDO.Ninja hotkeys.
 
 ```
 https://vdo.ninja/beta/?midiremote=4&director=ROOMNAMEHERE
@@ -18112,7 +18112,7 @@ This is available for version 18 and higher.
 
 This lets you route all MIDI messages from one computer to another computer, going from local MIDI device input to the remote MIDI device output. Example usage:
 
-Starting with Vide0Link v20, this will feature will also mirror the channel input, matching the channel with the output. The only control a user has really in configuring it is which device is the input and which device is the output.
+Starting with VDO.Ninja v20, this will feature will also mirror the channel input, matching the channel with the output. The only control a user has really in configuring it is which device is the input and which device is the output.
 
 ```
 https://vdo.ninja/?view=Nwz2C7d&midiin=1
@@ -18134,7 +18134,7 @@ Check the console log or [https://vdo.ninja/midi](https://vdo.ninja/midi) to see
 
 While the original MIDI timestamp is transmitted to the remote computer also, it currently isn't included with the output MIDI event itself. I'm just not sure what to use it for currently, but let me know if you need it.
 
-Remote midi transfer does need a Vide0Link peer connection to send the MIDI data over. If you don't want to create a connection that includes video and/or audio, you can disable media inputs by using `&vd=0&ad=0`, which disables any audio or video input options.
+Remote midi transfer does need a VDO.Ninja peer connection to send the MIDI data over. If you don't want to create a connection that includes video and/or audio, you can disable media inputs by using `&vd=0&ad=0`, which disables any audio or video input options.
 
 You can also disable playback of video or audio tracks by using `&novideo&noaudio.`
 
@@ -18142,9 +18142,9 @@ You can have multiple inputs and outputs per connection.
 
 ## Video Guides
 
+https://www.youtube.com/watch?v=uidN3bLLiVk
 
-
-
+https://www.youtube.com/watch?v=mdAzAZo65Mc
 
 ## Related
 
@@ -18210,7 +18210,7 @@ Allows for sending of MIDI signals to a remote computer. Mirrors even the channe
 
 The remote device must use [`&midiin`](midiin.md) to accept the signal and a peer connection is needed for the signal to take place.
 
-You can disable the video and audio of Vide0Link, but still have a basic data-only peer-connection, but using `&videodevice=0&audiodevice=0` or [`&novideo`](../advanced-settings/video-parameters/and-novideo.md)[`&noaudio`](../advanced-settings/view-parameters/noaudio.md).
+You can disable the video and audio of VDO.Ninja, but still have a basic data-only peer-connection, but using `&videodevice=0&audiodevice=0` or [`&novideo`](../advanced-settings/video-parameters/and-novideo.md)[`&noaudio`](../advanced-settings/view-parameters/noaudio.md).
 
 If testing locally, beware of feedback loops, where the MIDI output is fed back into the MIDI input, causing high CPU usage and a lot of MIDI messages. If testing locally, use two MIDI devices and explicitly select the input and output MIDI devices to avoid these feedback loops.
 
@@ -18380,7 +18380,7 @@ Example: `&chunked=2000`
 
 ### Chunked video transfer mode
 
-[Version 20](../release-notes/v20.md) introduces the option to enable a chunked-video transfer mode, which is similar to how Twitch or YouTube Live broadcasts videos, but using a different and newer technology. This still uses Vide0Link's peer to peer connections to distribute video to viewers, except it does not use WebRTC's video streaming protocols; rather it uses a custom protocol over WebRTC data-channels.
+[Version 20](../release-notes/v20.md) introduces the option to enable a chunked-video transfer mode, which is similar to how Twitch or YouTube Live broadcasts videos, but using a different and newer technology. This still uses VDO.Ninja's peer to peer connections to distribute video to viewers, except it does not use WebRTC's video streaming protocols; rather it uses a custom protocol over WebRTC data-channels.
 
 The upsides of this mode is that packet loss on a network connection impacts the video stream less, so the quality can be higher. It also makes it easier to record the stream to disk on the viewer's end with no added quality loss and with lower CPU usage. This is because recording a chunked-stream to disk does not require any transcoding on the viewers-end; it just writes the encoded chunks directly to a WebM media container on your disk.
 
@@ -18390,7 +18390,7 @@ Chunked mode is a bit similar to the previously released [`&webp`](../advanced-s
 
 The downsides of the chunk-transfer mode is that if the connection stalls out long enough, the video will be forced to pause and buffer. It also has a buffer, which is currently around 1 second by default. The chunked-transfer mode might be suitable for doing remote recordings of interviews where the highest quality is desirable, but it may not be suitable for live and interactive chat if on a bad connection.
 
-The default and normal WebRTC video and audio sending modes used by Vide0Link are largely handled by the browser, with few encoder and controls for apps like Vide0Link to control. The chunked mode offers lower-level access to the encoder on the other hand, but it's up to the app then to handle the sending, buffering, recovery, and all other aspects of streaming video. It's quite hard to do well, so `&chunked` mode isn't yet the best solution for all users; the normal mode has broader support and is better tested by the global community.
+The default and normal WebRTC video and audio sending modes used by VDO.Ninja are largely handled by the browser, with few encoder and controls for apps like VDO.Ninja to control. The chunked mode offers lower-level access to the encoder on the other hand, but it's up to the app then to handle the sending, buffering, recovery, and all other aspects of streaming video. It's quite hard to do well, so `&chunked` mode isn't yet the best solution for all users; the normal mode has broader support and is better tested by the global community.
 
 #### Random notes
 
@@ -18404,7 +18404,7 @@ The default and normal WebRTC video and audio sending modes used by Vide0Link ar
 * Chunked transfer is supported in recent Chromium-based browsers, including OBS v27.2 and newer.
 * Audio and video sync isn't always guaranteed.
 * If screen sharing your entire display, and assuming that display supports higher than 60-fps, chunked mode will support the higher frame rate. I've tested 120-fps on my gaming monitor, using chunked mode while screen sharing the entire display. Adding [`&fps=120`](../advanced-settings/video-parameters/and-fps.md) to the sender's URL will configure the chunked mode to both capture and publish at 120-fps. It will error out if not supported however.
-* While support for alpha-channels (RGBA/transparencies) has been added to chunked mode, it's up to the browser to provide video encoders that support alpha-channels. Vide0Link as of v24 will look for any compatible alpha-enabled encoders when `&alpha` along with the `&chunked` parameter, but fall back to the normal RGB mode if none are found.
+* While support for alpha-channels (RGBA/transparencies) has been added to chunked mode, it's up to the browser to provide video encoders that support alpha-channels. VDO.Ninja as of v24 will look for any compatible alpha-enabled encoders when `&alpha` along with the `&chunked` parameter, but fall back to the normal RGB mode if none are found.
 
 ## Related
 
@@ -18429,7 +18429,7 @@ The `&datamode` parameter just combines a bunch of flags together; no video, no 
 
 ## Sample code and example
 
-If looking to use Vide0Link for sending data via p2p in your application, there are some projects already doing so, but also provided is a code snippet.
+If looking to use VDO.Ninja for sending data via p2p in your application, there are some projects already doing so, but also provided is a code snippet.
 
 #### Minimal code example
 
@@ -18445,11 +18445,11 @@ A remote control page, that works anywhere online, and another page to forward t
 
 #### Social Stream Ninja
 
-[Social Stream](../steves-helper-apps/social-stream-ninja/) is used by thousands of users as a free way to send text messages and image data using Vide0Link's p2p data function. The p2p nature of this setup keeps latency and internet usage low when the two connections are on the same LAN, but also provides a NAT firewall bypass for sending messages across the Internet, without the need for websocket servers.
+[Social Stream](../steves-helper-apps/social-stream-ninja/) is used by thousands of users as a free way to send text messages and image data using VDO.Ninja's p2p data function. The p2p nature of this setup keeps latency and internet usage low when the two connections are on the same LAN, but also provides a NAT firewall bypass for sending messages across the Internet, without the need for websocket servers.
 
 ### Update in [v23](../releases/v23.md)
 
-The [`&datamode`](and-datamode.md) option was tweaked to work a bit better now when using it to both connect via push and view modes. Data-only mode is an advanced option; it's a bit like doing `&audiodevice=0&videodevice=0&webcam&autostart&hidemenu`, but a bit cleaner and disables a few other common functions that might be considered bloat. Useful perhaps if you want to use only the data-channels of Vide0Link, for remote control only operations or sending files.
+The [`&datamode`](and-datamode.md) option was tweaked to work a bit better now when using it to both connect via push and view modes. Data-only mode is an advanced option; it's a bit like doing `&audiodevice=0&videodevice=0&webcam&autostart&hidemenu`, but a bit cleaner and disables a few other common functions that might be considered bloat. Useful perhaps if you want to use only the data-channels of VDO.Ninja, for remote control only operations or sending files.
 
 ## Related
 
@@ -18697,7 +18697,7 @@ Example: `&meshcast=video`
 
 ## Details
 
-[Meshcast ](https://meshcast.io/)is a free-to-use server-based service for broadcasting low-latency video streams. It can be used with Vide0Link in a couple different ways, either as an iFrame or as a peer-2-peer replacement for guest and director streams. It can be used to help lower system requirements of Vide0Link for some users or use cases.
+[Meshcast ](https://meshcast.io/)is a free-to-use server-based service for broadcasting low-latency video streams. It can be used with VDO.Ninja in a couple different ways, either as an iFrame or as a peer-2-peer replacement for guest and director streams. It can be used to help lower system requirements of VDO.Ninja for some users or use cases.
 
 Adding `&meshcast` to a guest or director link will trigger the service, causing the outbound audio/video stream to be transferred to a hosted server, which then distributes the stream to all the viewers. This adds a bit of latency to the stream and reduces the theoretical privacy, but it implies the guest/director does not need to encode and upload multiple videos, lowering CPU load and bandwidth usage.
 
@@ -18711,7 +18711,7 @@ There is a toggle in the director's room which adds `&meshcast` to the guest's i
 
 Steve made a YouTube video explaining all the Meshcast stuff:
 
-Understanding Meshcast as a tool for Vide0Link
+Understanding Meshcast as a tool for VDO.Ninja
 
 As a director you can also select the Meshcast server on the bottom left of the director's control center. This method will show you the current load on a server, so you can avoid servers that are over-capacity.
 
@@ -18720,9 +18720,9 @@ You can also specify the Meshcast server based on geographic timezone values usi
 
 Normally during peak-hours, around 7pm, the Internet in general can get slow, and Meshcast servers can occasionally become slow also as a result. Using a Meshcast server that's located in a different timezone, even if on the other side of the world, can sometimes avoid the bottlenecks in your local region, offering better results.
 
-Lastly, if a Meshcast server fails to respond, please ..email or Steve on discord (discord.vdo.ninja) so it can be fixed.
+Lastly, if a Meshcast server fails to respond, please contact steve@seguin.email or Steve on discord ([discord.vdo.ninja](https://discord.com/invite/cKkj5nN8pH)) so it can be fixed.
 
-Meshcast /w Vide0Link to host even Larger Rooms
+Meshcast /w VDO.Ninja to host even Larger Rooms
 
 ### Server Codes
 
@@ -18915,7 +18915,7 @@ Sender-Side Option! ([`&push`](../source-settings/push.md))
 
 Adding `&safemode` to a source/guest link currently just tries to load the camera/audio with as little possible complexity as possible. For cameras that just 'flash' their video preview for a second, but won't work beyond that when setting things up, this might be a solution there.
 
-This has the guest's camera start in a rather basic fashion, which might help solve problems with certain camera not being able to use Vide0Link.&#x20;
+This has the guest's camera start in a rather basic fashion, which might help solve problems with certain camera not being able to use VDO.Ninja.&#x20;
 
 It's available under director's customization options as well, under "Compatibility mode".
 
@@ -19411,7 +19411,7 @@ This release is a fairly small update, with an emphasis on general polish and fi
 
 * Right-click menu added, to allow for downloading, video mirroring, and even stream pausing.
 * Chunked transfer has been improved some more. It does not adapt very well to low-quality connections still, but as a proof of concept it's become more usable and stable.
-* IOTA-blockchain API support added; an experimental option, but in theory it allows Vide0Link as a service to be decentralized.&#x20;
+* IOTA-blockchain API support added; an experimental option, but in theory it allows VDO.Ninja as a service to be decentralized.&#x20;
 
 If you have problems with version 21, version 20.4 (from January 2022) can be accessed here:[ https://vdo.ninja/v20/](https://vdo.ninja/v20/)
 
@@ -19462,18 +19462,18 @@ Viewer-Side Option! ([`&view`](../advanced-settings/view-parameters/view.md), [`
 
 [screensharequality.md](../source-settings/screensharequality.md)
 ---
-description: Mobile app version of Vide0Link and other Android related topics
+description: Mobile app version of VDO.Ninja and other Android related topics
 ---
 
 # Android
 
-[Vide0Link](https://vdo.ninja/) generally works quite well with Android; even older Android devices tend to work reasonable well. The browser-based version of Vide0Link is recommend for most users, although there is an native mobile app version for Android that solves some limitations of the web-version.
+[VDO.Ninja](https://vdo.ninja/) generally works quite well with Android; even older Android devices tend to work reasonable well. The browser-based version of VDO.Ninja is recommend for most users, although there is an native mobile app version for Android that solves some limitations of the web-version.
 
 ### Native Android app
 
 The native mobile app for Android is fairly simple, as it can be only used for one-way publishing. It does support screen-sharing though, so it has its value.  It will also work while in the background, and sometimes works on certain devices when the browser-version won't.
 
-Please note, the native app requires a modern version of Android, while the web-based version of Vide0Link has been tested with Android 5.1 using Chrome.
+Please note, the native app requires a modern version of Android, while the web-based version of VDO.Ninja has been tested with Android 5.1 using Chrome.
 
 The **Google Play Store** <img src="../.gitbook/assets/image (116) (1).png" alt="" data-size="line"> hosted version is here: 
 [https://play.google.com/store/apps/details?id=flutter.vdo.ninja](https://play.google.com/store/apps/details?id=flutter.vdo.ninja)  
@@ -19506,7 +19506,7 @@ Example: `&echocancellation=1`
 
 ## Details
 
-Automatic echo-cancellation is ON by default in Vide0Link.
+Automatic echo-cancellation is ON by default in VDO.Ninja.
 
 You can turn off echo-cancellation by adding `&aec=0` to a source link (guest). If you are using [`&proaudio`](../advanced-settings/audio-parameters/and-proaudio.md), echo-cancellation gets turned off. You can enable it again with `&proaudio&aec=1`.
 
@@ -19604,7 +19604,7 @@ Example: `&compressor=1`
 
 Noise suppression reduces background audio noise from your surrounding environment.
 
-Noise suppression is ON by default in Vide0Link.
+Noise suppression is ON by default in VDO.Ninja.
 
 You can turn off noise suppression by adding `&denoise=0` to a source link (guest). If you are using [`&proaudio`](../advanced-settings/audio-parameters/and-proaudio.md), echo-cancellation gets turned off. You can enable it again with `&proaudio&denoise=1`.
 
@@ -20023,11 +20023,11 @@ Set the `&mutespeaker` value to `false` or `0` to have the mute button start unm
 
 [https://vdo.ninja/?director=ROOMNAME\&mutespeaker=0](https://vdo.ninja/?director=ROOMNAME\&mutespeaker=0)
 
-### Muting shared websites (meshcast.io
+### Muting shared websites ([meshcast.io](https://meshcast.io/) / youtube)
 
-The director and guests can share websites with others in a group room. The audio playback of [meshcast.io](https://meshcast.io/) shared links will respect the `&mutespeaker` parameter used by Vide0Link, but other sites that are shared may not respect it.
+The director and guests can share websites with others in a group room. The audio playback of [meshcast.io](https://meshcast.io/) shared links will respect the `&mutespeaker` parameter used by VDO.Ninja, but other sites that are shared may not respect it.
 
-You can also add [`&mute`](and-mute.md) to a meshcast.io link itself, when sharing it, which will mute just the meshcast video by default for others. This can be useful to avoid echo cancellation issues that sometimes are created when sharing meshcast.io links in a Vide0Link group room.
+You can also add [`&mute`](and-mute.md) to a meshcast.io link itself, when sharing it, which will mute just the meshcast video by default for others. This can be useful to avoid echo cancellation issues that sometimes are created when sharing meshcast.io links in a VDO.Ninja group room.
 
 ## Related
 
@@ -20222,7 +20222,7 @@ Do not use while on a director page to autostart a camera; `&autostart&vd=video_
 
 If you would still like the guest to have access to the screen-sharing button once they have joined the call, you can force it to appear with the [`&ssb`](../advanced-settings/settings-parameters/and-screensharebutton.md) option. The [`&webcam`](and-webcam.md) option by default will hide the screen-share button otherwise.
 
-Starting with [v19](../release-notes/v19.md) of Vide0Link, there is also the [`&webcam2`](../newly-added-parameters/and-webcam2.md) option; a minor UI variant that requires an additional button press, but more clearly preps the guest to the fact they will be sharing their webcam.
+Starting with [v19](../release-notes/v19.md) of VDO.Ninja, there is also the [`&webcam2`](../newly-added-parameters/and-webcam2.md) option; a minor UI variant that requires an additional button press, but more clearly preps the guest to the fact they will be sharing their webcam.
 
 ## Related
 
@@ -20315,11 +20315,11 @@ It can be changed after the connection has been established. Useful for helping 
 
 You can pass a string name to auto-select an audio device that has a label containing that same string.
 
-You can pass a device ID as well; see [vdo.ninja/devices](https://vdo.ninja/devices) to see the device IDs (specific to Vide0Link's domain).
+You can pass a device ID as well; see [vdo.ninja/devices](https://vdo.ninja/devices) to see the device IDs (specific to VDO.Ninja's domain).
 
 Setting this option to `&audiodevice=0` will also disable the guest's microphone, potentially allowing for guest connections that have no video or audio. You might do this if you needed midi-only transport, hidden IFRAME control, or just to chatting.
 
-See [vdo.ninja/devices](https://vdo.ninja/devices) to see the device IDs and device names. DeviceIDs are specific to Vide0Link's domain, while device names are not. 
+See [vdo.ninja/devices](https://vdo.ninja/devices) to see the device IDs and device names. DeviceIDs are specific to VDO.Ninja's domain, while device names are not. 
 
 This web-based tool will also auto-create links for you, just by clicking on the respective device.
 
@@ -20360,7 +20360,7 @@ Example: `&autogain=1`
 
 ## Details
 
-Audio auto-normalization is ON by default in Vide0Link.
+Audio auto-normalization is ON by default in VDO.Ninja.
 
 You can turn off auto-normalization by adding `&autogain=0` to a source link (guest). If you are using [`&proaudio`](../advanced-settings/audio-parameters/and-proaudio.md), auto-normalization gets turned off. You can enable it again with `&proaudio&autogain=1`.
 
@@ -20374,7 +20374,7 @@ Some microphones or devices with software-based gain controls can have problems 
 
 If using a Chromium-based browser, like Chrome, Edge or Brave, you can either disable auto-gain or you can go into your browser's settings and disable the browser from being able to control the device's input volume. The link to this option is here: [chrome://flags/#enable-webrtc-allow-input-volume-adjustment](chrome://flags/#enable-webrtc-allow-input-volume-adjustment) (as of March 2024 at least)
 
-Please note that this issue seems to be a Chromium-related issue, and it is not Vide0Link specific. If you do disable auto-gain within Vide0Link, the option to manually increase your gain is still normally available also.
+Please note that this issue seems to be a Chromium-related issue, and it is not VDO.Ninja specific. If you do disable auto-gain within VDO.Ninja, the option to manually increase your gain is still normally available also.
 
 ## Related
 
@@ -20422,7 +20422,7 @@ Adding `&screensharecursor` to a source link attempts to show the mouse cursor o
 
 This flag is introduced in [v18.4](../release-notes/v18.md), but it's largely useless currently due to lack of support from most browsers.
 
-The default cursor state in Vide0Link is to not show a cursor, but Chrome/Firefox will still add a cursor overlay in regardless.
+The default cursor state in VDO.Ninja is to not show a cursor, but Chrome/Firefox will still add a cursor overlay in regardless.
 
 If sharing a Chrome tab, Chrome adds the cursor in only when that tab is active.
 
@@ -20431,7 +20431,7 @@ According to the web spec, we should be able to control the visibility of a curs
 You can see this link to tinker with different settings easily, to validate the problem:
 [https://www.webrtc-experiment.com/getDisplayMedia/](https://www.webrtc-experiment.com/getDisplayMedia/)
 
-Generally, to have better control of the cursor, maybe instead capture the screen with OBS and bring the video into Vide0Link as a virtual camera.
+Generally, to have better control of the cursor, maybe instead capture the screen with OBS and bring the video into VDO.Ninja as a virtual camera.
 For information on alternative ideas on how to hide or show the cursor, you can see the following article.
 
 [cursor-shows-when-screen-sharing.md](../common-errors-and-known-issues/cursor-shows-when-screen-sharing.md)
@@ -20471,7 +20471,7 @@ Sender-Side Option! ([`&push`](push.md))
 
 ## Details
 
-To prevent accidental page refreshes or exits during a stream, Vide0Link will ask the user to confirm they wish to leave the page when they try to. Using `&easyexit` prevents this confirmation pop-up from occurring, which might be useful if you are doing a lot of testing and find the added clicking to be annoying.
+To prevent accidental page refreshes or exits during a stream, VDO.Ninja will ask the user to confirm they wish to leave the page when they try to. Using `&easyexit` prevents this confirmation pop-up from occurring, which might be useful if you are doing a lot of testing and find the added clicking to be annoying.
 
 It hides this popup:
 
@@ -20554,7 +20554,7 @@ If you combine this command with [`&cleanoutput`](../advanced-settings/design-pa
 
 If you load the webcam in OBS first, you'll need to use the Virtual Camera and some special settings to have the webcam be available in other applications, like the browser. Window-capturing is an alternative that uses less CPU and does not require special drivers to be installed.
 
-It is recommend to consider using the Electron Capture app as the window-capture source app, as it is frameless, can be pinned on top, uses less CPU than the Chrome browser, and can be screen-captured or window-captured by most applications. It's also designed for Vide0Link, so lots of command line options available.
+It is recommend to consider using the Electron Capture app as the window-capture source app, as it is frameless, can be pinned on top, uses less CPU than the Chrome browser, and can be screen-captured or window-captured by most applications. It's also designed for VDO.Ninja, so lots of command line options available.
 
 ## Related
 
@@ -20579,7 +20579,7 @@ Sender-Side Option! ([`&push`](push.md),[`&webcam`](and-webcam.md),[`&screenshar
 
 When combined with the either [`&webcam`](and-webcam.md) or [`&screenshare`](screenshare.md), this option won't auto-load the camera/mic selection page. Instead, it shows the main-menu button for either the webcam option or screen-share option.
 
-For some users, this prepares them better for the upcoming request for camera/microphone permissions; particularly useful if using Vide0Link as an IFRAME integration.
+For some users, this prepares them better for the upcoming request for camera/microphone permissions; particularly useful if using VDO.Ninja as an IFRAME integration.
 
 `&intro&webcam` is the same like [`&wc2`](../newly-added-parameters/and-webcam2.md).
 `&intro&screenshare` is the same like [`&ss2`](../newly-added-parameters/and-screenshare2.md).
@@ -20823,7 +20823,7 @@ Example: `&push=StreamID`
 
 ## Details
 
-`&push` is the parameter that tells Vide0Link to be a publisher.
+`&push` is the parameter that tells VDO.Ninja to be a publisher.
 
 [https://vdo.ninja/?push=streamid](https://vdo.ninja/?push=streamid)
 [https://vdo.ninja/?view=streamid](https://vdo.ninja/?view=streamid)
@@ -20837,7 +20837,7 @@ If left empty, the stream ID will default to a random one.
 
 If the stream ID is already in active use, an error will be shown and the stream will not publish.
 
-If using a [`&room`](../general-settings/room.md) URL and not using [`&scene`](../advanced-settings/view-parameters/scene.md) or [`&solo`](../advanced-settings/mixer-scene-parameters/and-solo.md), Vide0Link will automatically generate a `&push` ID.
+If using a [`&room`](../general-settings/room.md) URL and not using [`&scene`](../advanced-settings/view-parameters/scene.md) or [`&solo`](../advanced-settings/mixer-scene-parameters/and-solo.md), VDO.Ninja will automatically generate a `&push` ID.
 
 ## Related
 
@@ -20881,13 +20881,13 @@ Sender-Side Option! ([`&push`](push.md))
 
 `&screenshare` will allow the guest to screen share by being directly asked to share a screen or window instead of being taken to the camera/screenshare selection screen.
 
-Starting with [v19](../release-notes/v19.md) of Vide0Link, there is also the [`&screenshare2`](../newly-added-parameters/and-screenshare2.md) option; a minor UI variant that requires an additional button press, but more clearly preps the guest to the fact they will be sharing their screen.
+Starting with [v19](../release-notes/v19.md) of VDO.Ninja, there is also the [`&screenshare2`](../newly-added-parameters/and-screenshare2.md) option; a minor UI variant that requires an additional button press, but more clearly preps the guest to the fact they will be sharing their screen.
 
 #### Using `&screenshare` with the [Electron Capture App](../steves-helper-apps/electron-capture.md)
 
 When using the Electron Capture App you have to "Elevate Privileges" to be able to share a window or screen. You can enable Elevated Privileges for the Electron App via the command line with `--node true` or in the app by right-clicking and selecting "Elevate Privileges" from the context-menu.
 
-One unique feature about the [Electron Capture App](../steves-helper-apps/electron-capture.md) is that it can auto-select a screen or window when screen-sharing with Vide0Link, without user-input.
+One unique feature about the [Electron Capture App](../steves-helper-apps/electron-capture.md) is that it can auto-select a screen or window when screen-sharing with VDO.Ninja, without user-input.
 For example:
 `&screenshare=1` for the main display
 `&screenshare=2` for the second display
@@ -20965,7 +20965,7 @@ There is a toggle in the director's room which adds `&ssid` to the guest's invit
 
 `&screenshareid` doesn't work with [`&screensharetype=3`](../newly-added-parameters/and-screensharetype.md). When using `&screensharetype=3` the screen share gets the appendix `:s` added to the stream ID of the guest. 
 
-As of Vide0Link [v23](../releases/v23.md),`&screensharetype=3` is default, but you can revert back to `&screensharetype=2` or use the new `&screensharetype=3` method post-fix `:s` method of identify screen shares.
+As of VDO.Ninja [v23](../releases/v23.md),`&screensharetype=3` is default, but you can revert back to `&screensharetype=2` or use the new `&screensharetype=3` method post-fix `:s` method of identify screen shares.
 
 ## Related
 
@@ -21002,7 +21002,7 @@ Example: `&screensharequality=1`
 Update on V22:
 `&screensharequality` applies now to both primary and secondary types of screen-shares. Before [`&quality`](../advanced-settings/video-parameters/and-quality.md) was needed for primary screen share quality setting.
 
-When a guest shares their screen during a group chat, it creates a secondary Vide0Link session to share that screen, alongside their active webcam. Two streams as a result.
+When a guest shares their screen during a group chat, it creates a secondary VDO.Ninja session to share that screen, alongside their active webcam. Two streams as a result.
 
 Using this parameter will give you control over the quality of the screen share, specifically, overriding what you might have set with [`&quality`](../advanced-settings/video-parameters/and-quality.md). It will not impact the webcam quality.
 
@@ -21163,8 +21163,8 @@ The transcription service uses default browser/system mic as a source and cannot
 Generally needs to be used in conjunction with [`&closedcaptions`](../advanced-settings/settings-parameters/and-closedcaptions.md).
 
 * The transcription audio source will be the default microphone of the browser, which often is the same as the system's default input source.
-* It is not necessary the microphone that has been selected in Vide0Link. Please double check this if the transcription isn't working.
-* The mute button of Vide0Link will not work with this feature; at the moment anyways.
+* It is not necessary the microphone that has been selected in VDO.Ninja. Please double check this if the transcription isn't working.
+* The mute button of VDO.Ninja will not work with this feature; at the moment anyways.
 * Only one transcription service can run at a time.
 * Chrome or other browsers will prevent the user from running multiple transcription services at a time. Since the transcription services of most browsers requires the Internet.
 
@@ -21210,7 +21210,7 @@ For a device like an iPhone, you can pass a string value such as `&videodevice=b
 
 When combined with [`&webcam`](and-webcam.md) and [`&autostart`](and-autostart.md), you can have the camera start publishing instantly, often without any user interaction at all. Keep in mind that some browsers will still need to ask for permissions or require a user-gesture for things to function correctly though.
 
-See [vdo.ninja/devices](https://vdo.ninja/devices) to see the device IDs and device names. DeviceIDs are specific to Vide0Link's domain, while device names are not. The page will also auto-create links for  you, just by clicking on the respective device.
+See [vdo.ninja/devices](https://vdo.ninja/devices) to see the device IDs and device names. DeviceIDs are specific to VDO.Ninja's domain, while device names are not. The page will also auto-create links for  you, just by clicking on the respective device.
 
 When using `&videodevice=videoDevice`, the name matching order sorts based on "NameStartsWith", then "ExactDeviceID", and then finally "NameIncludes". This should avoid the Streamlabs OBS Virtual Cam being selected when you actually want the OBS Virtual Camera being selected, as the two devices both contain `obs virtual camera` in their name.
 
@@ -21245,7 +21245,7 @@ description: >-
 
 [https://caption.ninja/](https://caption.ninja/)
 
-Although Vide0Link supports captions, sometimes you need something simple yet flexible. Caption.Ninja lets you use the browser's built in speech-to-text service to provide overlay captions for your live stream.
+Although VDO.Ninja supports captions, sometimes you need something simple yet flexible. Caption.Ninja lets you use the browser's built in speech-to-text service to provide overlay captions for your live stream.
 
 Captions are streamed via a web-socket service to your OBS or other studio software, where they can be shown over your video.
 
@@ -21279,7 +21279,7 @@ description: Multi-group audio chat
 * Created a page called _Comms_, which is designed for audio-only production.
 * You can select which "group" you want to be a part of via the top bar, where those in your group can hear you and vice versa.
 * If you aren't in a group, you hear everyone.
-* Compatible with [`&groups`](../general-settings/and-group.md) with Vide0Link as normal; it's just a custom layout stylized/tweaked for audio-only production comms.
+* Compatible with [`&groups`](../general-settings/and-group.md) with VDO.Ninja as normal; it's just a custom layout stylized/tweaked for audio-only production comms.
 * There's a few URL parameters you can set, including [`&push`](../source-settings/push.md), [`&label`](../general-settings/label.md), [`&room`](../general-settings/room.md), [`&password`](../advanced-settings/setup-parameters/and-password.md), and [`&groups`](../general-settings/and-group.md).
 * If you use `&groups=group1,groupb,etc`, new group buttons will appear.
 * By default, groups 1 to 6 are there.
@@ -21300,19 +21300,19 @@ An experimental very simple voice-chat-room app based on the new Comms app: [htt
 [updates-comms.md](../updates/updates-comms.md)
 ---
 description: >-
-  Awesome tools made by the community that help with common Vide0Link-related
+  Awesome tools made by the community that help with common VDO.Ninja-related
   tasks
 ---
 
 # Community contributed tools
 
-There's some tools out there made by the greater community that can help with common [Vide0Link](https://vdo.ninja/) related-tasks. If you want your project listed here, please get in contact with us at the discord (discord.vdo.ninja).
+There's some tools out there made by the greater community that can help with common [VDO.Ninja](https://vdo.ninja/) related-tasks. If you want your project listed here, please get in contact with us at the discord ([discord.vdo.ninja](https://discord.vdo.ninja)).
 
 | Tool                                                                                                                              | Description                                                                                                                                       | Author                                                                                       |
 | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | [Linkgen](https://linkgen.vdo.ninja/)                                                                                             | Wizard style links generator                                                                                                                      | [@jcalado](https://github.com/jcalado/)                                                      |
 | [Invite Generator](https://invite.vdo.ninja/)                                                                                     | Toggle style links generator                                                                                                                      | [@jcalado](https://github.com/jcalado/)                                                      |
-| [Trampoline](https://rse.github.io/vdo-ninja-trampoline/)                                                                         | Another awesome link generator for Vide0Link                                                                                                      | [Dr. Ralf S. Engelschall](https://github.com/rse)                                            |
+| [Trampoline](https://rse.github.io/vdo-ninja-trampoline/)                                                                         | Another awesome link generator for VDO.Ninja                                                                                                      | [Dr. Ralf S. Engelschall](https://github.com/rse)                                            |
 | [Vingester](https://github.com/steveseguin/vingester)                                                                             | Ingest web pages as NDI-multicasted streams                                                                                                       | [Dr. Ralf S. Engelschall](https://github.com/rse)                                            |
 | [Cheat Sheets](https://github.com/steveseguin/obsninja/blob/quickstart/README.md)                                                 | Quick start guides and cheat sheets                                                                                                               | [Chris Marquardt](https://chrismarquardt.com/)                                               |
 | [Show Manager](https://github.com/knmurphy/show-manager-obsn)                                                                     | Excel based link configuration tool                                                                                                               | [@knmurphy](https://github.com/knmurphy)                                                     |
@@ -21321,13 +21321,13 @@ There's some tools out there made by the greater community that can help with co
 | [Cheat Sheet 3](https://docs.google.com/spreadsheets/d/1rNPus\_c6fLwNIKOr1WCZZVMRWtlNJttUNtvvelInuRU)                             | A Google Sheets list of all available parameters                                                                                                  | JK14 on Discord                                                                              |
 | [URL Configurator](https://drive.google.com/file/d/1A7qiFACoCxk9J-uTv9yyZa5yQWzFol8l/view?usp=sharing)                            | Excel based URL Link Configurator                                                                                                                 | JK14 on Discord                                                                              |
 | [Layout String Generator](https://docs.google.com/spreadsheets/d/1cHBTfni-Os3SAITsXrrNJ3qVCMVjunuW3xugvw1dykw/edit#gid=151839312) | For [`&layouts`](../advanced-settings/director-parameters/and-layouts.md) parameter                                                               | JK14 on Discord                                                                              |
-| [API / IFRAME sandbox page](https://vdo.ninja/alpha/iframe)                                                                       | API / IFRAME Sandbox page for developer using Vide0Link                                                                                           | Sam MacKinnon on Discord                                                                     |
+| [API / IFRAME sandbox page](https://vdo.ninja/alpha/iframe)                                                                       | API / IFRAME Sandbox page for developer using VDO.Ninja                                                                                           | Sam MacKinnon on Discord                                                                     |
 | [Companion Module](https://github.com/bitfocus/companion-module-vdo-ninja)                                                        | Remote control VDON via this plugin for Companion                                                                                                 | [Bryce](https://github.com/bitfocus/companion-module-vdo-ninja/commits?author=bryce-seifert) |
 | [VirtualCam Filter](https://github.com/exeldro/obs-virtual-cam-filter)                                                            | Select any source in OBS to be the virtual cam output                                                                                             | [Exeldro](https://obsproject.com/forum/members/exeldro.128836/)                              |
 | [Source Record](https://obsproject.com/forum/resources/source-record.1285/)                                                       | Record a source in OBS that is different than the output                                                                                          | [Exeldro](https://obsproject.com/forum/members/exeldro.128836/)                              |
 | [OBS Audio Monitor](https://obsproject.com/forum/resources/audio-monitor.1186/)                                                   | Plugin for OBS; adds Audio Monitor dock and filter                                                                                                | [Exeldro](https://obsproject.com/forum/members/exeldro.128836/)                              |
 | [Win Cap Audio](https://obsproject.com/forum/resources/win-capture-audio.1338/)                                                   | Capture audio from specific window in OBS                                                                                                         | [bozbez](https://obsproject.com/forum/members/bozbez.344203/)                                |
-| [Browser to RTMP](https://github.com/steveseguin/browser-to-rtmp-docker)                                                          | A docker container that lets you output a Vide0Link to RTMP                                                                                       | [aws-samples](https://github.com/aws-samples/amazon-chime-meeting-broadcast-demo)            |
+| [Browser to RTMP](https://github.com/steveseguin/browser-to-rtmp-docker)                                                          | A docker container that lets you output a VDO.Ninja to RTMP                                                                                       | [aws-samples](https://github.com/aws-samples/amazon-chime-meeting-broadcast-demo)            |
 | [Atrium Vertical](https://obsproject.com/forum/resources/aitum-vertical.1715/)                                                    | Allow OBS to publish both Portrait (vertical) and Landscape (16:9) video at the same time.                                                        | [Aitum](https://obsproject.com/forum/members/aitum.441032/)                                  |
 
 The video engineering and live streaming community is pretty amazing, so thank you all for being so awesome. ♥
@@ -21339,7 +21339,7 @@ description: Provides users a clean way of window capturing websites
 
 [https://github.com/steveseguin/electroncapture](https://github.com/steveseguin/electroncapture)
 
-Created for [Vide0Link](https://vdo.ninja) users, it can provide users a clean way of window capturing websites. In the case of [Vide0Link](https://vdo.ninja), it may offer a more flexible and reliable method of capturing live video than the browser source plugin built into OBS.
+Created for [VDO.Ninja](https://vdo.ninja) users, it can provide users a clean way of window capturing websites. In the case of [VDO.Ninja](https://vdo.ninja), it may offer a more flexible and reliable method of capturing live video than the browser source plugin built into OBS.
 
 ## Why ?
 
@@ -21347,7 +21347,7 @@ On some systems the OBS Browser Source plugin isn't available or doesn't work al
 
 The app can also be set to remain on top of other windows, attempts to hide the mouse cursor when possible, provides accurate window sizes for 1:1 pixel mapping, and supports global system hotkeys (`CTRL+M` on Windows, for example).
 
-Windows users may find it beneficial too, as it offers support for Vide0Link's [`&buffer`](https://docs.vdo.ninja/viewers-settings/buffer) audio sync command and it has robust support for video packet loss. In other words, it can playback live video better than OBS can, with fewer video playback errors and with better audio/video sync. If you have a spare monitor, it may at times be worth the hassle to use instead of OBS alone.
+Windows users may find it beneficial too, as it offers support for VDO.Ninja's [`&buffer`](https://docs.vdo.ninja/viewers-settings/buffer) audio sync command and it has robust support for video packet loss. In other words, it can playback live video better than OBS can, with fewer video playback errors and with better audio/video sync. If you have a spare monitor, it may at times be worth the hassle to use instead of OBS alone.
 
 The Electron Capture app uses recent versions of Chromium, which is more resistant to desync, video smearing, and other issues that might exist in the native OBS browser source capture method. [More benefits listed here](https://github.com/steveseguin/electroncapture/blob/master/BENEFITS.md)
 
@@ -21357,7 +21357,7 @@ Lastly, since playback is agnostic, you can window-capture the same video multip
 
 [updates-electron-capture-app.md](../updates/updates-electron-capture-app.md)
 ---
-description: Link generators to create invite links for Vide0Link
+description: Link generators to create invite links for VDO.Ninja
 ---
 
 # Invite Link Generators
@@ -21368,7 +21368,7 @@ description: Link generators to create invite links for Vide0Link
 | Toggle-style                 | [https://invite.vdo.ninja/](https://invite.vdo.ninja/)                                                                |
 | Excel-based                  | [https://drive.google.com/file/d/1A7qiFAC](https://drive.google.com/file/d/1A7qiFACoCxk9J-uTv9yyZa5yQWzFol8l/view)... |
 | Trampoline                   | [https://rse.github.io/vdo-ninja-trampoline/](https://rse.github.io/vdo-ninja-trampoline/)                            |
-| URL Obfuscator for Vide0Link | [https://invite.cam/](https://invite.cam/)                                                                            |
+| URL Obfuscator for VDO.Ninja | [https://invite.cam/](https://invite.cam/)                                                                            |
 | Dock for OBS                 | [https://vdo.ninja/dock](https://vdo.ninja/dock)                                                                      |
 ---
 description: PNG and 3D LUT maker for color calibration
@@ -21389,14 +21389,14 @@ It's also open-source and no downloads are needed; you can run the script using 
 ---
 description: >-
   A low latency video CDN (content delivery network), which can be used to host
-  larger group rooms in Vide0Link
+  larger group rooms in VDO.Ninja
 ---
 
 # Meshcast.io
 
 [https://meshcast.io/](https://meshcast.io/)
 
-This is a free to use service that can work in conjunction with Vide0Link. It's a low latency video CDN (content delivery network), which can be used to host larger group rooms in Vide0Link. It's not designed for mass broadcast, not at present anyways, but it can handle upwards of 100-viewers without taxing your CPU or network.
+This is a free to use service that can work in conjunction with VDO.Ninja. It's a low latency video CDN (content delivery network), which can be used to host larger group rooms in VDO.Ninja. It's not designed for mass broadcast, not at present anyways, but it can handle upwards of 100-viewers without taxing your CPU or network.
 
 [https://youtu.be/-7QsLChfdsE](https://youtu.be/-7QsLChfdsE)
 
@@ -21409,7 +21409,7 @@ This is a free to use service that can work in conjunction with Vide0Link. It's 
 [updates-meshcast.io.md](../updates/updates-meshcast.io.md)
 ---
 description: >-
-  Customize layouts, positions, and assets in Vide0Link, with remote control to
+  Customize layouts, positions, and assets in VDO.Ninja, with remote control to
   change the layouts dynamically. This is very efficient and low on resources
   compared to other methods.
 ---
@@ -21418,7 +21418,7 @@ description: >-
 
 [https://vdo.ninja/alpha/mixer](https://vdo.ninja/alpha/mixer)
 
-The Mixer App is an alternative to the director's control center of Vide0Link. It gives you the full power to customize scenes, layouts and positions of the video feeds dynamically.
+The Mixer App is an alternative to the director's control center of VDO.Ninja. It gives you the full power to customize scenes, layouts and positions of the video feeds dynamically.
 
 There are currently 3 versions of the Mixer App. The newest version with all the current updates is Alpha.
 
@@ -21430,7 +21430,7 @@ There are currently 3 versions of the Mixer App. The newest version with all the
 
 <figure><img src="../.gitbook/assets/image (6) (2) (1) (1).png" alt=""><figcaption><p>Layout of the Video Mixer</p></figcaption></figure>
 
-If you find some bugs, have feature requests, ideas or feedback, please contact us on the Discord channel.
+If you find some bugs, have feature requests, ideas or feedback, please contact us on the [Discord channel](https://discord.gg/qWDshMsTar).
 
 There is a YouTube video from Steve (December 2021) about the Mixer App. It's slightly out of date though.
 
@@ -21449,9 +21449,9 @@ Android
 
 iOS
 
-At present, the native mobile app versions of Vide0Link are fairly basic, but they can be useful for a couple of reasons.
+At present, the native mobile app versions of VDO.Ninja are fairly basic, but they can be useful for a couple of reasons.
 
-* The native Android app supports screen-sharing, while the browser-based version of Vide0Link does not.
+* The native Android app supports screen-sharing, while the browser-based version of VDO.Ninja does not.
 * More camera types are listed on the Android native app version; some wide-angle lenses appear that do not appear in the browser-based version.
 * Sometimes the native mobile app will work when the browser-based versions do not.
 
@@ -21460,11 +21460,11 @@ There are some limitations to the native mobile app versions though.
 * Rooms and group chat are not supported yet.
 * Passwords are not supported yet.
 * UVC camera and mic support is not yet available, but we're working on it. UVC devices are supported via the Raspberry Pi and Nvidia Jetson devices however (see bottom).
-* The native app requires a modern version of Android, while the web-based version of Vide0Link has been tested with Android 5.1 using Chrome.
+* The native app requires a modern version of Android, while the web-based version of VDO.Ninja has been tested with Android 5.1 using Chrome.
 
 ## Download the Android app
 
-You have a few different ways to download and install the Android app for Vide0Link. Installing the Google Play Store version is recommended, as it can auto-update with patches and new features automatically.
+You have a few different ways to download and install the Android app for VDO.Ninja. Installing the Google Play Store version is recommended, as it can auto-update with patches and new features automatically.
 
 #### The **Google Play Store** <img src="../.gitbook/assets/image (116) (1).png" alt="" data-size="line"> hosted version is here:&#x20;
 
@@ -21481,15 +21481,15 @@ GitHub repository for the app
 
 ## Download the iOS app
 
-The native iOS app for Vide0Link is again available on the Apple App Store.&#x20;
+The native iOS app for VDO.Ninja is again available on the Apple App Store.&#x20;
 
 Download from the Apple App Store - It's Free
 
 The native App Store app is very basic, but It does support the ability to stream your camera's output to a remote computer, with the option to enable the Torch light.
 
-While screen share support is available in-app, it currently only works when the app is open, making it a bit useless if you need to switch apps. If you're looking to screen-share from an iPhone or iPad with Vide0Link, other ways to do it exist.  See this guide here:&#x20;
+While screen share support is available in-app, it currently only works when the app is open, making it a bit useless if you need to switch apps. If you're looking to screen-share from an iPhone or iPad with VDO.Ninja, other ways to do it exist.  See this guide here:&#x20;
 
-How to screen capture your iPhone or iPad with Vide0Link
+How to screen capture your iPhone or iPad with VDO.Ninja
 
 Room support and passwords are not supported yet in the native mobile apps.
 
@@ -21501,7 +21501,7 @@ Room support and passwords are not supported yet in the native mobile apps.
 
 [improving-quality-of-the-native-app.md](../guides/improving-quality-of-the-native-app.md)
 ---
-description: List of apps and helper tools Steve has created to be used with Vide0Link
+description: List of apps and helper tools Steve has created to be used with VDO.Ninja
 ---
 
 # Steve's helper apps & tools
@@ -21564,7 +21564,7 @@ description: Useful tools that could help you make your stream better
 
 # Tech Demonstrations
 
-<table><thead><tr><th width="197">Tool</th><th width="549">Description</th></tr></thead><tbody><tr><td>Overview</td><td>Overview of all the Tech Demonstrations</td></tr><tr><td>P2P</td><td>How to use Vide0Link as a data transport tunneling service</td></tr><tr><td>Twitch</td><td>How to have a twitch live chat side-by-side with Vide0Link on the same screen (viewing Twitch chat while using Vide0Link on mobile)</td></tr><tr><td>YouTube</td><td>How to have a YouTube live chat side-by-side with Vide0Link on the same screen</td></tr><tr><td>Dual</td><td>How to have two Vide0Link windows (or any windows really) open on the same page; Picture-in-Picture style</td></tr><tr><td>Multiple Rooms</td><td>How to have multiple director rooms open in a single tab; note the URL's <code>?rooms=xx,yy</code> command</td></tr><tr><td>versus.cam</td><td>How to use the IFRAME API to transport audio and video to the parent frame in Chrome</td></tr><tr><td>Add to scene</td><td>How to use the IFrame API to add/remove guests to a scene remotely</td></tr><tr><td>Big Mute Button</td><td>Mobile-friendly big-button for muting yourself easily</td></tr><tr><td>Sensors</td><td>How to transmit sensor and video data from a phone to a computer, drawing it to canvas.</td></tr><tr><td>Sensor Overlay</td><td>Overlay the incoming speed from remote mobile sensor data onto your video</td></tr><tr><td>MIDI</td><td>Demonstrates the MIDI API for Vide0Link</td></tr><tr><td>Draggable</td><td>Demonstrates how to drag multiple windows around, if you wanted to create a custom layout of elements. (experimental)</td></tr><tr><td>Chat overlay</td><td>Example of a chat-only interface for Vide0Link; maybe dockable into OBS even.</td></tr><tr><td>iFrame outbound stats</td><td>iframe.outbound-stats.html demonstrates how to get stats from Vide0Link using the IFRAME API</td></tr><tr><td>Change password</td><td>Lets you create passwords and related HASH values for Vide0Link rooms</td></tr><tr><td>WebHID</td><td>WebHID demonstrates how to interface with a USB device, like a Streamdeck (mouse/keyboard not supported)</td></tr><tr><td>Zoom</td><td>A tool for letting you publish into Vide0Link, but then full-screen the window once setup, allowing for window-capturing into zoom.</td></tr><tr><td>OBS Remote</td><td>Also hosted on GitHub elsewhere, but it's an example of how to remotely control OBS using Vide0Link's tunneling abilities</td></tr><tr><td>Overlay</td><td>Create a sample of how to apply a custom full-page overlay on top of Vide0Link</td></tr><tr><td>PowerPoint Remote Control</td><td>Remote PowerPoint Web control via Vide0Link (IFrame API)</td></tr><tr><td>Rotate website</td><td>Lets you rotate a specific website 90, 270, or 180 degrees</td></tr><tr><td>Waiting room</td><td>Prompts a guest who is joining a room with a message if the director is not there yet</td></tr><tr><td>OBS Remote Control</td><td>A code example of how to use the IFRAME API of Vide0Link to remotely control OBS</td></tr><tr><td>PTZ Remote Controller</td><td>Remotely control the pan tilt of a camera</td></tr></tbody></table>
+<table><thead><tr><th width="197">Tool</th><th width="549">Description</th></tr></thead><tbody><tr><td><a href="https://vdo.ninja/examples/">Overview</a></td><td>Overview of all the Tech Demonstrations</td></tr><tr><td><a href="https://vdo.ninja/examples/p2p.html">P2P</a></td><td>How to use VDO.Ninja as a data transport tunneling service</td></tr><tr><td><a href="https://vdo.ninja/twitch">Twitch</a></td><td>How to have a twitch live chat side-by-side with VDO.Ninja on the same screen (viewing Twitch chat while using VDO.Ninja on mobile)</td></tr><tr><td><a href="https://vdo.ninja/examples/youtube.html">YouTube</a></td><td>How to have a YouTube live chat side-by-side with VDO.Ninja on the same screen</td></tr><tr><td><a href="https://vdo.ninja/examples/dual.html">Dual</a></td><td>How to have two VDO.Ninja windows (or any windows really) open on the same page; Picture-in-Picture style</td></tr><tr><td><a href="https://vdo.ninja/examples/multi.html?rooms=room1xx,room2xx,room3xx">Multiple Rooms</a></td><td>How to have multiple director rooms open in a single tab; note the URL's <code>?rooms=xx,yy</code> command</td></tr><tr><td><a href="https://versus.cam/">versus.cam</a></td><td>How to use the IFRAME API to transport audio and video to the parent frame in Chrome</td></tr><tr><td><a href="https://vdo.ninja/examples/addtoscene.html">Add to scene</a></td><td>How to use the IFrame API to add/remove guests to a scene remotely</td></tr><tr><td><a href="https://vdo.ninja/examples/bigmutebutton.html">Big Mute Button</a></td><td>Mobile-friendly big-button for muting yourself easily</td></tr><tr><td><a href="https://vdo.ninja/examples/sensors.html">Sensors</a></td><td>How to transmit sensor and video data from a phone to a computer, drawing it to canvas.</td></tr><tr><td><a href="https://vdo.ninja/examples/sensoroverlay.html">Sensor Overlay</a></td><td>Overlay the incoming speed from remote mobile sensor data onto your video</td></tr><tr><td><a href="https://vdo.ninja/midi">MIDI</a></td><td>Demonstrates the MIDI API for VDO.Ninja</td></tr><tr><td><a href="https://vdo.ninja/examples/draggable.html">Draggable</a></td><td>Demonstrates how to drag multiple windows around, if you wanted to create a custom layout of elements. (experimental)</td></tr><tr><td><a href="https://vdo.ninja/examples/chatoverlay.html">Chat overlay</a></td><td>Example of a chat-only interface for VDO.Ninja; maybe dockable into OBS even.</td></tr><tr><td><a href="https://vdo.ninja/examples/iframe.outbound-stats.html">iFrame outbound stats</a></td><td>iframe.outbound-stats.html demonstrates how to get stats from VDO.Ninja using the IFRAME API</td></tr><tr><td><a href="https://vdo.ninja/examples/changepass.html">Change password</a></td><td>Lets you create passwords and related HASH values for VDO.Ninja rooms</td></tr><tr><td><a href="https://vdo.ninja/webhid">WebHID</a></td><td>WebHID demonstrates how to interface with a USB device, like a Streamdeck (mouse/keyboard not supported)</td></tr><tr><td><a href="https://vdo.ninja/examples/zoom.html">Zoom</a></td><td>A tool for letting you publish into VDO.Ninja, but then full-screen the window once setup, allowing for window-capturing into zoom.</td></tr><tr><td><a href="https://vdo.ninja/examples/obs_remote/index">OBS Remote</a></td><td>Also hosted on GitHub elsewhere, but it's an example of how to remotely control OBS using VDO.Ninja's tunneling abilities</td></tr><tr><td><a href="https://vdo.ninja/alpha/examples/overlay">Overlay</a></td><td>Create a sample of how to apply a custom full-page overlay on top of VDO.Ninja</td></tr><tr><td><a href="https://vdo.ninja/examples/powerpoint">PowerPoint Remote Control</a></td><td>Remote PowerPoint Web control via VDO.Ninja (IFrame API)</td></tr><tr><td><a href="https://vdo.ninja/examples/rotated.html">Rotate website</a></td><td>Lets you rotate a specific website 90, 270, or 180 degrees</td></tr><tr><td><a href="https://vdo.ninja/examples/waitingroom?room=TESTROOM123">Waiting room</a></td><td>Prompts a guest who is joining a room with a message if the director is not there yet</td></tr><tr><td><a href="https://vdo.ninja/alpha/examples/obsremote">OBS Remote Control</a></td><td>A code example of how to use the IFRAME API of VDO.Ninja to remotely control OBS</td></tr><tr><td><a href="https://vdo.ninja/alpha/examples/ptz">PTZ Remote Controller</a></td><td>Remotely control the pan tilt of a camera</td></tr></tbody></table>
 # Teleprompter Tool
 
 [https://vdo.ninja/teleprompter](https://vdo.ninja/teleprompter)
@@ -21577,7 +21577,7 @@ Created a tool that lets you rotate, flip, and mirror any cors-compatible websit
 * (optionally) it can take `&link` with a URL value, or `&twitch` to pass a user name
 * Hide menu button; to show the menu again, just reload the page
 
-This works great for reading chat out from a teleprompter or even just for Vide0Link feeds. Vide0Link works great for sending remote teleprompter feeds to something like a Firestick 4K Max, and this teleprompting website should make it easy to flip/invert/mirror the video as needed.
+This works great for reading chat out from a teleprompter or even just for VDO.Ninja feeds. VDO.Ninja works great for sending remote teleprompter feeds to something like a Firestick 4K Max, and this teleprompting website should make it easy to flip/invert/mirror the video as needed.
 
 <figure><img src="../.gitbook/assets/image (7) (5).png" alt=""><figcaption></figcaption></figure>
 ---
@@ -21586,14 +21586,14 @@ description: Useful tools that could help you make your stream better
 
 # VDO Applications
 
-<table><thead><tr><th width="394">Tool</th><th>URL</th></tr></thead><tbody><tr><td>Device Support</td><td>https://vdo.ninja/supports</td></tr><tr><td>Device IDs</td><td>https://vdo.ninja/devices</td></tr><tr><td>Web-based Media Conversion Tools</td><td>https://isolated.vdo.ninja/convert</td></tr><tr><td>Electron</td><td>https://vdo.ninja/electron</td></tr><tr><td>Video streaming quality test</td><td>https://vdo.ninja/speedtest</td></tr><tr><td>Remote Monitor</td><td>https://vdo.ninja/monitor</td></tr><tr><td>Companion</td><td>https://companion.vdo.ninja/</td></tr><tr><td>MIDI Controller App</td><td>https://vdo.ninja/alpha/remotemidi</td></tr><tr><td>API / IFRAME sandbox page for developer</td><td>https://vdo.ninja/alpha/iframe</td></tr><tr><td>WHIP (publish from VDON directly to Twitch)</td><td>https://vdo.ninja/alpha/whip</td></tr></tbody></table>
+<table><thead><tr><th width="394">Tool</th><th>URL</th></tr></thead><tbody><tr><td>Device Support</td><td><a href="https://vdo.ninja/supports">https://vdo.ninja/supports</a></td></tr><tr><td>Device IDs</td><td><a href="https://vdo.ninja/devices">https://vdo.ninja/devices</a></td></tr><tr><td>Web-based Media Conversion Tools</td><td><a href="https://isolated.vdo.ninja/convert">https://isolated.vdo.ninja/convert</a></td></tr><tr><td>Electron</td><td><a href="https://vdo.ninja/electron">https://vdo.ninja/electron</a></td></tr><tr><td>Video streaming quality test</td><td><a href="https://vdo.ninja/speedtest">https://vdo.ninja/speedtest</a></td></tr><tr><td>Remote Monitor</td><td><a href="https://vdo.ninja/monitor">https://vdo.ninja/monitor</a></td></tr><tr><td>Companion</td><td><a href="https://companion.vdo.ninja/">https://companion.vdo.ninja/</a></td></tr><tr><td>MIDI Controller App</td><td><a href="https://vdo.ninja/alpha/remotemidi">https://vdo.ninja/alpha/remotemidi</a></td></tr><tr><td>API / IFRAME sandbox page for developer</td><td><a href="https://vdo.ninja/alpha/iframe">https://vdo.ninja/alpha/iframe</a></td></tr><tr><td>WHIP (publish from VDON directly to Twitch)</td><td><a href="https://vdo.ninja/alpha/whip">https://vdo.ninja/alpha/whip</a></td></tr></tbody></table>
 ---
 description: Focus on ease of use and high-bitrate / e-sports streams
 ---
 
 # Versus.cam
 
-Versus.cam is the upcoming and standalone replacement for the [vdo.ninja/monitor](https://vdo.ninja/monitor) page. Versus.cam has some interesting features that are specific to the upcoming version of Vide0Link, so at the moment it only works in conjunction with [vdo.ninja/alpha](https://vdo.ninja/alpha/).
+Versus.cam is the upcoming and standalone replacement for the [vdo.ninja/monitor](https://vdo.ninja/monitor) page. Versus.cam has some interesting features that are specific to the upcoming version of VDO.Ninja, so at the moment it only works in conjunction with [vdo.ninja/alpha](https://vdo.ninja/alpha/).
 
 ### Details
 
@@ -21604,14 +21604,14 @@ Versus.cam is the upcoming and standalone replacement for the [vdo.ninja/monitor
 * The room is configured so that guests cannot see or talk to each other. All guests can do is text-chat with the versus host.
 
 * Versus.cam is compatible with a director and the director room, so you can use a director room AND the Versus.cam room at the same time, without conflict.
-* A new feature that Versus.cam has, that will also soon be coming to the normal Vide0Link directors' room, is the ability to **dynamically change the resolution and bitrate of remote scenes**. This works by means of the [`&remote`](../general-settings/remote.md) control feature, which is preconfigured in the links already, so no director is needed when using versus. This will then also work with non-room links, so long as [`&remote`](../general-settings/remote.md) is included in their URL.
+* A new feature that Versus.cam has, that will also soon be coming to the normal VDO.Ninja directors' room, is the ability to **dynamically change the resolution and bitrate of remote scenes**. This works by means of the [`&remote`](../general-settings/remote.md) control feature, which is preconfigured in the links already, so no director is needed when using versus. This will then also work with non-room links, so long as [`&remote`](../general-settings/remote.md) is included in their URL.
 * I don't intend to add many advanced features to this site.
 * It's designed to be very simple, elegant, and hyper focused on a single use case and user type.
-* E-Sports and one-way ingestion of very high quality video. I'll likely be making more scenario-specific interfaces in the future like this, to make Vide0Link easier and less cluttered for common use cases.
-* Versus.cam is built using the Vide0Link IFRAME API, which I hope demonstrates the flexibility of it.
+* E-Sports and one-way ingestion of very high quality video. I'll likely be making more scenario-specific interfaces in the future like this, to make VDO.Ninja easier and less cluttered for common use cases.
+* Versus.cam is built using the VDO.Ninja IFRAME API, which I hope demonstrates the flexibility of it.
 * Versus.cam is only supported by Chrome/Chromium-based browsers; it isn't yet compatible with Firefox/Safari (they lack the features needed for it to operate).
 
-Please report bugs. It's a first release, using the alpha version of Vide0Link, so bugs are kind of expected.
+[Please report bugs](https://discord.gg/qWDshMsTar). It's a first release, using the alpha version of VDO.Ninja, so bugs are kind of expected.
 
 [https://youtu.be/I12ASNWHPPI](https://youtu.be/I12ASNWHPPI)
 
@@ -21621,48 +21621,48 @@ Please report bugs. It's a first release, using the alpha version of Vide0Link, 
 ---
 description: >-
   WHIP allows you to publish to supported sites, like Twitch, directly from
-  Vide0Link
+  VDO.Ninja
 ---
 
 # WHIP and WHEP tooling
 
-Using the newly added WHIP ingest end point at Twitch, you can now publish directly from Vide0Link to Twitch. Low-latency, no downloads needed, and free.
+Using the newly added WHIP ingest end point at Twitch, you can now publish directly from VDO.Ninja to Twitch. Low-latency, no downloads needed, and free.
 
-WHIP is a bit like the classic RTMP publishing, but it's far more advanced, includes AV1 video codec support, and can even work within your browser. Best of all, Vide0Link supports it. Vide0Link can both act as a host for WHIP publishers, such as OBS Studio, or it can publish video via WHIP to WHIP broadcasting hosts, such as Twitch, Janus, Mediamtx, Pion, Cloudflare, and many more.
+WHIP is a bit like the classic RTMP publishing, but it's far more advanced, includes AV1 video codec support, and can even work within your browser. Best of all, VDO.Ninja supports it. VDO.Ninja can both act as a host for WHIP publishers, such as OBS Studio, or it can publish video via WHIP to WHIP broadcasting hosts, such as Twitch, Janus, Mediamtx, Pion, Cloudflare, and many more.
 
-WHEP, on the other hand, is generally used to playback video using the same technology, rather to publish it. Vide0Link also supports WHEP playback and hosting, with advanced statistic panels, recording, and buffering options.&#x20;
+WHEP, on the other hand, is generally used to playback video using the same technology, rather to publish it. VDO.Ninja also supports WHEP playback and hosting, with advanced statistic panels, recording, and buffering options.&#x20;
 
 ### Our WHIP page for making WHIP / WHEP easy
 
-To make using WHIP and WHEP more accessible, Vide0Link has a hosted page with common tools for making use of it, such as publishing a video or screen share to Twitch.
+To make using WHIP and WHEP more accessible, VDO.Ninja has a hosted page with common tools for making use of it, such as publishing a video or screen share to Twitch.
 
 [https://vdo.ninja/whip](https://vdo.ninja/whip)
 
-This is the future! To try it out, visit [https://vdo.ninja/whip](https://vdo.ninja/whip), enter your Twitch stream token in the correct field, GO, and then select your camera in Vide0Link as normal.
+This is the future! To try it out, visit [https://vdo.ninja/whip](https://vdo.ninja/whip), enter your Twitch stream token in the correct field, GO, and then select your camera in VDO.Ninja as normal.
 
 
 ### Alpha version of WHIP support and features
 
-The alpha version of Vide0Link has the cutting edge available to it, often with even more advanced features and fixes that have not yet made it available to the production stable release.
+The alpha version of VDO.Ninja has the cutting edge available to it, often with even more advanced features and fixes that have not yet made it available to the production stable release.
 
 Check out the alpha version here: [https://vdo.ninja/alpha/whip](https://vdo.ninja/alpha/whip)
 
 ### WHIP ingest from OBS Studio or other
 
-While Vide0Link can act as a host for incoming WHIP requests (published to `https://whip.vdo.ninja/YOURTOKENHERE`), many such publishing clients do not support NAT traversal or STUN server support yet.&#x20;
+While VDO.Ninja can act as a host for incoming WHIP requests (published to `https://whip.vdo.ninja/YOURTOKENHERE`), many such publishing clients do not support NAT traversal or STUN server support yet.&#x20;
 
 OBS Studio v30 does not, for example, so it may not work if publishing to someone who is behind a firewall. Still, even in those cases, the WHIP ingest feature will still work when:
 
 * on the same Local Area Network as the publisher,&#x20;
-* if hosting Vide0Link on a cloud server with public IP address available,&#x20;
+* if hosting VDO.Ninja on a cloud server with public IP address available,&#x20;
 * if your UDP ports are being forwarded (UDP ports 4096-65535)
 * or if your local IP address is set to the DMZ mode target within your router's network settings.
 
-For WHIP publishing clients that do support NAT traversal, such as Gstreamer's whip element, Vide0Link will already work with them.
+For WHIP publishing clients that do support NAT traversal, such as Gstreamer's whip element, VDO.Ninja will already work with them.
 
 I welcome support and engagement from other developers to work through these issues, so please reach out if you'd like to speak.
 
-In terms of ideal settings for OBS v30's WHIP output into Vide0Link, below you can find a link to some recommended encoder options, to ensure smoothest playback
+In terms of ideal settings for OBS v30's WHIP output into VDO.Ninja, below you can find a link to some recommended encoder options, to ensure smoothest playback
 
 [obs-whip-output-settings.md](../guides/obs-whip-output-settings.md)
 
@@ -21672,35 +21672,35 @@ Contact me on Discord
 
 ### Using WHIP + WHEP to host your own Meshcast service
 
-For more advanced users, you can use Vide0Link's WHIP/WHEP support, with your own WHIP/WHEP compatible broadcasting host, to provide your own Meshcast functionality within Vide0Link.
+For more advanced users, you can use VDO.Ninja's WHIP/WHEP support, with your own WHIP/WHEP compatible broadcasting host, to provide your own Meshcast functionality within VDO.Ninja.
 
-The [Meshcast service](meshcast.io.md) long offered by Vide0Link works like a WHIP/WHEP host, offloading video distribution via the hosted servers, thus avoiding the need for multiple p2p streams. As a result, it was pretty easy to add support for generic WHIP/WHEP hosting alternatives.
+The [Meshcast service](meshcast.io.md) long offered by VDO.Ninja works like a WHIP/WHEP host, offloading video distribution via the hosted servers, thus avoiding the need for multiple p2p streams. As a result, it was pretty easy to add support for generic WHIP/WHEP hosting alternatives.
 
 Currently a guide on using Cloudflare as the host is available, located here, [https://vdo.ninja/cloudflare](https://vdo.ninja/cloudflare), with guides for other self-hosted providers becoming available all the time.
 
-For the highly technical and curious, please note that if your WHIP server's response header includes a WHEP URL in it, where the WHIP stream can be viewed from, Vide0Link will automatically provide that URL to connected viewers to use as the main video source.
+For the highly technical and curious, please note that if your WHIP server's response header includes a WHEP URL in it, where the WHIP stream can be viewed from, VDO.Ninja will automatically provide that URL to connected viewers to use as the main video source.
 
 ie: WHEP: [`https://whep.urdomain.com/yourstreamtoken`](https://whep.urdomain.com/yourstreamtoken)
 
-### Demo video, showing us publishing from Vide0Link to Twitch
+### Demo video, showing us publishing from VDO.Ninja to Twitch
 
 [https://youtu.be/\_RHBsAJmfGs?si=653vhKBJesct\_cmS](https://youtu.be/\_RHBsAJmfGs?si=653vhKBJesct\_cmS)
 
-### The Vide0Link Mixer app supports WHIP out also
+### The VDO.Ninja Mixer app supports WHIP out also
 
-The Vide0Link [Mixer App](mixer-app.md) ([https://vdo.ninja/alpha/mixer](https://vdo.ninja/alpha/mixer)) supports WHIP output, with an option to publish directly to Twitch as well. If OBS is too much for you, and you need just a simple studio and mixing controls, this could be a great option for you.
+The VDO.Ninja [Mixer App](mixer-app.md) ([https://vdo.ninja/alpha/mixer](https://vdo.ninja/alpha/mixer)) supports WHIP output, with an option to publish directly to Twitch as well. If OBS is too much for you, and you need just a simple studio and mixing controls, this could be a great option for you.
 
 ### `&publish` URL option
 
-While still a work in progress, some of the features of the [https://vdo.ninja/whip](https://vdo.ninja/whip) page, primarily the WHIP publishing features, are also slowly being added as an integral part of Vide0Link itself.
+While still a work in progress, some of the features of the [https://vdo.ninja/whip](https://vdo.ninja/whip) page, primarily the WHIP publishing features, are also slowly being added as an integral part of VDO.Ninja itself.
 
-While this may change in the future, adding `&publish` to the URL of a Vide0Link (v24) will let you select a screen to capture and publish to a WHIP endpoint. This may also be added as built-in menu option at some point as well, allowing you to select any screen, page, or element to publish via WHIP.
+While this may change in the future, adding `&publish` to the URL of a VDO.Ninja (v24) will let you select a screen to capture and publish to a WHIP endpoint. This may also be added as built-in menu option at some point as well, allowing you to select any screen, page, or element to publish via WHIP.
 
 ### Raspberry Ninja also now supports WHIP output
 
 [Raspberry.Ninja](raspberry.ninja/) isn't just for Raspberry Pis, but works on a Linux system really, along with Windows WSL.
 
-If you want low-level controls over AV1 codec encoding and other facets of WHIP publishing that can't be obtained via the browser, check it out. It of course also supports Vide0Link, has a built-in SFU for Vide0Link, and lots more!
+If you want low-level controls over AV1 codec encoding and other facets of WHIP publishing that can't be obtained via the browser, check it out. It of course also supports VDO.Ninja, has a built-in SFU for VDO.Ninja, and lots more!
 
 ## Related
 
@@ -21731,7 +21731,7 @@ Chronologically updates are here:
 
 ### This is the **Electron Capture app**,
 
-Created originally for [Vide0Link](https://vdo.ninja) users, it can provide users a clean way of window capturing websites or as a production-oriented Chrome-alternative with numerous performance tweaks. It can also be used to pin [live chat overlays](https://socialstream.ninja) on screen, screen share without user interaction, increase the resolution of Zoom streams, and much much more.
+Created originally for [VDO.Ninja](https://vdo.ninja) users, it can provide users a clean way of window capturing websites or as a production-oriented Chrome-alternative with numerous performance tweaks. It can also be used to pin [live chat overlays](https://socialstream.ninja) on screen, screen share without user interaction, increase the resolution of Zoom streams, and much much more.
 
 [**Jump to Downloads Section**](https://github.com/steveseguin/electroncapture#links-to-downloads-below)
 
@@ -21741,13 +21741,13 @@ Created originally for [Vide0Link](https://vdo.ninja) users, it can provide user
 
 On some systems the OBS Browser Source plugin isn't available or doesn't work all that well, so this tool was made as a viable agnostic alternative. It was originally built to let you cleanly screen-grab just a video stream without the need of the OBS Browser Source plugin. The app was also made to make selecting the output audio playback device easy, outputting audio to something such as a Virtual Audio device: ie) https://vb-audio.com/Cable/ (Windows & macOS; donationware) or VAC (Windows @ https://vac.muzychenko.net/), or Loopback (macOS).
 
-While the OBS Browser source is ever maturing, and issues with video smearing, crashing, and dropped audio are far less common these days, there are still user reports of desync issues and other mishaps with OBS browser sources. As a result, Electron Capture remains the preference for many professional Vide0Link users, and over time it has evolved to offer additional solutions for many different use cases in the video production world.
+While the OBS Browser source is ever maturing, and issues with video smearing, crashing, and dropped audio are far less common these days, there are still user reports of desync issues and other mishaps with OBS browser sources. As a result, Electron Capture remains the preference for many professional VDO.Ninja users, and over time it has evolved to offer additional solutions for many different use cases in the video production world.
 
 The app can be set to remain on top of other windows, can hide the mouse cursor when possible, provides accurate window sizes options for 1:1 pixel mapping, and supports global system hotkeys (CTRL+M on Windows, for example). It also offers relatively low-CPU usage, command-line launch tools, built-in recording options, and it won't crash if OBS crashes. It may be worth exploring before your next production.
 
-The Electron Capture app uses recent versions of Chromium, and is setup to more resistant to desync, video smearing, and other issues that might exist in the native OBS browser source capture method. If a cutting edge web feature becomes available within browsers, it will also become available to Electron Capture first, making certain experimental features within Vide0Link accessible. The app is also optimized to not throttle when the system is stressed, ensuring that production-critical web-oriented code and media does not slow down or stop when its most needed.
+The Electron Capture app uses recent versions of Chromium, and is setup to more resistant to desync, video smearing, and other issues that might exist in the native OBS browser source capture method. If a cutting edge web feature becomes available within browsers, it will also become available to Electron Capture first, making certain experimental features within VDO.Ninja accessible. The app is also optimized to not throttle when the system is stressed, ensuring that production-critical web-oriented code and media does not slow down or stop when its most needed.
 
-For non-Vide0Link users, the window-sharing focus of Electron Capture is also useful for Zoom or other users. For example, when screen sharing it into Zoom, the published video will be high-resolution, since Zoom publishes virtual webcam and other camera streams at lower quality compared to screen shares. You can screen share websites without the browser frame, search history, or nav bar from appearing. When doing a Power Point presentation, you can screen share the window via Electron Capture, while also pinning the it in place on top, avoiding having to toggle between multiple windows as you present.
+For non-VDO.Ninja users, the window-sharing focus of Electron Capture is also useful for Zoom or other users. For example, when screen sharing it into Zoom, the published video will be high-resolution, since Zoom publishes virtual webcam and other camera streams at lower quality compared to screen shares. You can screen share websites without the browser frame, search history, or nav bar from appearing. When doing a Power Point presentation, you can screen share the window via Electron Capture, while also pinning the it in place on top, avoiding having to toggle between multiple windows as you present.
 
 [More benefits listed here](https://github.com/steveseguin/electroncapture/blob/master/BENEFITS.md)
 
@@ -21836,7 +21836,7 @@ Starting with version 1.6.0, to enable screen-share support and some other featu
 
 You can enable Elevated Privileges for the app via the command line with `--node 1` or in the app by right-clicking and selecting "Elevate Privileges" from the context-menu. If right-clicking to enable this mode, the app may reload the page afterwards.
 
-A unique feature about the Electron Capture app is that it can auto-select a screen or window when screen-sharing with Vide0Link, without user-input. Adding to the Vide0Link URL, [`&ss=1`](../../source-settings/screenshare.md) will select display 1, `&ss=2` for the second display, etc. Or specify a window with `&ss=window_name_here`.
+A unique feature about the Electron Capture app is that it can auto-select a screen or window when screen-sharing with VDO.Ninja, without user-input. Adding to the VDO.Ninja URL, [`&ss=1`](../../source-settings/screenshare.md) will select display 1, `&ss=2` for the second display, etc. Or specify a window with `&ss=window_name_here`.
 
 To select Screen 1 automatically on load, for example you can do:
 
@@ -21848,11 +21848,11 @@ or to select Discord automatically
 elecap.exe --node 1 --url "https://vdo.ninja/beta/?ss=Discord&autostart"
 ```
 
-It's also possible to select audio-only when screen sharing via Electron Capture with Vide0Link; you do not need to select a video if you wish to share audio-only.
+It's also possible to select audio-only when screen sharing via Electron Capture with VDO.Ninja; you do not need to select a video if you wish to share audio-only.
 
 **Global hotkeys**
 
-Global Hotkeys, such as CTRL+M, are supported. CTRL+M will mute the mic, in the most recently opened window. You can assign a custom global hot-key in Vide0Link, and it will be respected by Electron Capture. (Vide0Link Settings -> User -> Global Hotkey)
+Global Hotkeys, such as CTRL+M, are supported. CTRL+M will mute the mic, in the most recently opened window. You can assign a custom global hot-key in VDO.Ninja, and it will be respected by Electron Capture. (VDO.Ninja Settings -> User -> Global Hotkey)
 
 Youtube has a built-in automatic ad-skipper added, and for both Youtube, Twitch, and more, when watching a video, you can full-window the video, allowing for clean video capture. This option is available via the context menu of Electron Capture; just right-click somewhere on the page that is empty and select Clean Video Output.
 
@@ -21879,7 +21879,7 @@ More recently, with newer versions of OBS, you can capture an application's audi
 
 **Changing the audio output device**
 
-If you right click the app when on a site, you can change the audio output device for that site. This is useful for setting a YouTube or Vide0Link video to output to a virtual audio cable or headphones, rather than playout via the default audio device.
+If you right click the app when on a site, you can change the audio output device for that site. This is useful for setting a YouTube or VDO.Ninja video to output to a virtual audio cable or headphones, rather than playout via the default audio device.
 
 On MacOS, this is especially helpful since there is a lack of audio routing controls.
 
@@ -21897,9 +21897,9 @@ Once "click thru" mode is enabled, you can re-enable click-capture by just selec
 
 While there is no native Syphon or NDI output option yet available, one user has mentioned a solution for some users: [http://www.sigmasix.ch/syphoner/](http://www.sigmasix.ch/syphoner/)
 
-#### Automation Workflows with Vide0Link
+#### Automation Workflows with VDO.Ninja
 
-You can see a quick start / cheat sheet guide for example uses of the app with Vide0Link here: [https://github.com/steveseguin/vdo.ninja/blob/quickstart/automation/cheatsheet\_obsn\_automation.md](https://github.com/steveseguin/vdo.ninja/blob/quickstart/automation/cheatsheet\_obsn\_automation.md)
+You can see a quick start / cheat sheet guide for example uses of the app with VDO.Ninja here: [https://github.com/steveseguin/vdo.ninja/blob/quickstart/automation/cheatsheet\_obsn\_automation.md](https://github.com/steveseguin/vdo.ninja/blob/quickstart/automation/cheatsheet\_obsn\_automation.md)
 
 ### Notes on Using and Closing the App
 
@@ -21926,7 +21926,7 @@ You can see a quick start / cheat sheet guide for example uses of the app with V
 
 You can find the newest release builds of the app here: [https://github.com/steveseguin/electroncapture/releases](https://github.com/steveseguin/electroncapture/releases) or see below.
 
-Please note that the Electron Capture app does not auto-update to newer versions of Chromium. This can become a security issue if it is left to become out of date. It's also recommended to not use the Electron Capture app with websites and remote Vide0Link peers that you do not trust.
+Please note that the Electron Capture app does not auto-update to newer versions of Chromium. This can become a security issue if it is left to become out of date. It's also recommended to not use the Electron Capture app with websites and remote VDO.Ninja peers that you do not trust.
 
 #### Windows Version
 
@@ -22060,7 +22060,7 @@ Change the capture method in OBS to "BitBlt"and uncheck the Capture Cursor. Also
 
 ![image](https://user-images.githubusercontent.com/2575698/126881462-b6916972-aa46-41bd-be01-54e3c2a58906.png)
 
-Adding [`&nocursor`](../../general-settings/and-nocursor.md) to Vide0Link will hide the cursor in that browser window, but that often isn't enough. If the above fails, make sure you are window capturing with OBS using the same display adapter for both OBS and the Electron window.
+Adding [`&nocursor`](../../general-settings/and-nocursor.md) to VDO.Ninja will hide the cursor in that browser window, but that often isn't enough. If the above fails, make sure you are window capturing with OBS using the same display adapter for both OBS and the Electron window.
 
 Lastly, if that still doesn't help, you can try Windows + Tab (on windows), and host the Electron Capture app on the secondary windows desktop. Windows + Tab back to the main one and select the window then. You may need to toggle between the two desktops after selecting the window to capture, to get it to show in OBS, but it is one way of hiding the mouse.
 
@@ -22100,9 +22100,9 @@ Chronologically updates are here:
 
 ## ![](https://user-images.githubusercontent.com/2575698/107161314-f6523f80-6969-11eb-9e9b-9135554b87b5.png) Raspberry Ninja
 
-Turn your Raspberry Pi, Nvidia Jetson, Orange Pi, or nearly any Python-compatible system into a ninja-cam with hardware-acceleration enabled! This lets you publish live streaming video and audio directly to your web browser or OBS instance using Vide0Link. Achieve very low streaming latency over the Internet or a LAN; all for free.
+Turn your Raspberry Pi, Nvidia Jetson, Orange Pi, or nearly any Python-compatible system into a ninja-cam with hardware-acceleration enabled! This lets you publish live streaming video and audio directly to your web browser or OBS instance using VDO.Ninja. Achieve very low streaming latency over the Internet or a LAN; all for free.
 
-It also has the ability to record remote Vide0Link streams to disk, without needing to transcode, and can broadcast a low-latency video stream to multiple viewers at time. More recently, fdsink and OpenCV support have been added, for ingesting remote video streams with sub-300-ms of latency into your computer vision projects.
+It also has the ability to record remote VDO.Ninja streams to disk, without needing to transcode, and can broadcast a low-latency video stream to multiple viewers at time. More recently, fdsink and OpenCV support have been added, for ingesting remote video streams with sub-300-ms of latency into your computer vision projects.
 
 ### Preface
 
@@ -22268,7 +22268,7 @@ optional arguments:
   --pipein              Lets you pipe data in from a unix pipe, something like: `ffmpeg -i input.mp4 -o - | python3 publish.py --pipein auto`
   --libcamera           Use libcamera as a source; this may be needed if using third party cameras like those from Arducam
   --latency             Set the incoming jitter buffer, in milliseconds. 200-ms is the default.
-  --password            Start with Vide0Link v24, Raspberry.Ninja is partially compatible with passwords
+  --password            Start with VDO.Ninja v24, Raspberry.Ninja is partially compatible with passwords
   --framebuffer         Specify the stream ID that you wish to ingest and output locally as as frame buffer (OpenCV friendly)
 
 ```
@@ -22333,7 +22333,7 @@ RTMP support overrides WebRTC support at the moment, and the features that are s
 
 Things like bitrate, width, height, raw, framerate are also supported, but not a whole lot else.
 
-RTMP support is currently experimental; example use with a Jetson here: 
+RTMP support is currently experimental; example use with a Jetson here: [https://www.youtube.com/watch?v=8JOn2sK4GfQ](https://www.youtube.com/watch?v=8JOn2sK4GfQ)
 
 You can't publish to vdo.ninja with RTMP, but rather a service like YouTube.
 
@@ -22389,7 +22389,7 @@ Support for the Theta 4k 360 USB camera has been added. Has been tested with the
 
 Install script and brief usage example found here: [https://github.com/steveseguin/raspberry\_ninja/blob/main/nvidia\_jetson/theta\_z1\_install.sh](https://github.com/steveseguin/raspberry\_ninja/blob/main/nvidia\_jetson/theta\_z1\_install.sh)
 
-To view equirectangular 360-degree video with Vide0Link, you can refer the the https://vdo.ninja/360 simple 360-degree player offered. Usage is like: 
+To view equirectangular 360-degree video with VDO.Ninja, you can refer the the https://vdo.ninja/360 simple 360-degree player offered. Usage is like: 
 
 [https://vdo.ninja/360?view=the360StreamIDHere](https://vdo.ninja/360?view=the360StreamIDHere), with the \&password being an optional parameter. Just change out `the360StreamIDHere` with your own stream ID, and publish a equirectangular video stream at high resolution to it.
 
@@ -22400,8 +22400,8 @@ Some notes about the 360-player and support:
 * Each viewer of the stream can interact, with each having their control to look around in 360-space.
 * As the sender, you can use an OBS Virtual Camera as a source, when sending, or use a camera with a Equirectangular output
   * In terms of supported cameras, I have a Theta V 360 camera for example, which can output via USB to OBS Studio.
-    * It requires a plugin to work, but it handles converting to Equirectangular format. From there, you can add the virtual camera output containing the equirectangular output to Vide0Link
-    * More on the Theta V camera and its use with OBS Studio here; 
+    * It requires a plugin to work, but it handles converting to Equirectangular format. From there, you can add the virtual camera output containing the equirectangular output to VDO.Ninja
+    * More on the Theta V camera and its use with OBS Studio here; [https://www.youtube.com/watch?v=qUzciWQ5HiM](https://www.youtube.com/watch?v=qUzciWQ5HiM)
 
 #### HDMI Input options
 
@@ -22413,7 +22413,7 @@ Audio is also more challenging when dealing with the HDMI to CSI adapters, as yo
 
 Please note before buying that there are different HDMI to CSI2 boards, and they might look similar, but they are definitely not equal.
 
-* X630 boards seem to have a solder-free audio support (via an addon board; X630-A2) and 1080p25 support; there's a nice YouTube guide on setting it up  and a kit available to make it all a breeze; https://geekworm.com/products/x630?variant=39772641165400.
+* X630 boards seem to have a solder-free audio support (via an addon board; X630-A2) and 1080p25 support; there's a nice YouTube guide on setting it up https://www.youtube.com/watch?v=lJL2Ihs1aYg and a kit available to make it all a breeze; https://geekworm.com/products/x630?variant=39772641165400.
 * C779 boards do not support audio (hardware problem), making it quite challenging to use. But it is often the cheapest option. I don't recommend this option.
 * C780 boards supposedly has fixed the audio issue of the C779 boards, but they remain untested by me yet. It appears they have good audio support and a 4-lane option (C780B) for the RPi Compute module boards, but most users will proabably need the two-lane C780A.
 * Boards by Auvidea, like the B100, B101, or B102, have audio support via I2S it seems. These are more expensive options though, and there is mention of RPi Compute Module support with some of these Auvidea boards as well. I haven't tested these boards yet.
@@ -22425,13 +22425,13 @@ Please share with the community what works well for you and what did not.
 
 #### MIDI options
 
-When using the `--midi` parameter, video and audio are disabled. Instead, the script can send and recieve MIDI commands over Vide0Link. Supports plug-and-play, although you may need to install `python-rtmidi` using pip3 first.
+When using the `--midi` parameter, video and audio are disabled. Instead, the script can send and recieve MIDI commands over VDO.Ninja. Supports plug-and-play, although you may need to install `python-rtmidi` using pip3 first.
 
 Incoming MIDI messages will be forwarded to the first MIDI device connected to the Pi. Adding `&midiout` to the viewer's view-link will have that remote browser send any MIDI messages (such as from a USB DJ Controller) to the raspberry\_ninja publish.py script, which will then be forwarded to the first local MIDI device
 
 Outgoing MIDI messages will be sent to connected viewers, and if those connected viewers have `&midiin` added to their view-links, those MIDI commands will be forwarded to the connected MIDI devices.
 
-If using a virtual MIDI device on the remote viewer's computer, such as `loopMIDI`, you can target that as both a source and target for MIDI commands. This is especially useful for connecting Vide0Link to DJ software applilcations, like Mixxx or Serato DJ Pro, which supports mapping of MIDI inputs/outputs.
+If using a virtual MIDI device on the remote viewer's computer, such as `loopMIDI`, you can target that as both a source and target for MIDI commands. This is especially useful for connecting VDO.Ninja to DJ software applilcations, like Mixxx or Serato DJ Pro, which supports mapping of MIDI inputs/outputs.
 
 Please note, the raspberry\_ninja publish.py script can both send and recieve MIDI commands over a single peer connection, which is a bit different than how video/audio work currently. It's also different than how browser to browser currently is setup, where a sender won't ever request MIDI data, yet the raspberry\_ninja code does allow the sender to both send and receive MIDI data.
 
@@ -22460,24 +22460,24 @@ Midi demo video:
 
 #### Discord Support
 
-Support is available on Discord at  in channel _#raspberry-ninja_
+Support is available on Discord at [https://discord.vdo.ninja](https://discord.vdo.ninja) in channel _#raspberry-ninja_
 ---
-description: Publish live streaming video to Vide0Link at very high resolutions
+description: Publish live streaming video to VDO.Ninja at very high resolutions
 ---
 
 # Raspberry.Ninja
 
 [https://raspberry.ninja/](https://raspberry.ninja/)
 
-Turn your Raspberry Pi or Nvidia Jetson into a Ninja-cam with hardware-acceleration enabled! Publish live streaming video to Vide0Link on the cheap at very high resolutions! The script for the Nvidia Jetson ($69 and up) is setup to plug in a $10 1080p30 HDMI to USB adapter and go, while the Raspberry Pi is setup as a quick-deploy image that can work with the official Raspicam.
+Turn your Raspberry Pi or Nvidia Jetson into a Ninja-cam with hardware-acceleration enabled! Publish live streaming video to VDO.Ninja on the cheap at very high resolutions! The script for the Nvidia Jetson ($69 and up) is setup to plug in a $10 1080p30 HDMI to USB adapter and go, while the Raspberry Pi is setup as a quick-deploy image that can work with the official Raspicam.
 
-Get support on the Discord if you have any problems: 🏮│raspberry․ninja
+Get support on the Discord if you have any problems: [🏮│raspberry․ninja](https://discord.gg/BVvGwGaD9F)
 
-![An Nvidia Jetson NX pushing 1080p video to Vide0Link, captured with a $10 HDMI to USB adapter](<../../.gitbook/assets/image (38) (1).png>)
+![An Nvidia Jetson NX pushing 1080p video to VDO.Ninja, captured with a $10 HDMI to USB adapter](<../../.gitbook/assets/image (38) (1).png>)
 
 ## Raspberry Pi system images (and code)
 
-If you have a Raspberry Pi, Nvidia Jetson, or a Linux system, you can use those devices to connect UVC-compatible cameras and microphones to Vide0Link. It's a great way to make a cheap mobile stream encoder.
+If you have a Raspberry Pi, Nvidia Jetson, or a Linux system, you can use those devices to connect UVC-compatible cameras and microphones to VDO.Ninja. It's a great way to make a cheap mobile stream encoder.
 
 This is much cheaper than using a mobile phone and this solution won't overheat when streaming 1080p video after hours. The code is written in Python, so it is accessible for novice developers to use, and it supports hardware-accelerated video encoding.
 
@@ -22511,9 +22511,9 @@ Consolidate your live social messaging streams
 * Multi-channel source-icon support, so you can differentiate between different streams and creators
 * No user login, API key, or permission needed to capture the chat messages from most sites and services.
 * Queuing of messages for later highlighting
-* Free community support at https://discord.socialstream.ninja
+* Free community support at [https://discord.socialstream.ninja](https://discord.socialstream.ninja)
 
-Social Stream makes use of Vide0Link's data-transport API to stream data securely between browser windows with extremely low latency and all for free!
+Social Stream makes use of VDO.Ninja's data-transport API to stream data securely between browser windows with extremely low latency and all for free!
 
 ![image](https://user-images.githubusercontent.com/2575698/148505639-972eec38-7d8b-4bf3-9f15-2bd02182591e.png) ![image](https://user-images.githubusercontent.com/2575698/148505691-8a08e7b0-29e6-4eb5-9632-9dbcac50c204.png)
 
@@ -22543,7 +22543,7 @@ Social Stream makes use of Vide0Link's data-transport API to stream data securel
 * telegram (web.telegram.org in stream mode; requires toggle enabled)
 * slack (https://app.slack.com/ ; required toggle enabled to use)
 * Google Meet ; required toggle enabled to use
-* ![Requires toggling to enable certain integrations](
+* ![Requires toggling to enable certain integrations](https://user-images.githubusercontent.com/2575698/178857380-24b3a0fc-bf86-4645-91ec-24893df19279.png) telegram, slack, whatsapp, discord require an extra step to enable. See this video for more help: https://www.youtube.com/watch?v=L3l0\_8V1t0Q
 * restream.io chat supported (https://chat.restream.io/chat)
 * amazon.com/live
 * wix.com (https://manage.wix.com/dashboard/_/live-video/_)
@@ -22725,7 +22725,7 @@ If using the automated chat response options, like auto-hi, you must ensure the 
 
 * Toggle the extension on and off, and reload the pop-out chat window. Ideally the pop-out chat should be visible on screen, as even just a few pixels shown will allow the pop-out chat to work at full-power. Chrome otherwise may throttle performance.
 * Open a new dock / overlay link if things still do not work, as the session ID may have changed.
-* Ensure that Vide0Link works with your browser, as if not, webRTC may be disabled and so this social stream extension will not work also.
+* Ensure that VDO.Ninja works with your browser, as if not, webRTC may be disabled and so this social stream extension will not work also.
 * If using Facebook live chat, please sure you are viewing the page as a "viewer", not as a publisher, and that you are connected to WiFi or Ethernet, and not mobile LTE/4G/5G.
 * The auto-responder requires you to be signed in to the social endpoint and that you have access to chat; ensure you accept any disclaimer and try issuing a test message first.
 * Try using the extension in Incognito mode or try disabling all other browser extensions, then reloading the browser, and trying again. Many extension types will conflict with Socialstream, causing certain functions to fail.
@@ -23101,7 +23101,7 @@ For a simple site, a developer should need just 30 minutes to an hour to get a s
 
 #### Support
 
-You can find me on discord over at https://discord.socialstream.ninja or  offering free support in channel #chat.overlay-support
+You can find me on discord over at https://discord.socialstream.ninja or [https://discord.gg/7U4ERn9y](https://discord.gg/vFU8AuwNf3), offering free support in channel #chat.overlay-support
 
 Feedback and feature requests are welcomed. Please also make a Github issue if you're not a fan of Discord, but still need to report a bug or feature request.
 
@@ -23130,7 +23130,7 @@ Consolidate your live social messaging streams, including YouTube, Twitch, and m
 
 Very much like Chat Overlay Ninja, except is purely for live chat and has a focus on consolidation of chat messages, instead of just featured chat. Has many features and supported sites at this point.
 
-Get support on the Discord if you have any problems: 💬│social-stream-ninja
+Get support on the Discord if you have any problems: [💬│social-stream-ninja](https://discord.gg/6Wbu848w94)
 
 ## Standalone App
 

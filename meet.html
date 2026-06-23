@@ -10,10 +10,10 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="./media/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="./media/favicon-16x16.png" />
 	<link rel="icon" href="./media/favicon.ico" />
-	<link itemprop="thumbnailUrl" href="./media/logo.png" />
-	
-	
-	
+	<link itemprop="thumbnailUrl" href="./media/vdoNinja_logo_full.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400;700&display=swap" rel="stylesheet">
 	<style>
 	:root{
 		--aspect-ratio: 1.7777777777;
@@ -909,12 +909,12 @@
 			<br /><br />
 			<div class="footer">
 				<div>
-					
+					<a href="https://discord.vdo.ninja" class="discord" target="_blank"></a>
 				</div>
 				<div>
-					
+					<a class="github" href="https://github.com/steveseguin/vdoninja" rel="noopener" target="_blank" title="Star steveseguin/vdoninja on GitHub"></a>
 				</div>
-				<div style="cursor:pointer;" onclick=" ">Powered by Vide0Link</div>
+				<div style="cursor:pointer;" onclick="window.open('https://vdo.ninja');">Powered by VDO.Ninja</div>
 			</div>
 		</div>
 	</div>
@@ -1155,7 +1155,7 @@
 					hyperlink = "http://" + hyperlink;
 				}
 				var display = url.length > 35 ? url.substring(0, 35) + "..." : url;
-				result += '<a href="' + sanitize(hyperlink) + '" title="Click to open the link in a new tab" rel="noopener noreferrer">' + sanitize(display) + "</a>";
+				result += '<a href="' + sanitize(hyperlink) + '" title="Click to open the link in a new tab" target="_blank" rel="noopener noreferrer">' + sanitize(display) + "</a>";
 			} else {
 				result += sanitize(match[0]);
 			}

@@ -208,7 +208,7 @@ async function parseVdoNinjaUrl(url) {
       url = 'https://' + url;
     }
     if (!url.includes('vdo.ninja') && !url.includes('obs.ninja') && !url.includes('versus.cam') && !url.includes('comms.cam')) {
-      throw new Error('Not a valid Vide0Link URL');
+      throw new Error('Not a valid VDO.Ninja URL');
     }
     const urlObj = new URL(url);
     const params = new URLSearchParams(urlObj.search);
@@ -257,7 +257,7 @@ async function parseVdoNinjaUrl(url) {
       pushId: components.push || ''
     };
   } catch (e) {
-    console.error('Error parsing Vide0Link URL:', e);
+    console.error('Error parsing VDO.Ninja URL:', e);
     throw e;
   }
 }
@@ -276,8 +276,8 @@ function setupUrlDetection() {
       const newFormGroup = document.createElement('div');
       newFormGroup.className = 'form-group';
       newFormGroup.innerHTML = `
-        <label for="vdo-url-input">Vide0Link URL (Optional):</label>
-        <input type="text" id="vdo-url-input" placeholder="Paste your Vide0Link URL">
+        <label for="vdo-url-input">VDO.Ninja URL (Optional):</label>
+        <input type="text" id="vdo-url-input" placeholder="Paste your VDO.Ninja URL">
         <small>We'll extract the notification topic from your URL automatically</small>
       `;
       const topicFormGroup = subscribeCard.querySelector('.form-group');
@@ -661,7 +661,7 @@ function setupEventListeners() {
 		}
 		const testNotification = {
 		  title: 'Test Notification',
-		  body: 'This is a test notification for Vide0Link',
+		  body: 'This is a test notification for VDO.Ninja',
 		  url: window.location.href,
 		  timestamp: Date.now()
 		};
@@ -803,7 +803,7 @@ function createNotificationPopup(notification) {
   const timeAgo = window.notificationManager.getTimeAgo(notification.timestamp || Date.now());
   notificationElement.innerHTML = `
     <div class="notification-popup-header">
-      <h3 class="notification-popup-title">🔔 ${notification.title || 'Vide0Link Notification'}</h3>
+      <h3 class="notification-popup-title">🔔 ${notification.title || 'VDO.Ninja Notification'}</h3>
       <button class="notification-popup-close">&times;</button>
     </div>
     <div class="notification-popup-body">
@@ -883,7 +883,7 @@ function updateNotificationHistoryUI() {
     notificationEl.innerHTML = `
       <div class="notification-icon">🔔</div>
       <div class="content">
-        <h3>${notification.title || 'Vide0Link Notification'}</h3>
+        <h3>${notification.title || 'VDO.Ninja Notification'}</h3>
         <p>${notification.body || 'Notification received'}</p>
         <div class="time"><strong>${timeAgo}</strong> (${new Date(timestamp).toLocaleString()})</div>
       </div>
@@ -915,7 +915,7 @@ function setupParseUrlButton() {
   parseUrlBtn.addEventListener('click', async () => {
     const url = vdoUrlInput.value.trim();
     if (!url) {
-      displayStatusMessage('⚠️ Please enter a Vide0Link URL', 'warning');
+      displayStatusMessage('⚠️ Please enter a VDO.Ninja URL', 'warning');
       return;
     }
     try {

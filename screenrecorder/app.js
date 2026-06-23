@@ -3644,7 +3644,7 @@ function clearCountdown() {
 }
 
 function updateDocumentTitle() {
-  const appTitle = "Vide0Link Screen Recorder";
+  const appTitle = "VDO.Ninja Screen Recorder";
 
   if (state.countdownRemaining > 0) {
     document.title = "Starting in " + state.countdownRemaining + " | " + appTitle;
@@ -5194,7 +5194,7 @@ function buildTranscriptExportText(videoFilename) {
   }
 
   const lines = [];
-  lines.push("Vide0Link Screen Recorder Transcript");
+  lines.push("VDO.Ninja Screen Recorder Transcript");
   lines.push("Source: " + videoFilename);
   lines.push("Created: " + new Date().toISOString());
   lines.push("");
@@ -5231,7 +5231,7 @@ function buildMarkerExportText(videoFilename) {
   }
 
   const lines = [];
-  lines.push("Vide0Link Screen Recorder Markers");
+  lines.push("VDO.Ninja Screen Recorder Markers");
   lines.push("Source: " + videoFilename);
   lines.push("Created: " + new Date().toISOString());
   lines.push("Timeline: timestamps are relative to the exported recording.");

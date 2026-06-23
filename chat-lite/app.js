@@ -526,7 +526,7 @@ const testMessagePresets = [
   }),
   () => ({
     type: 'twitch',
-    chatname: 'Vide0Link',
+    chatname: 'VDO.Ninja',
     chatmessage: '<img src="https://github.com/steveseguin/social_stream/raw/main/icons/icon-128.png" alt="icon"> 😁 🇨🇦 https://vdo.ninja/',
     chatimg: 'https://socialstream.ninja/media/sampleavatar.png',
     vip: true,
@@ -923,21 +923,21 @@ function handleCopyLink() {
     navigator.clipboard.writeText(url)
       .then(() => {
         updateSessionStatus(
-          `Overlay link copied. <a href="${safeLink}" rel="noopener">Open chat overlay</a>.`,
+          `Overlay link copied. <a href="${safeLink}" target="_blank" rel="noopener">Open chat overlay</a>.`,
           'success',
           { html: true }
         );
       })
       .catch(() => {
         updateSessionStatus(
-          `Clipboard copy failed. Use this link instead: <a href="${safeLink}" rel="noopener">${safeLink}</a>`,
+          `Clipboard copy failed. Use this link instead: <a href="${safeLink}" target="_blank" rel="noopener">${safeLink}</a>`,
           'warn',
           { html: true }
         );
       });
   } else {
     updateSessionStatus(
-      `Copy this link manually: <a href="${safeLink}" rel="noopener">${safeLink}</a>`,
+      `Copy this link manually: <a href="${safeLink}" target="_blank" rel="noopener">${safeLink}</a>`,
       'info',
       { html: true }
     );

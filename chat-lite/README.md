@@ -1,6 +1,6 @@
-# Social Stream Ninja Lite (Vide0Link integration)
+# Social Stream Ninja Lite (VDO.Ninja integration)
 
-A lightweight in-repo chat control surface for Vide0Link. It connects directly to supported providers in-browser and renders an activity/overlay view without requiring the Social Stream extension.
+A lightweight in-repo chat control surface for VDO.Ninja. It connects directly to supported providers in-browser and renders an activity/overlay view without requiring the Social Stream extension.
 
 ## Features
 

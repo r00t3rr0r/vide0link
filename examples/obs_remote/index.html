@@ -1,8 +1,8 @@
 <html>
   <head>
     <script type="text/javascript" src="./thirdparty/obs-websocket.min.js"></script>
-	
-	<title>OBS Controller Demo using Vide0Link</title>
+	<link rel="stylesheet" href="https://vdo.ninja/main.css" />
+	<title>OBS Controller Demo using VDO.Ninja</title>
 	<style>
 	
 		.container {
@@ -125,9 +125,9 @@
 			<button id="address_button">Connect</button>
 			<button id="address_button_2">Connect and share OBS Output</button>
 		</span>
-		<a id="client" ></a>
+		<a id="client" target="_blank"></a>
 		<div id="info"></div>
-		<small>Code available on GitHub: <a href='https://github.com/steveseguin/remote_ninja'>https://github.com/steveseguin/remote_ninja</a></small>
+		<small>Code available on GitHub: <a target="_blank" href='https://github.com/steveseguin/remote_ninja'>https://github.com/steveseguin/remote_ninja</a></small>
 	</div>
 	<script>
 
@@ -306,7 +306,7 @@
 			localStorage.setItem('roomname',roomname)
 			localStorage.setItem('password',pwurl)
 			
-			createIFrame(camera); // connects to Vide0Link's IFRAME API
+			createIFrame(camera); // connects to VDO.Ninja's IFRAME API
 			
 			localStorage.setItem('address',address);
 			if (password){

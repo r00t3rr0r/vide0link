@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vide0Link Developer API Sandbox</title>
-  
+  <title>VDO.Ninja Developer API Sandbox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-primary: #07140a;
+      --bg-primary: #1a1a1a;
       --bg-secondary: #252525;
       --bg-tertiary: #2d2d2d;
       --text-primary: #e0e0e0;
@@ -608,7 +608,7 @@
 <body>
 <div class="container">
   <header>
-    <h1>Vide0Link Developer API Sandbox</h1>
+    <h1>VDO.Ninja Developer API Sandbox</h1>
     <div style="display: flex; flex-wrap: wrap; gap: var(--spacing); align-items: center;">
       <div>
         <p>Your API Key: <span class="api-key" id="api-key" onclick="copyToClipboard(this)">Loading...</span></p>
@@ -620,12 +620,12 @@
         </div>
       </div>
       <div style="flex: 1;">
-        <p>Your Ninja Link: <a id="ninja-link" href="#" >Loading...</a></p>
-        <p><small>You can append Vide0Link parameters to this link, treating it like a normal Vide0Link link.</small></p>
+        <p>Your Ninja Link: <a id="ninja-link" href="#" target="_blank">Loading...</a></p>
+        <p><small>You can append VDO.Ninja parameters to this link, treating it like a normal VDO.Ninja link.</small></p>
       </div>
       <div>
-        Companion Module
-        IFrame API Docs
+        <a href="https://github.com/bitfocus/companion-module-vdo-ninja" target="_blank" style="margin-right: 10px;">Companion Module</a>
+        <a href="https://docs.vdo.ninja/guides/iframe-api-documentation" target="_blank">IFrame API Docs</a>
       </div>
     </div>
   </header>
@@ -718,7 +718,7 @@ const socket = new WebSocket("wss://api.vdo.ninja:443");
 
 // Track connection state
 socket.onopen = function() {
-  console.log("Connected to Vide0Link API");
+  console.log("Connected to VDO.Ninja API");
   // Join with your API ID
   socket.send(JSON.stringify({ "join": "YOUR_API_ID" }));
 };
@@ -869,7 +869,7 @@ function sendHTTPRequest(apiID, action, target = "null", value = "null") {
     <div class="tab-content" id="sse-tab">
       <div class="section">
         <div class="section-title">Server-Sent Events (SSE) Listener</div>
-        <p>SSE provides a one-way communication channel to receive events from Vide0Link without sending requests.</p>
+        <p>SSE provides a one-way communication channel to receive events from VDO.Ninja without sending requests.</p>
         
         <div class="request-builder">
           <div class="form-group">
@@ -1157,7 +1157,7 @@ function sendCameraCommand(apiID, action, value, value2 = null, target = null) {
     <div class="tab-content" id="midi-tab">
       <div class="section">
         <div class="section-title">MIDI Integration</div>
-        <p>Control Vide0Link using MIDI controllers with various mapping options.</p>
+        <p>Control VDO.Ninja using MIDI controllers with various mapping options.</p>
         
         <div class="request-builder">
           <div class="form-group">
@@ -1181,7 +1181,7 @@ function sendCameraCommand(apiID, action, value, value2 = null, target = null) {
         </div>
         
         <h3>Default MIDI Mappings</h3>
-        <p>Vide0Link supports several MIDI mapping schemes, which can be configured using the <code>midiHotkeys</code> parameter.</p>
+        <p>VDO.Ninja supports several MIDI mapping schemes, which can be configured using the <code>midiHotkeys</code> parameter.</p>
         
         <div class="midi-config">
           <div class="midi-mapping">
@@ -1507,11 +1507,11 @@ function controlGuest(apiID, target, action, value = null, method = "websocket")
     <!-- API Reference Tab -->
     <div class="tab-content" id="docs-tab">
       <div class="section">
-        <div class="section-title">Vide0Link API Reference</div>
+        <div class="section-title">VDO.Ninja API Reference</div>
         <p>Complete reference for all supported API commands, parameters, and response formats.</p>
         
         <h3>API Overview</h3>
-        <p>The Vide0Link API supports multiple communication methods:</p>
+        <p>The VDO.Ninja API supports multiple communication methods:</p>
         <ul>
           <li><strong>WebSocket API</strong>: Real-time bidirectional communication (preferred for most uses)</li>
           <li><strong>HTTP GET API</strong>: Simple REST-style requests, compatible with hotkey systems</li>
@@ -1520,8 +1520,8 @@ function controlGuest(apiID, target, action, value = null, method = "websocket")
           <li><strong>MIDI Integration</strong>: Control via MIDI devices using various mapping schemes</li>
         </ul>
         
-        <p>For integrations with BitFocus Companion, check out the official Companion module.</p>
-        <p>For custom embeds, refer to the IFrame API Documentation.</p>
+        <p>For integrations with BitFocus Companion, check out the <a href="https://github.com/bitfocus/companion-module-vdo-ninja" target="_blank">official Companion module</a>.</p>
+        <p>For custom embeds, refer to the <a href="https://docs.vdo.ninja/guides/iframe-api-documentation" target="_blank">IFrame API Documentation</a>.</p>
         
         <h3>Command Reference</h3>
         <p>The following tables list all available commands, their parameters, and what they do.</p>
@@ -2145,7 +2145,7 @@ if (urlParams.has("api")) {
 // Update the displayed API key
 document.getElementById('api-key').textContent = WID;
 
-// Create the Vide0Link link
+// Create the VDO.Ninja link
 const ninjaPath = "vdo.ninja";
 const ninjaLink = document.getElementById('ninja-link');
 ninjaLink.href = `https://${ninjaPath}/?api=${WID}`;

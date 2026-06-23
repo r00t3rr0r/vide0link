@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OBS Plugin for Vide0Link</title>
-    
-    
-    
+    <title>OBS Plugin for VDO.Ninja</title>
+    <link rel="icon" type="image/x-icon" href="https://vdo.ninja/media/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
@@ -320,15 +320,15 @@
           <img
             class="brand-logo"
             src="https://raw.githubusercontent.com/steveseguin/vdo.ninja/develop/media/vdoninja.png"
-            alt="Vide0Link logo"
+            alt="VDO.Ninja logo"
           />
-          <span>OBS Plugin for Vide0Link</span>
+          <span>OBS Plugin for VDO.Ninja</span>
         </div>
         <nav class="nav">
-          Install
+          <a href="https://github.com/steveseguin/ninja-obs-plugin/blob/main/INSTALL.md">Install</a>
           <a href="#quick-start">Quick Start</a>
           <a href="#faq">FAQ</a>
-          Releases
+          <a href="https://github.com/steveseguin/ninja-obs-plugin/releases">Releases</a>
         </nav>
       </header>
 
@@ -336,20 +336,20 @@
         <section class="hero">
           <article class="hero-main" data-reveal style="--delay: 130ms">
             <p class="eyebrow">Direct WebRTC in OBS</p>
-            <h1>Direct low-latency OBS publishing to Vide0Link</h1>
+            <h1>Direct low-latency OBS publishing to VDO.Ninja</h1>
             <p class="lede">
               Native OBS streaming service for OBS -> audience and OBS -> OBS contribution without running your own media server. Optional source ingest and room-based inbound feeds are available when needed.
             </p>
             <div class="cta">
-              Download Latest Release
-              View Repository
+              <a class="btn btn-primary" href="https://github.com/steveseguin/ninja-obs-plugin/releases">Download Latest Release</a>
+              <a class="btn btn-secondary" href="https://github.com/steveseguin/ninja-obs-plugin">View Repository</a>
             </div>
           </article>
 
           <aside class="hero-side">
             <section class="panel" data-reveal style="--delay: 220ms">
               <h2>Before Quick Start</h2>
-              <p style="margin: 0; color: var(--muted)">This section is post-install. Need install steps first? Open the install guide.</p>
+              <p style="margin: 0; color: var(--muted)">This section is post-install. Need install steps first? Open the <a href="https://github.com/steveseguin/ninja-obs-plugin/blob/main/INSTALL.md">install guide</a>.</p>
             </section>
             <section class="panel" data-reveal style="--delay: 300ms">
               <h2>Viewer URL pattern</h2>
@@ -365,11 +365,11 @@ https://vdo.ninja/?view=YourStreamID&amp;room=YourRoomID&amp;solo</code></pre>
             <div class="steps">
               <div class="step">
                 <strong>1. Confirm plugin loaded</strong>
-                <div>Check <code>Settings -> Stream</code> for <code>Vide0Link</code> and <code>Tools -> Vide0Link Control Center</code>.</div>
+                <div>Check <code>Settings -> Stream</code> for <code>VDO.Ninja</code> and <code>Tools -> VDO.Ninja Control Center</code>.</div>
               </div>
               <div class="step">
                 <strong>2. Configure OBS</strong>
-                <div>Open <code>Settings -> Stream</code>, choose <code>Vide0Link</code>, and set <code>Stream ID</code>.</div>
+                <div>Open <code>Settings -> Stream</code>, choose <code>VDO.Ninja</code>, and set <code>Stream ID</code>.</div>
               </div>
               <div class="step">
                 <strong>3. Go live</strong>
@@ -403,14 +403,14 @@ https://vdo.ninja/?view=YourStreamID&amp;room=YourRoomID&amp;solo</code></pre>
           <section class="section links" data-reveal style="--delay: 240ms">
             <h2>Docs and Support</h2>
             <ul class="list">
-              <li>Releases</li>
-              <li>Install guide</li>
-              <li>Linux install guide</li>
-              <li>macOS install guide</li>
-              <li>README</li>
-              <li>Manual test matrix</li>
-              <li>Issue tracker</li>
-              <li>Vide0Link</li>
+              <li><a href="https://github.com/steveseguin/ninja-obs-plugin/releases">Releases</a></li>
+              <li><a href="https://github.com/steveseguin/ninja-obs-plugin/blob/main/INSTALL.md">Install guide</a></li>
+              <li><a href="https://github.com/steveseguin/ninja-obs-plugin/blob/main/INSTALL.md#install-linux">Linux install guide</a></li>
+              <li><a href="https://github.com/steveseguin/ninja-obs-plugin/blob/main/INSTALL.md#install-macos">macOS install guide</a></li>
+              <li><a href="https://github.com/steveseguin/ninja-obs-plugin/blob/main/README.md">README</a></li>
+              <li><a href="https://github.com/steveseguin/ninja-obs-plugin/blob/main/TESTING_OBS_MANUAL.md">Manual test matrix</a></li>
+              <li><a href="https://github.com/steveseguin/ninja-obs-plugin/issues">Issue tracker</a></li>
+              <li><a href="https://vdo.ninja/">VDO.Ninja</a></li>
             </ul>
           </section>
 
@@ -418,14 +418,14 @@ https://vdo.ninja/?view=YourStreamID&amp;room=YourRoomID&amp;solo</code></pre>
             <h2>FAQ</h2>
             <ul class="list">
               <li><strong>Does <code>Go Live</code> do anything different from <code>Start Streaming</code>?</strong> No. They trigger the same OBS stream output pipeline.</li>
-              <li><strong>Can I publish to Vide0Link and another stream destination at the same time?</strong> Not with this plugin path alone. It uses the active OBS stream output slot as a single destination.</li>
-              <li><strong>Where are Linux/macOS install steps?</strong> Use the install guide links above, or open INSTALL.md.</li>
+              <li><strong>Can I publish to VDO.Ninja and another stream destination at the same time?</strong> Not with this plugin path alone. It uses the active OBS stream output slot as a single destination.</li>
+              <li><strong>Where are Linux/macOS install steps?</strong> Use the install guide links above, or open <a href="https://github.com/steveseguin/ninja-obs-plugin/blob/main/INSTALL.md">INSTALL.md</a>.</li>
             </ul>
           </section>
         </div>
       </main>
 
-      <footer>OBS Plugin for Vide0Link - AGPL-3.0-only</footer>
+      <footer>OBS Plugin for VDO.Ninja - AGPL-3.0-only</footer>
     </div>
   </body>
 </html>

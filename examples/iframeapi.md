@@ -1,17 +1,17 @@
-# Understanding the Vide0Link IFRAME API: Detecting User Joins and Disconnects
+# Understanding the VDO.Ninja IFRAME API: Detecting User Joins and Disconnects
 
-The Vide0Link IFRAME API allows websites to embed and interact with Vide0Link streams. One of the most useful features is the ability to detect when users join or disconnect from your stream through event messaging. This guide will explain how to implement this functionality in your own projects.
+The VDO.Ninja IFRAME API allows websites to embed and interact with VDO.Ninja streams. One of the most useful features is the ability to detect when users join or disconnect from your stream through event messaging. This guide will explain how to implement this functionality in your own projects.
 
 ## How the IFRAME API Works
 
-Vide0Link's IFRAME API uses the browser's `postMessage` API to communicate between your parent website and the embedded Vide0Link iframe. This allows you to:
+VDO.Ninja's IFRAME API uses the browser's `postMessage` API to communicate between your parent website and the embedded VDO.Ninja iframe. This allows you to:
 
-1. Send commands to control the Vide0Link instance
-2. Receive events and data from the Vide0Link instance
+1. Send commands to control the VDO.Ninja instance
+2. Receive events and data from the VDO.Ninja instance
 
 ## Setting Up the Basic Structure
 
-First, you need to create an iframe that loads Vide0Link:
+First, you need to create an iframe that loads VDO.Ninja:
 
 ```javascript
 // Create the iframe element
@@ -20,7 +20,7 @@ var iframe = document.createElement("iframe");
 // Set necessary permissions
 iframe.allow = "camera;microphone;fullscreen;display-capture;autoplay;";
 
-// Set the source URL (your Vide0Link room)
+// Set the source URL (your VDO.Ninja room)
 iframe.src = "https://vdo.ninja/?room=your-room-name&cleanoutput";
 
 // Add the iframe to your page
@@ -39,7 +39,7 @@ var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
 
 // Add the event listener
 eventer(messageEvent, function (e) {
-    // Make sure the message is from our Vide0Link iframe
+    // Make sure the message is from our VDO.Ninja iframe
     if (e.source != iframe.contentWindow) return;
     
     // Log the data for debugging
@@ -149,7 +149,7 @@ var connectedUsers = {};
 
 // Add the event listener
 eventer(messageEvent, function (e) {
-    // Make sure the message is from our Vide0Link iframe
+    // Make sure the message is from our VDO.Ninja iframe
     if (e.source != iframe.contentWindow) return;
     
     // Log all messages for debugging
@@ -249,17 +249,17 @@ iframe.contentWindow.postMessage({ "getDetailedState": true }, "*");
 
 ## Best Practices
 
-1. **Always check the source**: Make sure messages are coming from your Vide0Link iframe.
+1. **Always check the source**: Make sure messages are coming from your VDO.Ninja iframe.
 2. **Handle disconnections gracefully**: Sometimes connections drop unexpectedly.
 3. **Consider implementing reconnection logic**: If important users disconnect, you might want to notify them or attempt to reconnect.
 4. **Debug with console.log**: Log all events during development to understand the full message flow.
 5. **Test with multiple users**: The behavior can be different depending on who connects first.
 
-By implementing these techniques, you can build sophisticated applications that respond to users joining and leaving your Vide0Link sessions, creating more interactive and responsive experiences.
+By implementing these techniques, you can build sophisticated applications that respond to users joining and leaving your VDO.Ninja sessions, creating more interactive and responsive experiences.
 
-# Vide0Link IFRAME API - Complete Inbound Control Reference
+# VDO.Ninja IFRAME API - Complete Inbound Control Reference
 
-This document provides a comprehensive list of all inbound remote control calls available through the Vide0Link IFRAME API. These commands allow you to control a Vide0Link instance embedded in an iframe from your parent webpage.
+This document provides a comprehensive list of all inbound remote control calls available through the VDO.Ninja IFRAME API. These commands allow you to control a VDO.Ninja instance embedded in an iframe from your parent webpage.
 
 ## Table of Contents
 - [Basic Usage](#basic-usage)
@@ -278,7 +278,7 @@ This document provides a comprehensive list of all inbound remote control calls 
 
 ## Basic Usage
 
-To send commands to the Vide0Link iframe:
+To send commands to the VDO.Ninja iframe:
 
 ```javascript
 iframe.contentWindow.postMessage({

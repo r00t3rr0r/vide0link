@@ -700,7 +700,7 @@ class NotificationManager {
 		  
 		  // Simply try to show the notification
 		  self.registration.showNotification(
-			notification.title || 'Vide0Link',
+			notification.title || 'VDO.Ninja',
 			options
 		  ).then(() => {
 			console.log('[SW-DEBUG] Notification shown successfully:', notification.id);

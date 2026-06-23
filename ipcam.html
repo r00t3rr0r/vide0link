@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IP Camera streaming tool with secure E2EE P2P sharing via Vide0Link and WHIP support">
+    <meta name="description" content="IP Camera streaming tool with secure E2EE P2P sharing via VDO.Ninja and WHIP support">
     <title>IP Camera Stream</title>
     <style>
         html, body {
@@ -12,7 +12,7 @@
             overflow: hidden;
         }
         body {
-            background: #07140a;
+            background: #1a1a1a;
             color: #fff;
             padding: 10px;
             font-family: system-ui;
@@ -63,7 +63,7 @@
             padding: 8px;
             border-radius: 4px;
             border: 1px solid #404040;
-            background: #07140a;
+            background: #1a1a1a;
             color: white;
             font-family: monospace;
         }
@@ -152,7 +152,7 @@
             margin: 8px 0;
             border: 1px solid #404040;
             border-radius: 4px;
-            background: #07140a;
+            background: #1a1a1a;
             color: white;
         }
         .page-description {
@@ -193,7 +193,7 @@
 			padding: 8px;
 			border-radius: 4px;
 			border: 1px solid #404040;
-			background: #07140a;
+			background: #1a1a1a;
 			color: white;
 			font-family: monospace;
 			width: 100%;
@@ -278,7 +278,7 @@
                 Configure how you want to publish your IP camera feed.
             </div>
             <div class="modal-buttons">
-                <button onclick="showMode('vdo')" title="Peer-to-peer encrypted streaming via Vide0Link">Vide0Link</button>
+                <button onclick="showMode('vdo')" title="Peer-to-peer encrypted streaming via VDO.Ninja">VDO.Ninja</button>
                 <button onclick="showMode('whip')" title="Stream to any WHIP-compatible service">WHIP</button>
                 <button onclick="showMode('twitch')" title="Stream directly to Twitch">Twitch</button>
                 <button onclick="showMode('preview')" title="Local preview only - no streaming">Preview</button>
@@ -330,7 +330,7 @@
 	<div class="electron-banner">
 		<div>
 			For best compatibility with IP camera streams, we recommend using 
-			ElectronCapture 
+			<a href="https://electroncapture.app" target="_blank">ElectronCapture</a> 
 			(available for Windows, Mac, and Linux).
 		</div>
 		<button class="electron-banner-close" onclick="dismissBanner()">×</button>
@@ -367,7 +367,7 @@
 			let info = '';
 			switch (publishConfig.mode) {
 				case 'vdo':
-					info = `Publishing to Vide0Link - ${publishConfig.push ? 'Stream ID: ' + publishConfig.push : 'Room: ' + publishConfig.room}`;
+					info = `Publishing to VDO.Ninja - ${publishConfig.push ? 'Stream ID: ' + publishConfig.push : 'Room: ' + publishConfig.room}`;
 					document.querySelector('.view-link-container').style.display = 'flex';
 					break;
 				case 'whip':
@@ -419,7 +419,7 @@
         function startPublishing() {
 			if (!publishConfig || isPublishing) return;
 			
-			// Always start with HTTPS for Vide0Link URLs
+			// Always start with HTTPS for VDO.Ninja URLs
 			let iframeUrl;
 			// For VDO and WHIP modes, ensure we're using HTTPS
 			iframeUrl = new URL('https://vdo.ninja');
@@ -737,7 +737,7 @@
             document.querySelector(`button[onclick="showMode('${mode}')"]`).classList.add('active');
             
             const descriptions = {
-                'vdo': 'Stream securely peer-to-peer using Vide0Link',
+                'vdo': 'Stream securely peer-to-peer using VDO.Ninja',
                 'whip': 'Stream to any WHIP-compatible service',
                 'twitch': 'Stream directly to your Twitch channel',
                 'preview': 'Local preview mode - no streaming'
