@@ -5,7 +5,7 @@ export function buildDockUrl(sessionId, { dockParams = '' } = {}) {
   }
 
   const extra = dockParams ? `&${dockParams.replace(/^&+/, '')}` : '';
-  return `https://vdo.socialstream.ninja/?ln&salt=vdo.ninja&password=false&room=${encodeURIComponent(trimmed)}&push=${encodeURIComponent(trimmed)}&vd=0&ad=0&autostart&cleanoutput&view&label=SocialStream${extra}`;
+  return `https://vdo.socialstream.ninja/?ln&salt=crypt.c0mm.l1nk&password=false&room=${encodeURIComponent(trimmed)}&push=${encodeURIComponent(trimmed)}&vd=0&ad=0&autostart&cleanoutput&view&label=SocialStream${extra}`;
 }
 
 function extractOverlayPayload(data) {

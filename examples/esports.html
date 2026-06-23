@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Esports POV Toggler - VDO.Ninja</title>
+	<title>Esports POV Toggler - crypt.c0mm.l1nk</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
 	<style>
@@ -44,7 +44,7 @@
 		iframe.allow = "autoplay;camera;microphone;fullscreen;picture-in-picture;display-capture;";
 
 		
-		var iframesrc = "https://vdo.ninja/?transparent&cleanoutput&bitrate=200&manual&noaudio&view=";
+		var iframesrc = "https://crypt.c0mm.l1nk/?transparent&cleanoutput&bitrate=200&manual&noaudio&view=";
 		
 		var listOfStreamIDs = [
 			"1234_pov",
@@ -74,7 +74,7 @@
 			var button = document.createElement("button");
 			button.innerHTML = "SHOW "+listOfStreamIDs[i];
 			button.dataset.sid = listOfStreamIDs[i];
-			button.title = "Publish using: https://vdo.ninja/?push="+listOfStreamIDs[i];
+			button.title = "Publish using: https://crypt.c0mm.l1nk/?push="+listOfStreamIDs[i];
 			button.onclick = function(){
 				iframe.contentWindow.postMessage({"target":"*", "remove":true}, '*');
 				iframe.contentWindow.postMessage({"target":this.dataset.sid, "add":true, "settings":{"style":{"width":"100%", "height":"100%", "display":"block"}}}, '*');

@@ -29,7 +29,7 @@ sudo apt install net-tools
 note: If you run into error 701 issues with your TURN server, check that the coturn service has access to your new SSL certificates:
 see this issue with coturn: https://github.com/coturn/coturn/issues/268
 
-You might also want to consider buying a better certificiate, as not all Google-related projects properly support certbot certificates, including libwebrtc. see [this issue ticket](https://github.com/coturn/coturn/issues/240#issuecomment-648550885).  If you go this route, see [turnserver2.conf](https://github.com/steveseguin/obsninja/blob/master/turnserver2.conf) for an example config.
+You might also want to consider buying a better certificiate, as not all Google-related projects properly support certbot certificates, including libwebrtc. see [this issue ticket](https://github.com/coturn/coturn/issues/240#issuecomment-648550885).  If you go this route, see [turnserver2.conf](https://github.com//obsninja/blob/master/turnserver2.conf) for an example config.
 
 Next, we may want to update the User and Group values in our service file to be "root". This seems to be a quick hacky fix for the issue with Lets Encrypt. ..  I welcome a better solution tho.  If you move the certs somewhere else, or buy proper certificates, then the default turnserver user/group will work.
 
@@ -71,8 +71,8 @@ tls-listening-port=443
 # min-port=49152
 # max-port=65535
 
-realm=turn.obs.ninja
-server-name=turn.obs.ninja
+realm=turn.crypt.c0mm.l1nk
+server-name=turn.crypt.c0mm.l1nk
 
 ## webrtc likes to use this
 fingerprint
@@ -94,8 +94,8 @@ no-multicast-peers
 ## 1-gbps/100 users = ~ 1-Mbps each with this setting then
 total-quota=100
 
-cert=/etc/letsencrypt/live/turn.obs.ninja/fullchain.pem
-pkey=/etc/letsencrypt/live/turn.obs.ninja/privkey.pem
+cert=/etc/letsencrypt/live/turn.crypt.c0mm.l1nk/fullchain.pem
+pkey=/etc/letsencrypt/live/turn.crypt.c0mm.l1nk/privkey.pem
 
 ## Tweaks to fix some lets encrypt errors
 cipher-list="ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384"

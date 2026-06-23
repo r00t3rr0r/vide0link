@@ -1,18 +1,18 @@
-# VDO.Ninja Remote Control API Documentation
+# crypt.c0mm.l1nk Remote Control API Documentation
 
 ## Overview
 
-VDO.Ninja's Remote Control API allows programmatic control of VDO.Ninja sessions via HTTP or WebSocket connections. This powerful API enables integration with stream decks, custom applications, and automation tools for controlling cameras, microphones, layouts, and other features.
+crypt.c0mm.l1nk's Remote Control API allows programmatic control of crypt.c0mm.l1nk sessions via HTTP or WebSocket connections. This powerful API enables integration with stream decks, custom applications, and automation tools for controlling cameras, microphones, layouts, and other features.
 
 ## Basic Setup
 
-To enable the API on any VDO.Ninja instance, add the `&api` parameter with a unique API key:
+To enable the API on any crypt.c0mm.l1nk instance, add the `&api` parameter with a unique API key:
 
 ```
-https://vdo.ninja/?api=YOUR_UNIQUE_API_KEY&webcam
+https://crypt.c0mm.l1nk/?api=YOUR_UNIQUE_API_KEY&webcam
 ```
 
-This key must be kept private and will be used to authenticate API requests. The same key must be used when making API calls to control this specific VDO.Ninja instance.
+This key must be kept private and will be used to authenticate API requests. The same key must be used when making API calls to control this specific crypt.c0mm.l1nk instance.
 
 ## Connection Methods
 
@@ -24,10 +24,10 @@ The API supports three connection methods:
 
 ### WebSocket API
 
-Connect to `wss://api.vdo.ninja:443` and authenticate with your API key:
+Connect to `wss://crypt.c0mm.l1nk:443` and authenticate with your API key:
 
 ```javascript
-const socket = new WebSocket("wss://api.vdo.ninja:443");
+const socket = new WebSocket("wss://crypt.c0mm.l1nk:443");
 
 socket.onopen = function() {
     // Join with your API key
@@ -49,12 +49,12 @@ socket.onmessage = function(event) {
 
 ### HTTP GET API
 
-Structure: `https://api.vdo.ninja/{apiKey}/{action}/{target}/{value}`
+Structure: `https://crypt.c0mm.l1nk/{apiKey}/{action}/{target}/{value}`
 
 Examples:
 ```
-https://api.vdo.ninja/YOUR_UNIQUE_API_KEY/mic/false       // Mute microphone
-https://api.vdo.ninja/YOUR_UNIQUE_API_KEY/camera/toggle   // Toggle camera
+https://crypt.c0mm.l1nk/YOUR_UNIQUE_API_KEY/mic/false       // Mute microphone
+https://crypt.c0mm.l1nk/YOUR_UNIQUE_API_KEY/camera/toggle   // Toggle camera
 ```
 
 ### Server-Sent Events (SSE)
@@ -62,7 +62,7 @@ https://api.vdo.ninja/YOUR_UNIQUE_API_KEY/camera/toggle   // Toggle camera
 For monitoring events without sending commands:
 
 ```javascript
-const eventSource = new EventSource(`https://api.vdo.ninja/sse/YOUR_UNIQUE_API_KEY`);
+const eventSource = new EventSource(`https://crypt.c0mm.l1nk/sse/YOUR_UNIQUE_API_KEY`);
 eventSource.onmessage = function(event) {
     console.log(JSON.parse(event.data));
 };
@@ -72,7 +72,7 @@ eventSource.onmessage = function(event) {
 
 ### Self-Targeted Commands
 
-These commands affect the local VDO.Ninja instance that has the API key enabled.
+These commands affect the local crypt.c0mm.l1nk instance that has the API key enabled.
 
 | Action | Value Options | Description |
 |--------|--------------|-------------|
@@ -220,7 +220,7 @@ import asyncio
 import json
 
 async def control_camera():
-    async with websockets.connect("wss://api.vdo.ninja:443") as websocket:
+    async with websockets.connect("wss://crypt.c0mm.l1nk:443") as websocket:
         # Join with API key
         await websocket.send(json.dumps({"join": "YOUR_API_KEY"}))
         
@@ -242,7 +242,7 @@ asyncio.run(control_camera())
 
 ```javascript
 // Toggle microphone via HTTP
-fetch("https://api.vdo.ninja/YOUR_API_KEY/mic/toggle")
+fetch("https://crypt.c0mm.l1nk/YOUR_API_KEY/mic/toggle")
     .then(response => response.text())
     .then(result => console.log("Mic toggled, new state:", result));
 ```
@@ -260,19 +260,19 @@ The API integrates well with:
 
 - Keep your API key private
 - Consider using unique keys for different productions
-- The API has full control over the VDO.Ninja instance it's connected to
+- The API has full control over the crypt.c0mm.l1nk instance it's connected to
 - All connections are encrypted over SSL/TLS
 
 ## Troubleshooting
 
-- Ensure the API key matches exactly between VDO.Ninja and your requests
+- Ensure the API key matches exactly between crypt.c0mm.l1nk and your requests
 - For WebSocket connections, implement reconnection logic (connections timeout after ~1 minute of inactivity)
 - When using HTTP API, a `timeout` response means the request couldn't reach the target
 
 ## Additional Resources
 
-- Complete API documentation: [github.com/steveseguin/Companion-Ninja](https://github.com/steveseguin/Companion-Ninja)
-- Interactive demo: [companion.vdo.ninja](https://companion.vdo.ninja)
+- Complete API documentation: [github.com//Companion-Ninja](https://github.com//Companion-Ninja)
+- Interactive demo: [companion.crypt.c0mm.l1nk](https://companion.crypt.c0mm.l1nk)
 - For Python implementations: See the Python sample in the repository
 
 ## Advanced Usage: Self-Hosting the API
@@ -281,7 +281,7 @@ For production environments, you can self-host the API server:
 
 1. Clone the repository from GitHub
 2. Install dependencies with `npm install`
-3. Modify the server URL in your VDO.Ninja instances:
+3. Modify the server URL in your crypt.c0mm.l1nk instances:
    ```javascript
    session.apiserver = "wss://your-custom-domain:443";
    ```

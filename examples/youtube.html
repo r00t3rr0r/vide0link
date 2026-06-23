@@ -105,7 +105,7 @@ function loadIframes(url=false){
 	path = path.replace("/examples","");
 	
 	var room1 = "https://"+path+"/?push="+streamid+"&webcam&autostart&vd=front&ad=1&transparent&noheader";
-	var room2 = "https://www.youtube.com/live_chat?is_popout=1&v="+youtube+"&embed_domain="+location.hostname;
+	var room2 = "https://crypt.c0mm.l1nk/?chat="+youtube;
 	var iframe = document.createElement("iframe");
 	iframe.allow = "autoplay;camera;microphone;fullscreen;picture-in-picture;";
 	iframe.src = room1;

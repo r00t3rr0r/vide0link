@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2026 Steve Seguin. All Rights Reserved.
+ *  Copyright (c) 2026 . All Rights Reserved.
  *
  *  Use of this source code is governed by the APGLv3 open-source license
  *  that can be found in the LICENSE file in the root of the source
@@ -64,12 +64,12 @@ var miscTranslations = {
 	// i can replace this list from time to time from the generated one in blank.json using translate.js
 	start: "START",
 	"new-display-name": "Enter a new Display Name for this stream",
-	"submit-error-report": "Press OK to submit any error logs to VDO.Ninja. Error logs may contain private information.",
+	"submit-error-report": "Press OK to submit any error logs to crypt.c0mm.l1nk. Error logs may contain private information.",
 	"director-redirect-1": "The director wishes to redirect you to the URL: ",
 	"director-redirect-2": "\n\nPress OK to be redirected.",
 	"add-a-label": "Add a label",
 	"audio-processing-disabled": "Audio processing is disabled with this guest. Can't mute or change volume",
-	"not-the-director": "<span color='red'>You are not the director of this room. You will have limited to no control. See <a target='_blank' href='https://docs.vdo.ninja/director-settings/codirector'>&codirector</a> on how to become a co-director.</span>",
+	"not-the-director": "<span color='red'>You are not the director of this room. You will have limited to no control. See <a target='_blank' href='https://crypt.c0mm.l1nk/director-settings/codirector'>&codirector</a> on how to become a co-director.</span>",
 	"room-is-claimed": "The room is already claimed by someone else.\n\nOnly the first person to join a room is the assigned director.\n\nRefresh after the first director leaves to claim.",
 	"token-room-is-claimed": "The room is claimed by someone else.\n\nJoin as a guest or co-director instead.",
 	"room-is-claimed-codirector": "The room is already claimed by someone else.\n\nTrying to join as a co-director...",
@@ -135,20 +135,20 @@ var miscTranslations = {
 	"camera-tip-camlink": "<i>Tip:</i> A Cam Link may glitch green/purple if accessed elsewhere while already in use.",
 	"samsung-a-series": "Samsung A-series phones may have issues with Chrome; if so, try Firefox Mobile instead or switch video codecs.",
 	"screen-permissions-denied": "Permission to capture denied. Ensure your browser has screen record system permissions\n\n1.On your Mac, choose Apple menu  > System Preferences, click Security & Privacy , then click Privacy.\n2.Select Screen Recording.\n3.Select the checkbox next to your browser to allow it to record your screen.",
-	"change-audio-output-device": "Audio could not be captured.\n\nIf you need audio, please make sure you have an audio output device available.\n\nSome gaming headsets (ie: Logitech/Corsair) also may need to be set to 2-channel output to work, as <a target='_blank' href='https://docs.vdo.ninja/common-errors-and-known-issues/surround-sound-error-when-screen-sharing-with-usb-headset'>surround sound drivers may cause problems</a>",
+	"change-audio-output-device": "Audio could not be captured.\n\nIf you need audio, please make sure you have an audio output device available.\n\nSome gaming headsets (ie: Logitech/Corsair) also may need to be set to 2-channel output to work, as <a target='_blank' href='https://crypt.c0mm.l1nk/common-errors-and-known-issues/surround-sound-error-when-screen-sharing-with-usb-headset'>surround sound drivers may cause problems</a>",
 	"prompt-access-request": " is trying to view your stream. Allow them?",
 	"confirm-reload-user": "Are you sure you wish to reload this user's browser?",
 	"webrtc-is-blocked": "⚠ This browser has either blocked WebRTC or does not support it.\n\nThis site will not work without it.\n\nDisable any browser extensions or privacy settings that may be blocking WebRTC, or try a different browser.",
 	"not-clean-session": "Video effects or canvas rendering failed.\n\nCheck to ensure any remotely hosted images are cross-origin allowed.",
-	"ios-no-screen-share": "Sorry, but your iOS browser does not support screen-sharing.\n\nPlease see <a href='https://docs.vdo.ninja/guides/screen-share-your-iphone-ipad' target='_blank'>this guide</a> for an alternative method to do so.",
-	"mobile-no-screen-share": "Sorry, your mobile browser does not support screen-sharing.\n\nThe <a href='https://docs.vdo.ninja/getting-started/native-mobile-app-versions' target='_blank'>The native apps</a> do offer basic support for it though.",
+	"ios-no-screen-share": "Sorry, but your iOS browser does not support screen-sharing.\n\nPlease see <a href='https://crypt.c0mm.l1nk/guides/screen-share-your-iphone-ipad' target='_blank'>this guide</a> for an alternative method to do so.",
+	"mobile-no-screen-share": "Sorry, your mobile browser does not support screen-sharing.\n\nThe <a href='https://crypt.c0mm.l1nk/getting-started/native-mobile-app-versions' target='_blank'>The native apps</a> do offer basic support for it though.",
 	"no-screen-share-supported": "Sorry, your browser does not support screen-sharing.\n\nPlease use the desktop versions of Firefox or Chrome instead.",
 	"no-screen-share-supported-firefox": "Sorry, your browser does not support screen-sharing.\n\nYour Firefox settings may be configured to block it or you've accessed the site insecurely.",
 	"speech-not-suppoted": "⚠ Speech Recognition is not supported by this browser",
-	"blue-yeti-tip": "<i>Tip:</i> Blue Yeti microphones may experience issues being overly loud. <a href='https://support.google.com/chrome/thread/7542181?hl=en&msgid=79691143'>Please see here</a> for a solution or disable auto-gain in VDO.Ninja.",
+	"blue-yeti-tip": "<i>Tip:</i> Blue Yeti microphones may experience issues being overly loud. <a href='https://support.google.com/chrome/thread/7542181?hl=en&msgid=79691143'>Please see here</a> for a solution or disable auto-gain in crypt.c0mm.l1nk.",
 	"sample-rate-too-high": "Your audio playback device has its sample rate set very high. If having audio issues, try using 48-kHz instead.",
-	"site-not-responsive": "<h3>Notice: The system cannot be accessed or is currently slow to respond.</h3>\nIf a routing issue, try adding <i title='or try visiting https://proxy.vdo.ninja/'>&proxy</i> to the URL; you can also try <i>https://proxy.vdo.ninja</i> or a VPN if the service is blocked in your country.\n\nIf the main service is down, a backup version is also available here: <i>https://backup.vdo.ninja</i>\n\nContact steve@seguin.email for added help.\n\nThis service requires the use of Websockets over port 443.",
-	"no-audio-source-detected": "No audio source was detected.<br><br>Please see <a href='https://docs.vdo.ninja/common-errors-and-known-issues/cant-capture-an-applications-audio-when-screen-sharing' target='_blank'>the documention</a> for a guide on how to capture application-based audio.",
+	"site-not-responsive": "<h3>Notice: The system cannot be accessed or is currently slow to respond.</h3>\nIf a routing issue, try adding <i title='or try visiting https://crypt.c0mm.l1nk/'>&proxy</i> to the URL; you can also try <i>https://crypt.c0mm.l1nk</i> or a VPN if the service is blocked in your country.\n\nIf the main service is down, a backup version is also available here: <i>https://crypt.c0mm.l1nk</i>\n\nContact  for added help.\n\nThis service requires the use of Websockets over port 443.",
+	"no-audio-source-detected": "No audio source was detected.<br><br>Please see <a href='https://crypt.c0mm.l1nk/common-errors-and-known-issues/cant-capture-an-applications-audio-when-screen-sharing' target='_blank'>the documention</a> for a guide on how to capture application-based audio.",
 	"viewer-count": "Total outbound p2p connections of this remote stream",
 	"enter-url-for-widget": "Enter a URL for a page to embed as a sidebar",
 	"director-password": "Enter the main director's password",
@@ -644,11 +644,11 @@ function submitDebugLog(msg = false) {
 		var request = new XMLHttpRequest();
 
 		var recordResults = session.streamID + "_" + parseInt(Date.now());
-		request.open("POST", "https://reports.vdo.ninja/?name=" + recordResults); //  php, well, whatever.
+		request.open("POST", "https://reports.crypt.c0mm.l1nk/?name=" + recordResults); //  php, well, whatever.
 		if (!session.cleanOutput) {
-			warnUser("Report any details of your bug report to steve@seguin.email, along with the following link: <a target='_blank' onclick='copyFunction(this, event)' href='https://reports.vdo.ninja/?name=" + recordResults + "'>https://reports.vdo.ninja/?name=" + recordResults + "</a>", false, false);
+			warnUser("Report any details of your bug report to , along with the following link: <a target='_blank' onclick='copyFunction(this, event)' href='https://reports.crypt.c0mm.l1nk/?name=" + recordResults + "'>https://reports.crypt.c0mm.l1nk/?name=" + recordResults + "</a>", false, false);
 		}
-		console.log("Report any details of your bug report to steve@seguin.email, along with the following ID: " + recordResults);
+		console.log("Report any details of your bug report to , along with the following ID: " + recordResults);
 
 		request.send(JSON.stringify(errorReport));
 		errorReport = [];
@@ -969,7 +969,7 @@ if (session.audioCtx && session.audioCtx.sampleRate && session.audioCtx.sampleRa
 }
 
 if (isVingester) {
-	console.warn("If Vingester isn't able to capture audio, get a fixed version of Vingester from here: https://github.com/steveseguin/vingester/releases/");
+	console.warn("If Vingester isn't able to capture audio, get a fixed version of Vingester from here: https://github.com//vingester/releases/");
 }
 
 function isAlphaNumeric(str) {
@@ -4080,7 +4080,7 @@ function obsSourceActiveChanged(event) {
 }
 
 function obsSourceVisibleChanged(event) {
-	// accounts for visible in VDO.Ninja scene AND visible in OBS scene
+	// accounts for visible in crypt.c0mm.l1nk scene AND visible in OBS scene
 	warnlog("obsSourceVisibleChanged");
 	warnlog(event.detail);
 	try {
@@ -4525,7 +4525,7 @@ function processOBSCommand(msg) {
 				}
 				window.obsstudio[msg.obsCommand.action](msg.obsCommand.value);
 			} else {
-				window.obsstudio[msg.obsCommand.action]();
+				window.obsstudiomsg.obsCommand.action;
 			}
 		}
 	} catch (e) {
@@ -10677,7 +10677,7 @@ var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
 eventer(messageEvent, function (e) {
 	// this listens for child IFRAMES.
 	try {
-		if (e.origin == "https://www.youtube.com") {
+		if (e.origin == "") {
 			processYoutubeEvent(e);
 		} else if (e.data && typeof e.data == "object" && "action" in e.data) {
 			if (e.data.action == "screen-share-state" && !e.data.value) {
@@ -13893,7 +13893,7 @@ function TFLiteWorker() {
 
 				// THE BELOW BLUR CODE polyfil is by David Enke
 				// MIT License: Copyright (c) 2019
-				// https://github.com/steveseguin/context-filter-polyfill/blob/master/src/filters/blur.filter.ts
+				// https://github.com//context-filter-polyfill/blob/master/src/filters/blur.filter.ts
 				const wm = width - 1;
 				const hm = height - 1;
 				const rad1 = amount + 1;
@@ -16582,7 +16582,7 @@ function printValues(obj, sort = false) {
 						return;
 					}
 				} else if (key == "version") {
-					stat = "VDO.Ninja Version";
+					stat = "crypt.c0mm.l1nk Version";
 				} else if (key == "platform") {
 					stat = "Platform (OS)";
 				} else if (key == "iPhone12Up") {
@@ -17240,7 +17240,7 @@ function printMyStats(menu, screenshare = false) {
 				menu.innerHTML += "<li><span title='Only available if not in a group room'>adjust video bitrate</span><span><input class='thinSlider' title='Adjust the outbound bitrate for this stream.' type='range' value='" + (session.pcs[UUID].savedBitrate || session.pcs[UUID].setBitrate || 2500) + "' min='0' max='" + (session.pcs[UUID].setBitrate || 6000) + "' onchange='session.limitBitrate(\"" + UUID + "\", parseInt(this.value));' /></span></li>";
 
 				if (!session.hidehome) {
-					menu.innerHTML += "<center><a target='_blank' href='https://docs.vdo.ninja/guides/how-do-i-control-bitrate-quality'>More info on setting bitrates higher here</a></center>";
+					menu.innerHTML += "<center><a target='_blank' href='https://crypt.c0mm.l1nk/guides/how-do-i-control-bitrate-quality'>More info on setting bitrates higher here</a></center>";
 				}
 			}
 		}
@@ -20334,7 +20334,7 @@ function sendQosReport() {
 
 		// Send using sendBeacon for reliability during page unload
 		var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
-		navigator.sendBeacon("https://qos.vdo.ninja/v1/report", blob);
+		navigator.sendBeacon("https://qos.crypt.c0mm.l1nk/v1/report", blob);
 		log("QoS report sent");
 	} catch (e) {
 		warnlog("QoS report error: " + e);
@@ -24780,7 +24780,7 @@ function publishWebcam(btn = false, miconly = false) {
 }
 
 function createYoutubeLink(vidid) {
-	return "https://www.youtube.com/embed/" + vidid + "?modestbranding=1&playsinline=1&enablejsapi=1&autoplay=1";
+	return "" + vidid + "?modestbranding=1&playsinline=1&enablejsapi=1&autoplay=1";
 }
 function parseURL4Iframe(iframeURL) {
 	if (iframeURL == "") {
@@ -24804,7 +24804,7 @@ function parseURL4Iframe(iframeURL) {
 		}
 	}
 
-	if (iframeURL.startsWith("http://") && !electronApi && (location.hostname !== "insecure.vdo.ninja")) {
+	if (iframeURL.startsWith("http://") && !electronApi && (location.hostname !== "insecure.crypt.c0mm.l1nk")) {
 		try {
 			iframeURL = "https://" + iframeURL.split("http://")[1];
 		} catch (e) {
@@ -24853,7 +24853,7 @@ function parseURL4Iframe(iframeURL) {
 				var match = iframeURL.match(regExp);
 				var plid = match && match[7] && match[7].length == 34 ? match[7] : false;
 				if (plid) {
-					iframeURL = "https://www.youtube.com/embed/videoseries?list=" + plid + "&autoplay=1&modestbranding=1&playsinline=1&enablejsapi=1";
+					iframeURL = "" + plid + "&autoplay=1&modestbranding=1&playsinline=1&enablejsapi=1";
 				}
 			}
 		} else if (domain == "twitch.tv" || domain == "www.twitch.tv") {
@@ -25430,7 +25430,7 @@ session.publishIFrame = function (iframeURL) {
 	container.appendChild(iframe);
 	getById("gridlayout").appendChild(container);
 
-	if (session.iframeSrc.startsWith("https://www.youtube.com/")) {
+	if (session.iframeSrc.startsWith("")) {
 		// special handler.
 		setTimeout(
 			function (iframe_id) {
@@ -25548,7 +25548,7 @@ session.publishIFrame = function (iframeURL) {
 	container.appendChild(iframe);
 	getById("gridlayout").appendChild(container);
 
-	if (session.iframeSrc.startsWith("https://www.youtube.com/")){ // special handler.
+	if (session.iframeSrc.startsWith("")){ // special handler.
 		setTimeout(function(iframe_id){YoutubeListen(iframe_id);}, 1000, iframe.id);
 	}
 
@@ -27297,7 +27297,7 @@ async function joinRoom(roomname) {
 								warnUser("You can invite others with:\n\n<a target='_blank' title='Copy this link to the clipboard' style='cursor:pointer' onclick='copyFunction(this.innerText,event);' href='" + invite + "'>" + invite + "</a>", false, false);
 							} else {
 								generateHash(session.password + session.salt, 4).then(function (hash) {
-									// change the hash length from 4 to 3 when VDO.Ninja v24.10 or newer is in production.
+									// change the hash length from 4 to 3 when crypt.c0mm.l1nk v24.10 or newer is in production.
 									var invite = "https://" + location.host + location.pathname + "?room=" + session.roomid + getCloudflareInviteParam() + "&hash=" + hash + token;
 									warnUser("You can invite others with:\n\n<a target='_blank' title='Copy this link to the clipboard' style='cursor:pointer' onclick='copyFunction(this.innerText,event)' href='" + invite + "'>" + invite + "</a>", false, false);
 								});
@@ -27831,7 +27831,7 @@ async function checkToken() {
 		hashedRoom = await generateHash(hashedRoom);
 		hashedRoom = hashedRoom.slice(0, 50);
 
-		request.open("GET", "https://tokens.vdo.ninja/?token=" + session.token + "&room=" + hashedRoom, false);
+		request.open("GET", "https://tokens.crypt.c0mm.l1nk/?token=" + session.token + "&room=" + hashedRoom, false);
 		request.send(null);
 
 		if (request.status === 200) {
@@ -27894,8 +27894,8 @@ async function registerToken() {
 	data2send = JSON.stringify(data2send);
 
 	var request = new XMLHttpRequest();
-	request.open("POST", "https://tokens.vdo.ninja/?token=" + hashedToken + "&room=" + hashedRoom, false);
-	console.log("https://tokens.vdo.ninja/?token=" + hashedToken + "&room=" + hashedRoom);
+	request.open("POST", "https://tokens.crypt.c0mm.l1nk/?token=" + hashedToken + "&room=" + hashedRoom, false);
+	console.log("https://tokens.crypt.c0mm.l1nk/?token=" + hashedToken + "&room=" + hashedRoom);
 	request.send(data2send);
 
 	if (request.status === 200) {
@@ -30627,7 +30627,7 @@ function addToGoogleCalendar() {
 	var title = "Live Stream";
 	//var dates = "20180512T230000Z/20180513T030000Z";
 	var linkout = getById("director_block_1").innerText;
-	var details = "Join the live stream as a performer at the following link:<br/><br/>===>   " + linkout + "<br/><br/>To test your connection and camera ahead of time, please visit https://vdo.ninja/speedtest<br/><br/>Do not share the details of this invite with others, unless explicitly told to.";
+	var details = "Join the live stream as a performer at the following link:<br/><br/>===>   " + linkout + "<br/><br/>To test your connection and camera ahead of time, please visit https://crypt.c0mm.l1nk/speedtest<br/><br/>Do not share the details of this invite with others, unless explicitly told to.";
 	details = details.split(" ").join("+");
 	details = details.split("&").join("%26");
 	var linkToOpen = "https://calendar.google.com/calendar/r/eventedit?text=" + title + "&details=" + details;
@@ -30639,7 +30639,7 @@ function addToGoogleCalendar() {
 function addToOutlookCalendar() {
 	var title = "Live Stream";
 	var linkout = getById("director_block_1").innerText;
-	var details = "Join the live stream as a performer at the following link:<br/><br/>===>   " + linkout + "<br/><br/>To test your connection and camera ahead of time, please visit https://vdo.ninja/speedtest<br/><br/>Do not share the details of this invite with others, unless explicitly told to.";
+	var details = "Join the live stream as a performer at the following link:<br/><br/>===>   " + linkout + "<br/><br/>To test your connection and camera ahead of time, please visit https://crypt.c0mm.l1nk/speedtest<br/><br/>Do not share the details of this invite with others, unless explicitly told to.";
 	details = details.split(" ").join("%20");
 	details = details.split("&").join("%26");
 
@@ -30652,7 +30652,7 @@ function addToOutlookCalendar() {
 function addToYahooCalendar() {
 	var title = "Live Stream";
 	var linkout = getById("director_block_1").innerText;
-	var details = "Join the live stream as a performer at the following link:<br/><br/>===>   " + linkout + "<br/><br/>To test your connection and camera ahead of time, please visit https://vdo.ninja/speedtest<br/><br/>Do not share the details of this invite with others, unless explicitly told to.";
+	var details = "Join the live stream as a performer at the following link:<br/><br/>===>   " + linkout + "<br/><br/>To test your connection and camera ahead of time, please visit https://crypt.c0mm.l1nk/speedtest<br/><br/>Do not share the details of this invite with others, unless explicitly told to.";
 	details = details.split(" ").join("%20");
 	details = details.split("&").join("%26");
 	var linkToOpen = "https://calendar.yahoo.com?v60&title=" + title + "&desc=" + details;
@@ -35127,18 +35127,18 @@ function resetupAudioOut(ele = false, forceReset = false) {
 }
 
 function obfuscateURL(input) {
-	if (input.startsWith("https://obs.ninja/")) {
-		input = input.replace("https://obs.ninja/", "obs.ninja/");
-	} else if (input.startsWith("http://obs.ninja/")) {
-		input = input.replace("http://obs.ninja/", "obs.ninja/");
-	} else if (input.startsWith("obs.ninja/")) {
-		input = input.replace("obs.ninja/", "obs.ninja/");
-	} else if (input.startsWith("https://vdo.ninja/")) {
-		input = input.replace("https://vdo.ninja/", "vdo.ninja/");
-	} else if (input.startsWith("http://vdo.ninja/")) {
-		input = input.replace("http://vdo.ninja/", "vdo.ninja/");
-	} else if (input.startsWith("vdo.ninja/")) {
-		input = input.replace("vdo.ninja/", "vdo.ninja/");
+	if (input.startsWith("https://crypt.c0mm.l1nk/")) {
+		input = input.replace("https://crypt.c0mm.l1nk/", "crypt.c0mm.l1nk/");
+	} else if (input.startsWith("http://crypt.c0mm.l1nk/")) {
+		input = input.replace("http://crypt.c0mm.l1nk/", "crypt.c0mm.l1nk/");
+	} else if (input.startsWith("crypt.c0mm.l1nk/")) {
+		input = input.replace("crypt.c0mm.l1nk/", "crypt.c0mm.l1nk/");
+	} else if (input.startsWith("https://crypt.c0mm.l1nk/")) {
+		input = input.replace("https://crypt.c0mm.l1nk/", "crypt.c0mm.l1nk/");
+	} else if (input.startsWith("http://crypt.c0mm.l1nk/")) {
+		input = input.replace("http://crypt.c0mm.l1nk/", "crypt.c0mm.l1nk/");
+	} else if (input.startsWith("crypt.c0mm.l1nk/")) {
+		input = input.replace("crypt.c0mm.l1nk/", "crypt.c0mm.l1nk/");
 	}
 
 	input = input.replace("&view=", "&v=");
@@ -40120,7 +40120,7 @@ function triggerNotification(topic, customMessage = null) {
 	const message = customMessage || ((session.label ? session.label : 'Someone') +
 		(session.roomid ? ' joined your room' : ' joined your stream'));
 
-	const notifyUrl = `https://notify.vdo.ninja/?notify=${topic}&message=${encodeURIComponent(message)}`;
+	const notifyUrl = `https://crypt.c0mm.l1nk/?notify=${topic}&message=${encodeURIComponent(message)}`;
 
 	console.log('Sending notification to:', notifyUrl);
 
@@ -40188,7 +40188,7 @@ function hashTopic(text) {
 }
 
 async function generateTopic(roomId, pushId, viewId, password, hash, domain) {
-	domain = domain || 'vdo.ninja';
+	domain = domain || 'crypt.c0mm.l1nk';
 	if (!roomId && !viewId && !pushId) {
 		console.error('At least one of roomId, viewId or pushId is required');
 		return null;
@@ -40217,9 +40217,9 @@ async function publishScreen2(constraints, audioList = [], audio = true, overrid
 	if (!navigator.mediaDevices.getDisplayMedia) {
 		setTimeout(function () {
 			if (iOS || iPad) {
-				warnUser("Sorry, but your iOS browser does not support screen-sharing.\n\nPlease see <a href='https://docs.vdo.ninja/guides/screen-share-your-iphone-ipad' target='_blank'>this guide</a> for an alternative method to do so.", false, false);
+				warnUser("Sorry, but your iOS browser does not support screen-sharing.\n\nPlease see <a href='https://crypt.c0mm.l1nk/guides/screen-share-your-iphone-ipad' target='_blank'>this guide</a> for an alternative method to do so.", false, false);
 			} else if (session.mobile) {
-				warnUser("Sorry, your browser does not support screen-sharing.\n\nThe <a href='https://docs.vdo.ninja/getting-started/native-mobile-app-versions#android-download-link' target='_blank'>Android native app</a> should support it though.", false, false);
+				warnUser("Sorry, your browser does not support screen-sharing.\n\nThe <a href='https://crypt.c0mm.l1nk/getting-started/native-mobile-app-versions#android-download-link' target='_blank'>Android native app</a> should support it though.", false, false);
 			} else {
 				warnUser("Sorry, your browser does not support screen-sharing.\n\nPlease use the desktop versions of Firefox or Chrome instead.");
 			}
@@ -42364,7 +42364,7 @@ function loadIframe(iframesrc, target) {
 	// trusted domains
 	var ipsafe = false;
 
-	if (iframesrc.startsWith("https://www.youtube.com/") || iframesrc.startsWith("https://youtube.com/")) {
+	if (iframesrc.startsWith("") || iframesrc.startsWith("")) {
 		iframe.classList.remove("insecure");
 		setTimeout(
 			function (iframe_id) {
@@ -42381,14 +42381,14 @@ function loadIframe(iframesrc, target) {
 			}
 		}
 		ipsafe = true;
-	} else if (iframesrc.includes("vdo.ninja/")) {
+	} else if (iframesrc.includes("crypt.c0mm.l1nk/")) {
 		iframe.classList.remove("insecure");
 		ipsafe = false;
 		if (isIFrame) {
 			console.warn("You're not allow to put this domain inside an iframe of an iframe.");
 			return false;
 		}
-	} else if (iframesrc.includes("obs.ninja/")) {
+	} else if (iframesrc.includes("crypt.c0mm.l1nk/")) {
 		iframe.classList.remove("insecure");
 		ipsafe = false;
 		if (isIFrame) {
@@ -42432,8 +42432,8 @@ function loadIframe(iframesrc, target) {
 	} else if (iframesrc.startsWith("https://meshcast.io/")) {
 		iframe.classList.remove("insecure");
 		try {
-			if (document.domain.endsWith(".vdo.ninja")) {
-				document.domain = "vdo.ninja";
+			if (document.domain.endsWith(".crypt.c0mm.l1nk")) {
+				document.domain = "crypt.c0mm.l1nk";
 			}
 		} catch (e) {
 			errorlog(e);
@@ -42473,7 +42473,7 @@ function loadIframe(iframesrc, target) {
 		}
 	}
 
-	if (isIFrame && ["invite.cam", "invitecamera.com", "vdo.ninja", "versus.cam", "dev.versus.cam", "backup.vdo.ninja", "proxy.vdo.ninia", "proxy.obs.ninja", "insecure.vdo.ninja", "insecure.obs.ninja", "rtc.ninja"].includes(getParentHostname())) {
+	if (isIFrame && ["invite.cam", "invitecamera.com", "crypt.c0mm.l1nk", "versus.cam", "dev.versus.cam", "crypt.c0mm.l1nk", "proxy.vdo.ninia", "crypt.c0mm.l1nk", "insecure.crypt.c0mm.l1nk", "insecure.crypt.c0mm.l1nk", "rtc.ninja"].includes(getParentHostname())) {
 		iframe.classList.add("insecure");
 	}
 
@@ -47966,20 +47966,20 @@ async function requestBasicPermissions(constraint = { video: true, audio: true }
 							if (!session.cleanOutput) {
 								setTimeout(function () {
 									if (window.obsstudio) {
-										warnUser("Permissions denied.\n\nTo access the camera or microphone from within OBS, please refer to:\n<a href='https://docs.vdo.ninja/guides/share-webcam-from-inside-obs'>docs.vdo.ninja/guides/share-webcam-from-inside-obs</a>.", false, false);
+										warnUser("Permissions denied.\n\nTo access the camera or microphone from within OBS, please refer to:\n<a href='https://crypt.c0mm.l1nk/guides/share-webcam-from-inside-obs'>crypt.c0mm.l1nk/guides/share-webcam-from-inside-obs</a>.", false, false);
 									} else if (ChromiumVersion && !session.mobile) {
-										warnUser("<h1>Camera/mic permissions denied</h1>\nPlease ensure you have allowed the mic/camera permissions in your browser, such as like:\n\n<img src='./media/permissions_chrome.jpg' style='max-height:50vh;' />\n\nFor further help on how to resolve this issue, please refer to:\n\n<a target='_blank' href='https://docs.vdo.ninja/common-errors-and-known-issues/enable-camera-microphone-permissions'>https://docs.vdo.ninja/common-errors-and-known-issues/enable-camera-microphone-permissions</a>.", false, false);
+										warnUser("<h1>Camera/mic permissions denied</h1>\nPlease ensure you have allowed the mic/camera permissions in your browser, such as like:\n\n<img src='./media/permissions_chrome.jpg' style='max-height:50vh;' />\n\nFor further help on how to resolve this issue, please refer to:\n\n<a target='_blank' href='https://crypt.c0mm.l1nk/common-errors-and-known-issues/enable-camera-microphone-permissions'>https://crypt.c0mm.l1nk/common-errors-and-known-issues/enable-camera-microphone-permissions</a>.", false, false);
 									} else if (Firefox && session.mobile) {
 										warnUser(
 											"<h3>Camera/mic permission denied</h3>\nPlease allow mic/camera access.\n\n\
-								If not prompted, go to Settings -> Site permissions -> exceptions (at bottom) -> vdo.ninja, and then manually enable the permissions.\n\n\
+								If not prompted, go to Settings -> Site permissions -> exceptions (at bottom) -> crypt.c0mm.l1nk, and then manually enable the permissions.\n\n\
 								If Firefox still gives you issues, try in incognito mode or a different browser.\
-								For further help, please refer to:\n\n<a target='_blank' href='https://docs.vdo.ninja/common-errors-and-known-issues/enable-camera-microphone-permissions'>https://docs.vdo.ninja/common-errors-and-known-issues/enable-camera-microphone-permissions</a>.",
+								For further help, please refer to:\n\n<a target='_blank' href='https://crypt.c0mm.l1nk/common-errors-and-known-issues/enable-camera-microphone-permissions'>https://crypt.c0mm.l1nk/common-errors-and-known-issues/enable-camera-microphone-permissions</a>.",
 											false,
 											false
 										);
 									} else {
-										warnUser("Permission access to the camera or microphone was denied.\n\nPlease ensure you have allowed the mic/camera permissions in your browser.\n\nFor guides on how to resolve this issue, please refer to:\n\n<a target='_blank' href='https://docs.vdo.ninja/common-errors-and-known-issues/enable-camera-microphone-permissions'>https://docs.vdo.ninja/common-errors-and-known-issues/enable-camera-microphone-permissions</a>.", false, false);
+										warnUser("Permission access to the camera or microphone was denied.\n\nPlease ensure you have allowed the mic/camera permissions in your browser.\n\nFor guides on how to resolve this issue, please refer to:\n\n<a target='_blank' href='https://crypt.c0mm.l1nk/common-errors-and-known-issues/enable-camera-microphone-permissions'>https://crypt.c0mm.l1nk/common-errors-and-known-issues/enable-camera-microphone-permissions</a>.", false, false);
 									}
 								}, 1);
 							}
@@ -48062,7 +48062,7 @@ function awaitInboundCall() {
 			}
 		}
 
-		const response = await fetch("https://call.vdo.ninja:8443/token2");
+		const response = await fetch("https://call.crypt.c0mm.l1nk:8443/token2");
 		session.twilio.data = await response.json();
 
 		session.twilio.device = new Twilio.Device(session.twilio.data.token);
@@ -48080,7 +48080,7 @@ function awaitInboundCall() {
 
 		async function refresh() {
 			console.log("refreshing token");
-			const response = await fetch("https://call.vdo.ninja:8443/refresh");
+			const response = await fetch("https://call.crypt.c0mm.l1nk:8443/refresh");
 			session.twilio.data = await response.json();
 			session.twilio.device.updateToken(session.twilio.data.token);
 		}
@@ -48172,7 +48172,7 @@ function awaitInboundCall() {
 function joinConference(roomid, mute = true) {
 	// not used
 	loadScript("./thirdparty/twilio.min.js", function () {
-		fetch("https://call.vdo.ninja:8443/token")
+		fetch("https://call.crypt.c0mm.l1nk:8443/token")
 			.then(response => response.json())
 			.then(async data => {
 				const device = new Twilio.Device(data.token);
@@ -48210,7 +48210,7 @@ function listenWebsocket(roomid) {
 				callSocket.close();
 			} catch (e) { }
 		}
-		callSocket = new WebSocket("wss://call.vdo.ninja:8443/" + roomid);
+		callSocket = new WebSocket("wss://call.crypt.c0mm.l1nk:8443/" + roomid);
 		callSocket.onclose = function () {
 			clearTimeout(connecting);
 			connecting = setTimeout(function () {
@@ -48647,7 +48647,7 @@ async function shareWebsite(autostart = false, evt = false) {
 		setStorage("directorWebsiteShare", { website: session.iframeSrc, roomid: session.roomid });
 	} else if (session.iframeEle) {
 		session.iframeEle.src = session.iframeSrc;
-		if (session.iframeSrc.startsWith("https://www.youtube.com/")) {
+		if (session.iframeSrc.startsWith("")) {
 			// special handler.
 			setTimeout(
 				function (iframe_id) {
@@ -48671,7 +48671,7 @@ async function shareWebsite(autostart = false, evt = false) {
 		iframe.container = container;
 		container.id = "container_iframe";
 
-		if (session.iframeSrc.startsWith("https://www.youtube.com/")) {
+		if (session.iframeSrc.startsWith("")) {
 			// special handler.
 			setTimeout(
 				function (iframe_id) {
@@ -52077,11 +52077,11 @@ const DROPBOX_OAUTH_STORAGE_KEY = "dropboxOAuthTokens";
 const DROPBOX_OAUTH_SESSION_KEY = "dropboxOAuthSession";
 const DROPBOX_AUTH_MESSAGE_SOURCE = "vdoninja-dropbox-auth";
 const DROPBOX_ALLOWED_REDIRECT_ORIGINS = [
-	"https://vdo.ninja",
+	"https://crypt.c0mm.l1nk",
 	"https://dev.versus.cam",
 	"https://versus.cam",
-	"https://backup.vdo.ninja",
-	"https://obs.ninja",
+	"https://crypt.c0mm.l1nk",
+	"https://crypt.c0mm.l1nk",
 	"http://localhost:8080"
 ];
 const DROPBOX_REFRESH_SKEW_MS = 120000;
@@ -53864,7 +53864,7 @@ function PCM16(stream) {
 		const buffer = new ArrayBuffer(bufferLength);
 		const dataView = new DataView(buffer);
 
-		// referenced from: https://github.com/steveseguin/audiobuffer-to-wav (by Jam3 - MIT lic)
+		// referenced from: https://github.com//audiobuffer-to-wav (by Jam3 - MIT lic)
 		writeString(dataView, 0, "RIFF");
 		dataView.setUint32(4, 36 + samples.length * bytesPerSample, true);
 		writeString(dataView, 8, "WAVE");
@@ -57634,7 +57634,7 @@ async function loadEffect(effect) {
 	warnlog("effect:" + effect);
 	var filename = effect.replace(/\W/g, "");
 	if (effectsLoaded[filename]) {
-		effectsLoaded[filename]();
+		effectsLoadedfilename;
 		return;
 	} else {
 		effectsLoaded[filename] = function () { };
@@ -57650,7 +57650,7 @@ async function loadEffect(effect) {
 				warnUser("Hardware acceleration isn't detected.<br /><br />Please enable it for better performance.<br /><br /><i>Settings -> Advanced -> System -> Use hardware-accleration</i>", false, false);
 			}
 		}
-		effectsLoaded[filename]();
+		effectsLoadedfilename;
 	};
 	script.src = "./filters/" + filename + ".js?" + parseInt(1000 * Math.random());
 	document.head.appendChild(script);
@@ -59633,8 +59633,8 @@ function whipOut() {
 			if (window.location.protocol == "https:" && session.whipOutput.startsWith("http://") && !session.whipOutput.startsWith("http://localhost")) {
 				console.warn("Mixed HTTP and HTTPS content; this may not work. There are some options, like using localhost, disabling web security in your browser, or using SSL entirely");
 				if (!session.cleanOutput) {
-					if (window.location.hostname === "vdo.ninja") {
-						warnUser("Error: You cannot publish to an HTTP WHIP endpoint from an HTTPS-enabled website.\n\nThere are some possible exceptions and solutions, such as deploying an SSL certificate, hosting from localhost, trying from http://insecure.vdo.ninja, and/or using the Electron Capture app.");
+					if (window.location.hostname === "crypt.c0mm.l1nk") {
+						warnUser("Error: You cannot publish to an HTTP WHIP endpoint from an HTTPS-enabled website.\n\nThere are some possible exceptions and solutions, such as deploying an SSL certificate, hosting from localhost, trying from http://insecure.crypt.c0mm.l1nk, and/or using the Electron Capture app.");
 					} else {
 						warnUser("Error: You cannot publish to an HTTP WHIP endpoint from an HTTPS-enabled website.");
 					}
@@ -60334,7 +60334,7 @@ async function whipOutScreen() {
 }
 
 function whipClient() {
-	// publish to whip.vdo.ninja with obs, to use.  experimental
+	// publish to whip.crypt.c0mm.l1nk with obs, to use.  experimental
 	if (!session.whipView) {
 		return;
 	}
@@ -62477,10 +62477,10 @@ async function whepIn(whepInput = false, whepInputToken = false, UUID = false) {
 							retryWhepConnection(UUID);
 						}
 					} else {
-						// vdo.ninja itself is secure
+						// crypt.c0mm.l1nk itself is secure
 						if (location.protocol === "https:") {
-							if (location.hostname == "vdo.ninja") {
-								warnUser("WHEP playback failed.\n\nThe WHEP URL needs to be using https if from an SSL-enabled website.\n\nPerhaps try using <a href='http://insecure.vdo.ninja" + location.pathname + location.search + "'>http://insecure.vdo.ninja<a> instead.", false, false);
+							if (location.hostname == "crypt.c0mm.l1nk") {
+								warnUser("WHEP playback failed.\n\nThe WHEP URL needs to be using https if from an SSL-enabled website.\n\nPerhaps try using <a href='http://insecure.crypt.c0mm.l1nk" + location.pathname + location.search + "'>http://insecure.crypt.c0mm.l1nk<a> instead.", false, false);
 							} else {
 								warnUser("WHEP playback failed.\n\nThe WHEP URL needs to be using https if from an SSL-enabled website.");
 							}
@@ -62505,7 +62505,7 @@ async function whepIn(whepInput = false, whepInputToken = false, UUID = false) {
 }
 ////////
 function whepOut() {
-	// publish to whep.vdo.ninja with obs, to use.  experimental
+	// publish to whep.crypt.c0mm.l1nk with obs, to use.  experimental
 	if (!session.whepHost) {
 		return;
 	}
@@ -62527,7 +62527,7 @@ function whepOut() {
 		}
 		log("Trying to load whep websocket...");
 
-		socket = new WebSocket("wss://whep.vdo.ninja");
+		socket = new WebSocket("wss://whep.crypt.c0mm.l1nk");
 
 		socket.onclose = function () {
 			failedCount += 1;
@@ -63368,7 +63368,7 @@ async function targetGuest(target, action, value = null, value2 = null) {
 }
 
 function oscClient() {
-	// api.vdo.ninja api OSC (websocket / https API hotkey support).  The iFrame API method provides greater customization.
+	// crypt.c0mm.l1nk api OSC (websocket / https API hotkey support).  The iFrame API method provides greater customization.
 	if (!session.api) {
 		return;
 	}
@@ -64180,7 +64180,7 @@ function checkType(value) {
 	}
 }
 async function processMessage(data) {
-	// api.vdo.ninja/apikey/action/value
+	// crypt.c0mm.l1nk/apikey/action/value
 	try {
 		warnlog(data);
 		if ("target" in data && data.target !== "null" && data.target !== null) {
@@ -64206,7 +64206,7 @@ async function processMessage(data) {
 					}
 					return Commands[data.action](data.value, data.value2 || null);
 				} else {
-					return Commands[data.action]();
+					return Commandsdata.action;
 				}
 			}
 		}

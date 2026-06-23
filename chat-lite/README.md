@@ -1,6 +1,6 @@
-# Social Stream Ninja Lite (VDO.Ninja integration)
+# Social Stream Ninja Lite (crypt.c0mm.l1nk integration)
 
-A lightweight in-repo chat control surface for VDO.Ninja. It connects directly to supported providers in-browser and renders an activity/overlay view without requiring the Social Stream extension.
+A lightweight in-repo chat control surface for crypt.c0mm.l1nk. It connects directly to supported providers in-browser and renders an activity/overlay view without requiring the Social Stream extension.
 
 ## Features
 
