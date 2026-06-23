@@ -1134,6 +1134,21 @@ hr {
 	border: 0;
 	margin: 0;
 }
+#directorlayout {
+	--accent: #c2c8ce;
+	--accent-bright: #dde2e7;
+	--text: #d5dbe1;
+	--text-dim: #b8bfc7;
+	--text-muted: #969ea7;
+	--ok: #c2c8ce;
+	--link: #cfd5db;
+	--green-accent: #6e747b;
+	--darktheme-green: #6e747b;
+	--darktheme-lightgreen: #8b9299;
+	--shadow: 0 0 10px rgba(221, 226, 231, 0.12);
+	--glow: 0 0 5px rgba(221, 226, 231, 0.26);
+	--text-shadow: 0 0 3px rgba(221, 226, 231, 0.22);
+}
 #gridlayout{
 	z-index:-1;
 }
