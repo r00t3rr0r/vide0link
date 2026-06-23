@@ -2,7 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Teleprompter - VDO.Ninja</title>
+	<title>Teleprompter - crypt.c0mm.l1nk</title>
 	<style>
 	html {
 		border:0;
@@ -285,7 +285,7 @@
 					<label for="changeText">
 						🔗
 					</label>
-					<input type="text" id="iframeURL" onchange="updatedURL();" class="inputfield changeText" placeholder="Website URL to transform. ie: https://vdo.ninja" />
+					<input type="text" id="iframeURL" onchange="updatedURL();" class="inputfield changeText" placeholder="Website URL to transform. ie: https://crypt.c0mm.l1nk" />
 					<input type="text" id="iframeURL_twitch" onchange="updatedURL();" class="hidden inputfield changeText" placeholder="Twitch Username; their chat will load" />
 					<input type="text" id="iframeURL_youtube" onchange="updatedURL();" class="hidden inputfield changeText" placeholder="Youtube Username; will try to load chat" />
 					<button  onclick="gohere1();" class="gobutton" id="gobutton1">Load</button>
@@ -484,11 +484,11 @@ async function loadPage(){
 			iframeURL = "@"+iframeURL;
 		}
 		try{
-			var response = await fetch("https://www.youtube.com/c/"+iframeURL+"/live");
+			var response = await fetch(""+iframeURL+"/live");
 			var data = await response.text();
 			let videoID = data.split('{"videoId":"')[1].split('"')[0];
 			console.log(videoID);
-			iframeURL = "https://www.youtube.com/live_chat?is_popout=1&v="+videoID;
+			iframeURL = ""+videoID;
 		} catch(e){
 			alert("This Youtube user isn't live or is set to private");
 			return;
@@ -518,7 +518,7 @@ async function loadPage(){
 		var match = iframeURL.match(regExp);
 		var vidid = (match&&match[7].length==11)? match[7] : false;
 		
-		// https://www.youtube.com/live_chat?v=<your video ID>&embed_domain=<your blog domain>
+		// <your video ID>&embed_domain=<your blog domain>
 		if (iframeURL.includes("/live_chat")){
 			if (!iframeURL.includes("&embed_domain=")){
 				iframeURL += "&embed_domain="+location.hostname;
@@ -528,21 +528,21 @@ async function loadPage(){
 		if (vidid){
 			//specialResult = {};
 			//specialResult.originalSrc = iframeURL;
-			//specialResult.parsedSrc = "https://www.youtube.com/embed/"+vidid+"?autoplay=1&modestbranding=1&playsinline=1&enablejsapi=1";
+			//specialResult.parsedSrc = ""+vidid+"?autoplay=1&modestbranding=1&playsinline=1&enablejsapi=1";
 			//specialResult.handler = "youtube";
 			//specialResult.vid = vidid;
 			//iframeURL = specialResult;
 			iframeURL = createYoutubeLink(vidid);
 		} else { // see if there is a playlist link here or not.
 		
-			// https://youtube.com/playlist?list=PLWodc2tCfAH1l_LDvEyxEqFf42hOBKqQM
+			// 
 			iframeURL  = iframeURL.replace("playlist?list=","embed/videoseries?list=");
 			
 			var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(videoseries\?))\??list?=?([^#&?]*).*/;
 			var match = iframeURL.match(regExp);
 			var plid = (match&&match[7].length==34)? match[7] : false;
 			if (plid){
-				iframeURL = 'https://www.youtube.com/embed/videoseries?list='+plid+"&autoplay=1&modestbranding=1&playsinline=1&enablejsapi=1";
+				iframeURL = '"&autoplay=1&modestbranding=1&playsinline=1&enablejsapi=1";
 			}
 			
 		}

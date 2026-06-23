@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Custom Labels Overlay - VDO.Ninja</title>
+<title>Custom Labels Overlay - crypt.c0mm.l1nk</title>
 <meta charset="UTF-8">
 <style>
 body{
@@ -49,7 +49,7 @@ body{
 			<div id="label"></div>
 		</div>
 		<div id="start" onclick="start();" >
-			Join with this sample guest link: <a id="invite" href='https://vdo.ninja/?push=testoverlay123&autostart&webcam&label' target="_blank">https://vdo.ninja/?push=testoverlay123&autostart&webcam&label</a><br /><br />
+			Join with this sample guest link: <a id="invite" href='https://crypt.c0mm.l1nk/?push=testoverlay123&autostart&webcam&label' target="_blank">https://crypt.c0mm.l1nk/?push=testoverlay123&autostart&webcam&label</a><br /><br />
 			Click anywhere to start playback in this window.
 		</div>
 	</div>
@@ -62,8 +62,8 @@ var label = document.getElementById("label");
 
 const urlParams = new URLSearchParams(window.location.search);
 const streamID = urlParams.get('view') || "testoverlay123";
-document.getElementById("invite").href = "https://vdo.ninja/?autostart&webcam&label&push="+streamID;
-document.getElementById("invite").innerText = "https://vdo.ninja/?autostart&webcam&label&push="+streamID
+document.getElementById("invite").href = "https://crypt.c0mm.l1nk/?autostart&webcam&label&push="+streamID;
+document.getElementById("invite").innerText = "https://crypt.c0mm.l1nk/?autostart&webcam&label&push="+streamID
 
 function loadIframe(url){ 
 	
@@ -101,7 +101,7 @@ function loadIframe(url){
 
 function start(){
 	document.querySelector("#start").remove();
-	loadIframe("https://vdo.ninja/?transparent&cleanoutput&novideo&noaudio&novideo&dataonly&view="+streamID); // vdo.ninja/?push=testoverlay123&label=Test_Label&autostart&webcam
+	loadIframe("https://crypt.c0mm.l1nk/?transparent&cleanoutput&novideo&noaudio&novideo&dataonly&view="+streamID); // crypt.c0mm.l1nk/?push=testoverlay123&label=Test_Label&autostart&webcam
 }
 if (window.obsstudio){
 	start();

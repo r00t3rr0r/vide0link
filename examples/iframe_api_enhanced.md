@@ -2,7 +2,7 @@
 
 ### Overview
 
-The VDO.Ninja IFRAME API provides access to all HTTP/WSS API commands through the `action` parameter. This means you can use any command from the [HTTP/WSS API](https://github.com/steveseguin/Companion-Ninja) directly through the iframe's postMessage interface.
+The crypt.c0mm.l1nk IFRAME API provides access to all HTTP/WSS API commands through the `action` parameter. This means you can use any command from the [HTTP/WSS API](https://github.com//Companion-Ninja) directly through the iframe's postMessage interface.
 
 ### Using HTTP/WSS API Commands via IFRAME
 
@@ -28,14 +28,14 @@ iframe.contentWindow.postMessage({
 
 Example iframe URL with director permissions:
 ```
-https://vdo.ninja/?director=myroom&cleanoutput&api=myapikey
+https://crypt.c0mm.l1nk/?director=myroom&cleanoutput&api=myapikey
 ```
 
 ### Complete Command Reference
 
 #### Self Commands (No Target Required)
 
-These commands affect the local VDO.Ninja instance:
+These commands affect the local crypt.c0mm.l1nk instance:
 
 ```javascript
 // Microphone control
@@ -313,7 +313,7 @@ window.addEventListener("message", function(e) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VDO.Ninja Director Control Panel</title>
+    <title>crypt.c0mm.l1nk Director Control Panel</title>
 </head>
 <body>
     <h1>Director Control Panel</h1>
@@ -342,7 +342,7 @@ window.addEventListener("message", function(e) {
     // Create iframe with director permissions
     const iframe = document.createElement("iframe");
     iframe.allow = "camera;microphone;fullscreen;display-capture;autoplay;";
-    iframe.src = "https://vdo.ninja/?director=myroom&cleanoutput&api=mykey";
+    iframe.src = "https://crypt.c0mm.l1nk/?director=myroom&cleanoutput&api=mykey";
     iframe.style.width = "800px";
     iframe.style.height = "600px";
     document.getElementById("container").appendChild(iframe);
@@ -431,4 +431,4 @@ window.addEventListener("message", function(e) {
 - **Guest not found**: Confirm target value matches slot or stream ID
 - **Permission errors**: Ensure using `&director=` not `&room=`
 
-This integration allows you to build powerful control interfaces using the full capabilities of the VDO.Ninja API through simple iframe messaging.
+This integration allows you to build powerful control interfaces using the full capabilities of the crypt.c0mm.l1nk API through simple iframe messaging.

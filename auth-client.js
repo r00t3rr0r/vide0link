@@ -1,4 +1,4 @@
-/* VDO.Ninja Authentication Client Integration */
+/* crypt.c0mm.l1nk Authentication Client Integration */
 
 // Configuration
 const AUTH_SERVICE_URL = 'https://vdo-ninja-auth-service.vdo.workers.dev'; // Change for local dev: http://localhost:8787
@@ -96,7 +96,7 @@ function showAuthUI(options = {}) {
   const canDisableSSO = isDirectorAuthURL && session.authMode && !session.universalToken && !session.decrypted && !options.hideDisableSSO;
   authContainer.innerHTML = `
     <div class="auth-modal">
-      <h2>Sign in to VDO.Ninja</h2>
+      <h2>Sign in to crypt.c0mm.l1nk</h2>
       <p>${options.message || 'Sign in to claim your personal stream ID and enable advanced features'}</p>
       
       <div class="auth-buttons">
@@ -1003,7 +1003,7 @@ async function handleAccessRequest(roomId, userId, action) {
   return false;
 }
 
-// Export functions for use in main VDO.Ninja code
+// Export functions for use in main crypt.c0mm.l1nk code
 window.vdoAuth = {
   init: initAuthentication,
   assignStream: assignAuthStream,
