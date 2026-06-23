@@ -2002,7 +2002,7 @@
 					
 					<!-- Row of MIDI Buttons -->
 					<div class="row hidden advanced midi-controls" title="Remote guest plays out MIDI events. Toggles. Hold CTRL(cmd) to replay instead of toggle.">
-						<span style="flex: 1 21%; color: lightgreen; margin: auto 0;">MIDI Ctrls</span>
+						<span style="flex: 1 21%; color: var(--accent); margin: auto 0;">MIDI Ctrls</span>
 						<button class="btn-HL-peach" data-action-type="midi-button" data-midi-note="C1" data-midi-mode="toggle" title="Toggle MIDI C1" onclick="buttonMIDI(this);">
 							<span>C1</span>
 						</button>
@@ -2023,7 +2023,7 @@
 						</button>
 					</div>
 					<div class="row hidden advanced midi-controls" title="Remote guest plays out MIDI events on Ch 1only.">
-						<span style="flex: 1 21%; color: lightgreen; margin: auto 0;">MIDI Ch 1</span>
+						<span style="flex: 1 21%; color: var(--accent); margin: auto 0;">MIDI Ch 1</span>
 						<button class="btn-HL-purple" data-action-type="midi-button" data-midi-note="C3" data-midi-channel="1" title="Send MIDI C3 on Channel 1" onclick="buttonMIDI(this);">
 							<span>C3</span>
 						</button>
@@ -2046,7 +2046,7 @@
 					
 					<!-- Row of Channels -->
 					<div class="row advanced">
-						<span style="flex: 1 21%;color: lightgreen; margin: auto 0;">Monitor Mix</span>
+						<span style="flex: 1 21%;color: var(--accent); margin: auto 0;">Monitor Mix</span>
 						<button class="btn-HL-paleblue" style="flex: 1 17%;" data-action-type="add-channel" title="Listen to this guest via your left audio speaker (Audio Channel 1)" onclick="changeChannelOffset(this.dataset.UUID, 0);">
 							<span>Your Left</span>
 						</button>

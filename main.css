@@ -1134,20 +1134,21 @@ hr {
 	border: 0;
 	margin: 0;
 }
-#directorlayout {
-	--accent: #c2c8ce;
-	--accent-bright: #dde2e7;
-	--text: #d5dbe1;
-	--text-dim: #b8bfc7;
-	--text-muted: #969ea7;
-	--ok: #c2c8ce;
-	--link: #cfd5db;
-	--green-accent: #6e747b;
-	--darktheme-green: #6e747b;
-	--darktheme-lightgreen: #8b9299;
-	--shadow: 0 0 10px rgba(221, 226, 231, 0.12);
-	--glow: 0 0 5px rgba(221, 226, 231, 0.26);
-	--text-shadow: 0 0 3px rgba(221, 226, 231, 0.22);
+#directorlayout,
+#controls_directors_blank {
+	--accent: #cfd4da;
+	--accent-bright: #e4e8ec;
+	--text: #d9dee4;
+	--text-dim: #bcc3cb;
+	--text-muted: #9aa2ab;
+	--ok: #cfd4da;
+	--link: #d7dde3;
+	--green-accent: #b7bec6;
+	--darktheme-green: #b7bec6;
+	--darktheme-lightgreen: #c8cfd6;
+	--shadow: 0 0 10px rgba(228, 232, 236, 0.14);
+	--glow: 0 0 5px rgba(228, 232, 236, 0.3);
+	--text-shadow: 0 0 3px rgba(228, 232, 236, 0.24);
 }
 #gridlayout{
 	z-index:-1;
@@ -4658,7 +4659,7 @@ div#roomnotes2 {
 	background-color: rgb(228, 203, 189);
 }
 .controlsGrid .btn-HL-green {
-	background-color: rgb(189, 228, 199);
+	background-color: rgb(206, 214, 222);
 }
 .controlsGrid .btn-HL-blue {
 	background-color: rgb(170, 204, 248);
