@@ -79,8 +79,8 @@ span {
 </div>
 <div id="deleteme">
 	<h2>PTZ Remote Control interface</h2>
-	<input placeholder="Enter a push link. ie) https://crypt.c0mm.l1nk/?push=english123a&label=ENGLISH" id="viewlinka" type="text"><br>
-	<input placeholder="Enter a push link. ie) https://crypt.c0mm.l1nk/?push=french123b&label=FRENCH" id="viewlinkb" type="text" /><br>
+	<input placeholder="Enter a push link. ie) https://vdo.ninja/?push=english123a&label=ENGLISH" id="viewlinka" type="text"><br>
+	<input placeholder="Enter a push link. ie) https://vdo.ninja/?push=french123b&label=FRENCH" id="viewlinkb" type="text" /><br>
 	<button onclick="loadIframes()">CONNECT</button>
 	<br>
 	This app is a toggle between two different inputs
@@ -126,7 +126,7 @@ if (urlParams.get("a")){
 	if (window.location.host){
 		var path = window.location.host+window.location.pathname.replace("/examples/","/").split("/").slice(0,-1).join("/");
 	} else {
-		var path = "crypt.c0mm.l1nk";
+		var path = "vdo.ninja";
 	}
 	document.getElementById("viewlinka").value = "https://"+path+"/?push="+urlParams.get("a");
 	
@@ -141,7 +141,7 @@ if (urlParams.get("b")){
 	if (window.location.host){
 		var path = window.location.host+window.location.pathname.replace("/examples/","/").split("/").slice(0,-1).join("/");
 	} else {
-		var path = "crypt.c0mm.l1nk";
+		var path = "vdo.ninja";
 	}
 	document.getElementById("viewlinkb").value = "https://"+path+"/?push="+urlParams.get("b");
 	

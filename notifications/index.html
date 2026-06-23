@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>crypt.c0mm.l1nk Notifications</title>
+  <title>VDO.Ninja Notifications</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1565c0">
 
@@ -408,7 +408,7 @@ a:hover {
 <body>
   <div class="container">
     <div class="header">
-      <h1>crypt.c0mm.l1nk Notifications</h1>
+      <h1>VDO.Ninja Notifications</h1>
       <p>Get notified when someone joins your rooms</p>
     </div>
     
@@ -438,8 +438,8 @@ a:hover {
 			<h2>How to Use</h2>
 			<ol>
 			  <li>Enter a notification topic above and click Subscribe.</li>
-			  <li>Or have a topic automatically generated from your crypt.c0mm.l1nk room invite link.</li>
-			  <li>Add <code>&amp;poke=YOUR_TOPIC</code> to your crypt.c0mm.l1nk room URL.</li>
+			  <li>Or have a topic automatically generated from your VDO.Ninja room invite link.</li>
+			  <li>Add <code>&amp;poke=YOUR_TOPIC</code> to your VDO.Ninja room URL.</li>
 			  <li>When someone joins that room, you'll receive a notification.</li>
 			  <li><strong>Important:</strong> Allow Notifications for this site, or keep this page open.</li>
 			</ol>
@@ -450,19 +450,19 @@ a:hover {
 			</div>
 			
 			<div class="info-box">
-			  <p>For easier setup, use the "Create from crypt.c0mm.l1nk URL" option below. It will automatically generate a topic based on your room settings and give you a ready-to-use link.</p>
+			  <p>For easier setup, use the "Create from VDO.Ninja URL" option below. It will automatically generate a topic based on your room settings and give you a ready-to-use link.</p>
 			</div>
 		  </div>
 		  
 		  <div class="notification-card">
-		    <h2>Create from crypt.c0mm.l1nk URL</h2>
+		    <h2>Create from VDO.Ninja URL</h2>
 			  <div class="info-box">
-				<p>Enter your crypt.c0mm.l1nk URL to automatically create a notification topic</p>
+				<p>Enter your VDO.Ninja URL to automatically create a notification topic</p>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="vdo-url-input">crypt.c0mm.l1nk URL:</label>
-				<input type="text" id="vdo-url-input" placeholder="https://crypt.c0mm.l1nk/?room=yourroom">
+				<label for="vdo-url-input">VDO.Ninja URL:</label>
+				<input type="text" id="vdo-url-input" placeholder="https://vdo.ninja/?room=yourroom">
 			  </div>
 			  
 			  <button id="parse-url-btn">Create Notification Topic</button>
@@ -527,7 +527,7 @@ a:hover {
 		<div class="tab-content" id="developer-tab">
 			<div class="notification-card">
 			  <h2>Developer Integration</h2>
-			  <p>Learn how to integrate with the crypt.c0mm.l1nk notification system using Server-Sent Events (SSE).</p>
+			  <p>Learn how to integrate with the VDO.Ninja notification system using Server-Sent Events (SSE).</p>
 			  
 			  <div class="info-box">
 				<p>This API allows developers to subscribe to room join events programmatically using SSE.</p>
@@ -536,14 +536,14 @@ a:hover {
 			  <h3>SSE Endpoint</h3>
 			  <div class="form-group">
 				<label>Base URL:</label>
-				<input type="text" value="https://crypt.c0mm.l1nk" readonly>
+				<input type="text" value="https://notify.vdo.ninja" readonly>
 			  </div>
 			  
 			  <h3>Connection Example</h3>
 			  <pre style="background-color: #2a2a2a; padding: 15px; border-radius: 4px; overflow: auto;">
 		// Basic SSE connection
 		const topic = "your_notification_topic";
-		const evtSource = new EventSource(\`https://crypt.c0mm.l1nk/events?topic=\${topic}\`);
+		const evtSource = new EventSource(\`https://notify.vdo.ninja/events?topic=\${topic}\`);
 
 		// Handle connection
 		evtSource.addEventListener('connect', (event) => {
@@ -586,7 +586,7 @@ a:hover {
 		async function pollForNotifications(topic, lastPollTime) {
 		  try {
 			const response = await fetch(
-			  \`https://crypt.c0mm.l1nk/poll?topic=\${topic}&since=\${lastPollTime}\`
+			  \`https://notify.vdo.ninja/poll?topic=\${topic}&since=\${lastPollTime}\`
 			);
 			const data = await response.json();
 			
@@ -652,7 +652,7 @@ a:hover {
 
 
 	<div class="footer">
-	  <p>crypt.c0mm.l1nk Notifications | <a href="https://crypt.c0mm.l1nk" target="_blank">Return to crypt.c0mm.l1nk</a></p>
+	  <p>VDO.Ninja Notifications | <a href="https://vdo.ninja" target="_blank">Return to VDO.Ninja</a></p>
 	</div>
   </div>
   

@@ -314,8 +314,8 @@
 	<div id="header" style="-webkit-app-region: drag; color:#6f6f6f;font-size:20px; line-height: 20px; padding: 5px 10px; letter-spacing: 3; font-weight: bold;">Electron Capture</div>
 	<div class="container" >
 		
-		<div id='warning4mac' style="display:none;"> ✨ Great News! OBS v26.1.2 <a href="https://github.com/obsproject/obs-browser/issues/209#issuecomment-748683083">now supports</a> crypt.c0mm.l1nk without needing the Electron Capture app! 🥳</div>
-		<div id="electronVersion" style="display:none;">✨ Great News! <a href="https://github.com//electroncapture/releases/latest">Electron Capture <span id="currentElectronVersion"></span></a> is now available!<br>Update yours today to stay up-to-date with security patches.</div>
+		<div id='warning4mac' style="display:none;"> ✨ Great News! OBS v26.1.2 <a href="https://github.com/obsproject/obs-browser/issues/209#issuecomment-748683083">now supports</a> VDO.Ninja without needing the Electron Capture app! 🥳</div>
+		<div id="electronVersion" style="display:none;">✨ Great News! <a href="https://github.com/steveseguin/electroncapture/releases/latest">Electron Capture <span id="currentElectronVersion"></span></a> is now available!<br>Update yours today to stay up-to-date with security patches.</div>
 		
 		<div id="messageDiv" style='display:block'><br /></div>
 		<div class="container">
@@ -324,11 +324,11 @@
 						<i class="las la-play"></i>
 					</label>
 					<div id="inputCombo">
-						<input type="text" id="changeText" class="inputfield" value="http://crypt.c0mm.l1nk/" onchange="modURL" onkeyup="enterPressed(event, gohere);" />
+						<input type="text" id="changeText" class="inputfield" value="http://vdo.ninja/" onchange="modURL" onkeyup="enterPressed(event, gohere);" />
 						<button  onclick="gohere();" id="gobutton">GO</button>
 					</div>
 				</div>
-				<div id="audioOutputContainer" title="This option will only work with the official crypt.c0mm.l1nk domain">
+				<div id="audioOutputContainer" title="This option will only work with the official vdo.ninja domain">
 					<label for="audioOutput"><i class="las la-headphones"></i></label><select id="audioOutput"></select>
 				</div>
 				<div id="history" title="History of past links used. You can clear this history using the button to the left">
@@ -343,7 +343,7 @@
 	<div id="version"></div>
 <script>
 /*
-*  Copyright (c) 2020 . All Rights Reserved.
+*  Copyright (c) 2020 Steve Seguin. All Rights Reserved.
 *
 *  Use of this source code is governed by the APGLv3 open-source license
 *  that can be found in the LICENSE file in the root of the source
@@ -465,13 +465,13 @@ function resetHistory(){
 
 var urlParams = new URLSearchParams(window.location.search);
 
-if (location.hostname.toLowerCase() == "crypt.c0mm.l1nk"){
+if (location.hostname.toLowerCase() == "vdo.ninja"){
 	try {
 		if (navigator.userAgent.toLowerCase().indexOf(' electron/') > -1) { 
 			function compareVersions(version){
 			    document.getElementById("version").innerHTML = "Current version: "+version;
 				version = version.split(".");
-				fetch('https://api.github.com/repos//electroncapture/releases/latest')
+				fetch('https://api.github.com/repos/steveseguin/electroncapture/releases/latest')
 				  .then(response => response.json())
 				  .then(data => {
 					console.log("recentVersion: "+data.tag_name);
@@ -703,7 +703,7 @@ function createAsioNotice(asioDevices) {
   linkSpan.textContent = ' - ';
 
   var link = document.createElement('a');
-  link.href = 'https://github.com//electroncapture#asio-audio-capture-windows-only';
+  link.href = 'https://github.com/steveseguin/electroncapture#asio-audio-capture-windows-only';
   link.target = '_blank';
   link.textContent = 'Low-latency pro audio available';
   link.style.color = '#0ff';
@@ -833,7 +833,7 @@ function updateURLParameter(url, param, paramVal){
 if (urlParams.has('name')){
 	var name  = urlParams.get('name');
 	if (name!="OBSNinja" && name!="VDONinja"){
-		document.getElementById('changeText').value = "https://crypt.c0mm.l1nk/?view="+name;
+		document.getElementById('changeText').value = "https://vdo.ninja/?view="+name;
 	}
 } 
 
@@ -852,13 +852,13 @@ function addUrlToHistory(url){
 function modURL(){
 	var url = document.getElementById('changeText').value;
 	url = url.trim();
-	if (url.startsWith("crypt.c0mm.l1nk")){
+	if (url.startsWith("obs.ninja")){
 		url = "https://"+url;
 	} else if (url.startsWith("youtube.com")){
 		url = "https://"+url;
 	} else if (url.startsWith("twitch.tv")){
 		url = "https://"+url;
-	} else if (url.startsWith("crypt.c0mm.l1nk")){
+	} else if (url.startsWith("vdo.ninja")){
 		url = "https://"+url;
 	} else if (url.startsWith("http://")){
 		// pass
@@ -876,8 +876,8 @@ function gohere(){
 	addUrlToHistory(document.getElementById('changeText').value);
 	localStorage.setItem('lastUrls', JSON.stringify(lastUrls));
 	var url = modURL();
-	if ((document.getElementById('changeText').value.includes("crypt.c0mm.l1nk")) && (document.getElementById('changeText').value.includes("http"))  && (document.getElementById('changeText').value.includes("&sink"))){
-		alert("Notice: OBS.Ninja has been renamed to crypt.c0mm.l1nk.\n\nPlease update your links accordingly for audio output to work correctly.");
+	if ((document.getElementById('changeText').value.includes("obs.ninja")) && (document.getElementById('changeText').value.includes("http"))  && (document.getElementById('changeText').value.includes("&sink"))){
+		alert("Notice: OBS.Ninja has been renamed to VDO.Ninja.\n\nPlease update your links accordingly for audio output to work correctly.");
 	} else if (!(document.getElementById('changeText').value.includes(window.location.hostname)) && (document.getElementById('changeText').value.includes("http"))  && (document.getElementById('changeText').value.includes("&sink"))){
 		alert("Notice: The &sink command is domain specific.\nVisit https://YOURDOMAIN.com/electron instead.");
 	}

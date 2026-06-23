@@ -47,13 +47,13 @@
     </style>
 </head>
 <body>
-    <h1>Simple IFRAME Replacement with crypt.c0mm.l1nk DataChannel SDK</h1>
+    <h1>Simple IFRAME Replacement with VDO.Ninja DataChannel SDK</h1>
     
     <div class="example old-way">
         <h2>❌ Old Way: Hidden IFRAME</h2>
         <pre><code>// HTML
 &lt;iframe id="vdo-iframe" 
-        src="https://crypt.c0mm.l1nk/?room=myroom&amp;push=sender&amp;view=receiver&amp;datachannel=true" 
+        src="https://vdo.ninja/?room=myroom&amp;push=sender&amp;view=receiver&amp;datachannel=true" 
         style="display:none"&gt;&lt;/iframe&gt;
 
 // JavaScript
@@ -67,13 +67,13 @@ iframe.contentWindow.postMessage({
 
 // Receive messages
 window.addEventListener('message', (event) => {
-    if (event.origin !== 'https://crypt.c0mm.l1nk') return;
+    if (event.origin !== 'https://vdo.ninja') return;
     console.log('Received:', event.data);
 });</code></pre>
         
         <p><strong>Problems:</strong></p>
         <ul>
-            <li>Hidden IFRAME still loads full crypt.c0mm.l1nk UI</li>
+            <li>Hidden IFRAME still loads full VDO.Ninja UI</li>
             <li>Cross-origin communication limitations</li>
             <li>No direct control over connections</li>
             <li>Hard to debug</li>
@@ -194,7 +194,7 @@ chat.publish({
             if (nodeA) nodeA.disconnect();
             
             nodeA = new VDONinjaDataChannel({
-                wss: 'wss://apibackup.crypt.c0mm.l1nk:443'
+                wss: 'wss://apibackup.vdo.ninja:443'
             });
             
             nodeA.addEventListener('data', (e) => {
@@ -231,7 +231,7 @@ chat.publish({
             if (nodeB) nodeB.disconnect();
             
             nodeB = new VDONinjaDataChannel({
-                wss: 'wss://apibackup.crypt.c0mm.l1nk:443'
+                wss: 'wss://apibackup.vdo.ninja:443'
             });
             
             nodeB.addEventListener('data', (e) => {

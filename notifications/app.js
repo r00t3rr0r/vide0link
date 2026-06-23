@@ -40,7 +40,7 @@ async function initializeApp() {
 		const topic = localStorage.getItem('notifyTopic');
 		
 		// Ping the server to keep subscription active
-		fetch('https://crypt.c0mm.l1nk/ping', {
+		fetch('https://notify.vdo.ninja/ping', {
 		  method: 'POST',
 		  headers: { 'Content-Type': 'application/json' },
 		  body: JSON.stringify({
@@ -207,8 +207,8 @@ async function parseVdoNinjaUrl(url) {
     if (!url.startsWith('http://') && !url.startsWith('https://')) {
       url = 'https://' + url;
     }
-    if (!url.includes('crypt.c0mm.l1nk') && !url.includes('crypt.c0mm.l1nk') && !url.includes('versus.cam') && !url.includes('comms.cam')) {
-      throw new Error('Not a valid crypt.c0mm.l1nk URL');
+    if (!url.includes('vdo.ninja') && !url.includes('obs.ninja') && !url.includes('versus.cam') && !url.includes('comms.cam')) {
+      throw new Error('Not a valid VDO.Ninja URL');
     }
     const urlObj = new URL(url);
     const params = new URLSearchParams(urlObj.search);
@@ -257,7 +257,7 @@ async function parseVdoNinjaUrl(url) {
       pushId: components.push || ''
     };
   } catch (e) {
-    console.error('Error parsing crypt.c0mm.l1nk URL:', e);
+    console.error('Error parsing VDO.Ninja URL:', e);
     throw e;
   }
 }
@@ -276,8 +276,8 @@ function setupUrlDetection() {
       const newFormGroup = document.createElement('div');
       newFormGroup.className = 'form-group';
       newFormGroup.innerHTML = `
-        <label for="vdo-url-input">crypt.c0mm.l1nk URL (Optional):</label>
-        <input type="text" id="vdo-url-input" placeholder="Paste your crypt.c0mm.l1nk URL">
+        <label for="vdo-url-input">VDO.Ninja URL (Optional):</label>
+        <input type="text" id="vdo-url-input" placeholder="Paste your VDO.Ninja URL">
         <small>We'll extract the notification topic from your URL automatically</small>
       `;
       const topicFormGroup = subscribeCard.querySelector('.form-group');
@@ -326,14 +326,14 @@ function addUrlInputListeners(urlInput, topicInput) {
   if (!urlInput || !topicInput) return;
   urlInput.addEventListener('input', async () => {
     const url = urlInput.value.trim();
-    if (url && (url.includes('crypt.c0mm.l1nk') || url.includes('crypt.c0mm.l1nk'))) {
+    if (url && (url.includes('vdo.ninja') || url.includes('obs.ninja'))) {
       processVdoUrl(url, topicInput);
     }
   });
   urlInput.addEventListener('paste', async (e) => {
     setTimeout(async () => {
       const url = urlInput.value.trim();
-      if (url && (url.includes('crypt.c0mm.l1nk') || url.includes('crypt.c0mm.l1nk'))) {
+      if (url && (url.includes('vdo.ninja') || url.includes('obs.ninja'))) {
         processVdoUrl(url, topicInput);
       }
     }, 10);
@@ -346,8 +346,8 @@ function enhanceTopicInput() {
       const clipboardData = e.clipboardData || window.clipboardData;
       const pastedText = clipboardData.getData('text');
       if (pastedText && (pastedText.includes('://') ||
-                         pastedText.includes('crypt.c0mm.l1nk') ||
-                         pastedText.includes('crypt.c0mm.l1nk'))) {
+                         pastedText.includes('vdo.ninja') ||
+                         pastedText.includes('obs.ninja'))) {
         e.preventDefault();
         const topic = await extractTopicFromUrl(pastedText);
         if (topic) {
@@ -661,7 +661,7 @@ function setupEventListeners() {
 		}
 		const testNotification = {
 		  title: 'Test Notification',
-		  body: 'This is a test notification for crypt.c0mm.l1nk',
+		  body: 'This is a test notification for VDO.Ninja',
 		  url: window.location.href,
 		  timestamp: Date.now()
 		};
@@ -803,7 +803,7 @@ function createNotificationPopup(notification) {
   const timeAgo = window.notificationManager.getTimeAgo(notification.timestamp || Date.now());
   notificationElement.innerHTML = `
     <div class="notification-popup-header">
-      <h3 class="notification-popup-title">🔔 ${notification.title || 'crypt.c0mm.l1nk Notification'}</h3>
+      <h3 class="notification-popup-title">🔔 ${notification.title || 'VDO.Ninja Notification'}</h3>
       <button class="notification-popup-close">&times;</button>
     </div>
     <div class="notification-popup-body">
@@ -883,7 +883,7 @@ function updateNotificationHistoryUI() {
     notificationEl.innerHTML = `
       <div class="notification-icon">🔔</div>
       <div class="content">
-        <h3>${notification.title || 'crypt.c0mm.l1nk Notification'}</h3>
+        <h3>${notification.title || 'VDO.Ninja Notification'}</h3>
         <p>${notification.body || 'Notification received'}</p>
         <div class="time"><strong>${timeAgo}</strong> (${new Date(timestamp).toLocaleString()})</div>
       </div>
@@ -915,7 +915,7 @@ function setupParseUrlButton() {
   parseUrlBtn.addEventListener('click', async () => {
     const url = vdoUrlInput.value.trim();
     if (!url) {
-      displayStatusMessage('⚠️ Please enter a crypt.c0mm.l1nk URL', 'warning');
+      displayStatusMessage('⚠️ Please enter a VDO.Ninja URL', 'warning');
       return;
     }
     try {

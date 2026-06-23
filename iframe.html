@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>crypt.c0mm.l1nk IFRAME API - Interactive Developer Console</title>
+	<title>VDO.Ninja IFRAME API - Interactive Developer Console</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
 	<link rel="icon" type="image/png" sizes="32x32" href="./media/favicon-32x32.png" />
@@ -63,7 +63,7 @@
 		}
 
 	/**
-	 * Main function to load and initialize a crypt.c0mm.l1nk iframe
+	 * Main function to load and initialize a VDO.Ninja iframe
 	 * This demonstrates best practices for iframe integration
 	 */
 	function loadIframe() {
@@ -205,7 +205,7 @@
 				guestId: 'companion',
 				title: 'HTTP/WSS API',
 				description: 'Companion.Ninja API commands available via iframe',
-				info: '<a href="https://github.com//Companion-Ninja#api-commands" target="_blank">📚 Full API Documentation</a>',
+				info: '<a href="https://github.com/steveseguin/Companion-Ninja#api-commands" target="_blank">📚 Full API Documentation</a>',
 				iframe: iframe
 			}
 		);
@@ -1003,7 +1003,7 @@
 
 	/**
 	 * Normalizes absolute iframe URLs to avoid mixed-content redirects.
-	 * Example: https://crypt.c0mm.l1nk/alpha -> https://crypt.c0mm.l1nk/alpha/
+	 * Example: https://vdo.ninja/alpha -> https://vdo.ninja/alpha/
 	 */
 	function normalizeIframeUrl(inputUrl) {
 		const value = (inputUrl || "").trim();
@@ -1056,7 +1056,7 @@
 		// Add example URL if empty
 		const viewlink = document.getElementById('viewlink');
 		if (!viewlink.value) {
-			viewlink.placeholder = "e.g., https://crypt.c0mm.l1nk/?view=teststream or just 'crypt.c0mm.l1nk/?room=myroom'";
+			viewlink.placeholder = "e.g., https://vdo.ninja/?view=teststream or just 'vdo.ninja/?room=myroom'";
 		}
 
 		// Add keyboard shortcuts
@@ -1071,12 +1071,12 @@
 </head>
 <body>
 	<div class="header-section">
-		<h1>🚀 crypt.c0mm.l1nk IFRAME API - Interactive Developer Console</h1>
-		<p>Test and explore the crypt.c0mm.l1nk IFRAME API with this interactive tool. Enter a crypt.c0mm.l1nk URL below to get started.</p>
+		<h1>🚀 VDO.Ninja IFRAME API - Interactive Developer Console</h1>
+		<p>Test and explore the VDO.Ninja IFRAME API with this interactive tool. Enter a VDO.Ninja URL below to get started.</p>
 	</div>
 	
 	<div class="url-input-section">
-		<input placeholder="Enter a crypt.c0mm.l1nk View URL (e.g., crypt.c0mm.l1nk/?view=abc123)" id="viewlink" />
+		<input placeholder="Enter a VDO.Ninja View URL (e.g., vdo.ninja/?view=abc123)" id="viewlink" />
 		<button onclick="loadIframe();" class="primary-button">➕ ADD IFRAME</button>
 		
 		<div class="url-options">
@@ -1092,7 +1092,7 @@
 			<div class="guide-content">
 				<h3>Getting Started:</h3>
 				<ol>
-					<li>Enter a crypt.c0mm.l1nk URL in the input field above</li>
+					<li>Enter a VDO.Ninja URL in the input field above</li>
 					<li>Click "ADD IFRAME" to create a new instance</li>
 					<li>Use the control panel to send commands</li>
 					<li>Monitor responses in the log window</li>
@@ -1119,10 +1119,10 @@
 		<details>
 			<summary>🔗 Useful Links</summary>
 			<div class="links-content">
-				<a href="https://github.com//crypt.c0mm.l1nk" target="_blank">📦 crypt.c0mm.l1nk GitHub</a>
-				<a href="https://crypt.c0mm.l1nk" target="_blank">📚 Documentation</a>
-				💬 Discord Community
-				<a href="https://github.com//Companion-Ninja" target="_blank">🤖 Companion API</a>
+				<a href="https://github.com/steveseguin/vdo.ninja" target="_blank">📦 VDO.Ninja GitHub</a>
+				<a href="https://docs.vdo.ninja" target="_blank">📚 Documentation</a>
+				<a href="https://discord.vdo.ninja" target="_blank">💬 Discord Community</a>
+				<a href="https://github.com/steveseguin/Companion-Ninja" target="_blank">🤖 Companion API</a>
 			</div>
 		</details>
 	</div>

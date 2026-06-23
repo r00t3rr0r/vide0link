@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>
-	Remote control interface using crypt.c0mm.l1nk's iframe API
+	Remote control interface using VDO.Ninja's iframe API
 </title>
 <style>
 #debugRemoteOBSControl{
@@ -35,10 +35,10 @@ a {
 		<input id="obsRemotePasswordinput" style="margin:0 10px;display:inline-block;padding: 8px 10px 6px 10px;" onchange="changeremote()" oninput="changeremote()" placeholder="Enter the remote OBS password here" />
 	</div>
 	
-	Put the following link into OBS with permissions set to allow for scene changes:<br >
+	Put the following link into OBS with permissions set to allow for scene changes:<br ><a href="" id="putintoOBSlink" style="margin: 10px 0;" target="_blank"></a>
 	
 	<small style="margin: 20px 0 0 0;display:block;" >
-		See the <a href="https://crypt.c0mm.l1nk/advanced-settings/upcoming-parameters/and-obs" style="cursor:pointer;" target="_blank">documentation</a> for the built-in OBS control options inside crypt.c0mm.l1nk
+		See the <a href="https://docs.vdo.ninja/advanced-settings/upcoming-parameters/and-obs" style="cursor:pointer;" target="_blank">documentation</a> for the built-in OBS control options inside VDO.Ninja
 	</small>
 	<div id="debugRemoteOBSControl" class="hidden">
 	</div>
@@ -90,16 +90,16 @@ function changeremote(){
 	ele.value = val;
 
 	if (val){
-		document.getElementById("putintoOBSlink").innerText = "https://crypt.c0mm.l1nk/?view="+sessionID+"&dataonly&remote="+val;
-		document.getElementById("putintoOBSlink").href = "https://crypt.c0mm.l1nk/?view="+sessionID+"&dataonly&remote="+val;
+		document.getElementById("putintoOBSlink").innerText = "https://vdo.ninja/?view="+sessionID+"&dataonly&remote="+val;
+		document.getElementById("putintoOBSlink").href = "https://vdo.ninja/?view="+sessionID+"&dataonly&remote="+val;
 	} else {
-		document.getElementById("putintoOBSlink").innerText = "https://crypt.c0mm.l1nk/?view="+sessionID+"&dataonly&remote";
-		document.getElementById("putintoOBSlink").href = "https://crypt.c0mm.l1nk/?view="+sessionID+"&dataonly&remote";
+		document.getElementById("putintoOBSlink").innerText = "https://vdo.ninja/?view="+sessionID+"&dataonly&remote";
+		document.getElementById("putintoOBSlink").href = "https://vdo.ninja/?view="+sessionID+"&dataonly&remote";
 	}
 }
 changeremote();
 
-iframe.src = "https://crypt.c0mm.l1nk/?push="+sessionID+"&remote&dataonly";  ///// change this
+iframe.src = "https://vdo.ninja/?push="+sessionID+"&remote&dataonly";  ///// change this
 iframeContainer.appendChild(iframe);
 iframeContainer.style.width = "300px";
 iframeContainer.style.height = "20px";
@@ -159,7 +159,7 @@ function sendMessage(msg){
 function manageSceneState(data, UUID){ // incoming obs details
 	var processNeeded = false
 	
-	if (!(UUID in session.pcs)){ // re-using crypt.c0mm.l1nk state structures, to make code functions available as simply copy/paste
+	if (!(UUID in session.pcs)){ // re-using vdo.ninja state structures, to make code functions available as simply copy/paste
 		session.pcs[UUID] = {};
 		session.pcs[UUID].obsState = {};
 	}

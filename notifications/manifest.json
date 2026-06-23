@@ -1,7 +1,7 @@
 {
-  "name": "crypt.c0mm.l1nk Notifications",
+  "name": "VDO.Ninja Notifications",
   "short_name": "VDO Notify",
-  "description": "Get notified when someone joins your crypt.c0mm.l1nk rooms",
+  "description": "Get notified when someone joins your VDO.Ninja rooms",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#121212",

@@ -890,7 +890,7 @@ function buildRoomGate(defaults = {}) {
   const cancelButton = createElement('button', 'podcast-room-gate__cancel', {
     type: 'button',
     text: 'Back to classic',
-    title: 'Return to the classic crypt.c0mm.l1nk interface.',
+    title: 'Return to the classic VDO.Ninja interface.',
   });
   const submitButton = createElement('button', 'podcast-room-gate__submit', {
     type: 'submit',
@@ -2462,7 +2462,7 @@ class PodcastStudioApp {
       relayToken,
       mimeType: storedSettings.mimeType,
       metadata: {
-        name: storedSettings.name || 'crypt.c0mm.l1nk Live',
+        name: storedSettings.name || 'VDO.Ninja Live',
         genre: storedSettings.genre || 'Live',
         public: storedSettings.public,
       },
@@ -2934,7 +2934,7 @@ class PodcastStudioApp {
       : DEFAULT_ICECAST_MIME_TYPE;
     this.icecastNameInput = createElement('input', 'icecast-config__input', {
       type: 'text',
-      placeholder: 'crypt.c0mm.l1nk Live',
+      placeholder: 'VDO.Ninja Live',
       value: icecastSettings.name || '',
       autocomplete: 'off',
       title: 'Optional stream name shown by Icecast.',
@@ -2954,7 +2954,7 @@ class PodcastStudioApp {
     icecastToggles.append(publicLabel);
 
     icecastBody.append(
-      createIcecastField('Source URL', this.icecastTargetInput, 'Recommended: allow crypt.c0mm.l1nk in the Icecast/AzuraCast CORS settings for the best direct publishing path.'),
+      createIcecastField('Source URL', this.icecastTargetInput, 'Recommended: allow VDO.Ninja in the Icecast/AzuraCast CORS settings for the best direct publishing path.'),
       createIcecastField('Username', this.icecastUsernameInput),
       createIcecastField('Password', this.icecastPasswordInput),
       createIcecastField('Format', this.icecastMimeSelect),
@@ -3101,7 +3101,7 @@ class PodcastStudioApp {
     // Footer
     const footer = createElement('footer', 'podcast-footer');
     footer.innerHTML = `
-      <div>Powered by crypt.c0mm.l1nk • Low-latency P2P backbone intact • <span class="podcast-help-link" id="podcast-help-link" role="button" tabindex="0">Guide</span></div>
+      <div>Powered by VDO.Ninja • Low-latency P2P backbone intact • <span class="podcast-help-link" id="podcast-help-link" role="button" tabindex="0">Guide</span></div>
       <div class="cloud-status">
         <span id="podcast-cloud-drive">${this.cloud?.hasDriveAccess() ? 'Google Drive linked' : 'Drive link pending'}</span>
         <span id="podcast-cloud-dropbox">${this.cloud?.hasDropboxAccess() ? 'Dropbox linked' : 'Dropbox link pending'}</span>
@@ -5216,7 +5216,7 @@ class PodcastStudioApp {
           <p><strong>Google Drive:</strong></p>
           <ul>
             <li>Uploads complete files after recording stops</li>
-            <li>Files appear in a "crypt.c0mm.l1nk Recordings" folder</li>
+            <li>Files appear in a "VDO.Ninja Recordings" folder</li>
           </ul>
           <p><strong>Dropbox:</strong></p>
           <ul>
@@ -5235,9 +5235,9 @@ class PodcastStudioApp {
           <ul>
             <li><strong>Audio + Video ISO</strong> - Add <code>?studiovideo=1</code> to the studio URL to expose the experimental capture mode in the destinations card</li>
             <li><strong>Record Group</strong> - Opens a popup with the combined scene for screen recording</li>
-            <li><strong>Individual video workflow</strong> - See video guide ↗</li>
+            <li><strong>Individual video workflow</strong> - <a href="https://www.youtube.com/watch?v=s5shpEqLZbM" target="_blank" rel="noopener">See video guide ↗</a></li>
           </ul>
-          <p>The studio video ISO mode is still memory-heavy because files finalize after stop. For the most resilient long-form runs, guests can still use <code>&record</code> in their URL or the remote recording features in the classic crypt.c0mm.l1nk interface.</p>
+          <p>The studio video ISO mode is still memory-heavy because files finalize after stop. For the most resilient long-form runs, guests can still use <code>&record</code> in their URL or the remote recording features in the classic VDO.Ninja interface.</p>
         `,
       },
       {
@@ -5255,7 +5255,7 @@ class PodcastStudioApp {
       {
         title: 'Live Captions',
         content: `
-          <p>crypt.c0mm.l1nk supports real-time speech-to-text captions:</p>
+          <p>VDO.Ninja supports real-time speech-to-text captions:</p>
           <ul>
             <li><strong>Enable captions</strong> — Add <code>&transcribe</code> to a guest's URL to enable browser-based speech recognition</li>
             <li><strong>Display captions</strong> — Use <code>&showcc</code> on the viewer/scene URL to display incoming captions</li>
