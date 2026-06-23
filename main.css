@@ -7,17 +7,17 @@
 	--text: #0f0;
 	--text-dim: #090;
 	--text-muted: #060;
-	--accent: #00ff00;
-	--accent-bright: #00ff41;
+	--accent: #4a90e2;
+	--accent-bright: #56a5ea;
 	--warn: #ff0;
 	--danger: #f00;
 	--ok: #0f0;
 	--link: #0ff;
 	--input-bg: #000;
 	--input-bd: #333;
-	--shadow: 0 0 10px rgba(0,255,0,.1);
-	--glow: 0 0 5px rgba(0,255,0,.3);
-	--text-shadow: 0 0 3px rgba(0,255,0,.5);
+	--shadow: 0 0 10px rgba(74,144,226,.1);
+	--glow: 0 0 5px rgba(74,144,226,.3);
+	--text-shadow: 0 0 3px rgba(74,144,226,.5);
 
 	/* Terminal/Hacker Color Palette */
 	--discord-grey-0: #000000;
@@ -34,8 +34,8 @@
 
 	--darktheme-red: #ff1744;
 	--darktheme-blue: var(--accent-bright);
-	--darktheme-green: var(--accent);
-	--darktheme-lightgreen: var(--accent);
+	--darktheme-green: #3a8c3a;
+	--darktheme-lightgreen: #4daa4d;
 	--darktheme-brown: #ffaa00;
 	--darktheme-yellow: #ffff00;
 	
@@ -99,7 +99,7 @@
 	--red-accent: #553737;
 	--light-grey: var(--grid);
 	--near-black: var(--bg);
-	--green-accent: var(--accent);
+	--green-accent: #3a8c3a;
 	--olive-accent: #535D32;
 	--regular-margin: 10px;
 	--director-margin: 15px 20px 0 0;
@@ -1133,6 +1133,23 @@ hr {
 	justify-items: stretch;
 	border: 0;
 	margin: 0;
+}
+#directorlayout,
+#controls_directors_blank {
+	--accent: #cfd4da;
+	--accent-bright: #e4e8ec;
+	--blue-accent: #6b7a99;
+	--text: #d9dee4;
+	--text-dim: #bcc3cb;
+	--text-muted: #9aa2ab;
+	--ok: #cfd4da;
+	--link: #d7dde3;
+	--green-accent: #b7bec6;
+	--darktheme-green: #b7bec6;
+	--darktheme-lightgreen: #c8cfd6;
+	--shadow: 0 0 10px rgba(228, 232, 236, 0.14);
+	--glow: 0 0 5px rgba(228, 232, 236, 0.3);
+	--text-shadow: 0 0 3px rgba(228, 232, 236, 0.24);
 }
 #gridlayout{
 	z-index:-1;
@@ -4643,7 +4660,7 @@ div#roomnotes2 {
 	background-color: rgb(228, 203, 189);
 }
 .controlsGrid .btn-HL-green {
-	background-color: rgb(189, 228, 199);
+	background-color: rgb(206, 214, 222);
 }
 .controlsGrid .btn-HL-blue {
 	background-color: rgb(170, 204, 248);
