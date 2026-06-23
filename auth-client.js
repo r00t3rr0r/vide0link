@@ -4,6 +4,10 @@
 const AUTH_SERVICE_URL = 'https://vdo-ninja-auth-service.vdo.workers.dev'; // Change for local dev: http://localhost:8787
 
 // Authentication state
+if (typeof session === "undefined" || !session) {
+  window.session = {};
+}
+
 session.authMode = false;
 session.requireAuth = false;
 session.authToken = null;

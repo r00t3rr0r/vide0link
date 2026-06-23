@@ -227,9 +227,15 @@ function buildQosTurnAllowlist(turnlist) {
 }
 
 if (typeof session === "undefined") {
-	// make sure to init the WebRTC if not exists.
-	var session = WebRTC.Media;
-	session.streamID = session.generateStreamID();
+	// Make sure session exists even if WebRTC failed to load.
+	var session = (window.WebRTC && WebRTC.Media) ? WebRTC.Media : (window.session || {});
+	window.session = session;
+	if (typeof session.generateStreamID !== "function") {
+		session.generateStreamID = function () {
+			return "fallback-" + Math.random().toString(36).slice(2, 12);
+		};
+	}
+	session.streamID = session.streamID || session.generateStreamID();
 	errorlog("Serious error: WebRTC session didn't load in time");
 }
 
