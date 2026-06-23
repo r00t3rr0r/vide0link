@@ -469,15 +469,15 @@
 									</b>
 										<div id="ssoOptions" class="sso-options-panel" style="display:none;">
 											<div style="margin-bottom:6px; font-weight:600;">Guest access:</div>
-											<label style="display:block; margin:4px 0;">
+											<label class="radio-option">
 												<input type="radio" name="ssoAccessMode" value="public" checked onclick="document.getElementById('preAllowlistRow').style.display='none'">
 											<span>Public (no sign-in required for guests)</span>
 										</label>
-										<label style="display:block; margin:4px 0;">
+										<label class="radio-option">
 											<input type="radio" name="ssoAccessMode" value="authenticated" onclick="document.getElementById('preAllowlistRow').style.display='none'">
 											<span>Require SSO (guests must sign in)</span>
 										</label>
-										<label style="display:block; margin:4px 0;">
+										<label class="radio-option">
 											<input type="radio" name="ssoAccessMode" value="allowlist" onclick="document.getElementById('preAllowlistRow').style.display='block'">
 											<span>Allowlist only (specific users or emails)</span>
 										</label>
@@ -1297,7 +1297,7 @@
 							<input type="checkbox" checked data-param="&do" onchange="updateLinkInverse(1,this);saveDirectorSettings();">
 							<span class="slider"></span>
 						</label>
-							<span data-translate="guests-hear-others" style="line-height:0;position:relative;top:-3px;">Guests hear others</span>
+							<span data-translate="guests-hear-others">Guests hear others</span>
 						</span>
 						<button class='pull-right' onclick='copyFunction(getById("director_block_1"),event)'><i class='las la-copy'></i><span data-translate="copy-link">Copy link</span></button>
 						<button class='pull-right' id="showCustomizerButton1"  onclick='showCustomizer(1,this)'><i class='las la-tools'></i><span data-translate="customize">Customize</span></button>
@@ -1314,7 +1314,7 @@
 							<input type="checkbox" checked data-param="&scene" onchange="updateLinkScene(3,this);saveDirectorSettings();">
 							<span class="slider"></span>
 						</label>
-							<span data-translate="auto-add-guests" style="line-height:0;position:relative;top:-3px;">Auto-add guests</span>
+							<span data-translate="auto-add-guests">Auto-add guests</span>
 						</span>
 						<button class='pull-right' style='font-size:1.15em' onclick='copyFunction(getById("director_block_3"),event)'><i class='las la-copy'></i><span data-translate="copy-link">Copy link</span></button>
 						<button class='pull-right' style='font-size:1.15em' id="showCustomizerButton3"  onclick='showCustomizer(3,this)'><i class='las la-tools'></i><span data-translate="customize">Customize</span></button>
@@ -2851,16 +2851,16 @@
 					<div style="margin-bottom: 15px;">
 						<label>Access Mode:</label>
 						<div style="margin-top: 5px;">
-							<label style="display: block; margin-bottom: 5px;">
-								<input type="radio" name="roomAccessMode" value="public" onchange="updateRoomAccessMode(this.value)" style="margin-right: 5px;">
+							<label class="radio-option">
+								<input type="radio" name="roomAccessMode" value="public" onchange="updateRoomAccessMode(this.value)">
 								Public (anyone can join)
 							</label>
-							<label style="display: block; margin-bottom: 5px;">
-								<input type="radio" name="roomAccessMode" value="authenticated" onchange="updateRoomAccessMode(this.value)" style="margin-right: 5px;">
+							<label class="radio-option">
+								<input type="radio" name="roomAccessMode" value="authenticated" onchange="updateRoomAccessMode(this.value)">
 								Authenticated (must sign in)
 							</label>
-							<label style="display: block; margin-bottom: 5px;">
-								<input type="radio" name="roomAccessMode" value="allowlist" onchange="updateRoomAccessMode(this.value)" style="margin-right: 5px;">
+							<label class="radio-option">
+								<input type="radio" name="roomAccessMode" value="allowlist" onchange="updateRoomAccessMode(this.value)">
 								Allowlist (specific users only)
 							</label>
 						</div>

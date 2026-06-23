@@ -27922,23 +27922,18 @@ async function registerToken() {
 function hideDirectorinvites(ele, skip = true) {
 	if (getById("directorLinks2").style.display == "none") {
 		ele.innerHTML = '<i class="las la-caret-down"></i><span data-translate="hide-the-links"> LINKS (GUEST INVITES & SCENES)</span>';
-		getById("directorLinks2").style.display = "inline-block";
+		getById("directorlayout").classList.remove("hidden");
+		getById("directorLinks2").style.display = "";
+		getById("directorLinks1").style.display = "";
 		getById("customizeLinks").classList.remove("hidden");
 	} else {
 		ele.innerHTML = '<i class="las la-caret-right"></i><span data-translate="hide-the-links"> LINKS (GUEST INVITES & SCENES)</span>';
 		getById("directorLinks2").style.display = "none";
-		getById("help_directors_room").style.display = "none";
-		getById("roomnotes2").style.display = "none";
-		getById("customizeLinks").classList.add("hidden");
-	}
-	if (getById("directorLinks1").style.display == "none") {
-		getById("directorLinks1").style.display = "inline-block";
-		getById("customizeLinks").classList.remove("hidden");
-	} else {
 		getById("directorLinks1").style.display = "none";
 		getById("help_directors_room").style.display = "none";
 		getById("roomnotes2").style.display = "none";
 		getById("customizeLinks").classList.add("hidden");
+		getById("directorlayout").classList.add("hidden");
 	}
 	if (skip) {
 		saveDirectorSettings();
@@ -28400,8 +28395,8 @@ async function createRoomCallback(passAdd, passAdd2) {
 	if (session.cleanDirector == false && session.cleanOutput == false) {
 		getById("roomHeader").style.display = "";
 		//getById("directorLinks").style.display = "";
-		getById("directorLinks1").style.display = "inline-block";
-		getById("directorLinks2").style.display = "inline-block";
+		getById("directorLinks1").style.display = "";
+		getById("directorLinks2").style.display = "";
 
 		getById("calendarButton").style.display = "inline-block";
 	} else {

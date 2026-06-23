@@ -5570,56 +5570,129 @@ div.message-card.info:before {
 
 .switch {
 	position: relative;
-	margin:5px 5px 2px 5px;
+	margin: 0 8px 0 0;
 	width: 40px;
 	height: 24px;
-	bottom:20px;
-	border-radius: 2px;
+	bottom: 0;
 	display: inline-block;
+	vertical-align: middle;
 }
 
 .switch input {
-	width: 0;
-	height: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
 	opacity: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
 }
 
-.slider {
+.switch .slider {
+	position: absolute;
+	inset: 0;
 	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #ccc;
-	-webkit-transition: .3s;
-	transition: .3s;
-	position: absolute;
+	border-radius: 999px;
+	border: 1.5px solid #9ba6b8;
+	background: linear-gradient(180deg, #f9fbfd, #dce3ed);
+	box-shadow: inset 0 1px 2px rgba(255, 255, 255, .6), 0 1px 2px rgba(0, 0, 0, .16);
+	transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
 }
 
-.slider:before {
+.switch .slider:before {
 	content: "";
-	height: 17px;
-	width: 17px;
-	left: 3px;
-	bottom: 3px;
-	background-color: white;
-	-webkit-transition: .3s;
-	transition: .3s;
 	position: absolute;
+	left: 2px;
+	top: 2px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: linear-gradient(180deg, #ffffff, #eef2f7);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+	transition: transform .2s ease, background-color .2s ease;
 }
 
-input:checked + .slider {
-	background-color: #86b98f;
+.switch input:checked + .slider {
+	border-color: #2f7dff;
+	background: linear-gradient(180deg, #65a5ff, #2f7dff);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22), 0 0 0 3px rgba(47, 125, 255, .2);
 }
 
-input:focus + .slider {
-	box-shadow: 0 0 1px #86b98f;
-}
-
-input:checked + .slider:before {
-	-webkit-transform: translateX(16px);
-	-ms-transform: translateX(16px);
+.switch input:checked + .slider:before {
 	transform: translateX(16px);
+}
+
+.switch input:focus-visible + .slider {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(47, 125, 255, .35);
+}
+
+.darktheme .switch .slider {
+	border-color: rgba(0, 255, 0, .4);
+	background: linear-gradient(180deg, #191919, #0b0b0b);
+	box-shadow: inset 0 1px 2px rgba(255, 255, 255, .04), 0 0 10px rgba(0, 255, 0, .12);
+}
+
+.darktheme .switch .slider:before {
+	background: linear-gradient(180deg, #f3fff3, #d7f5d7);
+}
+
+.darktheme .switch input:checked + .slider {
+	border-color: var(--accent, #00ff00);
+	background: linear-gradient(180deg, #00ff66, #00b83f);
+	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3), 0 0 0 3px rgba(0, 255, 0, .22), 0 0 12px rgba(0, 255, 0, .18);
+}
+
+.darktheme .switch input:focus-visible + .slider {
+	box-shadow: 0 0 0 3px rgba(0, 255, 0, .35), 0 0 12px rgba(0, 255, 0, .2);
+}
+
+/* Keep toggle slider directly before text labels without visual offset */
+#customizeLinks .directorBlock.director-customizer-scroll label.switch + span,
+#customizeLinks .directorBlock.director-customizer-scroll label.switch + .tooltip,
+#customizeLinks .directorBlock.director-customizer-scroll label.switch + .tooltip + span {
+	vertical-align: middle;
+}
+
+#directorLinks1 .directorBlock > span > span,
+#directorLinks2 .directorBlock > span > span {
+	display: inline-flex !important;
+	align-items: center;
+	gap: 8px;
+	margin: 10px 0 0 10px !important;
+	bottom: auto !important;
+	max-width: 60% !important;
+}
+
+#directorLinks1 .directorBlock > span > span > .switch,
+#directorLinks2 .directorBlock > span > span > .switch {
+	margin: 0 !important;
+}
+
+#directorLinks1 .directorBlock > span > span > span,
+#directorLinks2 .directorBlock > span > span > span {
+	display: inline-block;
+	line-height: 1.25;
+}
+
+/* Keep action buttons in both top director cards vertically flush and aligned */
+#directorLinks1 .directorBlock > span > button.pull-right,
+#directorLinks2 .directorBlock > span > button.pull-right {
+	float: right;
+	clear: right;
+	width: 170px;
+	min-height: 38px;
+	margin: 6px 10px 0 0;
+	justify-content: center;
+	white-space: nowrap;
+	font-size: 1.1em !important;
+}
+
+#directorLinks1 .directorBlock > span > button.pull-right > span,
+#directorLinks2 .directorBlock > span > button.pull-right > span {
+	white-space: nowrap;
 }
 #remoteOBSControl {
 	user-select: none;
@@ -6475,34 +6548,53 @@ body.darktheme .startupWarning>.las  {
 */
 
 button {
-	background-color: var(--lighttheme-2);
+	background: linear-gradient(180deg, #ffffff, #eef2f7);
 	color: var(--lighttheme-text);
 	filter: brightness(1);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	gap: 6px;
 	user-select: none;
 	cursor: pointer;
-	padding: 4px 6px;
-	border-radius: 4px;
-	border: 1px solid var(--lighttheme-6);
+	padding: 6px 10px;
+	border-radius: 10px;
+	border: 1px solid #b7c0cf;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	transition: transform .12s ease, box-shadow .18s ease, filter .18s ease, border-color .18s ease;
+	box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 8px 20px rgba(0,0,0,.05);
 }
 button:hover {
+	filter: brightness(1.02);
+	transform: translateY(-1px);
+	box-shadow: 0 2px 4px rgba(0,0,0,.14), 0 12px 24px rgba(0,0,0,.08);
+	border-color: #9aa7bd;
+}
+button:active {
+	transform: translateY(0);
 	filter: brightness(0.98);
+	box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.08);
+}
+button:disabled {
+	opacity: .55;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
 }
 button i {
 	font-size: 130%;
 }
 .darktheme :not(.promptModalInner) > button {
-	background-color: #1a1a1a;
-	border: 1px solid #00FF00;
+	background: linear-gradient(180deg, #151515, #0b0b0b);
+	border: 1px solid rgba(0,255,0,.35);
 	color: var(--discord-text);
-	box-shadow: 0 0 5px #00FF0033;
+	box-shadow: 0 0 8px rgba(0,255,0,.12), inset 0 0 6px rgba(0,255,0,.08);
 }
 .darktheme :not(.promptModalInner) > button:hover {
-	filter: brightness(1.3);
-	box-shadow: 0 0 15px #00FF0066;
-	border-color: #00FF00;
+	filter: brightness(1.08);
+	box-shadow: 0 0 12px rgba(0,255,0,.2), inset 0 0 8px rgba(0,255,0,.1);
+	border-color: rgba(0,255,0,.55);
 }
 
 .gobutton {
@@ -6661,7 +6753,7 @@ input::placeholder {
 	color: rgba(0,255,0,.3) !important;
 }
 
-.darktheme :not(.promptModalInner) > input:not([type='range']) {
+.darktheme :not(.promptModalInner) > input:not([type='range']):not([type='radio']):not([type='checkbox']) {
 	border: 1px solid rgba(0,255,0,.3);
 	border-radius: 2px;
 	background-color: var(--input-bg);
@@ -6672,7 +6764,7 @@ input::placeholder {
 	font-family: inherit;
 }
 
-.darktheme :not(.promptModalInner) > input:not([type='range']):focus {
+.darktheme :not(.promptModalInner) > input:not([type='range']):not([type='radio']):not([type='checkbox']):focus {
 	box-shadow: 0 0 15px rgba(0,255,0,.2);
 	border-color: var(--accent);
 	color: var(--accent-bright);
@@ -6680,8 +6772,6 @@ input::placeholder {
 
 .darktheme :not(.promptModalInner) > input::placeholder {
 	color: rgba(0,255,0,.3) !important;
-}
-	color: #00AA00 !important;
 }
 
 .darktheme .card {
@@ -7672,14 +7762,40 @@ body {
 
 /* 5) Buttons and inputs (respect existing tokens) */
 button {
-    border-radius: var(--button-radius);
-    transition: box-shadow .15s ease, transform .08s ease, filter .15s ease;
+    border-radius: 10px;
+    border: 1px solid #b7c0cf;
+    padding: 6px 10px;
+    gap: 6px;
+    font-weight: 500;
+    letter-spacing: .01em;
+    background: linear-gradient(180deg, #ffffff, #eef2f7);
+    transition: border-color .15s ease, box-shadow .18s ease, transform .10s ease, filter .15s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 8px 20px rgba(0,0,0,.05);
 }
 button:hover {
-    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 4px rgba(0,0,0,.14), 0 12px 24px rgba(0,0,0,.08);
+    border-color: #9aa7bd;
+    transform: translateY(-1px);
 }
 button:active {
-    transform: translateY(1px);
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.08);
+}
+button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+.darktheme button {
+    background: linear-gradient(180deg, #151515, #0b0b0b);
+    border-color: rgba(0,255,0,.35);
+    color: var(--discord-text);
+    box-shadow: 0 0 8px rgba(0,255,0,.12), inset 0 0 6px rgba(0,255,0,.08);
+}
+.darktheme button:hover {
+    border-color: rgba(0,255,0,.55);
+    box-shadow: 0 0 12px rgba(0,255,0,.2), inset 0 0 8px rgba(0,255,0,.1);
 }
 
 /* Accessible focus treatment */
@@ -7707,31 +7823,92 @@ input[type="text"], input[type="search"], input[type="number"], select {
     color: var(--discord-text);
 }
 
-/* 17) Radios/checkboxes: make checked state feel active */
-input[type="radio"],
+/* 17) Radios/checkboxes */
 input[type="checkbox"] {
     accent-color: var(--accent-color);
 }
-.darktheme input[type="radio"],
-.darktheme input[type="checkbox"] {
-    accent-color: var(--accent-color);
+
+/* Modern radios */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid #7b8698;
+    background: linear-gradient(180deg, #ffffff, #f1f4f8);
+    box-shadow: inset 0 0 0 2px transparent, 0 1px 2px rgba(0, 0, 0, .18);
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0 6px 0 0;
+    transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease, transform .12s ease;
 }
+
+input[type="radio"]:hover {
+    border-color: #4f8cff;
+    box-shadow: inset 0 0 0 2px rgba(79, 140, 255, .14), 0 1px 3px rgba(0, 0, 0, .22);
+}
+
+input[type="radio"]:checked {
+    border-color: #2f7dff;
+    background: radial-gradient(circle at center, #2f7dff 0 42%, transparent 43%);
+    box-shadow: inset 0 0 0 2px #ffffff, 0 0 0 3px rgba(47, 125, 255, .20);
+}
+
+input[type="radio"]:focus-visible {
+    outline: none;
+    box-shadow: inset 0 0 0 2px #ffffff, 0 0 0 3px rgba(47, 125, 255, .35);
+}
+
+input[type="radio"]:active {
+    transform: scale(.96);
+}
+input[type="radio"]:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.darktheme input[type="radio"] {
+    border-color: rgba(0, 255, 0, .4);
+    background: linear-gradient(180deg, #141414, #0a0a0a);
+    box-shadow: inset 0 0 0 2px transparent, 0 0 8px rgba(0, 255, 0, .10);
+}
+
+.darktheme input[type="radio"]:hover {
+    border-color: var(--accent, #00ff00);
+    box-shadow: inset 0 0 0 2px rgba(0, 255, 0, .12), 0 0 12px rgba(0, 255, 0, .18);
+}
+
+.darktheme input[type="radio"]:checked {
+    border-color: var(--accent, #00ff00);
+    background: radial-gradient(circle at center, var(--accent, #00ff00) 0 42%, transparent 43%);
+    box-shadow: inset 0 0 0 2px #0a0a0a, 0 0 0 3px rgba(0, 255, 0, .22), 0 0 10px rgba(0, 255, 0, .20);
+}
+
+.darktheme input[type="radio"]:focus-visible {
+    box-shadow: inset 0 0 0 2px #0a0a0a, 0 0 0 3px rgba(0, 255, 0, .32), 0 0 12px rgba(0, 255, 0, .24);
+}
+.darktheme input[type="radio"]:disabled {
+    opacity: .45;
+}
+
 input[type="radio"] + label,
-input[type="checkbox"] + label { cursor: pointer; }
-input[type="radio"]:checked + label,
-input[type="checkbox"]:checked + label {
-    color: var(--a-link);
-    font-weight: 600;
+input[type="checkbox"] + label {
+    cursor: pointer;
 }
-/* Override: do not color labels on selection — only the control gets color */
-input[type="radio"]:checked + label,
-input[type="checkbox"]:checked + label {
-    color: inherit !important;
-    font-weight: inherit !important;
+
+/* Keep radio controls perfectly aligned with their option text in stacked lists */
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.25;
+    margin: 4px 0;
 }
-.darktheme input[type="radio"]:checked + label,
-.darktheme input[type="checkbox"]:checked + label {
-    color: inherit !important;
+
+.radio-option input[type="radio"] {
+    margin: 0;
+    flex: 0 0 auto;
 }
 
 /* Higher-contrast placeholders (theme-aware) */
@@ -7896,6 +8073,16 @@ ul#audioSource3 input:checked + label {
 .chatBarInputButton:hover {
     background-color: var(--accent-hover-color) !important;
 }
+.darktheme .chatBarInputButton {
+    background: linear-gradient(180deg, #151515, #0b0b0b) !important;
+    color: var(--accent, #00ff00) !important;
+    border: 1px solid rgba(0,255,0,.45) !important;
+    box-shadow: 0 0 8px rgba(0,255,0,.14), inset 0 0 6px rgba(0,255,0,.08) !important;
+}
+.darktheme .chatBarInputButton:hover {
+    border-color: rgba(0,255,0,.6) !important;
+    box-shadow: 0 0 12px rgba(0,255,0,.2), inset 0 0 8px rgba(0,255,0,.1) !important;
+}
 
 /* 16) Solo link accent harmonization */
 a.soloLink:link, a.soloLink:visited { color: var(--a-link); }
@@ -7954,6 +8141,28 @@ div#chatBody a {
 .gobutton:hover {
     background-color: var(--accent-hover-color) !important;
     border-color: #2f7ec4 !important;
+}
+
+/* Keep CTA buttons aligned with dark hacker palette */
+.darktheme .gobutton {
+    background: linear-gradient(180deg, #151515, #0b0b0b) !important;
+    color: var(--accent, #00ff00) !important;
+    border-color: rgba(0,255,0,.55) !important;
+    text-shadow: 0 0 3px rgba(0,255,0,.45);
+    box-shadow: 0 0 10px rgba(0,255,0,.14), inset 0 0 7px rgba(0,255,0,.08) !important;
+}
+.darktheme .gobutton:hover {
+    background: linear-gradient(180deg, #1b1b1b, #101010) !important;
+    border-color: rgba(0,255,0,.75) !important;
+    box-shadow: 0 0 16px rgba(0,255,0,.22), inset 0 0 9px rgba(0,255,0,.12) !important;
+}
+
+/* Override legacy bright-green CTA state that forces black text */
+.darktheme .gowebcam:enabled {
+    color: var(--accent, #00ff00) !important;
+    border-color: rgba(0,255,0,.65) !important;
+    background: radial-gradient(circle at center, #0e2a0e 0%, #081608 70%) !important;
+    box-shadow: 0 0 18px rgba(0,255,0,.18), inset 0 0 8px rgba(0,255,0,.1) !important;
 }
 
 /* 20) Message cards — softer backgrounds and accents */
