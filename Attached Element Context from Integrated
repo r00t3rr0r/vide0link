@@ -1,0 +1,97 @@
+Attached Element Context from Integrated Browser
+
+Element: div.directorBlock
+
+URL: http://localhost:8080/?director=threethusY
+
+HTML Path: div#directorlayout.directorsgrid > div#directorLinks1.directorContainer.half > div.directorBlock
+
+Outer HTML:
+```html
+<div class="directorBlock">
+					<h2 title="Gast oder Kamera zum Video-Gruppenchat einladen" style="margin-top: 5px;" data-key="invite-a-guest-or-camera-source-to-publish-into-the-group-room"><i class="las la-video director-link-icons"></i><span data-translate="invite-a-guest">GAST EINLADEN</span></h2>
+					<span style="margin:5px; line-height: 1.6;" data-translate="invite-users-to-join">Gäste können über diesen Link dem Raum beitreten</span>
+					<a onclick="copyFunction(this,event)" id="director_block_1" class="task grabLinks" data-menu="context-menu" style="cursor:copy;background-color: #0003;" data-raw="https://localhost:8080/?room=threethusY" href="https://localhost:8080/?room=threethusY">https://localhost:8080/?room=threethusY</a>
+					<span style="display:block;">
+						<span style="bottom: 0; margin: 22px 0 0 10px;  position: relative; display:inline-block; max-width:40%;">
+							<label class="switch" title="Wenn deaktiviert, kann der eingeladene Gast niemanden im Raum sehen oder hören." data-key="if-disabled-the-invited-guest-will-not-be-able-to-see-or-hear-anyone-in-the-room-">
+							<input type="checkbox" checked="" data-param="&amp;do" onchange="updateLinkInverse(1,this);saveDirectorSettings();">
+							<span class="slider"></span>
+						</label>
+							<span data-translate="guests-hear-others" style="line-height:0;position:relative;top:-3px;">Die Gäste können sich gegenseitig hören</span>
+						</span>
+						<button class="pull-right" onclick="copyFunction(getById(&quot;director_block_1&quot;),event)"><i class="las la-copy"></i><span data-translate="copy-link">Link kopieren</span></button>
+						<button class="pull-right" id="showCustomizerButton1" onclick="showCustomizer(1,this)"><i class="las la-tools"></i><span data-translate="customize">Anpassen</span></button>
+					<span>
+				</span></span></div>
+```
+
+Dimensions:
+- top: 91px
+- left: 21px
+- width: 569px
+- height: 216px
+
+CSS:
+```css
+* { padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	border: 0; }
+.directorBlock { padding: 10px 10px 5px 10px;
+	margin: var(--regular-margin);
+	color: white;
+	position:relative;
+	max-width: 100%;
+	overflow: hidden;
+	display: block;
+	min-height: 174px; }
+.directorBlock:nth-child(1) { background-color: var(--blue-accent); }
+
+/* Pseudo-elements */
+::selection { background-color: #0447c888;
+	color: #FFF; }
+::-webkit-scrollbar { width: 15px;
+	height: 15px; }
+::-webkit-scrollbar-thumb { border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 16px rgb(150 150 150 / 100%);
+	border: solid 3px transparent; }
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 13px rgb(0 0 0 / 50%);
+	border-radius: 3px; }
+
+/* Inherited */
+body { color: var(--text); font-family: "Courier New", "Lucida Console", Monaco, monospace; font-size: 13px; line-height: 1.4; letter-spacing: 0.5px }
+body { font-size: 0.9em }
+body { font-family: "Courier New", "Lucida Console", Monaco, monospace }
+body.darktheme { color: var(--text) }
+body.darktheme { color: white }
+html { font-size: clamp(13px, 3.5vw, 16px) }
+
+/* Resolved values */
+margin: 10px;
+padding: 10px 10px 5px;
+border-radius: 0px;
+border: 0px none rgb(255, 255, 255);
+background-color: rgb(39, 43, 39);
+box-shadow: none;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+display: block;
+font-family: "Courier New", "Lucida Console", Monaco, monospace;
+font-size: 14.4px;
+height: 196.375px;
+letter-spacing: 0.5px;
+line-height: 20.16px;
+max-width: 100%;
+min-height: 174px;
+overflow-x: hidden;
+overflow-y: hidden;
+position: relative;
+unicode-bidi: isolate /*UA*/;
+width: 549px;
+
+/* CSS variables */
+--regular-margin: 10px;
+--blue-accent: #2d312d;
+--text: #0f0;
+```

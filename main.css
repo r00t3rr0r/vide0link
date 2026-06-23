@@ -8411,3 +8411,1467 @@ video.viewchroma-source-hidden {
     visibility: hidden !important;
     pointer-events: none !important;
 }
+
+
+/* ============================================================
+   SMALL SCREEN & HACKER-GREEN POLISH — Added for tiny-display UX
+   Targets everything from 320 px (smartwatch/tiny phone) upward.
+   All colours follow the existing --text / --accent token system
+   so the hacker-green identity is preserved everywhere.
+   ============================================================ */
+
+/* ── 1) Base typography scale that shrinks gracefully ─────── */
+html {
+    font-size: clamp(13px, 3.5vw, 16px);
+}
+
+body {
+    min-width: 280px;           /* never clip below the smallest useful viewport */
+    word-break: break-word;
+    overflow-x: hidden;
+}
+
+/* ── 2) Universal button floor — always touchable ─────────── */
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.gobutton,
+.preSelectbutton,
+.preSelectButton {
+    min-height: 36px;
+    min-width: 36px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0,255,0,.15);
+}
+
+/* ── 3) Input / select floor — readable on tiny screens ───── */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+select,
+textarea {
+    min-height: 36px;
+    font-size: max(13px, 1em);  /* never below 13 px */
+}
+
+/* ── 4) gobutton (main CTA) — full width on small screens ─── */
+@media only screen and (max-width: 480px) {
+    .gobutton {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 1em !important;
+        padding: 14px 12px !important;
+        margin: 6px 0 !important;
+        letter-spacing: 1px;
+    }
+
+    /* Inputs stretch to full width */
+    #roomid,
+    #viewcode,
+    input[type="text"],
+    input[type="password"],
+    input[type="search"],
+    input[type="number"] {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Tables become block-level so they don't overflow */
+    table,
+    thead,
+    tbody,
+    tr,
+    th,
+    td {
+        display: block;
+        width: 100%;
+    }
+    th,
+    td {
+        padding: 4px 6px;
+    }
+}
+
+/* ── 5) Viewport widths 360 px and below (small phones) ───── */
+@media only screen and (max-width: 360px) {
+    html { font-size: 13px; }
+
+    .column {
+        padding: 14px 10px !important;
+    }
+
+    /* Compress header so video area stays maximal */
+    #header {
+        padding: 2px 4px !important;
+    }
+    #head4, #head6, #head7 {
+        font-size: 60%;
+    }
+    #head5 {
+        font-size: 75%;
+        margin-right: 4px;
+    }
+
+    /* Prevent long room-name strings from breaking layout */
+    #copythisurl,
+    .grabLinks {
+        font-size: 0.72em !important;
+        word-break: break-all;
+    }
+
+    /* Modals: use full width */
+    .promptModal,
+    .customModelPopup,
+    #promptModal,
+    .alertModalInner {
+        width: 98vw !important;
+        max-width: 98vw !important;
+        left: 1vw !important;
+        right: 1vw !important;
+        transform: none !important;
+        top: 2vw !important;
+        border-radius: 0 !important;
+    }
+
+    .tipModalInner {
+        width: 98vw !important;
+        max-width: 98vw !important;
+        padding: 16px !important;
+    }
+
+    .tipAmounts {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* ── 6) Viewport widths 280 px and below (smartwatches / tiny) */
+@media only screen and (max-width: 280px) {
+    html { font-size: 12px; }
+
+    .column {
+        padding: 10px 6px !important;
+    }
+
+    /* Collapse duplicate nav decorations */
+    #head4,
+    #head6,
+    #head7 {
+        display: none !important;
+    }
+    #head5 {
+        font-size: 65%;
+    }
+
+    button,
+    [role="button"],
+    input[type="submit"],
+    input[type="button"] {
+        font-size: 0.82em;
+        padding: 8px 6px;
+        min-height: 32px;
+    }
+
+    /* Tip amounts: 2 per row */
+    .tipAmounts {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+    }
+
+    /* Mix dropdown can be narrower */
+    .mix-dropdown {
+        min-width: 160px !important;
+    }
+}
+
+/* ── 7) Viewport heights 400 px and below (landscape phone) ── */
+@media only screen and (max-height: 400px) {
+    /* Header shrinks to a single slim bar */
+    #header {
+        padding: 1px 4px !important;
+    }
+    #head9 {
+        font-size: 90%;
+    }
+    #head4 {
+        display: none !important;
+    }
+
+    /* Modals scroll internally */
+    .promptModal,
+    .customModelPopup,
+    #promptModal,
+    #tipOnboardingModal {
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+        top: 5vh !important;
+        transform: none !important;
+    }
+    .promptModalInner {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+/* ── 8) Hacker-green colour corrections for readability ────── */
+
+/* Ensure the darktheme text tokens are always truly the terminal green */
+.darktheme body,
+body.darktheme {
+    color: var(--text);               /* #0f0 */
+    background-color: var(--bg);      /* #000 */
+}
+
+/* Labels that landed on grey — pull them back to hacker green */
+.darktheme label,
+.darktheme th,
+.darktheme td,
+.darktheme .settingsLabel,
+.darktheme .promptModalLabel {
+    color: var(--text) !important;    /* #0f0 */
+}
+
+/* Section divider labels in advanced audio/video settings */
+.darktheme .advancedAudioSettings .settingsLabel,
+.darktheme .advancedVideoSettings .settingsLabel {
+    color: var(--text-dim) !important;   /* #090 */
+    border-top-color: var(--grid) !important;
+}
+
+/* Mix-dropdown text — make readable in hacker green context */
+.darktheme .mix-dropdown {
+    background: var(--panel-alt) !important;   /* #1a1a1a */
+    border-color: var(--grid) !important;
+}
+.darktheme .mix-dropdown-header,
+.darktheme .mix-dropdown-section-title {
+    color: var(--text-muted) !important;       /* #060 */
+}
+.darktheme .mix-dropdown-item {
+    color: var(--text) !important;             /* #0f0 */
+}
+.darktheme .mix-dropdown-item:hover {
+    background: var(--panel) !important;       /* #111 */
+}
+
+/* Progress bar — use accent colour */
+#progressBar {
+    background-color: var(--accent) !important;
+}
+.darktheme #progressBar {
+    background-color: var(--accent-bright) !important;
+}
+
+/* ── 9) Control button bar on small screens ───────────────── */
+
+/* Ensure the toolbar is never taller than necessary and
+   wraps gracefully when very narrow */
+#subControlButtons {
+    flex-wrap: wrap;
+    max-width: 100vw;
+    overflow: visible;
+}
+
+@media only screen and (max-width: 360px) {
+    /* Sub-control icons: scale down uniformly */
+    #subControlButtons > div,
+    #subControlButtons > span {
+        min-width: 28px !important;
+        min-height: 28px !important;
+        margin: 2px !important;
+        border-radius: 4px !important;
+    }
+    #subControlButtons > div i {
+        font-size: 16px !important;
+    }
+    #hangupbutton {
+        margin-left: 4px !important;
+    }
+}
+
+/* ── 10) Infoblob / guest tips — small-screen legibility ───── */
+@media only screen and (max-width: 480px) {
+    .infoblob,
+    .cameraTip,
+    #guestTips {
+        font-size: 0.85em;
+        padding: 10px !important;
+        max-width: 100% !important;
+    }
+    .gowebcam {
+        padding: 8px 10px;
+    }
+}
+
+/* ── 11) Director grid on very small screens ──────────────── */
+@media only screen and (max-width: 360px) {
+    .directorsgrid .vidcon {
+        width: 100% !important;
+        display: block !important;
+    }
+    .directorsgrid .vidcon video {
+        max-width: 100% !important;
+    }
+}
+
+/* ── 12) Chat module compact mode ────────────────────────────*/
+@media only screen and (max-width: 360px) {
+    #chatModule {
+        font-size: 0.82em;
+    }
+    .chatBarInputButton {
+        min-width: 32px !important;
+        padding: 0 8px !important;
+    }
+}
+
+/* ── 13) QR-code shrinks on very small screens ─────────────── */
+@media only screen and (max-width: 360px) {
+    #qrcode img,
+    #qrcode canvas {
+        max-width: 90vw !important;
+        max-height: 90vw !important;
+        height: auto !important;
+    }
+}
+
+/* ── 14) Scrollable advanced settings panels ──────────────── */
+@media only screen and (max-width: 480px) {
+    .advancedAudioSettings,
+    .advancedVideoSettings {
+        max-height: 50vh;
+    }
+}
+
+/* ── 15) slotsbar — collapse on tiny screens ─────────────── */
+@media only screen and (max-width: 320px) {
+    .slotsbar {
+        font-size: 0.78em;
+        padding: 0 3px;
+    }
+    .slotsbar > button {
+        padding: 0 5px;
+    }
+}
+
+/* ── 16) Ensure touch targets never overlap unintentionally ── */
+@media (pointer: coarse) {
+    button,
+    [role="button"],
+    a,
+    label,
+    input[type="checkbox"],
+    input[type="radio"] {
+        min-height: 40px;
+        min-width: 40px;
+    }
+    /* but let icon-only items stay square */
+    #subControlButtons > div {
+        min-height: 40px;
+        min-width: 40px;
+    }
+    /* Checkboxes/radios need not force 40 px */
+    input[type="checkbox"],
+    input[type="radio"] {
+        min-height: 16px;
+        min-width: 16px;
+    }
+}
+
+
+/* ============================================================
+   TILE LAYOUT & TYPOGRAPHY POLISH — uniform rectangular cards
+   ============================================================ */
+
+/* ── 1) Uniform tile dimensions on the landing page ────────── */
+/* Guard: these rules only apply to tiles in their CLOSED (grid) state */
+.column:not(.skip-animation):not(.in-animation):not(.out-animation) {
+    height: auto !important;
+    min-height: 180px;
+    max-height: 260px;
+    width: auto !important;
+    min-width: 240px;
+    max-width: 340px;
+    padding: 20px 18px !important;
+    display: inline-flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Let the row wrap tiles evenly — CSS Grid auto-fill for dynamic columns */
+#mainmenu.row,
+#mainmenu {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+    gap: 16px !important;
+    padding: 16px !important;
+    /* undo old flex properties */
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    align-items: stretch !important;
+}
+
+/* Tiles inside mainmenu: fill their grid cell uniformly */
+#mainmenu .column {
+    flex: unset !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+/* ── 2) Internal font hierarchy ─────────────────────────────── */
+
+/* Tile heading — icon + h2 line */
+.column > i {
+    font-size: 2em !important;
+    color: var(--accent);
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    line-height: 1.2;
+}
+
+.column > h2,
+.column.card > h2 {
+    font-size: 0.92em !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--accent) !important;
+    text-shadow: var(--text-shadow);
+    margin: 0;
+    line-height: 1.3;
+    text-align: center;
+    width: 100%;
+}
+
+/* Body text / description inside tile */
+.column p,
+.column span:not(.la):not([class^="las"]):not([class^="la-"]) {
+    font-size: 0.78em !important;
+    color: var(--text-dim);
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Tile action buttons */
+.column button,
+.column .gobutton {
+    font-size: 0.8em !important;
+    padding: 8px 12px !important;
+    min-height: 32px !important;
+    width: 100%;
+    margin: 4px 0 0 0 !important;
+    letter-spacing: 0.5px;
+}
+
+/* ── 3) Responsive adjustments ─────────────────────────────── */
+
+@media only screen and (max-width: 900px) {
+    #mainmenu .column {
+        flex: 0 0 calc(33.33% - 16px);
+        max-width: 280px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .column {
+        min-height: 150px !important;
+        max-height: 220px !important;
+        min-width: 180px !important;
+        padding: 14px 12px !important;
+    }
+    #mainmenu .column {
+        flex: 0 0 calc(50% - 12px);
+        max-width: 100%;
+    }
+    .column > i {
+        font-size: 1.7em !important;
+    }
+    .column > h2,
+    .column.card > h2 {
+        font-size: 0.82em !important;
+    }
+    .column p,
+    .column span:not(.la):not([class^="las"]):not([class^="la-"]) {
+        font-size: 0.72em !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .column {
+        min-height: 130px !important;
+        max-height: 200px !important;
+        padding: 12px 10px !important;
+        gap: 6px;
+    }
+    #mainmenu .column {
+        flex: 0 0 calc(50% - 10px);
+    }
+    .column > i {
+        font-size: 1.5em !important;
+    }
+    .column > h2,
+    .column.card > h2 {
+        font-size: 0.78em !important;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #mainmenu .column {
+        flex: 0 0 100%;
+        max-width: 100%;
+        min-height: 110px !important;
+        max-height: 180px !important;
+    }
+    .column > i {
+        font-size: 1.3em !important;
+    }
+}
+
+/* ── 4) #empty-container: same size as .column ─────────────── */
+#empty-container {
+    height: auto !important;
+    min-height: 180px;
+    max-height: 260px;
+    width: auto !important;
+    min-width: 240px;
+    max-width: 340px;
+    padding: 20px 18px !important;
+}
+
+
+/* ============================================================
+   TILE ALIGNMENT FIX — equal height rows, no offset from arrows
+   ============================================================ */
+
+/* Override the inline overflow-y:auto on tiles so inner content
+   doesn't alter the outer card dimensions */
+.column.card,
+.column.columnfade {
+    /* Stretch all cards to the same height within each flex row */
+    align-self: stretch !important;
+
+    /* Anchor the card at the top — prevents baseline-shift caused by
+       the chevron/expand arrow inside the audio-source dropdown */
+    vertical-align: top !important;
+
+    /* Inner content scrolls, card box stays uniform */
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+}
+
+/* The container-inner holds the form content; let it fill height */
+.column.card .container-inner,
+.column.columnfade .container-inner {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Chevron inside the multiselect trigger (chevarrow1) — prevent it
+   from adding vertical space to the tile */
+#multiselect-trigger .chevron,
+#multiselect-trigger .chevron::before,
+a.form-control .chevron,
+a.form-control .chevron::before {
+    vertical-align: middle !important;
+    position: static !important;
+    bottom: auto !important;
+    top: auto !important;
+    display: inline-block;
+    line-height: 1;
+}
+
+/* The mainmenu flex container: align-items stretch so all cards
+   in a row share the same height */
+#mainmenu.row,
+#mainmenu {
+    align-items: stretch !important;
+}
+
+/* Each tile: grow to fill the row height uniformly */
+#mainmenu .column {
+    align-self: stretch !important;
+    height: auto !important;
+    min-height: 180px;
+}
+
+
+/* ============================================================
+   EXPANDED TILE — FULLSCREEN + CLOSE BUTTON + SCROLL
+   Single authoritative block; overwrites all earlier tile rules.
+   ============================================================ */
+
+/* During the open animation: let the keyframe drive size/position */
+.column.in-animation {
+    position: fixed !important;
+    z-index: 20 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    /* remove all size caps so the animation can grow freely */
+    min-height: unset !important;
+    max-height: none !important;
+    min-width: unset !important;
+    max-width: none !important;
+    /* display must be block so the keyframe width/height work */
+    display: block !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
+/* Fully expanded state: fill the viewport */
+.column.skip-animation {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    z-index: 20 !important;
+    /* flex column so header stays fixed and content scrolls */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    overflow: hidden !important;
+}
+
+/* h2 title bar — pinned at top */
+.column.skip-animation > h2 {
+    flex: 0 0 auto !important;
+    display: block !important;
+    width: 100% !important;
+    font-size: 1.1em !important;
+    font-weight: 700 !important;
+    padding: 14px 70px 14px 20px !important; /* right gap clears X button */
+    margin: 0 !important;
+    border-bottom: 1px solid var(--grid) !important;
+    background: var(--panel-alt) !important;
+    color: var(--accent) !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* Scrollable content area */
+.column.skip-animation .container-inner {
+    flex: 1 1 auto !important;
+    display: block !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: 0 !important;       /* flex trick: 0 + flex:1 = fill remaining space */
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 20px 20px 80px !important;
+}
+
+/* Buttons inside expanded tile: restore natural sizing */
+.column.skip-animation button,
+.column.skip-animation .gobutton {
+    width: auto !important;
+    font-size: 1em !important;
+    padding: 10px 18px !important;
+    min-height: 38px !important;
+    margin: 6px 4px !important;
+}
+.column.skip-animation .gowebcam,
+.column.skip-animation .mainScreenShareButton {
+    width: 100% !important;
+    margin: 8px 0 !important;
+}
+
+/* Text inside expanded tile: restore normal sizes */
+.column.skip-animation p,
+.column.skip-animation span {
+    font-size: inherit !important;
+    color: var(--text) !important;
+    text-align: left !important;
+}
+
+/* ── X close button ─────────────────────────────────────────── */
+.column.skip-animation .outer.close,
+.column.in-animation .outer.close {
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 9999 !important;
+    display: block !important;
+    width: 44px !important;
+    height: 44px !important;
+    cursor: pointer !important;
+    background: var(--panel-alt) !important;
+    border: 1px solid var(--accent) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 8px rgba(0,255,0,.4) !important;
+}
+
+/* X bars: hacker green, always visible */
+.column.skip-animation .outer.close .inner:before,
+.column.skip-animation .outer.close .inner:after,
+.column.in-animation .outer.close .inner:before,
+.column.in-animation .outer.close .inner:after {
+    background: var(--accent) !important;
+    height: 3px !important;
+    width: 24px !important;
+    margin-left: -12px !important;
+}
+.column.skip-animation .outer.close .inner:before,
+.column.in-animation .outer.close .inner:before {
+    top: 50% !important;
+    transform: translateY(-50%) rotate(45deg) !important;
+}
+.column.skip-animation .outer.close .inner:after,
+.column.in-animation .outer.close .inner:after {
+    top: 50% !important;
+    transform: translateY(-50%) rotate(-45deg) !important;
+}
+
+/* "Back" label: show on hover */
+.column.skip-animation .outer.close .labelclass,
+.column.in-animation .outer.close .labelclass {
+    opacity: 0 !important;
+    color: var(--accent) !important;
+    font-size: 0.7em !important;
+    line-height: 1 !important;
+    position: absolute !important;
+    right: 48px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    transition: opacity .2s !important;
+}
+.column.skip-animation .outer.close:hover .labelclass,
+.column.in-animation .outer.close:hover .labelclass {
+    opacity: 1 !important;
+}
+
+
+/* ============================================================
+   EXPANDED TILE — centred form content + dynamic responsive grid
+   ============================================================ */
+
+/* Centre all form-like content inside an expanded tile */
+.column.skip-animation .container-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* The inner content wrapper for the room form */
+.column.skip-animation .container-inner > *,
+.column.skip-animation .container-inner .section {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Tables inside expanded tiles: centred, max-width */
+.column.skip-animation table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+/* Buttons inside expanded tiles: centred block */
+.column.skip-animation .gobutton,
+.column.skip-animation .gowebcam,
+.column.skip-animation button.gobutton {
+    display: block !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin: 10px auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Inputs inside expanded tiles: full width, capped */
+.column.skip-animation input[type="text"],
+.column.skip-animation input[type="password"],
+.column.skip-animation input[type="number"],
+.column.skip-animation select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Responsive media query overrides for dynamic grid */
+@media only screen and (max-width: 600px) {
+    #mainmenu.row,
+    #mainmenu {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+        gap: 10px !important;
+        padding: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #mainmenu.row,
+    #mainmenu {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+        padding: 8px !important;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    #mainmenu.row,
+    #mainmenu {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* ============================================================
+   GRID FLOW: Ensure hidden tiles leave no gap in the grid
+   ============================================================ */
+
+/* Tiles with .hidden class must be fully removed from grid layout */
+#mainmenu .column.hidden,
+#mainmenu .column.hidden2 {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: 0 !important;
+    max-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    grid-column: unset !important;
+    grid-row: unset !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+}
+
+
+/* ============================================================
+   DIRECTOR BLOCKS — dark backgrounds, no green-on-green
+   ============================================================ */
+
+/* Override accent variables used as backgrounds in director blocks.
+   These were all mapped to #00ff00 (hacker green), making text invisible. */
+
+:root {
+    --blue-accent:  #1a1a1a;   /* "Invite a Guest"       — dark charcoal   */
+    --green-accent: #111111;   /* "Capture a Group Scene"— near-black       */
+}
+
+/* Blocks use nth-child ordering, so pin their backgrounds explicitly */
+.directorBlock:nth-child(1) {
+    background-color: #1a1a1a !important;  /* Invite a Guest */
+    border-left: 2px solid var(--accent);
+}
+
+.directorBlock:nth-child(2) {
+    background-color: #111111 !important;  /* Capture a Group Scene */
+    border-left: 2px solid #009900;
+}
+
+/* Force white/light text for ALL directorBlock descendants
+   so hacker-green inherited text doesn't appear on dark bg */
+.directorBlock,
+.directorBlock * {
+    color: #e0e0e0 !important;
+}
+
+/* Restore the heading to hacker-green (dark bg → green text = good contrast) */
+.directorBlock h2,
+.directorBlock h2 span,
+.directorBlock h2 i {
+    color: var(--accent) !important;
+}
+
+/* Restore link text so grab-links remain readable */
+.directorBlock a.grabLinks,
+.directorBlock a.task {
+    color: #e0e0e0 !important;
+    background-color: rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Buttons inside blocks: keep dark bg, light text */
+.directorBlock button {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+
+.directorBlock button:hover {
+    background-color: #333 !important;
+    color: var(--accent) !important;
+}
+
+/* The inline style on directorLinks2 sets green-accent — neutralise it */
+#directorLinks2 .directorBlock {
+    background-color: #111111 !important;
+}
+
+/* ============================================================
+   GLOBAL: prevent green text on green/bright backgrounds
+   ============================================================ */
+
+/* gobutton already has green bg — ensure text is black for readability */
+.gobutton,
+button.gobutton,
+a.gobutton,
+.gowebcam,
+button.gowebcam {
+    color: #000 !important;
+}
+
+/* Any element explicitly using --accent as background (e.g. btnArmTransferRoom hover)
+   should have dark text */
+button.btnArmTransferRoom:hover {
+    color: #000 !important;
+}
+
+/* Slider/toggle labels near accent-coloured elements */
+.slider + span,
+label.switch + span {
+    color: inherit;
+}
+
+/* Input fields with green borders: ensure text stays readable */
+input, select, textarea {
+    color: var(--text) !important;       /* hacker green text */
+    background-color: var(--bg) !important;  /* black bg = fine contrast */
+}
+
+/* Labels that may appear near green bg panels */
+.directorBlock label,
+.directorBlock .switch span,
+.directorBlock input[type="checkbox"] + span {
+    color: #e0e0e0 !important;
+}
+
+
+/* ============================================================
+   GREEN-ON-GREEN AUDIT FIXES
+   ============================================================ */
+
+/* 1) Control grid highlight buttons: darktheme remaps green/blue to
+      hacker-green (#00ff00/#00ff41). Force dark text so labels are readable. */
+.darktheme .controlsGrid .btn-HL-green,
+.darktheme .controlsGrid .btn-HL-blue,
+.darktheme .controlsGrid .btn-HL-paleblue {
+    /* Use a dark but clearly visible green-tinted bg instead of full bright green */
+    background-color: #1a3a1a !important;   /* dark forest green */
+    color: var(--accent) !important;
+    border: 1px solid #2a5a2a !important;
+}
+
+.darktheme .controlsGrid .btn-HL-blue,
+.darktheme .controlsGrid .btn-HL-paleblue {
+    background-color: #1a2a3a !important;   /* dark navy */
+    color: var(--accent-bright) !important;
+    border: 1px solid #2a4a6a !important;
+}
+
+/* 2) Video mute state indicator: green bg — ensure icon contrast */
+.video-mute-state.unmuted {
+    background-color: #1a4a1a !important;   /* dark green, not neon */
+}
+
+.video-mute-state i,
+.video-mute-state .las {
+    color: var(--accent) !important;  /* green icon on dark green bg — readable */
+}
+
+/* 3) Progress bar — green bg, ensure any label/text above it is dark */
+#progressBar {
+    background-color: var(--accent) !important;
+    color: #000 !important;  /* if any text overlays the bar */
+}
+#progressBar * {
+    color: #000 !important;
+}
+
+/* 4) director-block header row: ensure no green text on panels
+      that might have inherited accent colour */
+#roomHeader,
+.hideLinksClass {
+    color: #e0e0e0 !important;
+}
+#roomHeader a,
+.hideLinksClass a {
+    color: var(--accent) !important;
+}
+
+/* 5) The nth-child rules above target by DOM order, but the inline style
+      on directorLinks2 > directorBlock still needs to be overridden.
+      Raise specificity to beat the inline style. */
+div#directorLinks2 > div.directorBlock {
+    background-color: #111111 !important;
+}
+div#directorLinks1 > div.directorBlock {
+    background-color: #1a1a1a !important;
+}
+
+
+/* ============================================================
+   MODERN UI DESIGN SYSTEM — buttons, inputs, radio, checkbox,
+   containers, cards  (hacker-green terminal aesthetic)
+   ============================================================ */
+
+/* ── Design tokens ───────────────────────────────────────────── */
+:root {
+    --radius-sm:   6px;
+    --radius-md:   10px;
+    --radius-lg:   14px;
+    --radius-pill: 999px;
+
+    --shadow-sm:   0 1px 3px rgba(0,0,0,.5), 0 0 0 1px rgba(0,255,0,.06);
+    --shadow-md:   0 4px 12px rgba(0,0,0,.6), 0 0 0 1px rgba(0,255,0,.08);
+    --shadow-glow: 0 0 0 2px rgba(0,255,0,.35), 0 4px 16px rgba(0,255,0,.15);
+
+    --transition:  150ms ease;
+    --input-radius: var(--radius-md);
+}
+
+/* ── Base button reset + modern style ───────────────────────── */
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 18px;
+    font-family: "Courier New", monospace;
+    font-size: 0.88em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: var(--radius-md) !important;
+    border: 1px solid rgba(0,255,0,.25) !important;
+    background-color: #141414 !important;
+    color: var(--accent) !important;
+    box-shadow: var(--shadow-sm);
+    transition: background-color var(--transition),
+                border-color var(--transition),
+                box-shadow var(--transition),
+                color var(--transition);
+    white-space: nowrap;
+    user-select: none;
+    outline: none;
+    min-height: 36px;
+}
+
+button:hover,
+[role="button"]:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: #1e1e1e !important;
+    border-color: var(--accent) !important;
+    box-shadow: var(--shadow-glow) !important;
+    color: var(--accent-bright) !important;
+    filter: none !important;
+}
+
+button:active,
+[role="button"]:active {
+    background-color: #0a0a0a !important;
+    box-shadow: 0 0 0 2px rgba(0,255,0,.5) !important;
+    transform: scale(0.97);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Primary CTA (gobutton / gowebcam) */
+.gobutton,
+button.gobutton,
+a.gobutton,
+.gowebcam,
+button.gowebcam {
+    background: linear-gradient(135deg, #003300 0%, #005500 100%) !important;
+    border: 1px solid var(--accent) !important;
+    color: #000 !important;
+    font-size: 1em !important;
+    font-weight: 700 !important;
+    padding: 12px 24px !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: 0 0 0 1px rgba(0,255,0,.4), 0 4px 14px rgba(0,255,0,.2) !important;
+    letter-spacing: 0.08em !important;
+    min-height: 44px !important;
+}
+.gobutton:hover,
+button.gobutton:hover,
+.gowebcam:hover,
+button.gowebcam:hover {
+    background: linear-gradient(135deg, #005500 0%, #007700 100%) !important;
+    box-shadow: var(--shadow-glow) !important;
+    color: #000 !important;
+}
+
+/* Grey / secondary buttons */
+button.grey {
+    background-color: #1a1a1a !important;
+    border: 1px solid rgba(0,255,0,.2) !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--accent) !important;
+}
+button.grey:hover {
+    background-color: #222 !important;
+    border-color: var(--accent) !important;
+}
+
+/* Director block buttons (already have their own bg, just round them) */
+.directorBlock button {
+    border-radius: var(--radius-md) !important;
+    border: 1px solid #444 !important;
+    background-color: #252525 !important;
+    color: #e0e0e0 !important;
+    min-height: 34px;
+}
+.directorBlock button:hover {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background-color: #2e2e2e !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+/* ── Inputs, selects, textareas ─────────────────────────────── */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+select,
+textarea {
+    border-radius: var(--radius-md) !important;
+    padding: 9px 12px !important;
+    background-color: #0d0d0d !important;
+    color: var(--text) !important;
+    border: 1px solid rgba(0,255,0,.2) !important;
+    font-family: "Courier New", monospace !important;
+    font-size: 0.9em !important;
+    letter-spacing: 0.04em !important;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.5);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: var(--shadow-glow) !important;
+    background-color: #111 !important;
+}
+
+/* ── Checkboxes (custom) ─────────────────────────────────────── */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    border-radius: 5px !important;
+    border: 1.5px solid rgba(0,255,0,.4) !important;
+    background-color: #0d0d0d !important;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    transition: background-color var(--transition), border-color var(--transition);
+    flex-shrink: 0;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+input[type="checkbox"]:checked {
+    background-color: #003300 !important;
+    border-color: var(--accent) !important;
+}
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 6px;
+    height: 10px;
+    border: 2px solid var(--accent);
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+input[type="checkbox"]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ── Radio buttons (custom) ──────────────────────────────────── */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px !important;
+    height: 13px !important;
+    min-width: 13px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid rgba(0,255,0,.4) !important;
+    background-color: #0d0d0d !important;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    transition: border-color var(--transition);
+    flex-shrink: 0;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+input[type="radio"]:checked {
+    border-color: var(--accent) !important;
+    background-color: #001a00 !important;
+}
+input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+input[type="radio"]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ── Toggle switch (existing .switch/.slider) ────────────────── */
+.switch .slider {
+    border-radius: var(--radius-pill) !important;
+    background-color: #222 !important;
+    border: 1px solid rgba(0,255,0,.2) !important;
+    transition: background-color var(--transition) !important;
+}
+.switch input:checked + .slider {
+    background-color: #003800 !important;
+    border-color: var(--accent) !important;
+}
+.switch .slider:before {
+    border-radius: 50% !important;
+    background: #888 !important;
+    transition: transform var(--transition), background var(--transition) !important;
+}
+.switch input:checked + .slider:before {
+    background: var(--accent) !important;
+    box-shadow: 0 0 6px rgba(0,255,0,.6) !important;
+}
+
+/* ── Containers / cards ──────────────────────────────────────── */
+.directorContainer,
+.directorContainer.half {
+    border-radius: var(--radius-lg) !important;
+    border: 1px solid rgba(0,255,0,.1) !important;
+    box-shadow: var(--shadow-md) !important;
+    background-color: #0e0e0e !important;
+    overflow: hidden;
+}
+
+.directorBlock {
+    border-radius: var(--radius-md) !important;
+    margin: 6px !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Main tiles */
+.column.card {
+    border-radius: var(--radius-lg) !important;
+    border: 1px solid rgba(0,255,0,.12) !important;
+    box-shadow: var(--shadow-md) !important;
+    transition: box-shadow var(--transition), border-color var(--transition) !important;
+    overflow: hidden;
+}
+.column.card:hover {
+    border-color: rgba(0,255,0,.35) !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+/* Video tiles in director grid */
+.directorsgrid .vidcon {
+    border-radius: var(--radius-md) !important;
+    overflow: hidden;
+    border: 1px solid rgba(0,255,0,.1) !important;
+}
+
+/* Generic panel/section containers */
+.section,
+#roomnotes2,
+.controlsGrid {
+    border-radius: var(--radius-md) !important;
+}
+
+/* ── Range sliders ───────────────────────────────────────────── */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px !important;
+    background: #222 !important;
+    border-radius: var(--radius-pill) !important;
+    border: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+    background: var(--accent) !important;
+    border: 2px solid #000 !important;
+    box-shadow: 0 0 5px rgba(0,255,0,.5) !important;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0,255,0,.7) !important;
+}
+input[type="range"]::-moz-range-thumb {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+    background: var(--accent) !important;
+    border: 2px solid #000 !important;
+    box-shadow: 0 0 5px rgba(0,255,0,.5) !important;
+    cursor: pointer;
+}
+
+/* ── select arrow styling ────────────────────────────────────── */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300ff00' d='M6 8L0 0h12z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 10px center !important;
+    background-size: 10px !important;
+    padding-right: 30px !important;
+    cursor: pointer;
+}
+
+/* ── Scrollbar modernisation ─────────────────────────────────── */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,255,0,.25) transparent;
+}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: rgba(0,255,0,.25);
+    border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(0,255,0,.5); }
+
+
+/* ============================================================
+   CENTRING — control bar, director containers, main layout
+   ============================================================ */
+
+/* ── Control bar wrapper: already has justify-content:center,
+      ensure it is truly centred horizontally ─────────────────── */
+#controlButtons {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+}
+
+/* The actual toolbar pill — centred, not left-anchored */
+#subControlButtons {
+    position: relative !important;
+    bottom: unset !important;
+    left: unset !important;
+    right: unset !important;
+    margin: 0 auto !important;
+    max-width: min(96vw, 900px) !important;
+}
+
+/* ── Director layout: centre the whole block ─────────────────── */
+#directorlayout {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* Room header (links toggle bar) */
+#roomHeader {
+    width: 100% !important;
+    max-width: min(100%, 1220px) !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Director link containers (Invite / Scene / Customizer) */
+.directorContainer,
+.directorContainer.half {
+    margin: 6px auto !important;
+    max-width: min(100%, 1220px) !important;
+    box-sizing: border-box !important;
+}
+
+/* Guest feeds strip */
+#guestFeeds {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    max-width: min(100%, 1440px) !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+/* ── Main landing menu: already grid, ensure centred ────────── */
+#mainmenu.row,
+#mainmenu {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 1440px !important;
+}
+
+/* ── General: any .row that acts as a page-level wrapper ─────── */
+body > .row,
+#main > .row {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+}
+
+/* ── .controlPositioning: keep its children centred ─────────── */
+.controlPositioning {
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
