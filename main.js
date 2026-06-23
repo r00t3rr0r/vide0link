@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2026 . All Rights Reserved.
+ *  Copyright (c) 2026 Steve Seguin. All Rights Reserved.
  *
  *  Use of this source code is governed by the APGLv3 open-source license
  *  that can be found in the LICENSE file in the root of the source
@@ -518,7 +518,7 @@ async function main() {
 		}
 	}
 	
-	if (location.hostname !== "crypt.c0mm.l1nk" && location.hostname !== "crypt.c0mm.l1nk" && location.hostname !== "crypt.c0mm.l1nk" && location.hostname !== "alt.crypt.c0mm.l1nk" && location.hostname !== "crypt.c0mm.l1nk") {
+	if (location.hostname !== "vdo.ninja" && location.hostname !== "backup.vdo.ninja" && location.hostname !== "proxy.vdo.ninja" && location.hostname !== "alt.vdo.ninja" && location.hostname !== "obs.ninja") {
 		errorReport = false;
 
 		if (location.hostname === "rtc.ninja") {
@@ -552,7 +552,7 @@ async function main() {
 		}
 		try {
 			if (ln_template === false) {
-				if (location.hostname === "china.crypt.c0mm.l1nk") {
+				if (location.hostname === "china.vdo.ninja") {
 					changeLg("cn").then(() => {
 						if (altLabelOverride) {
 							applyAltLabelOverride(altLabelOverride);
@@ -566,7 +566,7 @@ async function main() {
 					});
 				}
 			}
-			if (location.hostname === "china.crypt.c0mm.l1nk") {
+			if (location.hostname === "china.vdo.ninja") {
 				session.wss = "wss://china.rtc.ninja:8443";
 			}
 			//getById("mainmenu").style.opacity = 1;
@@ -588,7 +588,7 @@ async function main() {
 		// check if automatic language translation is available
 		getById("mainmenu").style.opacity = 1;
 
-		if (location.hostname === "alt.crypt.c0mm.l1nk"){
+		if (location.hostname === "alt.vdo.ninja"){
 			session.wss = "wss://china.rtc.ninja:8443";
 		} 
 	}
@@ -1217,7 +1217,7 @@ async function main() {
 			if (!session.whipOutputToken) {
 				session.whipOutputToken = session.whipOutput;
 			}
-			session.whipOutput = "https://cloudflare.crypt.c0mm.l1nk/" + session.whipOutput;
+			session.whipOutput = "https://cloudflare.vdo.ninja/" + session.whipOutput;
 			session.whipOutputUserSet = true;
 		}
 	}
@@ -1578,14 +1578,14 @@ async function main() {
 	
 	if (urlParams.get("discordwebhook") || urlParams.get("dwh")) {
 		session.discordHook = decodeURIComponent(urlParams.get("discordwebhook") || urlParams.get("dwh"));
-		if (!session.discordHook.startsWith("")){
-			session.discordHook = ""+session.discordHook;
+		if (!session.discordHook.startsWith("https://discord.com/api/webhooks/")){
+			session.discordHook = "https://discord.com/api/webhooks/"+session.discordHook;
 		}
 	} else if (urlParams.get("discordwebhook2") || urlParams.get("dwh2")) {
 		session.discordHook = decodeURIComponent(urlParams.get("discordwebhook2") || urlParams.get("dwh2"));
 		session.discordHookSensitive = true;
-		if (!session.discordHook.startsWith("")){
-			session.discordHook = ""+session.discordHook;
+		if (!session.discordHook.startsWith("https://discord.com/api/webhooks/")){
+			session.discordHook = "https://discord.com/api/webhooks/"+session.discordHook;
 		}
 	}
 	
@@ -1758,13 +1758,13 @@ async function main() {
 	}
 
 	if (urlParams.has("motionswitch") || urlParams.has("motiondetection")) {
-		// switch OBS to this scene when there is motion, and "solo view" this video in the crypt.c0mm.l1nk auto-mixer, if used
+		// switch OBS to this scene when there is motion, and "solo view" this video in the VDO.Ninja auto-mixer, if used
 		session.motionSwitch = parseInt(urlParams.get("motionswitch")) || parseInt(urlParams.get("motiondetection")) || 15; // threshold of motion needed to trigger
 		session.hiddenSceneViewBitrate = false;
 	}
 
 	if (urlParams.has("motionrecord") || urlParams.has("recordmotion")) {
-		// switch OBS to this scene when there is motion, and "solo view" this video in the crypt.c0mm.l1nk auto-mixer, if used
+		// switch OBS to this scene when there is motion, and "solo view" this video in the VDO.Ninja auto-mixer, if used
 		session.motionRecord = parseInt(urlParams.get("motionrecord")) || parseInt(urlParams.get("recordmotion")) || 15; // threshold of motion needed to trigger
 		session.hiddenSceneViewBitrate = false;
 	}
@@ -2715,8 +2715,8 @@ async function main() {
 		// minutes
 		session.recordingInterval = urlParams.get("splitrecording") || 5; // 5 minutes
 		session.recordingInterval = parseInt(session.recordingInterval) || 1;
-		// For Mac: https://gist.github.com//8083172a20ad7c9ebcb449e22fc8fe67
-		// For Windows: https://gist.github.com//7ca1df1df9ec6042f27ecc8d258e3f30
+		// For Mac: https://gist.github.com/steveseguin/8083172a20ad7c9ebcb449e22fc8fe67
+		// For Windows: https://gist.github.com/steveseguin/7ca1df1df9ec6042f27ecc8d258e3f30
 	} else if ((SafariVersion || iOS || iPad) && (urlParams.has("record") || urlParams.has("autorecord"))) {
 		// Auto-enable split recording for Safari to prevent memory issues
 		// iOS/iPad: 5 minutes (tighter memory), desktop Safari: 10 minutes
@@ -3356,7 +3356,7 @@ async function main() {
 	}
 
 	if (urlParams.has("js")) {
-		// ie: &js=https%3A%2F%2Fcrypt.c0mm.l1nk%2Fexamples%2Ftestjs.js
+		// ie: &js=https%3A%2F%2Fvdo.ninja%2Fexamples%2Ftestjs.js
 		try {
 			var jsURL = urlParams.get("js");
 			try {
@@ -3523,7 +3523,7 @@ async function main() {
 				if (hash.substring(0, hash_input.length) !== hash_input) {
 					// this hash crc check is usually just the first 4 characters, but i'll match based on whatever is provided;
 					// max 6 length for security. 2 could be a good option for better security but more than 6 is too big of a security concern.
-					generateHash(session.password + "crypt.c0mm.l1nk", 6)
+					generateHash(session.password + "obs.ninja", 6)
 						.then(function (hash2) {
 							// million to one error; this is to support a legacy salt used. Depreciated, and will be removed eventually
 							log("hash2 is " + hash2);
@@ -3688,7 +3688,7 @@ async function main() {
 				id: "5",
 				label: "YouTube Channel",
 				type: "url",
-				placeholder: ""
+				placeholder: "https://youtube.com/c/channel"
 			},
 			twitch: {
 				id: "5",
@@ -3922,7 +3922,7 @@ async function main() {
 		}
 	}
 
-	// Deploy your own handshake server for free; see: https://github.com//websocket_server
+	// Deploy your own handshake server for free; see: https://github.com/steveseguin/websocket_server
 	if (urlParams.has("pie")) {
 		// piesocket.com support is to be deprecated after dec/19/21, since piesocket is no longer a free service.
 		session.customWSS = urlParams.get("pie") || true; // If session.customWSS == true, then there is no need to set parameters via URL
@@ -4205,8 +4205,8 @@ async function main() {
 			session.style = 1;
 		}
 	}
-	// https://crypt.c0mm.l1nk/?fakeguests=10&room=faketestroom123&scene&border=10&padding=20&rounded
-	// https://crypt.c0mm.l1nk/?fakeusers=10&scene&room=test12342345ff
+	// https://vdo.ninja/?fakeguests=10&room=faketestroom123&scene&border=10&padding=20&rounded
+	// https://vdo.ninja/?fakeusers=10&scene&room=test12342345ff
 
 	if (urlParams.has("fakeguests") || urlParams.has("fakefeeds")  || urlParams.has("fakeusers")) {
 		var total = parseInt(urlParams.get("fakeguests")) || parseInt(urlParams.get("fakefeeds")) || parseInt(urlParams.get("fakeusers")) || 4;
@@ -4218,7 +4218,7 @@ async function main() {
 			fakeElement.loop = true;
 			fakeElement.muted = true;
 			fakeElement.src = "./media/fakesteve.webm";
-			fakeElement.labelText = "Fake Steve\\n@\\nhe\/him";
+			fakeElement.labelText = "Fake Steve\\n@steveseguin\\nhe\/him";
 			fakeElement.dataset.sid = fakeElement.id = parseInt(Math.random() * 10000000000);
 			session.fakeFeeds.push(fakeElement);
 		}
@@ -4299,7 +4299,7 @@ async function main() {
 	if (urlParams.has("proxy")) {
 		// routes the wss traffic via an alternative network path. Not
 		session.proxy = true; // only works if session.wss is set to false
-	} else if (location.hostname === "crypt.c0mm.l1nk") {
+	} else if (location.hostname === "proxy.vdo.ninja") {
 		session.proxy = true;
 	}
 
@@ -4606,12 +4606,12 @@ async function main() {
 							"<div style='background-color:black;color:white;' data-translate='obs-macos-not-supported'><h1>Update OBS Studio to v26.1.2 or newer; older versions and StreamLabs OBS are not supported on macOS.\
 						<br /><i><small><small>download here: <a href='https://github.com/obsproject/obs-studio/releases'>https://github.com/obsproject/obs-studio/releases</a></small></small></i>\
 						</h1> <br /><br />\
-						<h2>Please use the <a href='https://github.com//electroncapture'>Electron Capture app</a> if there are further problems or if you wish to use StreamLabs on macOS still.</h2>\
+						<h2>Please use the <a href='https://github.com/steveseguin/electroncapture'>Electron Capture app</a> if there are further problems or if you wish to use StreamLabs on macOS still.</h2>\
 						<br /> You can bypass this error message by refreshing, <a href='" +
 							window.location.href +
 							"'> Clicking Here,</a> or by adding <i>&streamlabs</i> to the URL, but it may still not actually work.\
 						\
-						<br /> Please report this problem to  if you feel it is an error.\
+						<br /> Please report this problem to steve@seguin.email if you feel it is an error.\
 						</div>";
 					}
 				}
@@ -5377,7 +5377,7 @@ async function main() {
 
 	if (urlParams.has("debug")) {
 		const debugHost = ((window.location && window.location.hostname) || "").toLowerCase();
-		const allowDebug = debugHost === "crypt.c0mm.l1nk" || debugHost.endsWith(".crypt.c0mm.l1nk");
+		const allowDebug = debugHost === "vdo.ninja" || debugHost.endsWith(".vdo.ninja");
 		if (allowDebug) {
 			const debugSetting = (urlParams.get("debug") || "1").toLowerCase();
 			if (!["0", "false", "off", "no"].includes(debugSetting)) {
@@ -5388,7 +5388,7 @@ async function main() {
 				debugStart(); // locked to official debug endpoint in webrtc.js
 			}
 		} else {
-			warnlog("Debug mode is disabled outside crypt.c0mm.l1nk domains.");
+			warnlog("Debug mode is disabled outside vdo.ninja domains.");
 		}
 	}
 
@@ -6191,7 +6191,7 @@ async function main() {
 		}
 	}
 	if (urlParams.has("postimage")) {
-		var postURL = decodeURIComponent(urlParams.get("postimage")) || session.postURL; // default will post to https://temp.crypt.c0mm.l1nk/images/STREAMIDHERE.jpg , at an interval. it will be cached unless using url params.
+		var postURL = decodeURIComponent(urlParams.get("postimage")) || session.postURL; // default will post to https://temp.vdo.ninja/images/STREAMIDHERE.jpg , at an interval. it will be cached unless using url params.
 		setInterval(
 			function (postURL) {
 				try {
@@ -6806,7 +6806,7 @@ async function main() {
 			if (stunstring.length == 3) {
 				stun.username = stunstring[0]; // myusername
 				stun.credential = stunstring[1]; //mypassword
-				stun.urls = [stunstring[2]]; //  ["turn:turn.crypt.c0mm.l1nk:443"];
+				stun.urls = [stunstring[2]]; //  ["turn:turn.obs.ninja:443"];
 			} else if (stunstring.length == 1) {
 				stun.urls = [stunstring[0]];
 			}
@@ -6822,7 +6822,7 @@ async function main() {
 		if (stunstring.length == 3) {
 			stun.username = stunstring[0]; // myusername
 			stun.credential = stunstring[1]; //mypassword
-			stun.urls = [stunstring[2]]; //  ["turn:turn.crypt.c0mm.l1nk:443"];
+			stun.urls = [stunstring[2]]; //  ["turn:turn.obs.ninja:443"];
 		} else if (stunstring.length == 1) {
 			stun.urls = [stunstring[0]];
 		}
@@ -6903,7 +6903,7 @@ async function main() {
 					if (turnstring.length == 3) {
 						turn.username = turnstring[0]; // myusername
 						turn.credential = turnstring[1]; //mypassword
-						turn.urls = [turnstring[2]]; //  ["turn:turn.crypt.c0mm.l1nk:443"];
+						turn.urls = [turnstring[2]]; //  ["turn:turn.obs.ninja:443"];
 					} else if (turnstring.length == 1) {
 						turn.urls = [turnstring[0]];
 					}
@@ -7087,7 +7087,7 @@ async function main() {
 		
 		if (session.permaid && ((session.permaid.length<3) || (session.permaid==="test"))) {
 			if (session.password === session.defaultPassword) {
-				if (location.hostname === "crypt.c0mm.l1nk") {
+				if (location.hostname === "vdo.ninja") {
 					if (!session.cleanOutput){
 						window.focus();
 						warnUser(getTranslation("insecure-stream-id"),10000);
@@ -7208,7 +7208,7 @@ async function main() {
 
 	if (session.permaid === false && session.roomid === false && session.view === false && session.effect === false && session.director === false) {
 		session.effect = null;
-		getById("credits").innerHTML = "Version: " + session.version + ' <a href="https://github.com//vdoninja" aria-hidden="true" title="Source Code via Github">crypt.c0mm.l1nk, by </a> | ' + getById("credits").innerHTML;
+		getById("credits").innerHTML = "Version: " + session.version + ' <a href="https://github.com/steveseguin/vdoninja" aria-hidden="true" title="Source Code via Github">VDO.Ninja, by Steve Seguin</a> | ' + getById("credits").innerHTML;
 	}
 
 	if (session.mobile && session.permaid === false && !session.roomid) {
@@ -7442,9 +7442,9 @@ async function main() {
 	} else if (urlParams.get("audience")) {
 		session.audience = urlParams.get("audience");
 		if (urlParams.get("audience") && session.view !== false) {
-			session.wss = "wss://audience.crypt.c0mm.l1nk/listen/" + session.audience;
+			session.wss = "wss://audience.vdo.ninja/listen/" + session.audience;
 		} else {
-			session.wss = "wss://audience.crypt.c0mm.l1nk/publish/" + session.audience;
+			session.wss = "wss://audience.vdo.ninja/publish/" + session.audience;
 		}
 	}
 
@@ -8383,7 +8383,7 @@ async function main() {
 		}
 	}
 
-	//  Please contact steve on discord.crypt.c0mm.l1nk if you'd like this iFRAME tweaked, expanded, etc -- it's updated based on user request
+	//  Please contact steve on discord.vdo.ninja if you'd like this iFRAME tweaked, expanded, etc -- it's updated based on user request
 
 	session.remoteInterfaceAPI = function (e) {
 		// iFRAME api support
@@ -8845,7 +8845,7 @@ async function main() {
 			/// set a video bitrate for a video; scene or view link; kbps
 			var lock = true;
 			if ("lock" in e.data) {
-				// since this is the iframe API, we're going to assume the default is manual over-ride. crypt.c0mm.l1nk's automixer logic won't override a locked bitrate.
+				// since this is the iframe API, we're going to assume the default is manual over-ride. VDO.Ninja's automixer logic won't override a locked bitrate.
 				lock = e.data.lock;
 			}
 			for (var i in session.rpcs) {
@@ -8878,7 +8878,7 @@ async function main() {
 			// changes the audio bitrate of a specific or all inbound media tracks. kbps
 			var lock = true;
 			if ("lock" in e.data) {
-				// since this is the iframe API, we're going to assume the default is manual over-ride. crypt.c0mm.l1nk's automixer logic won't override a locked bitrate.
+				// since this is the iframe API, we're going to assume the default is manual over-ride. VDO.Ninja's automixer logic won't override a locked bitrate.
 				lock = e.data.lock;
 			}
 			for (var i in session.rpcs) {
@@ -9799,9 +9799,9 @@ async function main() {
 	window.addEventListener("offline", function (e) {
 		warnlog("connection lost");
 		if (((session.view!==false) || session.whepInput || session.whipView) && session.permaid === false) {
-			log("crypt.c0mm.l1nk has no network connectivity and can't work properly.");
+			log("VDO.Ninja has no network connectivity and can't work properly.");
 		} else if (session.scene !== false) {
-			log("crypt.c0mm.l1nk has no network connectivity and can't work properly.");
+			log("VDO.Ninja has no network connectivity and can't work properly.");
 		} else if (!session.cleanOutput) {
 			if (iOS || iPad) {
 				for (var UUID in session.pcs) {
@@ -9811,13 +9811,13 @@ async function main() {
 					applySceneState();
 				}
 			}
-			if (location.hostname === "crypt.c0mm.l1nk") {
+			if (location.hostname === "vdo.ninja") {
 				warnUser(getTranslation("no-network-details"));
 			} else {
 				warnUser(getTranslation("no-network"));
 			}
 		} else {
-			log("crypt.c0mm.l1nk has no network connectivity and can't work properly.");
+			log("VDO.Ninja has no network connectivity and can't work properly.");
 		}
 	});
 
@@ -9942,7 +9942,7 @@ async function main() {
 		if (session.label !== false) {
 			url += "&layer-name=" + session.label;
 		} else {
-			url += "&layer-name=crypt.c0mm.l1nk";
+			url += "&layer-name=VDO.Ninja";
 		}
 		if (streamId.length > 1) url += ": " + streamId[1].split("&")[0];
 		if (label.length > 1) url += " - " + decodeURI(label[1].split("&")[0]);

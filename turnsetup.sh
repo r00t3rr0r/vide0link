@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-# crypt.c0mm.l1nk TURN Server Setup Script
+# VDO.Ninja TURN Server Setup Script
 # Usage:
 #   ./turnsetup.sh          - Full installation
 #   ./turnsetup.sh --verify - Health check on existing server

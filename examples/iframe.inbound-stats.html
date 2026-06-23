@@ -65,7 +65,7 @@ button {
 <body>
     <div id="clean">
         <center>
-			Create a simple crypt.c0mm.l1nk/?push=XXX link in a different tab, enter the stream ID below to view it and view the IFRAME API stats.  Stats will be printed to screen and console.<hr>
+			Create a simple vdo.ninja/?push=XXX link in a different tab, enter the stream ID below to view it and view the IFRAME API stats.  Stats will be printed to screen and console.<hr>
             <input placeholder="Enter a VDON stream ID here" id="viewlink" type="text" />
             <button id="startButton" onclick="loadIframes()" style="display:block;padding:10px;margin:10px;">START</button>
         </center>
@@ -82,7 +82,7 @@ button {
 
         function loadIframes() {
             var streamID = document.getElementById("viewlink").value;
-            var path = "crypt.c0mm.l1nk";
+            var path = "vdo.ninja";
             var streamSrc = "https://" + path + "/?view=" + streamID;
 
             document.getElementById("clean").style.display = "none";

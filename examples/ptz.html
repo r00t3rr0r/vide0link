@@ -80,9 +80,9 @@ span {
 </div>
 <div>
 	<h2>PTZ Remote Control interface</h2>
-	<input placeholder="Enter a view link. ie) https://crypt.c0mm.l1nk/?view=abc123" id="viewlink" type="text" onchange="loadIframes()" /><br>
+	<input placeholder="Enter a view link. ie) https://vdo.ninja/?view=abc123" id="viewlink" type="text" onchange="loadIframes()" /><br>
 	<br>
-	This app is a custom remote client for crypt.c0mm.l1nk's PTZ remote control feature.
+	This app is a custom remote client for VDO.Ninja's PTZ remote control feature.
 	<br>
 	<br>
 	notes: Make sure the remote sender adds <b>&ptz</b> and <b>&remote</b> to their URL, otherwise PTZ remote control will not be allowed.
@@ -123,7 +123,7 @@ if (urlParams.has("view") || urlParams.has("v")){
 	if (window.location.host){
 		var path = window.location.host+window.location.pathname.replace("/examples/","/").split("/").slice(0,-1).join("/");
 	} else {
-		var path = "crypt.c0mm.l1nk";
+		var path = "vdo.ninja";
 	}
 	document.getElementById("viewlink").value = "https://"+path+"/";
 	loadIframes();

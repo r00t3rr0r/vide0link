@@ -1,5 +1,5 @@
 <!--
-  crypt.c0mm.l1nk Connected Label Overlay
+  VDO.Ninja Connected Label Overlay
   Description: Displays the label of the first connected peer in an overlay for OBS Studio
   
   Parameters:
@@ -10,7 +10,7 @@
   Usage: 
     - Add as a browser source in OBS Studio
     - Can be hosted locally: file:///C:/Users/steve/Code/vdoninja/examples/labelonly.html?view=steve123
-    - Or online: https://crypt.c0mm.l1nk/examples/labelonly.html?view=steve123
+    - Or online: https://vdo.ninja/examples/labelonly.html?view=steve123
   
   Styling:
     - Modify the #labelDisplay CSS styles to customize appearance
@@ -21,7 +21,7 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta charset="UTF-8">
-    <title>crypt.c0mm.l1nk - Connected Label</title>
+    <title>VDO.Ninja - Connected Label</title>
     <style>
         body, html {
             margin: 0;
@@ -120,7 +120,7 @@
 
         function RecvDataWindow(room) {
             const iframe = document.createElement("iframe");
-            iframe.src = `https://crypt.c0mm.l1nk/?ln${password}${room}${view}&notmobile&label=overlaypage&vd=0&ad=0&novideo&noaudio&cleanoutput`;
+            iframe.src = `https://vdo.ninja/?ln${password}${room}${view}&notmobile&label=overlaypage&vd=0&ad=0&novideo&noaudio&cleanoutput`;
             iframe.style.width = "0";
             iframe.style.height = "0";
             iframe.style.position = "fixed";

@@ -526,8 +526,8 @@ const testMessagePresets = [
   }),
   () => ({
     type: 'twitch',
-    chatname: 'crypt.c0mm.l1nk',
-    chatmessage: '<img src="https://github.com//social_stream/raw/main/icons/icon-128.png" alt="icon"> 😁 🇨🇦 https://crypt.c0mm.l1nk/',
+    chatname: 'VDO.Ninja',
+    chatmessage: '<img src="https://github.com/steveseguin/social_stream/raw/main/icons/icon-128.png" alt="icon"> 😁 🇨🇦 https://vdo.ninja/',
     chatimg: 'https://socialstream.ninja/media/sampleavatar.png',
     vip: true,
     chatbadges: ['https://socialstream.ninja/icons/bot.png', 'https://socialstream.ninja/icons/announcement.png']

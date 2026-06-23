@@ -5,7 +5,7 @@ const axios = require("axios").default;
 const fs = require("fs");
 
 const dom = new JSDOM(``, {
-  url: "https://crypt.c0mm.l1nk",
+  url: "https://obs.ninja",
   contentType: "text/html",
   includeNodeLocations: true,
   storageQuota: 10000000,
@@ -13,7 +13,7 @@ const dom = new JSDOM(``, {
 });
 
 global.document = new JSDOM(``, {
-  url: "https://crypt.c0mm.l1nk",
+  url: "https://obs.ninja",
   contentType: "text/html",
   includeNodeLocations: true,
   storageQuota: 10000000,
@@ -38,7 +38,7 @@ async function updateTranslation(filename) {
   // updates the website with a specific translation
   let data = await axios({
     method: "get",
-    url: `https://raw.githubusercontent.com//obsninja/master/translations/${filename}.json?${(
+    url: `https://raw.githubusercontent.com/steveseguin/obsninja/master/translations/${filename}.json?${(
       Math.random() * 100
     ).toString()}`,
   })
